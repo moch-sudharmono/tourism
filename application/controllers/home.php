@@ -4,6 +4,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$data['title'] 			= "Dashboard";
+		$data['small_title']	= "Halaman Utama";
+		$this->load->view('home', $data);
 	}
 }
+
+?>

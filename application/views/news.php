@@ -21,20 +21,17 @@
 <link href="<?=base_url();?>inc/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>inc/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<link href="<?=base_url();?>inc/global/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
-<!-- END PAGE LEVEL PLUGIN STYLES -->
-<!-- BEGIN PAGE STYLES -->
-<link href="<?=base_url();?>inc/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
-<!-- END PAGE STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/bootstrap-datepicker/css/datepicker.css"/>
+<!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?=base_url();?>inc/global/css/components.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>inc/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>inc/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link id="style_color" href="<?=base_url();?>inc/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>inc/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -497,7 +494,8 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				<li class="start active open">
+				
+				<li>
 					<a href="<?=base_url()?>">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>                    
@@ -506,7 +504,7 @@
 					</a>
 					
 				</li>
-				<li>
+				<li class="start active open">
 					<a href="<?=base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">News</span>
@@ -658,8 +656,7 @@
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
 							<form action="#" id="form_sample_3" class="form-horizontal">
-								<div class="form-body">
-									<h3 class="form-section">Advance validation. <small>Custom radio buttons, checkboxes and Select2 dropdowns</small></h3>
+								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
 										You have some form errors. Please check below.
@@ -669,44 +666,55 @@
 										Your form validation is successful!
 									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Name <span class="required">
+										<label class="control-label col-md-3">Title (English) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="name" data-required="1" class="form-control"/>
+											<input type="text" name="title_eng" data-required="1" class="form-control"/>
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">Email Address <span class="required">
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<div class="input-group">
-												<span class="input-group-addon">
-												<i class="fa fa-envelope"></i>
-												</span>
-												<input type="email" name="email" class="form-control" placeholder="Email Address">
+											<input type="text" name="title_ind" data-required="1" class="form-control"/>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3">News (English) <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-9">
+											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
+											<div id="editor1_error">
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Occupation&nbsp;&nbsp;</label>
-										<div class="col-md-4">
-											<input name="occupation" type="text" class="form-control"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Select2 Dropdown <span class="required">
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Berita (Bahasa) <span class="required">
 										* </span>
 										</label>
+										<div class="col-md-9">
+											<textarea class="wysihtml5 form-control" rows="6" name="editor2" data-error-container="#editor1_error"></textarea>
+											<div id="editor2_error">
+											</div>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="control-label col-md-3">News Date</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
-												<option value="">Select...</option>
-												<option value="Option 1">Option 1</option>
-												<option value="Option 2">Option 2</option>
-												<option value="Option 3">Option 3</option>
-												<option value="Option 4">Option 4</option>
-											</select>
+											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+												<input type="text" class="form-control" readonly name="datepicker">
+												<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+											</div>
+											<!-- /input-group -->
+											<span class="help-block">
+											select a date </span>
 										</div>
 									</div>
 																											
@@ -1411,27 +1419,23 @@
 <script src="<?=base_url();?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="<?=base_url();?>inc/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-<script type="text/javascript" src="<?=base_url();?>inc/assets/global/plugins/bootstrap-markdown/lib/markdown.js"></script>
-<!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="<?=base_url();?>inc/global/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="<?=base_url();?>inc/global/plugins/bootstrap-markdown/lib/markdown.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<script src="<?=base_url();?>inc/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?=base_url();?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?=base_url();?>inc/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?=base_url();?>inc/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?=base_url();?>inc/admin/pages/scripts/form-validation.js"></script>
+<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?=base_url();?>inc/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?=base_url();?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -1441,7 +1445,9 @@
 <script src="<?=base_url();?>inc/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {    
+jQuery(document).ready(function() { 
+	$(".wysihtml5").wysihtml5();   
+	$(".date").datepicker();   
    Metronic.init(); // init metronic core componets
    Layout.init(); // init layout
    QuickSidebar.init(); // init quick sidebar
@@ -1455,6 +1461,7 @@ jQuery(document).ready(function() {
    Index.initMiniCharts();
    Index.initIntro();
    Tasks.initDashboardWidget();
+   FormValidation.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->
