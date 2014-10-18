@@ -655,7 +655,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="<?=base_url()."index.php/".$modul."/".$action?>" method="post" id="form_sample_3" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -687,7 +687,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
@@ -698,7 +698,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor2" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>
@@ -722,7 +722,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" name="submit" class="btn green" value="save">Submit</button>
 											<button type="button" class="btn default">Cancel</button>
 										</div>
 									</div>
