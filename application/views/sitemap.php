@@ -148,7 +148,7 @@
                     <span class="arrow "></span>
 					</a>					
 				</li>				
-                <li class="start active open">
+                <li>
 					<a href="<?=base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
 					<span class="title">Testimonial</span>
@@ -188,7 +188,7 @@
 						</li>
                     </ul>			
 				</li>	
-                <li>
+                <li class="start active open">
 					<a href="<?=base_url()?>index.php/sitemap">
 					<i class="icon-basket"></i>
 					<span class="title">Sitemap</span>
@@ -201,7 +201,7 @@
 					<span class="title">Ask Us</span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	 		          
+				</li>	          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -210,7 +210,6 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">			
-			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			<?=$title?> <small><?=$small_title?></small>
@@ -239,44 +238,65 @@
 										<button class="close" data-close="alert"></button>
 										Your form validation is successful!
 									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Attraction <span class="required">
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Parent Menu <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
 											<select class="form-control select2me" name="options2">
 												<option value="">Please Choose Option</option>
-												<option value="Option 1">Wakatobi</option>
-												<option value="Option 2">Raja Ampat</option>
-												<option value="Option 3">Pantai Sikka</option>
+												<option value="Option 1">Menu 1</option>
+												<option value="Option 2">Menu 2</option>
+												<option value="Option 3">Menu 3</option>
 											</select>
 										</div>
 									</div>
-									
+                                    
 									<div class="form-group">
-										<label class="control-label col-md-3">Testimonial <span class="required">
+										<label class="control-label col-md-3">Menu Name <span class="required">
 										* </span>
 										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
-											<div id="editor1_error">
-											</div>
+										<div class="col-md-4">
+											<input type="text" name="menu_name" data-required="1" class="form-control"/>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="control-label col-md-3">URL <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="url" data-required="1" class="form-control"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3">CSS ID
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="cssid" data-required="1" class="form-control"/>
 										</div>
 									</div>
                                     
+                                    <div class="form-group">
+										<label class="control-label col-md-3">CSS Class <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="cssclass" data-required="1" class="form-control"/>
+										</div>
+									</div>
                                     
                                     <div class="form-group">
-										<label class="control-label col-md-3">Date</label>
+										<label class="control-label col-md-3">Icon Select <span class="required">
+										* </span>
+										</label>
 										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
+											<select class="form-control select2me" name="options3">
+												<option value="">Please Choose Option</option>
+												<option value="Option 1">Cart</option>
+												<option value="Option 2">Rocket</option>
+												<option value="Option 3">Door</option>
+											</select>
 										</div>
 									</div>
 																											

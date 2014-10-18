@@ -5,7 +5,7 @@ class Testimonial extends CI_Controller {
 	public function index()
 	{
 		$data['title'] 			= "Testimonial";
-		$data['small_title']	= "Terstimonial dari pengunjung";
+		$data['small_title']	= "Testimonial dari pengunjung";
 		$this->load->view('testimonial', $data);
 	}
 }

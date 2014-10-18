@@ -122,7 +122,7 @@
 					</a>
 					
 				</li>
-				<li>
+				<li class="start active open">
 					<a href="<?=base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">News</span>
@@ -148,7 +148,7 @@
                     <span class="arrow "></span>
 					</a>					
 				</li>				
-                <li class="start active open">
+                <li>
 					<a href="<?=base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
 					<span class="title">Testimonial</span>
@@ -194,14 +194,14 @@
 					<span class="title">Sitemap</span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	
+				</li>		
                 <li>
 					<a href="<?=base_url()?>index.php/askus">
 					<i class="icon-basket"></i>
 					<span class="title">Ask Us</span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	 		          
+				</li>	 	          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -240,47 +240,13 @@
 										Your form validation is successful!
 									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Attraction <span class="required">
+										<label class="control-label col-md-3">Tag <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
-												<option value="">Please Choose Option</option>
-												<option value="Option 1">Wakatobi</option>
-												<option value="Option 2">Raja Ampat</option>
-												<option value="Option 3">Pantai Sikka</option>
-											</select>
+											<input type="text" name="title_eng" data-required="1" class="form-control"/>
 										</div>
 									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-md-3">Testimonial <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
-											<div id="editor1_error">
-											</div>
-										</div>
-									</div>
-                                    
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Date</label>
-										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
-										</div>
-									</div>
-																											
-								</div>
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
