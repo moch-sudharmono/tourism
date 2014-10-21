@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for tourism
+DROP DATABASE IF EXISTS `tourism`;
 CREATE DATABASE IF NOT EXISTS `tourism` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tourism`;
 
 
 -- Dumping structure for table tourism.admin
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -30,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 
 -- Dumping structure for table tourism.category
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name_category` varchar(100) NOT NULL,
@@ -54,6 +57,7 @@ INSERT INTO `category` (`id`, `name_category`, `icon`, `description`) VALUES
 
 
 -- Dumping structure for table tourism.map
+DROP TABLE IF EXISTS `map`;
 CREATE TABLE IF NOT EXISTS `map` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `path` varchar(300) NOT NULL,
@@ -71,6 +75,7 @@ INSERT INTO `map` (`id`, `path`, `description`, `name`) VALUES
 
 
 -- Dumping structure for table tourism.pointer
+DROP TABLE IF EXISTS `pointer`;
 CREATE TABLE IF NOT EXISTS `pointer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -95,6 +100,7 @@ INSERT INTO `pointer` (`id`, `name`, `desc_point`, `picture`, `panorama`, `promo
 
 
 -- Dumping structure for table tourism.pr_berita
+DROP TABLE IF EXISTS `pr_berita`;
 CREATE TABLE IF NOT EXISTS `pr_berita` (
   `id_berita` int(10) NOT NULL AUTO_INCREMENT,
   `judul_berita_ina` varchar(255) NOT NULL,
@@ -113,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `pr_berita` (
 
 
 -- Dumping structure for table tourism.pr_berita_tag
+DROP TABLE IF EXISTS `pr_berita_tag`;
 CREATE TABLE IF NOT EXISTS `pr_berita_tag` (
   `id_berita_tag` int(11) NOT NULL AUTO_INCREMENT,
   `tag` int(11) NOT NULL,
@@ -126,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `pr_berita_tag` (
 
 
 -- Dumping structure for table tourism.pr_berita_tag_trans
+DROP TABLE IF EXISTS `pr_berita_tag_trans`;
 CREATE TABLE IF NOT EXISTS `pr_berita_tag_trans` (
   `id_berita_tag_trans` int(10) NOT NULL AUTO_INCREMENT,
   `id_berita` int(10) NOT NULL,
@@ -143,6 +151,7 @@ CREATE TABLE IF NOT EXISTS `pr_berita_tag_trans` (
 
 
 -- Dumping structure for table tourism.pr_global
+DROP TABLE IF EXISTS `pr_global`;
 CREATE TABLE IF NOT EXISTS `pr_global` (
   `id_global` int(10) NOT NULL AUTO_INCREMENT,
   `nama_variabel` varchar(255) NOT NULL,
@@ -161,6 +170,7 @@ CREATE TABLE IF NOT EXISTS `pr_global` (
 
 
 -- Dumping structure for table tourism.pr_kategori_promosi
+DROP TABLE IF EXISTS `pr_kategori_promosi`;
 CREATE TABLE IF NOT EXISTS `pr_kategori_promosi` (
   `id_kategori_promosi` int(10) NOT NULL AUTO_INCREMENT,
   `kategori_promosi` varchar(255) NOT NULL,
@@ -174,6 +184,7 @@ CREATE TABLE IF NOT EXISTS `pr_kategori_promosi` (
 
 
 -- Dumping structure for table tourism.pr_kategori_sarana_prasarana
+DROP TABLE IF EXISTS `pr_kategori_sarana_prasarana`;
 CREATE TABLE IF NOT EXISTS `pr_kategori_sarana_prasarana` (
   `id_kategori_sarana_prasarana` int(10) NOT NULL AUTO_INCREMENT,
   `kategori_sarana_prasarana_ina` varchar(255) NOT NULL,
@@ -194,6 +205,7 @@ INSERT INTO `pr_kategori_sarana_prasarana` (`id_kategori_sarana_prasarana`, `kat
 
 
 -- Dumping structure for table tourism.pr_lokasi_wisata
+DROP TABLE IF EXISTS `pr_lokasi_wisata`;
 CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata` (
   `id_lokasi_wisata` int(10) NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) DEFAULT NULL,
@@ -213,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata` (
 
 
 -- Dumping structure for table tourism.pr_lokasi_wisata_gambar
+DROP TABLE IF EXISTS `pr_lokasi_wisata_gambar`;
 CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_gambar` (
   `id_pr_lokasi_wisata_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_lokasi_wisata` int(10) NOT NULL,
@@ -231,6 +244,7 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_gambar` (
 
 
 -- Dumping structure for table tourism.pr_lokasi_wisata_tag_sarana
+DROP TABLE IF EXISTS `pr_lokasi_wisata_tag_sarana`;
 CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_tag_sarana` (
   `id_pr_lokasi_wisata_tag_sarana` int(10) NOT NULL AUTO_INCREMENT,
   `id_sarana_prasarana` int(10) NOT NULL,
@@ -248,6 +262,7 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_tag_sarana` (
 
 
 -- Dumping structure for table tourism.pr_paket_wisata
+DROP TABLE IF EXISTS `pr_paket_wisata`;
 CREATE TABLE IF NOT EXISTS `pr_paket_wisata` (
   `id_paket_wisata` int(10) NOT NULL AUTO_INCREMENT,
   `paket_wisata_ina` varchar(255) NOT NULL,
@@ -266,6 +281,7 @@ CREATE TABLE IF NOT EXISTS `pr_paket_wisata` (
 
 
 -- Dumping structure for table tourism.pr_paket_wisata_gambar
+DROP TABLE IF EXISTS `pr_paket_wisata_gambar`;
 CREATE TABLE IF NOT EXISTS `pr_paket_wisata_gambar` (
   `id_paket_wisata_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_paket_wisata` int(10) NOT NULL,
@@ -282,6 +298,7 @@ CREATE TABLE IF NOT EXISTS `pr_paket_wisata_gambar` (
 
 
 -- Dumping structure for table tourism.pr_promosi
+DROP TABLE IF EXISTS `pr_promosi`;
 CREATE TABLE IF NOT EXISTS `pr_promosi` (
   `id_promosi` int(10) NOT NULL AUTO_INCREMENT,
   `id_promosi_kategori` int(10) NOT NULL,
@@ -305,6 +322,7 @@ CREATE TABLE IF NOT EXISTS `pr_promosi` (
 
 
 -- Dumping structure for table tourism.pr_promosi_berkas
+DROP TABLE IF EXISTS `pr_promosi_berkas`;
 CREATE TABLE IF NOT EXISTS `pr_promosi_berkas` (
   `id_promosi_berkas` int(10) NOT NULL AUTO_INCREMENT,
   `id_promosi` int(10) NOT NULL,
@@ -320,6 +338,7 @@ CREATE TABLE IF NOT EXISTS `pr_promosi_berkas` (
 
 
 -- Dumping structure for table tourism.pr_promosi_gambar
+DROP TABLE IF EXISTS `pr_promosi_gambar`;
 CREATE TABLE IF NOT EXISTS `pr_promosi_gambar` (
   `id_promosi_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_promosi` int(10) NOT NULL,
@@ -335,6 +354,7 @@ CREATE TABLE IF NOT EXISTS `pr_promosi_gambar` (
 
 
 -- Dumping structure for table tourism.pr_route_edges
+DROP TABLE IF EXISTS `pr_route_edges`;
 CREATE TABLE IF NOT EXISTS `pr_route_edges` (
   `id_edges` int(10) NOT NULL AUTO_INCREMENT,
   `edge_from` int(10) NOT NULL,
@@ -364,6 +384,7 @@ INSERT INTO `pr_route_edges` (`id_edges`, `edge_from`, `edge_to`) VALUES
 
 
 -- Dumping structure for table tourism.pr_route_nodes
+DROP TABLE IF EXISTS `pr_route_nodes`;
 CREATE TABLE IF NOT EXISTS `pr_route_nodes` (
   `id_nodes` int(10) NOT NULL AUTO_INCREMENT,
   `nodes` varchar(255) NOT NULL,
@@ -386,6 +407,7 @@ INSERT INTO `pr_route_nodes` (`id_nodes`, `nodes`) VALUES
 
 
 -- Dumping structure for table tourism.pr_route_transportation
+DROP TABLE IF EXISTS `pr_route_transportation`;
 CREATE TABLE IF NOT EXISTS `pr_route_transportation` (
   `id_transportation` int(10) NOT NULL AUTO_INCREMENT,
   `id_edges` int(10) NOT NULL,
@@ -401,7 +423,7 @@ CREATE TABLE IF NOT EXISTS `pr_route_transportation` (
   CONSTRAINT `FKpr_route_t494151` FOREIGN KEY (`id_edges`) REFERENCES `pr_route_edges` (`id_edges`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_route_transportation: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_route_transportation: ~1 rows (approximately)
 /*!40000 ALTER TABLE `pr_route_transportation` DISABLE KEYS */;
 INSERT INTO `pr_route_transportation` (`id_transportation`, `id_edges`, `id_sarana_prasarana`, `deskripsi_ina`, `deskripsi_eng`, `waktu_perjalanan`, `estimasi_biaya`) VALUES
 	(2, 1, 1, 'Naik Pesawat akan memakan waktu kurang lebih 2 jam', 'Naik Pesawat akan memakan waktu kurang lebih 2 jam', 2, 1000000);
@@ -409,6 +431,7 @@ INSERT INTO `pr_route_transportation` (`id_transportation`, `id_edges`, `id_sara
 
 
 -- Dumping structure for table tourism.pr_sarana_prasarana
+DROP TABLE IF EXISTS `pr_sarana_prasarana`;
 CREATE TABLE IF NOT EXISTS `pr_sarana_prasarana` (
   `id_sarana_prasarana` int(10) NOT NULL AUTO_INCREMENT,
   `id_kategori_sarana_prasarana` int(10) NOT NULL,
@@ -431,6 +454,7 @@ INSERT INTO `pr_sarana_prasarana` (`id_sarana_prasarana`, `id_kategori_sarana_pr
 
 
 -- Dumping structure for table tourism.pr_sarana_prasarana_gambar
+DROP TABLE IF EXISTS `pr_sarana_prasarana_gambar`;
 CREATE TABLE IF NOT EXISTS `pr_sarana_prasarana_gambar` (
   `id_sarana_prasarana_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_sarana_prasarana` int(10) NOT NULL,
@@ -449,6 +473,7 @@ CREATE TABLE IF NOT EXISTS `pr_sarana_prasarana_gambar` (
 
 
 -- Dumping structure for table tourism.pr_sitemap
+DROP TABLE IF EXISTS `pr_sitemap`;
 CREATE TABLE IF NOT EXISTS `pr_sitemap` (
   `id_sitemap` int(10) NOT NULL AUTO_INCREMENT,
   `sitemap_no` varchar(255) NOT NULL,
@@ -469,6 +494,7 @@ CREATE TABLE IF NOT EXISTS `pr_sitemap` (
 
 
 -- Dumping structure for table tourism.pr_tanya_kami
+DROP TABLE IF EXISTS `pr_tanya_kami`;
 CREATE TABLE IF NOT EXISTS `pr_tanya_kami` (
   `id_tanya_kami` int(10) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -484,6 +510,7 @@ CREATE TABLE IF NOT EXISTS `pr_tanya_kami` (
 
 
 -- Dumping structure for table tourism.pr_testimoni_lokasi_wisata
+DROP TABLE IF EXISTS `pr_testimoni_lokasi_wisata`;
 CREATE TABLE IF NOT EXISTS `pr_testimoni_lokasi_wisata` (
   `id_testimoni_lokasi_wisata` int(10) NOT NULL AUTO_INCREMENT,
   `id_lokasi_wisata` int(10) NOT NULL,
