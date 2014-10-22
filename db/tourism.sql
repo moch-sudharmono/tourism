@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `pr_berita` (
 DROP TABLE IF EXISTS `pr_berita_tag`;
 CREATE TABLE IF NOT EXISTS `pr_berita_tag` (
   `id_berita_tag` int(11) NOT NULL AUTO_INCREMENT,
-  `tag` int(11) NOT NULL,
+  `tag` varchar(255) NOT NULL,
   PRIMARY KEY (`id_berita_tag`),
   UNIQUE KEY `tag` (`tag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -156,12 +156,13 @@ CREATE TABLE IF NOT EXISTS `pr_global` (
   `id_global` int(10) NOT NULL AUTO_INCREMENT,
   `nama_variabel` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `val_int` int(10) NOT NULL,
-  `val_varchar` varchar(255) NOT NULL,
-  `val_text` text NOT NULL,
+  `deskripsi` text,
+  `val_int` int(10) DEFAULT NULL,
+  `val_varchar` varchar(255) DEFAULT NULL,
+  `val_text` text,
   PRIMARY KEY (`id_global`),
-  UNIQUE KEY `nama_variabel` (`nama_variabel`)
+  UNIQUE KEY `nama_variabel` (`nama_variabel`),
+  UNIQUE KEY `nama` (`nama`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tourism.pr_global: ~0 rows (approximately)
@@ -211,9 +212,9 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata` (
   `parent_id` int(10) DEFAULT NULL,
   `nama_lokasi_wisata_ina` varchar(255) NOT NULL,
   `nama_lokasi_wisata_eng` varchar(255) NOT NULL,
-  `deskripsi_ina` text NOT NULL,
-  `deskripsi_eng` text NOT NULL,
-  `id_peta` int(10) NOT NULL,
+  `deskripsi_ina` text,
+  `deskripsi_eng` text,
+  `id_peta` int(10) DEFAULT NULL,
   PRIMARY KEY (`id_lokasi_wisata`),
   UNIQUE KEY `nama_lokasi_wisata_ina` (`nama_lokasi_wisata_ina`),
   UNIQUE KEY `nama_lokasi_wisata_eng` (`nama_lokasi_wisata_eng`)
@@ -230,8 +231,8 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_gambar` (
   `id_pr_lokasi_wisata_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_lokasi_wisata` int(10) NOT NULL,
   `gambar` varchar(255) NOT NULL,
-  `deskripsi_ina` text NOT NULL,
-  `deskripsi_eng` text NOT NULL,
+  `deskripsi_ina` text,
+  `deskripsi_eng` text,
   PRIMARY KEY (`id_pr_lokasi_wisata_gambar`),
   UNIQUE KEY `gambar` (`gambar`),
   KEY `FK_pr_lokasi_wisata_gambar_pr_lokasi_wisata` (`id_lokasi_wisata`),
@@ -328,6 +329,7 @@ CREATE TABLE IF NOT EXISTS `pr_promosi_berkas` (
   `id_promosi` int(10) NOT NULL,
   `berkas` varchar(255) NOT NULL,
   PRIMARY KEY (`id_promosi_berkas`),
+  UNIQUE KEY `berkas` (`berkas`),
   KEY `FKpr_promosi426263` (`id_promosi`),
   CONSTRAINT `FKpr_promosi426263` FOREIGN KEY (`id_promosi`) REFERENCES `pr_promosi` (`id_promosi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -419,8 +421,8 @@ CREATE TABLE IF NOT EXISTS `pr_route_transportation` (
   PRIMARY KEY (`id_transportation`),
   KEY `FKpr_route_t494151` (`id_edges`),
   KEY `FK_pr_route_transportation_pr_sarana_prasarana` (`id_sarana_prasarana`),
-  CONSTRAINT `FK_pr_route_transportation_pr_sarana_prasarana` FOREIGN KEY (`id_sarana_prasarana`) REFERENCES `pr_sarana_prasarana` (`id_sarana_prasarana`),
-  CONSTRAINT `FKpr_route_t494151` FOREIGN KEY (`id_edges`) REFERENCES `pr_route_edges` (`id_edges`)
+  CONSTRAINT `FKpr_route_t494151` FOREIGN KEY (`id_edges`) REFERENCES `pr_route_edges` (`id_edges`),
+  CONSTRAINT `FK_pr_route_transportation_pr_sarana_prasarana` FOREIGN KEY (`id_sarana_prasarana`) REFERENCES `pr_sarana_prasarana` (`id_sarana_prasarana`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tourism.pr_route_transportation: ~1 rows (approximately)
@@ -459,8 +461,8 @@ CREATE TABLE IF NOT EXISTS `pr_sarana_prasarana_gambar` (
   `id_sarana_prasarana_gambar` int(10) NOT NULL AUTO_INCREMENT,
   `id_sarana_prasarana` int(10) NOT NULL,
   `gambar` varchar(255) NOT NULL,
-  `deskripsi_ina` text NOT NULL,
-  `deskripsi_eng` text NOT NULL,
+  `deskripsi_ina` text,
+  `deskripsi_eng` text,
   PRIMARY KEY (`id_sarana_prasarana_gambar`),
   UNIQUE KEY `gambar` (`gambar`),
   KEY `FK_pr_sarana_prasarana_gambar_pr_sarana_prasarana` (`id_sarana_prasarana`),
