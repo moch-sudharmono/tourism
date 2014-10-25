@@ -34,8 +34,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -53,7 +53,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -94,7 +94,7 @@
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
 				
 				<li>
-					<a href="<?=base_url()?>">
+					<a href="<?php echo base_url()?>">
 					<i class="icon-home"></i>
 					<span class="title">Utama / <em>Dashboard</em></span>                    
 					<!--<span class="selected"></span>-->
@@ -103,94 +103,94 @@
 					
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/news">
+					<a href="<?php echo base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">Berita / <em>News</em></span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
                     	<li>
-							<a href="<?=base_url()?>index.php/news">
+							<a href="<?php echo base_url()?>index.php/news">
 							Daftar Berita / <em>News Data</em>
                             </a>
 						</li>
 						<li>
-							<a href="<?=base_url()?>index.php/tag">
+							<a href="<?php echo base_url()?>index.php/tag">
 							Tag
                             </a>
 						</li>
                     </ul>				
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/profile">
+					<a href="<?php echo base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
 					<span class="title">Lokasi Wisata / <em>Profile</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>				
                 <li>
-					<a href="<?=base_url()?>index.php/testimonial">
+					<a href="<?php echo base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
 					<span class="title">Testimoni / <em>Testimonial</em></span>
 					<span class="arrow "></span>
 					</a>					
 				</li>      
                 <li>
-					<a href="<?=base_url()?>index.php/gallery">
+					<a href="<?php echo base_url()?>index.php/gallery">
 					<i class="icon-basket"></i>
 					<span class="title">Galeri foto / <em>Gallery</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>	
                 <li class="start active open">
-					<a href="<?=base_url()?>index.php/attraction">
+					<a href="<?php echo base_url()?>index.php/attraction">
 					<i class="icon-basket"></i>
 					<span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>
 				 <li>
-					<a href="<?=base_url()?>index.php/infrastructure">
+					<a href="<?php echo base_url()?>index.php/infrastructure">
 					<i class="icon-basket"></i>
 					<span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                     <span class="arrow "></span>
 					</a>		
                     <ul class="sub-menu">
 						<li>
-							<a href="<?=base_url()?>index.php/infrastructure/categories">
+							<a href="<?php echo base_url()?>index.php/infrastructure/categories">
 							Kategori / <em>Categories</em>
                             </a>
 						</li>
                         <li>
-							<a href="<?=base_url()?>index.php/infrastructure">
+							<a href="<?php echo base_url()?>index.php/infrastructure">
 							Daftar Sarana Prasarana / <em>Infrastructure Data</em>
                             </a>
 						</li>
                     </ul>			
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/sitemap">
+					<a href="<?php echo base_url()?>index.php/sitemap">
 					<i class="icon-basket"></i>
 					<span class="title">Peta Situs / <em>Sitemap</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>
                 <li>
-					<a href="<?=base_url()?>index.php/askus">
+					<a href="<?php echo base_url()?>index.php/askus">
 					<i class="icon-basket"></i>
 					<span class="title">Tanya Kami / <em>Ask Us</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>    
                 <li>
-					<a href="<?=base_url()?>index.php/route">
+					<a href="<?php echo base_url()?>index.php/route">
 					<i class="icon-basket"></i>
 					<span class="title">Rute Perjalanan / <em>Route</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>   
                 <li>
-					<a href="<?=base_url()?>index.php/promotion">
+					<a href="<?php echo base_url()?>index.php/promotion">
 					<i class="icon-basket"></i>
 					<span class="title">Promosi / <em>Promotion</em></span>
                     <span class="arrow "></span>
@@ -207,7 +207,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->			
@@ -218,7 +218,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -266,6 +266,7 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -287,25 +288,14 @@
 							</tr>
 							</thead>
 							<tbody>
-<<<<<<< HEAD
+
 							<?php foreach($query as $no=>$value) { ?>
                             <tr>
-                            	<td><?=$no+1?></td>
-								<td><?=$value["paket_wisata_ina"]?></td>
-								<td><?=$value["paket_wisata_eng"]?></td>
-								<td><?=$value["url"]?></td>
-=======
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 1234
-								</td>
->>>>>>> origin/master
+                            	<td><?php echo $no+1?></td>
+								<td><?php echo $value["paket_wisata_ina"]?></td>
+								<td><?php echo $value["paket_wisata_eng"]?></td>
+								<td><?php echo $value["url"]?></td>
+
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -318,121 +308,9 @@
 									Delete </a>
 								</td>
 							</tr>
-<<<<<<< HEAD
-							<?php } ?>
-=======
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 434
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 232
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 132
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 462
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 62
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
 
->>>>>>> origin/master
+							<?php } ?>
+							
 							</tbody>
 							</table>
 						</div>
@@ -499,12 +377,9 @@
 										</div>
 									</div>
                                     <div class="form-group">
-<<<<<<< HEAD
+
 										<label class="control-label col-md-3">Url <span class="required">
 										* </span>
-=======
-										<label class="control-label col-md-3">URL
->>>>>>> origin/master
 										</label>
 										<div class="col-md-4">
 											<input type="text" name="url" data-required="1" class="form-control"/>
@@ -541,7 +416,7 @@
                                     </div>							
                                 </div>
                                 
-                                <form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                                <form id="fileupload" action="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
                     	
                         
                                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -625,7 +500,7 @@ jQuery(document).ready(function() {
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
 		document.getElementById('submit_attract').value = "insert";
-		document.getElementById('form_attraction').action="<?=base_url()."index.php/".$modul."/insert"?>";
+		document.getElementById('form_attraction').action="<?php echo base_url()."index.php/".$modul."/insert"?>";
 		//alert("add image");
 	});
 	

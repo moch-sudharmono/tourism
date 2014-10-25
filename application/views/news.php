@@ -45,8 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -105,7 +105,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
 				
 				<li>
-					<a href="<?=base_url()?>">
+					<a href="<?php echo base_url()?>">
 					<i class="icon-home"></i>
 					<span class="title">Utama / <em>Dashboard</em></span>                    
 					<!--<span class="selected"></span>-->
@@ -114,94 +114,94 @@ License: You must have a valid license purchased only from themeforest(the above
 					
 				</li>
 				<li class="start active open">
-					<a href="<?=base_url()?>index.php/news">
+					<a href="<?php echo base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">Berita / <em>News</em></span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
                     	<li class="start active open">
-							<a href="<?=base_url()?>index.php/news">
+							<a href="<?php echo base_url()?>index.php/news">
 							Daftar Berita / <em>News Data</em>
                             </a>
 						</li>
 						<li>
-							<a href="<?=base_url()?>index.php/tag">
+							<a href="<?php echo base_url()?>index.php/tag">
 							Tag
                             </a>
 						</li>
                     </ul>				
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/profile">
+					<a href="<?php echo base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
 					<span class="title">Lokasi Wisata / <em>Profile</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>				
                 <li>
-					<a href="<?=base_url()?>index.php/testimonial">
+					<a href="<?php echo base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
 					<span class="title">Testimoni / <em>Testimonial</em></span>
 					<span class="arrow "></span>
 					</a>					
 				</li>      
                 <li>
-					<a href="<?=base_url()?>index.php/gallery">
+					<a href="<?php echo base_url()?>index.php/gallery">
 					<i class="icon-basket"></i>
 					<span class="title">Galeri foto / <em>Gallery</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/attraction">
+					<a href="<?php echo base_url()?>index.php/attraction">
 					<i class="icon-basket"></i>
 					<span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>
 				 <li>
-					<a href="<?=base_url()?>index.php/infrastructure">
+					<a href="<?php echo base_url()?>index.php/infrastructure">
 					<i class="icon-basket"></i>
 					<span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                     <span class="arrow "></span>
 					</a>		
                     <ul class="sub-menu">
 						<li>
-							<a href="<?=base_url()?>index.php/infrastructure/categories">
+							<a href="<?php echo base_url()?>index.php/infrastructure/categories">
 							Kategori / <em>Categories</em>
                             </a>
 						</li>
                         <li>
-							<a href="<?=base_url()?>index.php/infrastructure">
+							<a href="<?php echo base_url()?>index.php/infrastructure">
 							Daftar Sarana Prasarana / <em>Infrastructure Data</em>
                             </a>
 						</li>
                     </ul>			
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/sitemap">
+					<a href="<?php echo base_url()?>index.php/sitemap">
 					<i class="icon-basket"></i>
 					<span class="title">Peta Situs / <em>Sitemap</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>
                 <li>
-					<a href="<?=base_url()?>index.php/askus">
+					<a href="<?php echo base_url()?>index.php/askus">
 					<i class="icon-basket"></i>
 					<span class="title">Tanya Kami / <em>Ask Us</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>		
                 <li>
-					<a href="<?=base_url()?>index.php/route">
+					<a href="<?php echo base_url()?>index.php/route">
 					<i class="icon-basket"></i>
 					<span class="title">Rute Perjalanan / <em>Route</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>   
                 <li>
-					<a href="<?=base_url()?>index.php/promotion">
+					<a href="<?php echo base_url()?>index.php/promotion">
 					<i class="icon-basket"></i>
 					<span class="title">Promosi / <em>Promotion</em></span>
                     <span class="arrow "></span>
@@ -218,7 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -228,7 +228,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -289,22 +289,22 @@ License: You must have a valid license purchased only from themeforest(the above
 							<tbody>
                             	<?php foreach($query as $no=>$value) {?>
 								<tr>
-                                    <td><?=$no+1;?></td>
-                                    <td><?=$value["judul_berita_ina"]?></td>
-                                    <td><?=$value["judul_berita_eng"]?></td>
-                                    <td><?=$value["isi_berita_ina"]?></td>
-                                    <td><?=$value["isi_berita_eng"]?></td>
-                                    <td><?=$value["tanggal_berita"]?></td>
+                                    <td><?php echo $no+1;?></td>
+                                    <td><?php echo $value["judul_berita_ina"]?></td>
+                                    <td><?php echo $value["judul_berita_eng"]?></td>
+                                    <td><?php echo $value["isi_berita_ina"]?></td>
+                                    <td><?php echo $value["isi_berita_eng"]?></td>
+                                    <td><?php echo $value["tanggal_berita"]?></td>
                                     <td>
                                     	<!--
                                         <a class="edit" href="javascript:;">
                                         Edit </a>
                                         -->
-                                        <a class="editNews" id="<?=$value["id_berita"]?>">
+                                        <a class="editNews" id="<?php echo $value["id_berita"]?>">
                                         Edit </a>
                                     </td>
                                     <td>
-                                        <a class="deleteNews" id="<?=$value["id_berita"]?>" href="javascript:;">
+                                        <a class="deleteNews" id="<?php echo $value["id_berita"]?>" href="javascript:;">
                                         Delete </a>
                                     </td>
                                 </tr>
@@ -319,96 +319,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
             
             <div id="NewsForm">
-            <div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-					<div class="portlet box green">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i>News Form
-							</div>							
-						</div>
-                        
-						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
-							<form action="" method="post" id="form_news" class="form-horizontal">
-								<div class="form-body">									
-									<div class="alert alert-danger display-hide">
-										<button class="close" data-close="alert"></button>
-										You have some form errors. Please check below.
-									</div>
-									<div class="alert alert-success display-hide">
-										<button class="close" data-close="alert"></button>
-										Your form validation is successful!
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Title (English) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="title_eng" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="title_ind" data-required="1" class="form-control"/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-md-3">News (English) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error"></textarea>
-											<div id="editor1_error">
-											</div>
-										</div>
-									</div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Berita (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error"></textarea>
-											<div id="editor2_error">
-											</div>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">News Date</label>
-										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
-										</div>
-									</div>
-																											
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" name="submit" id="submit_news" class="btn green" value="">Submit</button>
-											<button type="button" id="CancelButton" class="btn default">Cancel</button>
-										</div>
-									</div>
-								</div>
-							</form>
-							<!-- END FORM-->
-						</div>
-						<!-- END VALIDATION STATES-->
-					</div>
-				</div>
+           
 
 			</div>
             </div>
@@ -434,16 +345,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-	//$('#NewsForm').hide();
+	$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
 
 		$('#NewsForm').show();
-		document.getElementById('submit_news').value = "insert";
-		document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
+		//document.getElementById('form_news').action="<?php echo base_url()."index.php/".$modul."/insert"?>";
 
 		//$('#NewsForm').show();
-		Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
+		Query("POST","","<?php echo base_url()?>index.php/News/Form","#NewsForm","");
+		//document.getElementById('submit_news').value = "insert";
 	});
 	
 	$('#CancelButton').click(function(e){
@@ -457,9 +368,10 @@ jQuery(document).ready(function() {
 		tags: ["Pantai", "Wisata", "Jalan Jalan", "Renang", "Piknik"]
 	});
 	
-	$('.editNews').click(function(e){
+	$('.editNews').css( 'cursor', 'pointer' ).click(function(e){
 		var id = $(this).attr('id');
-		Query("GET","id="+id,"<?=base_url()?>index.php/News/Form","#NewsForm","");
+		$('#NewsForm').show();
+		Query("GET","id="+id,"<?php echo base_url()?>index.php/News/Form","#NewsForm","");
 	});
 
 	$('.deleteNews').click(function (e) {
@@ -470,7 +382,7 @@ jQuery(document).ready(function() {
             }
 
 			var id = $(this).attr("id");
-            Query("GET", "id="+id, "<?=base_url()?>index.php/News/Delete","","");
+            Query("GET", "id="+id, "<?php echo base_url()?>index.php/News/Delete","","");
         });
 			
 function Query(xType,xData,xUrl,xHasil,xEvent) {
