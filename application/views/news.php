@@ -218,7 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?=$small_title?> <small><?=$title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -247,7 +247,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="col-md-6">
 										<div class="btn-group">
 											<button id="add_new" class="btn green">
-											Add New <i class="fa fa-plus"></i>
+											Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
 											</button>
 										</div>
 									</div>
@@ -273,7 +273,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</div>
-							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+							<table class="table table-striped table-hover table-bordered" id="sample_editable_1" width="100%">
 							<thead>
 							<tr>
                             	<th>No.</th>
@@ -281,31 +281,31 @@ License: You must have a valid license purchased only from themeforest(the above
 								<th>Title</th>
                                 <th>Konten</th>
                                 <th>Content</th>
-								<th>Tanggal/Date</th>
-								<th>Edit</th>
-								<th>Delete</th>
+								<th>Tanggal / <em>Date</em></th>
+								<th>Ubah / <em>Edit</em></th>
+								<th>Hapus / <em>Delete</em></th>
 							</tr>
 							</thead>
 							<tbody>
                             	<?php foreach($query as $no=>$value) {?>
 								<tr>
-                                    <td><?=$no+1;?></td>
+                                    <td align="right"><?=$no+1;?></td>
                                     <td><?=$value["judul_berita_ina"]?></td>
                                     <td><?=$value["judul_berita_eng"]?></td>
-                                    <td><?=$value["isi_berita_ina"]?></td>
-                                    <td><?=$value["isi_berita_eng"]?></td>
-                                    <td><?=$value["tanggal_berita"]?></td>
+                                    <td><?= PotongKata($value["isi_berita_ina"], 30) ?></td>
+                                    <td><?= PotongKata($value["isi_berita_eng"], 30) ?></td>
+                                    <td><?=TglIndo($value["tanggal_berita"])?></td>
                                     <td>
                                     	<!--
                                         <a class="edit" href="javascript:;">
                                         Edit </a>
                                         -->
                                         <a class="editNews" id="<?=$value["id_berita"]?>">
-                                        Edit </a>
+                                        Ubah / <em>Edit</em></a>
                                     </td>
                                     <td>
                                         <a class="deleteNews" id="<?=$value["id_berita"]?>" href="javascript:;">
-                                        Delete </a>
+                                        Hapus / <em>Delete</em></a>
                                     </td>
                                 </tr>
                                 <?php } ?>
