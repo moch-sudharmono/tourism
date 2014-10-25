@@ -31,7 +31,7 @@
 	<?php $this->load->view("frontend/include/footer.view.php") ?>
     
     <script>
-		if( "<?php $this->session->userdata('lang')  ?>" == "ina" )
+		if( "<?php echo $this->session->userdata('lang')  ?>" == "ina" )
 		{
 			$(".ina").show();
 			$(".eng").hide();

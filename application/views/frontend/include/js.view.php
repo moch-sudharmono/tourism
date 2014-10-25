@@ -34,3 +34,15 @@
     });
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->
+<?php
+	if( isset($class) and !empty($class) ):
+?>
+	<script>
+		$(document).ready(function(e) {
+			$("#<?php echo $class ?>").addClass("active");            
+        });
+
+	</script>
+<?php
+	endif;
+?>

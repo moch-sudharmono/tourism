@@ -1,6 +1,6 @@
 <?php
 	$news = isset($news)?$news:array();
-	if( isset($news) and !empty($news) ):
+	foreach( $news as $row ):
 ?>
 <div class="main">
   <div class="container">
@@ -8,88 +8,69 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12 col-sm-12">
-        <h2>Berita / <em>News</em></h2>
+
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
-            <div class="col-md-9 col-sm-9 blog-posts">
-              
-              <?php
-				foreach( $news as $row ):
-			  ?>
-              <div class="row">
-                <div class="col-md-4 col-sm-4">
-                  <!-- BEGIN CAROUSEL -->            
-                  <div class="front-carousel">
-                    <div class="carousel slide" id="myCarousel">
-                      <!-- Carousel items -->
-                      <div class="carousel-inner">
-                        <div class="item">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img1.jpg">
-                        </div>
-                        <div class="item">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img2.jpg">
-                        </div>
-                        <div class="item active">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img3.jpg">
-                        </div>
+            <div class="col-md-9 col-sm-9 blog-item">
+              <div class="blog-item-img">
+                <!-- BEGIN CAROUSEL -->            
+                <div class="front-carousel">
+                  <div id="myCarousel" class="carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      <div class="item">
+                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img1.jpg" alt="">
                       </div>
-                      <!-- Carousel nav -->
-                      <a data-slide="prev" href="#myCarousel" class="carousel-control left">
-                        <i class="fa fa-angle-left"></i>
-                      </a>
-                      <a data-slide="next" href="#myCarousel" class="carousel-control right">
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>                
-                  </div>
-                  <!-- END CAROUSEL -->             
+                      <div class="item">
+                        <!-- BEGIN VIDEO -->   
+                        <iframe src="http://player.vimeo.com/video/56974716?portrait=0" style="width:100%; border:0" allowfullscreen="" height="259"></iframe>
+                        <!-- END VIDEO -->   
+                      </div>
+                      <div class="item active">
+                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img3.jpg" alt="">
+                      </div>
+                    </div>
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>                
                 </div>
-                <div class="col-md-8 col-sm-8">
-                  <h3>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina">
-                      	<?php echo strtoupper($row->judul_berita_ina) ?>
-                      </a>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng">
-                      	<?php echo strtoupper($row->judul_berita_eng) ?>
-                      </a>
-                  </h3>
-                  <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
-                    <li><i class="fa fa-comments"></i> 17</li>
-                    <li><i class="fa fa-tags"></i>
-                    	<?php
-                        	foreach( $row->tags as $rt ):
-								echo $rt->tag . " | ";	
-							endforeach;
-						?>
-                    </li>
-                  </ul>
-                  <p class="ina">
-                  	<?php echo PotongKata($row->isi_berita_ina, 50) ?>
-                  </p>
-                  <p class="eng">
-                  	<?php echo PotongKata($row->isi_berita_eng, 50) ?>
-                  </p>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina more">
-					Selengkapnya
-                  </a>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng more">
-                    Read More
-                  </a>
-                </div>
+                <!-- END CAROUSEL -->             
               </div>
-              <hr class="blog-post-sep">
-             <?php endforeach; ?>
-             <ul class="pagination">
-             	<?php echo $paging; ?>
-             </ul>              
+              <h2>
+              	<a href="#" class="ina"><?php echo strtoupper($row->judul_berita_ina) ?></a>
+                <a href="#" class="eng"><?php echo strtoupper($row->judul_berita_eng) ?></a>
+              </h2>
+              <p class="ina">
+              	 <?php echo $row->isi_berita_ina ?>
+              </p>
+              <p class="eng">
+              	 <?php echo $row->isi_berita_eng ?>
+              </p>
+              <ul class="blog-info">
+                <li><i class="fa fa-user"></i> By admin</li>
+                <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
+                <li><i class="fa fa-comments"></i> 17</li>
+                <li><i class="fa fa-tags"></i> 
+					<?php
+						foreach( $row->tags as $rt ):
+							echo $rt->tag . " | ";	
+						endforeach;
+					?>                
+                </li>
+              </ul>
+
+                                    
             </div>
             <!-- END LEFT SIDEBAR -->
 
             <!-- BEGIN RIGHT SIDEBAR -->            
             <div class="col-md-3 col-sm-3 blog-sidebar">
-
               <!-- BEGIN RECENT NEWS -->                            
               <h3>Terpopuler / <em>Most View</em></h3>
               <div class="recent-news margin-bottom-10">
@@ -171,11 +152,4 @@
     <!-- END SIDEBAR & CONTENT -->
   </div>
 </div>
-<?php
-	else:
-?>
-	<h4 class="ina">Data tidak ditemukan</h4>
- 	<h4 class="eng">Data not Found</h4>
-<?php	
-	endif;
-?>
+<?php endforeach; ?>

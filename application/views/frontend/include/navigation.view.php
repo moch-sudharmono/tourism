@@ -1,12 +1,12 @@
 <!-- BEGIN NAVIGATION -->
 <div class="header-navigation pull-right font-transform-inherit">
   <ul>
-    <li class="">
+    <li class="home" id="home">
       <a href="<?php echo base_url() ?>">
         Home 
       </a>
     </li>
-    <li class="">
+    <li class="news" id="news">
       <a href="<?php echo base_url() ?>frontend/news">
         Berita 
       </a>
@@ -77,17 +77,17 @@
         <li><a href="feature-forms.html">Rumah Makan</a></li>
       </ul>
     </li>
-    <li class="">
+    <li class="tour_packages" id="tour_packages">
       <a href="<?php echo base_url() ?>frontend/tour_packages">
         Paket Wisata 
       </a>
     </li>
-    <li class="">
+    <li class="gallery" id="gallery">
       <a href="<?php echo base_url() ?>frontend/gallery">
         Gallery
       </a>
     </li>
-    <li><a href="<?php echo base_url() ?>frontend/contact">Tanya Kami</a></li>
+    <li class="contact" id="contact"><a href="<?php echo base_url() ?>frontend/contact">Tanya Kami</a></li>
 
     <!-- BEGIN TOP SEARCH -->
     <li class="menu-search">
