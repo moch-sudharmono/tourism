@@ -6,6 +6,7 @@ class Profile extends CI_Controller {
 	{
 		$data['title'] 			= "Profile";
 		$data['small_title']	= "Profile mengenai tujuan wisata";
+
 		$this->load->view('profile', $data);
 	}
 }

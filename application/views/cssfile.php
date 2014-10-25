@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
 <link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
 <link rel="stylesheet" type="text/css" href="<?=base_url();?>inc/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet"/>
+<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
+<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?=base_url();?>inc/global/css/components.css" rel="stylesheet" type="text/css"/>
