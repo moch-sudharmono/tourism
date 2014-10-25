@@ -14,11 +14,7 @@ class Profile extends CI_Controller
 	{
 		$data['title'] 			= "Profile";
 		$data['small_title']	= "Profile mengenai tujuan wisata";
-<<<<<<< HEAD
 		$data["modul"]			= $this->modul;
-=======
-
->>>>>>> origin/master
 		$this->load->view('profile', $data);
 	}
 }

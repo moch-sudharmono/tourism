@@ -486,17 +486,10 @@
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Date</label>
+										<label class="control-label col-md-3">URL
+										</label>
 										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
+											<input type="text" name="url" data-required="1" class="form-control"/>
 										</div>
 									</div>
 																											
