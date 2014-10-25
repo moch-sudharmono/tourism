@@ -27,7 +27,7 @@
 										<label class="control-label col-md-3">Title (English) <span class="required">
 										* </span>
 										</label>
-										<div class="col-md-4">
+										<div class="col-md-8">
 											<input type="text" 
                                             		value="<?php echo (isset($value["judul_berita_eng"])? $value["judul_berita_eng"]: '') ?>" 
                                                     name="title_eng" data-required="1" class="form-control"/>
@@ -37,7 +37,7 @@
 										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
 										* </span>
 										</label>
-										<div class="col-md-4">
+										<div class="col-md-8">
 											<input type="text" value="<?php echo (isset($value["judul_berita_ina"])? $value["judul_berita_ina"]: '') ?>" name="title_ind" data-required="1" class="form-control"/>
 										</div>
 									</div>
