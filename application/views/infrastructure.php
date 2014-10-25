@@ -289,17 +289,14 @@
 							<tbody>
                             <?php foreach($query as $no=>$value) {?>
 							<tr>
-
                             	<td><?=$no+1?></td>
 								<td><?=$value["nama_ina"]?></td>
 								<td><?=$value["nama_eng"]?></td>
 								<td><?=$value["url"]?></td>
-
-								
-								<td>								
+                                <td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
-								<td>
+                                <td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
 								</td>
@@ -308,7 +305,6 @@
 									Delete </a>
 								</td>
 							</tr>
-							
                             <?php }?>
 							
 							</tbody>

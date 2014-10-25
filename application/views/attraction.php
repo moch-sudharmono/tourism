@@ -266,7 +266,6 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -274,7 +273,7 @@
 									 Title
 								</th>
 								<th>
-									 Date
+									 Url
 								</th>
                                 <th>
 									 Add Image
@@ -288,9 +287,15 @@
 							</tr>
 							</thead>
 							<tbody>
-							<?php ?>
+<<<<<<< HEAD
+							<?php foreach($query as $no=>$value) { ?>
                             <tr>
-                            	<td></td>
+                            	<td><?=$no+1?></td>
+								<td><?=$value["paket_wisata_ina"]?></td>
+								<td><?=$value["paket_wisata_eng"]?></td>
+								<td><?=$value["url"]?></td>
+=======
+							<tr>
 								<td>
 									 alex
 								</td>
@@ -300,6 +305,7 @@
 								<td>
 									 1234
 								</td>
+>>>>>>> origin/master
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -312,7 +318,121 @@
 									Delete </a>
 								</td>
 							</tr>
-							<?php ?>
+<<<<<<< HEAD
+							<?php } ?>
+=======
+							<tr>
+								<td>
+									 lisa
+								</td>
+								<td>
+									 Lisa Wong
+								</td>
+								<td>
+									 434
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 nick12
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 232
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 goldweb
+								</td>
+								<td>
+									 Sergio Jackson
+								</td>
+								<td>
+									 132
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 webriver
+								</td>
+								<td>
+									 Antonio Sanches
+								</td>
+								<td>
+									 462
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 gist124
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 62
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+
+>>>>>>> origin/master
 							</tbody>
 							</table>
 						</div>
@@ -330,7 +450,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="" id="form_attraction" method="post" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -379,17 +499,15 @@
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Date</label>
+<<<<<<< HEAD
+										<label class="control-label col-md-3">Url <span class="required">
+										* </span>
+=======
+										<label class="control-label col-md-3">URL
+>>>>>>> origin/master
+										</label>
 										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
+											<input type="text" name="url" data-required="1" class="form-control"/>
 										</div>
 									</div>
 																											
@@ -397,7 +515,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_attract" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -506,6 +624,8 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
+		document.getElementById('submit_attract').value = "insert";
+		document.getElementById('form_attraction').action="<?=base_url()."index.php/".$modul."/insert"?>";
 		//alert("add image");
 	});
 	
