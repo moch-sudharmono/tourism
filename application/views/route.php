@@ -448,9 +448,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="col-md-4">
 											<select class="form-control select2me" name="options2">
 												<option value="">Please Choose Option</option>
-												<option value="Option 1">Transportasi Darat</option>
-												<option value="Option 2">Transportasi Laut</option>
-												<option value="Option 3">Transportasi Udara</option>
+												<option value="Option 1">Wakatobi</option>
+												<option value="Option 2">Raja Ampat</option>
+												<option value="Option 3">Pantai Sikka</option>
 											</select>
 										</div>
 									</div>                                    
