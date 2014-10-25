@@ -266,6 +266,7 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -287,7 +288,9 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
+							<?php ?>
+                            <tr>
+                            	<td></td>
 								<td>
 									 alex
 								</td>
@@ -309,117 +312,7 @@
 									Delete </a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 434
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 232
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 132
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 462
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 62
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-
+							<?php ?>
 							</tbody>
 							</table>
 						</div>
