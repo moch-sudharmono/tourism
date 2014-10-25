@@ -266,7 +266,6 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -288,12 +287,25 @@
 							</tr>
 							</thead>
 							<tbody>
+<<<<<<< HEAD
 							<?php foreach($query as $no=>$value) { ?>
                             <tr>
                             	<td><?=$no+1?></td>
 								<td><?=$value["paket_wisata_ina"]?></td>
 								<td><?=$value["paket_wisata_eng"]?></td>
 								<td><?=$value["url"]?></td>
+=======
+							<tr>
+								<td>
+									 alex
+								</td>
+								<td>
+									 Alex Nilson
+								</td>
+								<td>
+									 1234
+								</td>
+>>>>>>> origin/master
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -306,7 +318,121 @@
 									Delete </a>
 								</td>
 							</tr>
+<<<<<<< HEAD
 							<?php } ?>
+=======
+							<tr>
+								<td>
+									 lisa
+								</td>
+								<td>
+									 Lisa Wong
+								</td>
+								<td>
+									 434
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 nick12
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 232
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 goldweb
+								</td>
+								<td>
+									 Sergio Jackson
+								</td>
+								<td>
+									 132
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 webriver
+								</td>
+								<td>
+									 Antonio Sanches
+								</td>
+								<td>
+									 462
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 gist124
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 62
+								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+
+>>>>>>> origin/master
 							</tbody>
 							</table>
 						</div>
@@ -373,8 +499,12 @@
 										</div>
 									</div>
                                     <div class="form-group">
+<<<<<<< HEAD
 										<label class="control-label col-md-3">Url <span class="required">
 										* </span>
+=======
+										<label class="control-label col-md-3">URL
+>>>>>>> origin/master
 										</label>
 										<div class="col-md-4">
 											<input type="text" name="url" data-required="1" class="form-control"/>

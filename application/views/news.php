@@ -296,11 +296,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <td><?=$value["isi_berita_eng"]?></td>
                                     <td><?=$value["tanggal_berita"]?></td>
                                     <td>
+                                    	<!--
                                         <a class="edit" href="javascript:;">
+                                        Edit </a>
+                                        -->
+                                        <a class="editNews" id="<?=$value["id_berita"]?>">
                                         Edit </a>
                                     </td>
                                     <td>
-                                        <a class="delete" href="javascript:;">
+                                        <a class="deleteNews" id="<?=$value["id_berita"]?>" href="javascript:;">
                                         Delete </a>
                                     </td>
                                 </tr>
@@ -315,6 +319,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
             
             <div id="NewsForm">
+<<<<<<< HEAD
             <div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN VALIDATION STATES-->
@@ -405,6 +410,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!-- END VALIDATION STATES-->
 					</div>
 				</div>
+=======
+            
+>>>>>>> origin/master
 			</div>
             </div>
 			<!-- END PAGE CONTENT-->
@@ -429,17 +437,58 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-	$('#NewsForm').hide();
+	//$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
+<<<<<<< HEAD
 		$('#NewsForm').show();
 		document.getElementById('submit_news').value = "insert";
 		document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
+=======
+		//$('#NewsForm').show();
+		Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
+>>>>>>> origin/master
 	});
 	
 	$('#CancelButton').click(function(e){
 		$('#NewsForm').hide();
 	});
+	
+	// initialize select2 tags
+	$("#news_tags").change(function() {
+		form3.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input 
+	}).select2({
+		tags: ["Pantai", "Wisata", "Jalan Jalan", "Renang", "Piknik"]
+	});
+	
+	$('.editNews').click(function(e){
+		var id = $(this).attr('id');
+		Query("GET","id="+id,"<?=base_url()?>index.php/News/Form","#NewsForm","");
+	});
+
+	$('.deleteNews').click(function (e) {
+            e.preventDefault();
+
+            if (confirm("Are you sure to delete this row ?") == false) {
+                return;
+            }
+
+			var id = $(this).attr("id");
+            Query("GET", "id="+id, "<?=base_url()?>index.php/News/Delete","","");
+        });
+			
+function Query(xType,xData,xUrl,xHasil,xEvent) {
+	 	 $.ajax({
+			cache:false,
+			type: xType,
+			url: xUrl,    
+			data: xData,
+			success: function (html){                 
+			  $(xHasil).html(html);
+			  eval(xEvent);				
+			} 
+		});
+}
 });
 </script>
 <!-- END CUSTOMIZE JQUERY -->
