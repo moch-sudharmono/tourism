@@ -24,26 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta content="" name="description"/>
 <meta content="" name="author"/>
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
-<!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet"/>
-<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
-<link href="<?=base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"/>
-<!-- END PAGE LEVEL STYLES -->
-<!-- BEGIN THEME STYLES -->
-<link href="<?=base_url();?>inc/global/css/components.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="<?=base_url();?>inc/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css"/>
-<link href="<?=base_url();?>inc/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
-<!-- END THEME STYLES -->
+<?php include("cssfile.php"); ?>
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- END HEAD -->
@@ -253,7 +234,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<i class="fa fa-plus"></i>
 								<span>
 								Add files... </span>
-								<input type="file" name="files[]" multiple="">
+								<input type="file" name="files[]" multiple>
 								</span>
 								<button type="submit" class="btn blue start">
 								<i class="fa fa-upload"></i>

@@ -96,7 +96,7 @@
 				<li>
 					<a href="<?=base_url()?>">
 					<i class="icon-home"></i>
-					<span class="title">Dashboard</span>                    
+					<span class="title">Utama / <em>Dashboard</em></span>                    
 					<!--<span class="selected"></span>-->
 					<span class="arrow"></span>
 					</a>
@@ -105,13 +105,13 @@
 				<li>
 					<a href="<?=base_url()?>index.php/news">
 					<i class="icon-basket"></i>
-					<span class="title">News</span>
+					<span class="title">Berita / <em>News</em></span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
                     	<li>
 							<a href="<?=base_url()?>index.php/news">
-							News Data
+							Daftar Berita / <em>News Data</em>
                             </a>
 						</li>
 						<li>
@@ -124,58 +124,46 @@
 				<li>
 					<a href="<?=base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
-					<span class="title">Profile</span>
+					<span class="title">Lokasi Wisata / <em>Profile</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>				
                 <li>
 					<a href="<?=base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
-					<span class="title">Testimonial</span>
+					<span class="title">Testimoni / <em>Testimonial</em></span>
 					<span class="arrow "></span>
 					</a>					
 				</li>      
                 <li>
 					<a href="<?=base_url()?>index.php/gallery">
 					<i class="icon-basket"></i>
-					<span class="title">Gallery</span>
+					<span class="title">Galeri foto / <em>Gallery</em></span>
                     <span class="arrow "></span>
 					</a>					
 				</li>	
                 <li class="start active open">
 					<a href="<?=base_url()?>index.php/attraction">
 					<i class="icon-basket"></i>
-					<span class="title">Potential Attraction</span>
+					<span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                     <span class="arrow "></span>
-					</a>	
-                    <ul class="sub-menu">
-						<li>
-							<a href="<?=base_url()?>index.php/attraction">
-							Attraction
-                            </a>
-						</li>
-                        <li>
-							<a href="<?=base_url()?>index.php/attractionimage">
-							Attraction Image
-                            </a>
-						</li>
-                    </ul>					
+					</a>					
 				</li>
 				 <li>
 					<a href="<?=base_url()?>index.php/infrastructure">
 					<i class="icon-basket"></i>
-					<span class="title">Infrastructure</span>
+					<span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                     <span class="arrow "></span>
 					</a>		
                     <ul class="sub-menu">
 						<li>
 							<a href="<?=base_url()?>index.php/infrastructure/categories">
-							Categories
+							Kategori / <em>Categories</em>
                             </a>
 						</li>
                         <li>
 							<a href="<?=base_url()?>index.php/infrastructure">
-							Infrastructure Data
+							Daftar Sarana Prasarana / <em>Infrastructure Data</em>
                             </a>
 						</li>
                     </ul>			
@@ -183,17 +171,31 @@
                 <li>
 					<a href="<?=base_url()?>index.php/sitemap">
 					<i class="icon-basket"></i>
-					<span class="title">Sitemap</span>
+					<span class="title">Peta Situs / <em>Sitemap</em></span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	
+				</li>
                 <li>
 					<a href="<?=base_url()?>index.php/askus">
 					<i class="icon-basket"></i>
-					<span class="title">Ask Us</span>
+					<span class="title">Tanya Kami / <em>Ask Us</em></span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	           
+				</li>    
+                <li>
+					<a href="<?=base_url()?>index.php/route">
+					<i class="icon-basket"></i>
+					<span class="title">Rute Perjalanan / <em>Route</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>   
+                <li>
+					<a href="<?=base_url()?>index.php/promotion">
+					<i class="icon-basket"></i>
+					<span class="title">Promosi / <em>Promotion</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>    
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -273,6 +275,9 @@
 								<th>
 									 Date
 								</th>
+                                <th>
+									 Add Image
+								</th>
 								<th>
 									 Edit
 								</th>
@@ -292,7 +297,9 @@
 								<td>
 									 1234
 								</td>
-								
+								<td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -312,6 +319,9 @@
 								<td>
 									 434
 								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -331,6 +341,9 @@
 								<td>
 									 232
 								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -350,6 +363,9 @@
 								<td>
 									 132
 								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -369,6 +385,9 @@
 								<td>
 									 462
 								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -388,6 +407,9 @@
 								<td>
 									 62
 								</td>
+                                <td>								
+                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
+                                </td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -489,12 +511,81 @@
 								</div>
 							</form>
 							<!-- END FORM-->
+                            
 						</div>
                         </div>
-						<!-- END VALIDATION STATES-->
+						<!-- END VALIDATION STATES-->      
+                        
+                                                                 
 					</div>
 				</div>
 			</div>
+            
+            <!-- IMAGE FORM -->
+                        <div id="imageUpload">
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-gift"></i>Image Form
+                                    </div>							
+                                </div>
+                                
+                                <form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                    	
+                        
+                                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                                <div class="row fileupload-buttonbar">
+                                    <div class="col-lg-7">
+                                        <!-- The fileinput-button span is used to style the file input field as button -->
+                                        <span class="btn blue fileinput-button">
+                                        <i class="fa fa-plus"></i>
+                                        <span>
+                                        Add files... </span>
+                                        <input type="file" name="files[]" multiple>
+                                        </span>
+                                        <button type="submit" class="btn blue start">
+                                        <i class="fa fa-upload"></i>
+                                        <span>
+                                        Start upload </span>
+                                        </button>
+                                        <button type="reset" class="btn warning cancel">
+                                        <i class="fa fa-ban-circle"></i>
+                                        <span>
+                                        Cancel upload </span>
+                                        </button>
+                                        <button type="button" class="btn red delete">
+                                        <i class="fa fa-trash"></i>
+                                        <span>
+                                        Delete </span>
+                                        </button>
+                                        <input type="checkbox" class="toggle">
+                                        <!-- The global file processing state -->
+                                        <span class="fileupload-process">
+                                        </span>
+                                    </div>
+                                    <!-- The global progress information -->
+                                    <div class="col-lg-5 fileupload-progress fade">
+                                        <!-- The global progress bar -->
+                                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar progress-bar-success" style="width:0%;">
+                                            </div>
+                                        </div>
+                                        <!-- The extended global progress information -->
+                                        <div class="progress-extended">
+                                             &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- The table listing the files available for upload/download -->
+                                <table role="presentation" class="table table-striped clearfix">
+                                <tbody class="files">
+                                </tbody>
+                                </table>
+                            </form>
+                            </div>
+                        </div>
+                        <!-- END OF IMAGE FORM --> 
+                                   
 			<!-- END PAGE CONTENT-->
 	
 </div>
@@ -518,9 +609,18 @@
 <script>
 jQuery(document).ready(function() { 
 	$('#AttractionForm').hide();
+	$('#imageUpload').hide();
 	
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
+		//alert("add image");
+	});
+	
+	$('.addImage').click(function(e){
+		$('#imageUpload').show();
+		$('#AttractionForm').hide();
+		//alert("add image");
+		FormFileUpload.init();
 	});
 	
 	$('#CancelButton').click(function(e){

@@ -1,18 +1,29 @@
 <!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 3.3.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
 <title>Tourism | Admin Dashboard</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta content="" name="description"/>
 <meta content="" name="author"/>
-
 <?php include("cssfile.php"); ?>
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -27,7 +38,7 @@
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body class="page-header-fixed page-quick-sidebar-over-content ">
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -102,14 +113,14 @@
 					</a>
 					
 				</li>
-				<li>
+				<li class="start active open">
 					<a href="<?=base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">Berita / <em>News</em></span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
-                    	<li>
+                    	<li class="start active open">
 							<a href="<?=base_url()?>index.php/news">
 							Daftar Berita / <em>News Data</em>
                             </a>
@@ -149,14 +160,14 @@
                     <span class="arrow "></span>
 					</a>					
 				</li>
-				 <li class="start active open">
+				 <li>
 					<a href="<?=base_url()?>index.php/infrastructure">
 					<i class="icon-basket"></i>
 					<span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                     <span class="arrow "></span>
 					</a>		
                     <ul class="sub-menu">
-						<li class="start active open">
+						<li>
 							<a href="<?=base_url()?>index.php/infrastructure/categories">
 							Kategori / <em>Categories</em>
                             </a>
@@ -181,7 +192,7 @@
 					<span class="title">Tanya Kami / <em>Ask Us</em></span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	    
+				</li>		
                 <li>
 					<a href="<?=base_url()?>index.php/route">
 					<i class="icon-basket"></i>
@@ -195,7 +206,7 @@
 					<span class="title">Promosi / <em>Promotion</em></span>
                     <span class="arrow "></span>
 					</a>					
-				</li>           
+				</li>    	          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -203,15 +214,15 @@
 	<!-- END SIDEBAR -->
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content">			
+		<div class="page-content">
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			<?=$title?> <small><?=$small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->	
-            <div class="row">
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
 					<div class="portlet box blue">
@@ -235,7 +246,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="btn-group">
-											<button id="AddNew" class="btn green">
+											<button id="add_new" class="btn green">
 											Add New <i class="fa fa-plus"></i>
 											</button>
 										</div>
@@ -265,12 +276,17 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-                            	<th>No.</th>
 								<th>
-									 Kategori
+									 Judul
 								</th>
 								<th>
-									 Category
+									 Title
+								</th>
+								<th>
+									 Route
+								</th>
+								<th>
+									 Edit
 								</th>
 								<th>
 									 Delete
@@ -278,17 +294,121 @@
 							</tr>
 							</thead>
 							<tbody>
-							<?php foreach($query as $no=>$value){?>
-                            <tr>
-								<td><?=$no+1?></td>
-								<td><?=$value["kategori_sarana_prasarana_ina"]?></td>
-                                <td><?=$value["kategori_sarana_prasarana_eng"]?></td>
+							<tr>
+								<td>
+									 alex
+								</td>
+								<td>
+									 Alex Nilson
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
 								<td>
 									<a class="delete" href="javascript:;">
 									Delete </a>
 								</td>
 							</tr>
-                            <?php }?>
+							<tr>
+								<td>
+									 lisa
+								</td>
+								<td>
+									 Lisa Wong
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 nick12
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 goldweb
+								</td>
+								<td>
+									 Sergio Jackson
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 webriver
+								</td>
+								<td>
+									 Antonio Sanches
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 gist124
+								</td>
+								<td>
+									 Nick Roberts
+								</td>
+								<td>
+									 <button class="btn blue addRoute">Add Route <i class="fa fa-plus"></i></button>
+								</td>
+								<td>
+									<a class="edit" href="javascript:;">
+									Edit </a>
+								</td>
+								<td>
+									<a class="delete" href="javascript:;">
+									Delete </a>
+								</td>
+							</tr>
 							</tbody>
 							</table>
 						</div>
@@ -298,20 +418,20 @@
 				</div>
 			</div>
             
-            <div ID="CategoriesForm">		
-			<div class="row">
+            <div id="NewsForm">
+            <div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN VALIDATION STATES-->
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?=$title?> Form
+								<i class="fa fa-gift"></i>Route Form
 							</div>							
 						</div>
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="" id="form_sarana_kat" class="form-horizontal" method="post"	>
+							<form action="" method="post" id="form_sample_3" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -322,34 +442,55 @@
 										Your form validation is successful!
 									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Category (English) <span class="required">
+										<label class="control-label col-md-3">Sarana Prasarana / <em>Infrastructure</em> <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="category_eng" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Kategori (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="category_ind" data-required="1" class="form-control"/>
-										</div>
-									</div>
-									
-									
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Icon Select <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="category_icon">
+											<select class="form-control select2me" name="options2">
 												<option value="">Please Choose Option</option>
-												<option value="Option 1">Cart</option>
-												<option value="Option 2">Rocket</option>
-												<option value="Option 3">Door</option>
+												<option value="Option 1">Wakatobi</option>
+												<option value="Option 2">Raja Ampat</option>
+												<option value="Option 3">Pantai Sikka</option>
 											</select>
+										</div>
+									</div>                                    
+									
+									<div class="form-group">
+										<label class="control-label col-md-3">Description (English) <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-9">
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error"></textarea>
+											<div id="editor1_error">
+											</div>
+										</div>
+									</div>
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Deskripsi (Bahasa) <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-9">
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error"></textarea>
+											<div id="editor2_error">
+											</div>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Waktu Perjalanan / <em>Travel Time</em> <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="travel_time" data-required="1" class="form-control"/>
+										</div>
+									</div>
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Estimasi Biaya / <em>Cost</em> <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="cost" data-required="1" class="form-control"/>
 										</div>
 									</div>
 																											
@@ -357,8 +498,8 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green" name="submit" id="submit_infra_kat" value="">Submit</button>
-											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
+											<button type="submit" name="submit" class="btn green" value="save">Submit</button>
+											<button type="button" id="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
 								</div>
@@ -371,13 +512,16 @@
 			</div>
             </div>
 			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
 	
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 	<div class="page-footer-inner">
-		 2014 &copy; Tourism by SS and co.
+		 2014 &copy; Metronic by keenthemes.
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>
@@ -385,23 +529,24 @@
 </div>
 <!-- END FOOTER -->
 <?php include("jsfile.php"); ?>
+
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-	$('#CategoriesForm').hide();
+	$('#NewsForm').hide();
 	
-	$('#AddNew').click(function(e){
-		$('#CategoriesForm').show();
-		document.getElementById('submit_infra_kat').value="insert";
-		document.getElementById('form_sarana_kat').action="<?=base_url()."index.php/".$modul."/insert_categories"?>"
+	$('#add_new').click(function(e){
+		$('#NewsForm').show();
 	});
 	
 	$('#CancelButton').click(function(e){
-		$('#CategoriesForm').hide();
+		$('#NewsForm').hide();
 	});
 });
 </script>
 <!-- END CUSTOMIZE JQUERY -->
+
+
 </body>
 <!-- END BODY -->
 </html>
