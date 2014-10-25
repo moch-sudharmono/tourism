@@ -319,7 +319,6 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
             
             <div id="NewsForm">
-<<<<<<< HEAD
             <div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN VALIDATION STATES-->
@@ -410,9 +409,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!-- END VALIDATION STATES-->
 					</div>
 				</div>
-=======
-            
->>>>>>> origin/master
+
 			</div>
             </div>
 			<!-- END PAGE CONTENT-->
@@ -440,14 +437,13 @@ jQuery(document).ready(function() {
 	//$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
-<<<<<<< HEAD
+
 		$('#NewsForm').show();
 		document.getElementById('submit_news').value = "insert";
 		document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
-=======
+
 		//$('#NewsForm').show();
 		Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
->>>>>>> origin/master
 	});
 	
 	$('#CancelButton').click(function(e){

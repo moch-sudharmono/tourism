@@ -19,9 +19,6 @@ class News extends CI_Controller {
 		$this->load->view('news', $data);
 	}
 	
-<<<<<<< HEAD
-
-=======
 	public function form()
 	{
 		$data['title'] 			= "News";
@@ -39,8 +36,7 @@ class News extends CI_Controller {
 		$data['modul']			= $this->modul;
 		$data['action']			= "insert";
 	}
-	
->>>>>>> origin/master
+
 	public function insert()
 	{
 		$task = $_POST['submit'];
@@ -67,12 +63,16 @@ class News extends CI_Controller {
 		
 	}
 	
-
-	
 	public function update()
 	{
 		$data['action']			= "update";
 		$task = $_POST['submit'];
+	}
+	
+	public function delete()
+	{
+		$id=$_GET['id'];
+		$this->Pr_berita->delete($id);
 	}
 	
 }
