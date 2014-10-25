@@ -613,12 +613,14 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
-		alert("add image");
+		//alert("add image");
 	});
 	
 	$('.addImage').click(function(e){
 		$('#imageUpload').show();
-		alert("add image");
+		$('#AttractionForm').hide();
+		//alert("add image");
+		FormFileUpload.init();
 	});
 	
 	$('#CancelButton').click(function(e){

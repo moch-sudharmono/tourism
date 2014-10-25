@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
    
    FormValidation.init();
    TableEditable.init();
-   FormFileUpload.init();
+   //FormFileUpload.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

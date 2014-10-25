@@ -516,6 +516,7 @@
 <script>
 jQuery(document).ready(function() { 
 	$('#ProfileForm').hide();
+	$('#imageUpload').hide();
 	
 	$('#AddNew').click(function(e){
 		$('#ProfileForm').show();
@@ -523,6 +524,13 @@ jQuery(document).ready(function() {
 	
 	$('#CancelButton').click(function(e){
 		$('#ProfileForm').hide();
+	});
+	
+	$('.addImage').click(function(e){
+		$('#imageUpload').show();
+		$('#ProfileForm').hide();
+		//alert("add image");
+		FormFileUpload.init();
 	});
 });
 </script>

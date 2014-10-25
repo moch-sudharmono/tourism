@@ -614,12 +614,20 @@
 jQuery(document).ready(function() { 
 	$('#InfrastructureForm').hide();
 	
+	$('#imageUpload').hide();
+	
 	$('#AddNew').click(function(e){
 		$('#InfrastructureForm').show();
 	});
 	
 	$('#CancelButton').click(function(e){
 		$('#InfrastructureForm').hide();
+	});
+	
+	$('.addImage').click(function(e){
+		$('#imageUpload').show();	
+		$('#InfrastructureForm').hide();
+		FormFileUpload.init();
 	});
 });
 </script>
