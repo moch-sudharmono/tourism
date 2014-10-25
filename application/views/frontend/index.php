@@ -10,6 +10,9 @@
 
 <!-- Body BEGIN -->
 <body class="corporate">
+	<?php
+		$this->session->set_userdata('lang', 'ina');
+	?>
 	<!--style customizzer-->
 	<?php //$this->load->view("frontend/include/style-customizerview.php") ?>
     
@@ -27,6 +30,18 @@
     <!--footer-->
 	<?php $this->load->view("frontend/include/footer.view.php") ?>
     
+    <script>
+		if( "<?php $this->session->userdata('lang')  ?>" == "ina" )
+		{
+			$(".ina").show();
+			$(".eng").hide();
+		}
+		else
+		{
+			$(".ina").hide();
+			$(".eng").show();
+		}
+	</script>
 </body>
 <!-- END BODY -->
 </html>

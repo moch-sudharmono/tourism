@@ -9,6 +9,11 @@
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
             <div class="col-md-9 col-sm-9 blog-posts">
+              
+              <?php
+              	$news = isset($news)?$news:array();
+				foreach( $news as $row ):
+			  ?>
               <div class="row">
                 <div class="col-md-4 col-sm-4">
                   <!-- BEGIN CAROUSEL -->            
@@ -38,74 +43,32 @@
                   <!-- END CAROUSEL -->             
                 </div>
                 <div class="col-md-8 col-sm-8">
-                  <h2><a href="blog-item.html">Corrupti quos dolores etquas</a></h2>
+                  <h3>
+                      <a href="blog-item.html">
+                      	<label class="ina"><?php echo strtoupper($row->judul_berita_ina) ?></label>
+                        <label class="eng"><?php echo strtoupper($row->judul_berita_eng) ?></label>
+                      </a>
+                  </h3>
                   <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> 25/07/2013</li>
+                    <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
                     <li><i class="fa fa-comments"></i> 17</li>
                     <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
                   </ul>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui sint blanditiis prae sentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing condimentum eleifend enim a feugiat.</p>
+                  <p class="ina">
+                  	<?php echo $row->isi_berita_ina ?>
+                  </p>
+                  <p class="eng">
+                  	<?php echo $row->isi_berita_eng ?>
+                  </p>
                   <a href="blog-item.html" class="more">Read more <i class="icon-angle-right"></i></a>
                 </div>
               </div>
               <hr class="blog-post-sep">
-              <div class="row">
-                <div class="col-md-4 col-sm-4">
-                  <img class="img-responsive" alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img4.jpg">
-                </div>
-                <div class="col-md-8 col-sm-8">
-                  <h2><a href="blog-item.html">Corrupti quos dolores etquas</a></h2>
-                  <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> 25/07/2013</li>
-                    <li><i class="fa fa-comments"></i> 17</li>
-                    <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
-                  </ul>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui sint blanditiis prae sentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing condimentum eleifend enim a feugiat.</p>
-                  <a href="blog-item.html" class="more">Read more <i class="icon-angle-right"></i></a>
-                </div>
-              </div>
-              <hr class="blog-post-sep">
-              <div class="row">
-                <div class="col-md-4 col-sm-4">
-                  <!-- BEGIN VIDEO -->   
-                  <iframe height="205" allowfullscreen="" style="width:100%; border:0" src="http://player.vimeo.com/video/56974716?portrait=0"></iframe>
-                  <!-- END VIDEO -->   
-                </div>
-                <div class="col-md-8 col-sm-8">
-                  <h2><a href="blog-item.html">Corrupti quos dolores etquas</a></h2>
-                  <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> 25/07/2013</li>
-                    <li><i class="fa fa-comments"></i> 17</li>
-                    <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
-                  </ul>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui sint blanditiis prae sentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing condimentum eleifend enim a feugiat.</p>
-                  <a href="blog-item.html" class="more">Read more <i class="fa fa-angle-right"></i></a>
-                </div>
-              </div>
-              <hr class="blog-post-sep">
-              <div class="row">
-                <div class="col-md-4 col-sm-4">
-                  <img class="img-responsive" alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img2.jpg">
-                </div>
-                <div class="col-md-8 col-sm-8">
-                  <h2><a href="#">Corrupti quos dolores etquas</a></h2>
-                  <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> 25/07/2013</li>
-                    <li><i class="fa fa-comments"></i> 17</li>
-                    <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
-                  </ul>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui sint blanditiis prae sentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing condimentum eleifend enim a feugiat.</p>
-                  <a href="blog-item.html" class="more">Read more <i class="fa fa-angle-right"></i></a>
-                </div>
-              </div>
-              <hr class="blog-post-sep">
+             <?php endforeach; ?>
+             
               <ul class="pagination">
                 <li><a href="#">Prev</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li class="active"><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <li class="active"><a href="#">1</a></li>
                 <li><a href="#">Next</a></li>
               </ul>               
             </div>
