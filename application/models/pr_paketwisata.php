@@ -15,12 +15,14 @@
             $title_ind 		= $this->input->post('title_ind');			
             $description_eng  = $this->input->post('description_eng');			
             $description_ind  = $this->input->post('description_ind');
+			$url			  = $this->input->post('url')	;
 			
             $data = array(
                    'paket_wisata_eng'=>$title_eng,
                    'paket_wisata_ina'=>$title_ind,
-				   'isi_berita_eng'=>$isi_eng,
-				   'isi_berita_ina'=>$isi_ind                    
+				   'deskripsi_eng'=>$description_eng,
+				   'deskripsi_ina'=>$description_ind ,
+				   'url'=>$url               
                     );
             $this->insert_into($data);    
 		}

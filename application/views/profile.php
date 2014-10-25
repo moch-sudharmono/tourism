@@ -164,14 +164,12 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
-									 Judul
+									 Lokasi Wisata
 								</th>
 								<th>
-									 Title
-								</th>
-								<th>
-									 Date
+									 Attraction Location 
 								</th>
                                 <th>
                                 	Image
@@ -185,16 +183,11 @@
 							</tr>
 							</thead>
 							<tbody>
+                            <?php foreach($query as $no=>$value) {?>
 							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 02/02/2014
-								</td>
+                            	<td><?=$no+1?></td>
+								<td><?=$value["nama_lokasi_wisata_ina"]?></td>
+                                <td><?=$value["nama_lokasi_wisata_eng"]?></td>
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -207,116 +200,7 @@
 									Delete </a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-                                <td>								
-                                	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
-                                </td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+                            <?php }?>
 							</tbody>
 							</table>
 						</div>
@@ -341,7 +225,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -355,11 +239,11 @@
 										<label class="control-label col-md-3">Parent Attraction Location
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
+											<select class="form-control select2me" name="cbo_parent">
 												<option value="">Please Choose Option</option>
-												<option value="Option 1">Wakatobi</option>
-												<option value="Option 2">Raja Ampat</option>
-												<option value="Option 3">Pantai Sikka</option>
+                                                <?php foreach($query as $no=>$value){?>
+                                                	<option value="<?=$value["id_lokasi_wisata"]?>"><?=$value["nama_lokasi_wisata_ina"]."/".$value["nama_lokasi_wisata_eng"]?></option>
+                                                <?php }?>
 											</select>
 										</div>
 									</div>
@@ -385,7 +269,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="description_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
@@ -396,7 +280,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor2" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="description_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>
@@ -406,7 +290,7 @@
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
+											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
 												<option value="Option 1">Wakatobi</option>
 												<option value="Option 2">Raja Ampat</option>
@@ -419,7 +303,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -520,6 +404,8 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#ProfileForm').show();
+		document.getElementById('submit_profile').value = "insert";
+		document.getElementById('form_profile').action="<?=base_url()."index.php/".$modul."/insert"?>";
 	});
 	
 	$('#CancelButton').click(function(e){

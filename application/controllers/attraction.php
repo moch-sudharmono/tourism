@@ -12,9 +12,9 @@ class Attraction extends CI_Controller {
 	public function index()
 	{
 		$data['title'] 			= "Potential Attraction";
-		$data['small_title']	= "Potensi Wisata";
+		$data['small_title']	  = "Potensi Wisata";
 		$data['modul']			= $this->modul;
-		
+		$data['query']			= $this->Pr_paketwisata->get_all();
 		$this->load->view('attraction', $data);
 	}
 	
@@ -22,10 +22,10 @@ class Attraction extends CI_Controller {
 	{
 		$task = $_POST['submit'];
 
-		if($task=="save"){			
+		if($task=="insert"){			
 			$this->Pr_paketwisata->validate();		
 					
-			redirect('home');					
+			redirect('Attraction');					
 		}
 		
 	}

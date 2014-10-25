@@ -19,23 +19,34 @@ class News extends CI_Controller {
 		$this->load->view('news', $data);
 	}
 	
-	public function load_data()
-	{
-		$data['modul']			= $this->modul;
-		$data['action']			= "insert";
-	}
-	
+
 	public function insert()
 	{
 		$task = $_POST['submit'];
 
-		if($task=="save"){			
-			$this->Pr_berita->validate();		
+		if($task=="insert"){	
+			$title_eng 	= $this->input->post('title_eng');
+            $title_ind 	= $this->input->post('title_ind');			
+            $isi_eng 	  = $this->input->post('isi_eng');			
+            $isi_ind 	  = $this->input->post('isi_ind');
+			$date		 = $this->input->post('datepicker');
+			
+            $data = array(
+                   'judul_berita_eng'=>$title_eng,
+                   'judul_berita_ina'=>$title_ind,
+				   'isi_berita_eng'=>$isi_eng,
+				   'isi_berita_ina'=>$isi_ind,
+				   'tanggal_berita'=>$date                   
+                    );
+				
+			$this->Pr_berita->validate($data);		
 					
-			redirect('home');					
+			redirect('News');					
 		}
 		
 	}
+	
+
 	
 	public function update()
 	{

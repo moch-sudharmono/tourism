@@ -274,7 +274,7 @@
 									 Title
 								</th>
 								<th>
-									 Date
+									 Url
 								</th>
                                 <th>
 									 Add Image
@@ -288,18 +288,12 @@
 							</tr>
 							</thead>
 							<tbody>
-							<?php ?>
+							<?php foreach($query as $no=>$value) { ?>
                             <tr>
-                            	<td></td>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 1234
-								</td>
+                            	<td><?=$no+1?></td>
+								<td><?=$value["paket_wisata_ina"]?></td>
+								<td><?=$value["paket_wisata_eng"]?></td>
+								<td><?=$value["url"]?></td>
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -312,7 +306,7 @@
 									Delete </a>
 								</td>
 							</tr>
-							<?php ?>
+							<?php } ?>
 							</tbody>
 							</table>
 						</div>
@@ -330,7 +324,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="" id="form_attraction" method="post" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -379,17 +373,11 @@
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Date</label>
+										<label class="control-label col-md-3">Url <span class="required">
+										* </span>
+										</label>
 										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
+											<input type="text" name="url" data-required="1" class="form-control"/>
 										</div>
 									</div>
 																											
@@ -397,7 +385,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_attract" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -506,6 +494,8 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
+		document.getElementById('submit_attract').value = "insert";
+		document.getElementById('form_attraction').action="<?=base_url()."index.php/".$modul."/insert"?>";
 		//alert("add image");
 	});
 	
