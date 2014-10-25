@@ -263,139 +263,35 @@ License: You must have a valid license purchased only from themeforest(the above
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-								<th>
-									 Judul
-								</th>
-								<th>
-									 Title
-								</th>
-								<th>
-									 Date
-								</th>
-								<th>
-									 Edit
-								</th>
-								<th>
-									 Delete
-								</th>
+                            	<th>No.</th>
+								<th>Judul</th>
+								<th>Title</th>
+                                <th>Konten</th>
+                                <th>Content</th>
+								<th>Tanggal/Date</th>
+								<th>Edit</th>
+								<th>Delete</th>
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 02/02/2014
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+                            	<?php foreach($query as $no=>$value) {?>
+								<tr>
+                                    <td><?=$no+1;?></td>
+                                    <td><?=$value["judul_berita_ina"]?></td>
+                                    <td><?=$value["judul_berita_eng"]?></td>
+                                    <td><?=$value["isi_berita_ina"]?></td>
+                                    <td><?=$value["isi_berita_eng"]?></td>
+                                    <td><?=$value["tanggal_berita"]?></td>
+                                    <td>
+                                        <a class="edit" href="javascript:;">
+                                        Edit </a>
+                                    </td>
+                                    <td>
+                                        <a class="delete" href="javascript:;">
+                                        Delete </a>
+                                    </td>
+                                </tr>
+                                <?php } ?>
 							</tbody>
 							</table>
 						</div>
@@ -418,7 +314,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="<?=base_url()."index.php/".$modul."/".$action?>" method="post" id="form_sample_3" class="form-horizontal">
+							<form action="<?=base_url()."index.php/".$modul."/"//.$action?>" method="post" id="form_sample_3" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>

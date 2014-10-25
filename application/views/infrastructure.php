@@ -251,6 +251,7 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -269,17 +270,12 @@
 							</tr>
 							</thead>
 							<tbody>
+                            <?php foreach($query as $no=>$value) {?>
 							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 1234
-								</td>
-								
+                            	<td><?=$no+1?></td>
+								<td><?=$value["nama_ina"]?></td>
+								<td><?=$value["nama_eng"]?></td>
+								<td><?=$value["url"]?></td>
 								<td>
 									<a class="edit" href="javascript:;">
 									Edit </a>
@@ -289,101 +285,8 @@
 									Delete </a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 434
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 232
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 132
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 462
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 62
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+                            <?php }?>
+							
 							</tbody>
 							</table>
 						</div>
@@ -406,7 +309,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="" id="form_infrastructure" method="post" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -415,6 +318,19 @@
 									<div class="alert alert-success display-hide">
 										<button class="close" data-close="alert"></button>
 										Your form validation is successful!
+									</div>
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Kategori/Category<span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<select class="form-control select2me" name="cbo_cat">
+												<option value="">Please Choose Option</option>
+                                                <?php foreach($query_kat as $no=>$value){ ?>
+												<option value="<?=$value["id_kategori_sarana_prasarana"]?>"><? echo $value["kategori_sarana_prasarana_ina"]."/".$value["kategori_sarana_prasarana_eng"]?></option>
+                                                <?php } ?>
+											</select>
+										</div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-md-3">Title (English) <span class="required">
@@ -438,7 +354,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="desc_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
@@ -449,7 +365,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor2" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="desc_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>
@@ -468,7 +384,7 @@
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
+											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
 												<option value="Option 1">Wakatobi</option>
 												<option value="Option 2">Raja Ampat</option>
@@ -481,7 +397,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_infra" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -516,10 +432,14 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#InfrastructureForm').show();
+		document.getElementById('submit_infra').value = "insert";
+		document.getElementById('form_infrastructure').action="<?=base_url()."index.php/".$modul."/insert_infrastructure"?>";
 	});
 	
 	$('#CancelButton').click(function(e){
 		$('#InfrastructureForm').hide();
+		document.getElementById('form_infrastructure').action="";
+		document.getElementById('submit_infra').value = "";
 	});
 });
 </script>

@@ -447,7 +447,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="description_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
@@ -458,7 +458,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="editor2" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="description_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>

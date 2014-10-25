@@ -251,6 +251,7 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
 									 Kategori
 								</th>
@@ -263,78 +264,17 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
+							<?php foreach($query as $no=>$value){?>
+                            <tr>
+								<td><?=$no+1?></td>
+								<td><?=$value["kategori_sarana_prasarana_ina"]?></td>
+                                <td><?=$value["kategori_sarana_prasarana_eng"]?></td>
 								<td>
 									<a class="delete" href="javascript:;">
 									Delete </a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+                            <?php }?>
 							</tbody>
 							</table>
 						</div>
@@ -357,7 +297,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
+							<form action="" id="form_sarana_kat" class="form-horizontal" method="post"	>
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -372,7 +312,7 @@
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="title_eng" data-required="1" class="form-control"/>
+											<input type="text" name="category_eng" data-required="1" class="form-control"/>
 										</div>
 									</div>
                                     <div class="form-group">
@@ -380,7 +320,7 @@
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="title_ind" data-required="1" class="form-control"/>
+											<input type="text" name="category_ind" data-required="1" class="form-control"/>
 										</div>
 									</div>
 									
@@ -390,7 +330,7 @@
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="options3">
+											<select class="form-control select2me" name="category_icon">
 												<option value="">Please Choose Option</option>
 												<option value="Option 1">Cart</option>
 												<option value="Option 2">Rocket</option>
@@ -403,7 +343,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_infra_kat" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -438,6 +378,8 @@ jQuery(document).ready(function() {
 	
 	$('#AddNew').click(function(e){
 		$('#CategoriesForm').show();
+		document.getElementById('submit_infra_kat').value="insert";
+		document.getElementById('form_sarana_kat').action="<?=base_url()."index.php/".$modul."/insert_categories"?>"
 	});
 	
 	$('#CancelButton').click(function(e){
