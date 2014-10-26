@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include("cssfile.php"); ?>
 <?php include("jsfile.php"); ?>
 
@@ -11,6 +12,53 @@
 							</div>							
 						</div>	
                         <div class="portlet-body form">
+=======
+<?php include('header.php'); ?>
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
+				
+				<?php include('sidebar.php'); ?>		
+                	          
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">			
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			<?php echo $title?> <small><?php echo $small_title?></small>
+			</h3>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+            	
+			<div class="row">
+				<div class="col-md-12">
+                	
+                
+					<!-- BEGIN VALIDATION STATES-->
+                    <div id="ProfileForm">
+					<div class="portlet box green">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i><?php echo $title?> Form
+							</div>							
+						</div>
+                        
+						<div class="portlet-body form">
+>>>>>>> origin/master
 							<!-- BEGIN FORM-->
 							<form action="" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
@@ -29,7 +77,11 @@
 											<select class="form-control select2me" name="cbo_parent">
 												<option value="">Please Choose Option</option>
                                                 <?php foreach($query as $no=>$value){?>
+<<<<<<< HEAD
                                                 	<option value="<?=$value["id_lokasi_wisata"]?>"><?=$value["nama_lokasi_wisata_ina"]."/".$value["nama_lokasi_wisata_eng"]?></option>
+=======
+                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
+>>>>>>> origin/master
                                                 <?php }?>
 											</select>
 										</div>
@@ -79,9 +131,12 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
+<<<<<<< HEAD
 												<option value="Option 1">Wakatobi</option>
 												<option value="Option 2">Raja Ampat</option>
 												<option value="Option 3">Pantai Sikka</option>
+=======
+>>>>>>> origin/master
 											</select>
 										</div>
 									</div>
@@ -98,6 +153,7 @@
 							</form>
 							<!-- END FORM-->
 						</div>
+<<<<<<< HEAD
                     </div>
                 <!-- END VALIDATION STATES-->
 					</div>
@@ -168,3 +224,31 @@
 
                         </div>
                         <!-- END OF IMAGE FORM --> 
+=======
+                        </div>
+						<!-- END VALIDATION STATES-->
+					</div>
+				</div>
+			</div>
+            
+            
+			<!-- END PAGE CONTENT-->
+	
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2014 &copy; Tourism by SS and co.
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<?php include("jsfile.php"); ?>
+
+</body>
+<!-- END BODY -->
+</html>
+>>>>>>> origin/master

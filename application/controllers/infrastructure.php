@@ -21,6 +21,15 @@ class Infrastructure extends CI_Controller {
 		$this->load->view('infrastructure', $data);
 	}
 	
+	public function add()
+	{
+		$data['title'] 			= "Infrastructure";
+		$data['small_title']	  = "Sarana dan Prasarana";	
+		$data['modul']			= $this->modul;
+		$data['query_kat']			= $this->Pr_kategorisarana->get_all();
+		$this->load->view('infrastructureForm', $data);
+	}
+	
 	public function categories()
 	{
 		$data['title'] 			= "Infrastructure Category";
@@ -29,6 +38,16 @@ class Infrastructure extends CI_Controller {
 		$data['submodul']			= $this->submodul;
 		$data['query']			= $this->Pr_kategorisarana->get_all();
 		$this->load->view('categories', $data);
+	}
+	
+	public function categories_form()
+	{
+		$data['title'] 			= "Infrastructure Category";
+		$data['small_title']	= "Kategori Sarana dan Prasarana";
+		$data['modul']			= $this->modul;
+		$data['submodul']		= $this->submodul;
+
+		$this->load->view('categoriesForm', $data);
 	}
 	
 	public function insert_categories()

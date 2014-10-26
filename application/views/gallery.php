@@ -45,8 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -105,7 +105,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
 				
 				<li>
-					<a href="<?=base_url()?>">
+					<a href="<?php echo base_url()?>">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>                    
 					<!--<span class="selected"></span>-->
@@ -114,92 +114,92 @@ License: You must have a valid license purchased only from themeforest(the above
 					
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/news">
+					<a href="<?php echo base_url()?>index.php/news">
 					<i class="icon-basket"></i>
 					<span class="title">News</span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
                     	<li>
-							<a href="<?=base_url()?>index.php/news">
+							<a href="<?php echo base_url()?>index.php/news">
 							News Data
                             </a>
 						</li>
 						<li>
-							<a href="<?=base_url()?>index.php/tag">
+							<a href="<?php echo base_url()?>index.php/tag">
 							Tag
                             </a>
 						</li>
                     </ul>				
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/profile">
+					<a href="<?php echo base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
 					<span class="title">Profile</span>
                     <span class="arrow "></span>
 					</a>					
 				</li>				
                 <li>
-					<a href="<?=base_url()?>index.php/testimonial">
+					<a href="<?php echo base_url()?>index.php/testimonial">
 					<i class="icon-rocket"></i>
 					<span class="title">Testimonial</span>
 					<span class="arrow "></span>
 					</a>					
 				</li>      
                 <li class="start active open">
-					<a href="<?=base_url()?>index.php/gallery">
+					<a href="<?php echo base_url()?>index.php/gallery">
 					<i class="icon-basket"></i>
 					<span class="title">Gallery</span>
                     <span class="arrow "></span>
 					</a>					
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/attraction">
+					<a href="<?php echo base_url()?>index.php/attraction">
 					<i class="icon-basket"></i>
 					<span class="title">Potential Attraction</span>
                     <span class="arrow "></span>
 					</a>	
                     <ul class="sub-menu">
 						<li>
-							<a href="<?=base_url()?>index.php/attraction">
+							<a href="<?php echo base_url()?>index.php/attraction">
 							Attraction
                             </a>
 						</li>
                         <li>
-							<a href="<?=base_url()?>index.php/attractionimage">
+							<a href="<?php echo base_url()?>index.php/attractionimage">
 							Attraction Image
                             </a>
 						</li>
                     </ul>					
 				</li>
 				 <li>
-					<a href="<?=base_url()?>index.php/infrastructure">
+					<a href="<?php echo base_url()?>index.php/infrastructure">
 					<i class="icon-basket"></i>
 					<span class="title">Infrastructure</span>
                     <span class="arrow "></span>
 					</a>		
                     <ul class="sub-menu">
 						<li>
-							<a href="<?=base_url()?>index.php/infrastructure/categories">
+							<a href="<?php echo base_url()?>index.php/infrastructure/categories">
 							Categories
                             </a>
 						</li>
                         <li>
-							<a href="<?=base_url()?>index.php/infrastructure">
+							<a href="<?php echo base_url()?>index.php/infrastructure">
 							Infrastructure Data
                             </a>
 						</li>
                     </ul>			
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/sitemap">
+					<a href="<?php echo base_url()?>index.php/sitemap">
 					<i class="icon-basket"></i>
 					<span class="title">Sitemap</span>
                     <span class="arrow "></span>
 					</a>					
 				</li>	
                 <li>
-					<a href="<?=base_url()?>index.php/askus">
+					<a href="<?php echo base_url()?>index.php/askus">
 					<i class="icon-basket"></i>
 					<span class="title">Ask Us</span>
                     <span class="arrow "></span>
@@ -216,14 +216,14 @@ License: You must have a valid license purchased only from themeforest(the above
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
 					
-					<form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+					<form id="fileupload" action="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
                     	
                         
 						<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -333,7 +333,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">8</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Bob Nilson</h4>
 										<div class="media-heading-sub">
@@ -342,7 +342,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar1.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar1.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Nick Larson</h4>
 										<div class="media-heading-sub">
@@ -354,7 +354,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">3</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar4.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar4.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Hubert</h4>
 										<div class="media-heading-sub">
@@ -363,7 +363,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar2.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar2.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ella Wong</h4>
 										<div class="media-heading-sub">
@@ -378,7 +378,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-warning">2</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar6.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar6.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lara Kunis</h4>
 										<div class="media-heading-sub">
@@ -393,7 +393,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="label label-sm label-success">new</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar7.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar7.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ernie Kyllonen</h4>
 										<div class="media-heading-sub">
@@ -403,7 +403,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar8.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar8.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lisa Stone</h4>
 										<div class="media-heading-sub">
@@ -418,7 +418,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">7</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar9.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar9.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Portalatin</h4>
 										<div class="media-heading-sub">
@@ -427,7 +427,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar10.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar10.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Irina Savikova</h4>
 										<div class="media-heading-sub">
@@ -439,7 +439,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">4</span>
 									</div>
-									<img class="media-object" src="<?=base_url();?>inc/admin/layout/img/avatar11.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url();?>inc/admin/layout/img/avatar11.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Maria Gomez</h4>
 										<div class="media-heading-sub">
@@ -459,7 +459,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<div class="page-quick-sidebar-chat-user-messages">
 									<div class="post out">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Bob Nilson</a>
@@ -469,7 +469,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Ella Wong</a>
@@ -479,7 +479,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Bob Nilson</a>
@@ -489,7 +489,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Ella Wong</a>
@@ -499,7 +499,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Bob Nilson</a>
@@ -509,7 +509,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Ella Wong</a>
@@ -519,7 +519,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Bob Nilson</a>
@@ -529,7 +529,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Ella Wong</a>
@@ -539,7 +539,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?=base_url();?>inc/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url();?>inc/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="#" class="name">Bob Nilson</a>
@@ -1040,62 +1040,62 @@ License: You must have a valid license purchased only from themeforest(the above
     </script>
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="<?=base_url();?>inc/global/plugins/respond.min.js"></script>
-<script src="<?=base_url();?>inc/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo base_url();?>inc/global/plugins/respond.min.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="<?=base_url();?>inc/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="<?=base_url();?>inc/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
 <!-- END PAGE LEVEL PLUGINS-->
 <!-- BEGIN:File Upload Plugin JS files-->
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
 <!-- The Templates plugin is included to render the upload/download listings -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js"></script>
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/load-image.min.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/load-image.min.js"></script>
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js"></script>
 <!-- blueimp Gallery script -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
 <!-- The basic File Upload plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
 <!-- The File Upload processing plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
 <!-- The File Upload image preview & resize plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js"></script>
 <!-- The File Upload audio preview plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
 <!-- The File Upload video preview plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js"></script>
 <!-- The File Upload validation plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
 <!-- The File Upload user interface plugin -->
-<script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js"></script>
+<script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js"></script>
 <!-- The main application script -->
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
 <!--[if (gte IE 8)&(lt IE 10)]>
-    <script src="<?=base_url();?>inc/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js"></script>
+    <script src="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js"></script>
     <![endif]-->
 <!-- END:File Upload Plugin JS files-->
-<script src="<?=base_url();?>inc/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="<?=base_url();?>inc/admin/pages/scripts/form-fileupload.js"></script>
+<script src="<?php echo base_url();?>inc/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>inc/admin/pages/scripts/form-fileupload.js"></script>
 <script>
         jQuery(document).ready(function() {
         // initiate layout and plugins

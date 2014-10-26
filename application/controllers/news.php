@@ -33,10 +33,32 @@ class News extends CI_Controller {
 		$this->load->view('newsForm', $data);
 	}
 	
+<<<<<<< HEAD
 	public function insert()
 	{
 		$task = $_POST['submit'];
 
+=======
+	public function load_data()
+	{
+		$data['modul']			= $this->modul;
+		$data['action']			= "insert";
+	}
+	
+	public function add()
+	{
+		$data['title'] 			= "News";
+		$data['small_title']	= "Berita Terkini";		
+		$data['modul']			= $this->modul;
+		$data['action']			= "insert";
+		$this->load->view('newsForm', $data);
+	}
+
+	public function insert()
+	{
+		$task = $_POST['submit'];
+		$id="";
+>>>>>>> origin/master
 		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
@@ -52,15 +74,28 @@ class News extends CI_Controller {
 				   'tanggal_berita'=>$tanggal                   
                     );
 				
-			$this->Pr_berita->validate($data);		
+			$this->Pr_berita->validate($data,$id);		
 					
 			redirect('News');					
 		}
 		
 	}
 	
+	public function edit()
+	{
+<<<<<<< HEAD
+=======
+		$data['title'] 			= "News";
+		$data['small_title']	= "Berita Terkini";		
+		$data['modul']			= $this->modul;
+		$data['action']			= "update";
+		$data['value']			= $this->Pr_berita->get_by_id($_GET['id']);
+		$this->load->view('newsForm', $data);
+	}
+	
 	public function update()
 	{
+>>>>>>> origin/master
 		$task = $_POST['submit'];
 		$id = $_POST['id_news'];
 
