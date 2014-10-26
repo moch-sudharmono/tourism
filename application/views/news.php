@@ -319,96 +319,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
             
             <div id="NewsForm">
-            <div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-					<div class="portlet box green">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i>News Form
-							</div>							
-						</div>
-                        
-						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
-							<form action="" method="post" id="form_news" class="form-horizontal">
-								<div class="form-body">									
-									<div class="alert alert-danger display-hide">
-										<button class="close" data-close="alert"></button>
-										You have some form errors. Please check below.
-									</div>
-									<div class="alert alert-success display-hide">
-										<button class="close" data-close="alert"></button>
-										Your form validation is successful!
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Title (English) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="title_eng" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="title_ind" data-required="1" class="form-control"/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-md-3">News (English) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error"></textarea>
-											<div id="editor1_error">
-											</div>
-										</div>
-									</div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Berita (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error"></textarea>
-											<div id="editor2_error">
-											</div>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">News Date</label>
-										<div class="col-md-4">
-											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-												<input type="text" class="form-control" readonly name="datepicker">
-												<span class="input-group-btn">
-												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-											<!-- /input-group -->
-											<span class="help-block">
-											select a date </span>
-										</div>
-									</div>
-																											
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" name="submit" id="submit_news" class="btn green" value="">Submit</button>
-											<button type="button" id="CancelButton" class="btn default">Cancel</button>
-										</div>
-									</div>
-								</div>
-							</form>
-							<!-- END FORM-->
-						</div>
-						<!-- END VALIDATION STATES-->
-					</div>
-				</div>
+           
 
 			</div>
             </div>
@@ -434,16 +345,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-	//$('#NewsForm').hide();
+	$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
 
 		$('#NewsForm').show();
-		document.getElementById('submit_news').value = "insert";
-		document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
+		//document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
 
 		//$('#NewsForm').show();
 		Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
+		//document.getElementById('submit_news').value = "insert";
 	});
 	
 	$('#CancelButton').click(function(e){
@@ -457,8 +368,9 @@ jQuery(document).ready(function() {
 		tags: ["Pantai", "Wisata", "Jalan Jalan", "Renang", "Piknik"]
 	});
 	
-	$('.editNews').click(function(e){
+	$('.editNews').css( 'cursor', 'pointer' ).click(function(e){
 		var id = $(this).attr('id');
+		$('#NewsForm').show();
 		Query("GET","id="+id,"<?=base_url()?>index.php/News/Form","#NewsForm","");
 	});
 

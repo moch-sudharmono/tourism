@@ -13,7 +13,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="<?=base_url()."index.php/".$modul."/"//.$action?>" method="post" id="form_sample_3" class="form-horizontal">
+							<form action="<?=base_url()."index.php/".$modul."/".$action?>" method="post" id="form_news" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -94,6 +94,7 @@
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" name="submit" class="btn green" value="save">Submit</button>
 											<button type="button" id="CancelButton" class="btn default">Cancel</button>
+                                            <input type="hidden" value="<?php echo (isset($id)? $id: '') ?>" name="id_news" data-required="1" class="form-control"/>
 										</div>
 									</div>
 								</div>
