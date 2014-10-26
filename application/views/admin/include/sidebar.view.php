@@ -100,8 +100,8 @@
                 <span class="arrow "></span>
                 </a>					
             </li>   
-            <li class="admin_menu">
-                <a href="<?php echo base_url() ?>promotion">
+            <li class="admin_menu" id="promotion">
+                <a href="<?php echo base_url() ?>admin/promotion">
                 <i class="icon-basket"></i>
                 <span class="title">Promosi / <em>Promotion</em></span>
                 <span class="arrow "></span>

@@ -50,23 +50,22 @@
             <table class="table table-striped table-hover table-bordered" id="tag_table">
             <thead>
             <tr>
-                <th>Tag</th>
+                <th>Judul</th><th>Title</th>
+                <th>Deskripsi</th><th>Description</th>
                 <th width="250">Aksi / <em>Action</em></th>
             </tr>
             </thead>
             <tbody>
             <?php			
-                if( isset($tag) and !empty($tag) ):
-                foreach( $tag as $row ):
+                if( isset($promotion) and !empty($promotion) ):
+                foreach( $promotion as $row ):
             ?>
             <tr>
-                <td><?php echo $row->tag ?></td>
+                <td><?php echo $row->promosi_ina ?></td><td><?php echo $row->promosi_eng ?></td>
+                <td><?php echo PotongKata($row->deskripsi_ina, 30) ?></td><td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>admin/tag/form/<?php echo $row->id_berita_tag ?>"> <i class="fa fa-edit">
-                    	</i> Ubah / <em>Edit</em> 
-                    </a> 
-                    |
-                    <a href="<?php echo base_url() ?>admin/tag/delete/<?php echo $row->id_berita_tag ?>" class="hapus_tag"> 
+                    <a href="#"> <i class="fa fa-edit"></i> Ubah / <em>Edit</em> </a> |
+                    <a href="<?php echo base_url() ?>admin/tag/delete/<?php echo $row->id_promosi ?>" class="hapus_tag"> 
                     	<i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                     </a>
                 </td>
