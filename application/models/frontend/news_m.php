@@ -33,7 +33,7 @@
 		
 		public function displayNewsTag()
 		{
-			$this->db->order_by("tag asc ");
+			$this->db->order_by("tag_ina ");
 			$query = $this->db->get("pr_berita_tag_trans_group_view");
 			return $query->result();
 		}

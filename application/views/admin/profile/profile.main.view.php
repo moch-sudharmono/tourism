@@ -1,5 +1,5 @@
 <!-- BEGIN EXAMPLE TABLE PORTLET-->
-<div class="portlet box blue col-md-7">
+<div class="portlet box blue col-md-12">
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-edit"></i> Tag Table
@@ -13,9 +13,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="btn-group">
-                        <button id="addnew_tag" class="btn green">
+                        <a href="<?php echo base_url() ?>admin/profile/form/0" class="btn green">
                         	Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -40,26 +40,30 @@
                 </div>
             </div>
         </div>
-            <table class="table table-striped table-hover table-bordered" id="tag_table">
+            <table class="table table-striped table-hover table-bordered" id="profile_table">
             <thead>
             <tr>
-                <th>Tag</th>
+                <th>Lokasi</th><th>Location</th>
+                <th>Profil</th><th>Profile</th>
                 <th width="250">Aksi / <em>Action</em></th>
             </tr>
             </thead>
             <tbody>
             <?php			
-                if( isset($tag) and !empty($tag) ):
-                foreach( $tag as $row ):
+                if( isset($profile) and !empty($profile) ):
+                foreach( $profile as $row ):
             ?>
             <tr>
-                <td><?php echo $row->tag_ina ?> / <?php echo $row->tag_eng ?></td>
+                <td><?php echo $row->nama_lokasi_wisata_ina ?></td>
+                <td><?php echo $row->nama_lokasi_wisata_eng ?></td>
+                <td><?php echo $row->deskripsi_ina ?></td>
+                <td><?php echo $row->deskripsi_eng ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>admin/tag/form/<?php echo $row->id_berita_tag ?>"> <i class="fa fa-edit">
+                    <a href="<?php echo base_url() ?>admin/profile/form/<?php echo $row->id_lokasi_wisata ?>"> <i class="fa fa-edit">
                     	</i> Ubah / <em>Edit</em> 
                     </a> 
                     |
-                    <a href="<?php echo base_url() ?>admin/tag/delete/<?php echo $row->id_berita_tag ?>" class="hapus_tag"> 
+                    <a href="<?php echo base_url() ?>admin/profile/delete/<?php echo $row->id_lokasi_wisata ?>" class="delete_profile"> 
                     	<i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                     </a>
                 </td>
@@ -80,11 +84,8 @@
 <!-- END EXAMPLE TABLE PORTLET-->
 
 <script>
-	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>admin/tag/form/0"
-    });
 	
-	$(".hapus_tag").click(function(e) {
+	$(".delete_profile").click(function(e) {
         if( confirm("Anda yakin / Are you Sure ?") )
 		{
 			return true;

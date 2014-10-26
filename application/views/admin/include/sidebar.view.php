@@ -21,7 +21,7 @@
                 </a>	
                 <ul class="sub-menu">
                     <li id="news">
-                        <a href="<?php echo base_url() ?>news">
+                        <a href="<?php echo base_url() ?>admin/news">
                         Daftar Berita / <em>News Data</em>
                         </a>
                     </li>
@@ -32,11 +32,10 @@
                     </li>
                 </ul>				
             </li>
-            <li class="admin_menu">
-                <a href="<?php echo base_url() ?>profile">
+            <li class="admin_menu" id="profile">
+                <a href="<?php echo base_url() ?>admin/profile">
                 <i class="icon-basket"></i>
                 <span class="title">Lokasi Wisata / <em>Profile</em></span>
-                <span class="arrow "></span>
                 </a>					
             </li>				
             <li class="admin_menu">

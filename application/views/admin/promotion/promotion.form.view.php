@@ -61,7 +61,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Deskripsi (Bahasa)</label>
                     <div class="col-md-10">
-	                    <textarea class="form-control wysihtml5" name="deskripsi_ina"><?php echo $deskripsi_ina ?></textarea>
+	                    <textarea class="form-control ckeditor" name="deskripsi_ina"><?php echo $deskripsi_ina ?></textarea>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Description (English)</label>
                     <div class="col-md-10">
-	                    <textarea class="form-control wysihtml5" data-error-container="#deskripsi_eng_error" name="deskripsi_eng"><?php echo $deskripsi_eng ?></textarea>
+	                    <textarea class="form-control ckeditor" data-error-container="#deskripsi_eng_error" name="deskripsi_eng"><?php echo $deskripsi_eng ?></textarea>
                         <div id="deskripsi_eng_error"></div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Gambar Sampul / <em>Cover</em></label>
                     <div class="col-md-10">
-	                    <input type="file" />
+	                    <input type="file" name="" />
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                     <label class="col-md-2 control-label">Tanggal Promosi / <em>Promotion Date</em></label>
                     <div class="col-md-2">
                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                            <input type="text" class="form-control tanggal_promosi" value="<?php echo $tanggal_promosi ?>" name="tanggal_promosi"  readonly name="datepicker" />
+                            <input type="text" class="form-control tanggal_promosi" value="<?php echo $tanggal_promosi ?>" name="tanggal_promosi"  readonly />
                             <span class="input-group-btn">
                             <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
@@ -101,7 +101,7 @@
                     <label class="col-md-2 control-label">Tanggal Kadarluarsa / <em>Expired Date</em></label>
                     <div class="col-md-2">
                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                            <input type="text" class="form-control" value="<?php echo $tanggal_kadarluarsa ?>" name="tanggal_kadarluarsa" id="tanggal_kadarluarsa" readonly name="datepicker" />
+                            <input type="text" class="form-control" value="<?php echo $tanggal_kadarluarsa ?>" name="tanggal_kadarluarsa" id="tanggal_kadarluarsa" readonly  />
                             <span class="input-group-btn">
                             <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
@@ -109,12 +109,29 @@
                     </div>
                 </div>
             </div>
-            
+            <hr />
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Berkas Pendukung / <em>Files</em></label>
+                    <div class="col-md-10">
+	                    <input type="file" name="" />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Foto Pendukung / <em>Photos</em></label>
+                    <div class="col-md-10">
+	                    <input type="file" name="" />
+                    </div>
+                </div>
+            </div>
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
                         <button type="button" class="btn default" id="back_promotion">Batal / Cancel</button>
-                        <button type="submit" class="btn blue">Simpan / Submit</button>
+                        <button type="submit" class="btn blue">Simpan / Save</button>
                     </div>
                 </div>
             </div>

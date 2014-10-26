@@ -60,7 +60,8 @@
                     <li><i class="fa fa-tags"></i>
                     	<?php
                         	foreach( $row->tags as $rt ):
-								echo $rt->tag . " | ";	
+								echo "<label class='ina'>" . $rt->tag_ina . " | </label> ";	
+								echo "<label class='eng'>" . $rt->tag_eng . " | </label> ";	
 							endforeach;
 						?>
                     </li>
@@ -153,7 +154,10 @@
                 	if( isset($news_tag) and !empty($news_tag) ):
 					foreach( $news_tag as $rnt ):
 				?>
-                  <li><a href="#"><i class="fa fa-tags"></i><?php echo $rnt->tag ?></a></li>
+                  <li>
+                  	<a href="#" class="ina"><i class="fa fa-tags"></i><?php echo $rnt->tag_ina ?></a>
+                    <a href="#" class="eng"><i class="fa fa-tags"></i><?php echo $rnt->tag_eng ?></a>
+                  </li>
                 <?php
 					endforeach;
                 	endif;
