@@ -122,6 +122,7 @@
 				</div>
 			</div>
             
+<<<<<<< HEAD
 
             <div id="NewsForm">
            
@@ -129,6 +130,8 @@
 			</div>
             </div>
 
+=======
+>>>>>>> origin/master
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>

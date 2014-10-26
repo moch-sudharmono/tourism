@@ -49,9 +49,9 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="btn-group">
-											<button id="AddNew" class="btn green">
+											<a href="<?php echo base_url().'index.php/sitemap/add'; ?>" class="btn green">
 											Add New <i class="fa fa-plus"></i>
-											</button>
+											</a>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -98,8 +98,12 @@
 									 Icon
 								</th>
                                 <th>
+									 Edit
+								</th>
+                                <th>
 									 Delete
 								</th>
+                                
 							</tr>
 							</thead>
 							<tbody>
@@ -122,131 +126,17 @@
 								<td>
 									 Alex Nilson
 								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
                                 <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
+									<a href="<?php echo base_url().'index.php/sitemap/edit'; ?>">
+											Edit
+									</a>
 								</td>
 								<td>
 									<a class="delete" href="javascript:;">
 									Delete </a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-                                <td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+							
 							</tbody>
 							</table>
 						</div>
@@ -256,108 +146,7 @@
 				</div>
 			</div>
             
-            <div ID="SitemapForm">		
-			<div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-					<div class="portlet box green">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i><?php echo $title?> Form
-							</div>							
-						</div>
-                        
-						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
-							<form action="#" id="form_sample_3" class="form-horizontal">
-								<div class="form-body">									
-									<div class="alert alert-danger display-hide">
-										<button class="close" data-close="alert"></button>
-										You have some form errors. Please check below.
-									</div>
-									<div class="alert alert-success display-hide">
-										<button class="close" data-close="alert"></button>
-										Your form validation is successful!
-									</div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Parent Menu <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="options2">
-												<option value="">Please Choose Option</option>
-												<option value="Option 1">Menu 1</option>
-												<option value="Option 2">Menu 2</option>
-												<option value="Option 3">Menu 3</option>
-											</select>
-										</div>
-									</div>
-                                    
-									<div class="form-group">
-										<label class="control-label col-md-3">Menu Name <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="menu_name" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">URL <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="url" data-required="1" class="form-control"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">CSS ID
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="cssid" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">CSS Class <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input type="text" name="cssclass" data-required="1" class="form-control"/>
-										</div>
-									</div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Icon Select <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="options3">
-												<option value="">Please Choose Option</option>
-												<option value="Option 1">Cart</option>
-												<option value="Option 2">Rocket</option>
-												<option value="Option 3">Door</option>
-											</select>
-										</div>
-									</div>
-																											
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">Submit</button>
-											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
-										</div>
-									</div>
-								</div>
-							</form>
-							<!-- END FORM-->
-						</div>
-						<!-- END VALIDATION STATES-->
-					</div>
-				</div>
-			</div>
-            </div>
+            
 			<!-- END PAGE CONTENT-->
 	
 </div>
@@ -373,21 +162,6 @@
 </div>
 <!-- END FOOTER -->
 <?php include("jsfile.php");?>
-<!-- CUSTOMIZE JQUERY -->
-<script>
-jQuery(document).ready(function() { 
-	$('#SitemapForm').hide();
-	
-	$('#AddNew').click(function(e){
-		$('#SitemapForm').show();
-	});
-	
-	$('#CancelButton').click(function(e){
-		$('#SitemapForm').hide();
-	});
-});
-</script>
-<!-- END CUSTOMIZE JQUERY -->
 </body>
 <!-- END BODY -->
 </html>

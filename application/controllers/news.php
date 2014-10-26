@@ -19,6 +19,29 @@ class News extends CI_Controller {
 		$this->load->view('news', $data);
 	}
 	
+<<<<<<< HEAD
+=======
+	public function form()
+	{
+		$data['title'] 			= "News";
+		$data['small_title']	  = "Berita Terkini";		
+		$data['modul']			= $this->modul;
+		$data['action']		   = "insert";	
+		if(isset($_GET['id'])){
+			$data['id'] 			= $_GET['id'];
+			$data['value']		= $this->Pr_berita->get_by_id($_GET['id']);
+			$data['action']		= "Update";
+		}
+		$this->load->view('newsForm', $data);
+	}
+	
+	public function load_data()
+	{
+		$data['modul']			= $this->modul;
+		$data['action']			= "insert";
+	}
+	
+>>>>>>> origin/master
 	public function add()
 	{
 		$data['title'] 			= "News";
@@ -57,7 +80,10 @@ class News extends CI_Controller {
 	
 	public function edit()
 	{
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 		$data['title'] 			= "News";
 		$data['small_title']	= "Berita Terkini";		
 		$data['modul']			= $this->modul;
@@ -68,7 +94,10 @@ class News extends CI_Controller {
 	
 	public function update()
 	{
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 		$task = $_POST['submit'];
 		$id = $_POST['id_news'];
 

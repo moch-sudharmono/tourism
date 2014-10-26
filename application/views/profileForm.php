@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 <?php include('header.php'); ?>
 <div class="clearfix">
 </div>
@@ -43,7 +47,10 @@
 						</div>
                         
 						<div class="portlet-body form">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<!-- BEGIN FORM-->
 							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action; ?>" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
@@ -61,8 +68,13 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_parent" id="cbo_parent">
 												<option value="">Please Choose Option</option>
+<<<<<<< HEAD
                                                 <?php foreach($query as $no=>$value){?>
 	                                              	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
+=======
+                                                <?php foreach($query as $value){?>
+                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
+>>>>>>> origin/master
                                                 <?php }?>
 											</select>
 										</div>
@@ -112,11 +124,14 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
+<<<<<<< HEAD
 
 												<option value="Option 1">Wakatobi</option>
 												<option value="Option 2">Raja Ampat</option>
 												<option value="Option 3">Pantai Sikka</option>
 
+=======
+>>>>>>> origin/master
 											</select>
 										</div>
 									</div>
@@ -133,6 +148,7 @@
 							</form>
 							<!-- END FORM-->
 						</div>
+<<<<<<< HEAD
 
                     </div>
                 <!-- END VALIDATION STATES-->
@@ -205,6 +221,8 @@
                         </div>
                         <!-- END OF IMAGE FORM --> 
 
+=======
+>>>>>>> origin/master
                         </div>
 						<!-- END VALIDATION STATES-->
 					</div>
@@ -231,9 +249,12 @@
 </body>
 <!-- END BODY -->
 </html>
+<<<<<<< HEAD
 
 <script>
 jQuery(document).ready(function() { 
 	//$("#cbo_parent").val()="<?php echo (isset($id)? $id: '') ?>"
 });
 </script>
+=======
+>>>>>>> origin/master

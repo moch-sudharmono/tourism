@@ -109,7 +109,7 @@
 								<td><?php echo $value["nama_eng"]?></td>
 								<td><?php echo $value["url"]?></td>
                                 <td>								
-                                	<a href="<?php echo base_url().'index.php/infrastructure/image'; ?>" class="btn blue addImage">Add Image <i class="fa fa-plus"></i></a>
+                                	<a href="<?php echo base_url().'index.php/infrastructure/addimage'; ?>" class="btn blue addImage">Add Image <i class="fa fa-plus"></i></a>
                                 </td>
                                 <td>
 									<a class="edit" href="javascript:;">
