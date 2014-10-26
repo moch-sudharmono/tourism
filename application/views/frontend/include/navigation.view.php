@@ -82,6 +82,11 @@
         Paket Wisata 
       </a>
     </li>
+    <li class="tour_packages" id="promotion">
+      <a href="<?php echo base_url() ?>frontend/promotion">
+        Promosi
+      </a>
+    </li>
     <li class="gallery" id="gallery">
       <a href="<?php echo base_url() ?>frontend/gallery">
         Gallery

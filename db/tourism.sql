@@ -111,11 +111,34 @@ CREATE TABLE IF NOT EXISTS `pr_berita` (
   PRIMARY KEY (`id_berita`),
   UNIQUE KEY `judul_berita_ina` (`judul_berita_ina`),
   UNIQUE KEY `judul_berita_eng` (`judul_berita_eng`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table tourism.pr_berita: ~3 rows (approximately)
+/*!40000 ALTER TABLE `pr_berita` DISABLE KEYS */;
+INSERT INTO `pr_berita` (`id_berita`, `judul_berita_ina`, `judul_berita_eng`, `isi_berita_ina`, `isi_berita_eng`, `tanggal_berita`) VALUES
+	(1, 'Tiba di Jakarta, Menlu AS akan Cari Dukungan Untuk Melawan ISIS', 'Tiba di Jakarta, Menlu AS akan Cari Dukungan Untuk Melawan ISIS', 'Jakarta - Menteri Luar Negeri (Menlu) Amerika Serikat John Kerry tiba di Jakarta untuk menghadiri pelantikan presiden dan wakil presiden terpilih, Jokowi-JK. Kerry juga disebut akan meminta bantuan negara-negara Asia Tenggara dalam upaya AS melawan militan ISIS.\r\n\r\nDalam kunjungan sehari di Jakarta, Kerry akan menghadiri pelantikan Jokowi-JK yang akan digelar pagi ini. Namun selain itu, Kerry juga dijadwalkan menggelar pertemuan bilateral dengan Jokowi, juga dengan Perdana Menteri Malaysia dan Singapura, lalu Sultan Brunei, Perdana Menteri Australia dan Menteri Luar Negeri Filipina.\r\n\r\nDemikian disampaikan oleh pejabat senior Departemen Luar Negeri AS kepada wartawan dalam penerbangan Kerry ke Jakarta, seperti dilansir Reuters, Senin (20/10/2014).\r\n\r\nMenurut pejabat senior yang enggan disebut namanya tersebut, pertemuan bilateral itu akan membahas sejumlah isu, mulai dari sengketa wilayah di Laut China Selatan, perjuangan melawan wabah Ebola dan perjanjian Kemitraan Perdagangan Trans-Pasifik yang masih dalam pembahasan.\r\n\r\nNamun isu prioritasnya, lanjut pejabat senior tersebut, ialah mencari lebih banyak bantuan dan dukungan dalam melawan ISIS di Suriah dan Irak.\r\n\r\nPembahasan antara kepala negara dan pejabat penting tersebut antara lain akan menyinggung upaya penangkalan rekrutmen anggota ISIS dari negara-negara Asia Tenggara, mencegah kembalinya pelaku jihad garis keras di wilayah tersebut, serta memblokir pendanaan bagi militan keji tersebut.\r\n\r\n"Menlu akan berbicara lewat wilayah yang kami yakini dan kami harap masing-masing negara bisa berbuat lebih banyak," ucap pejabat senior tersebut.', 'Jakarta - Menteri Luar Negeri (Menlu) Amerika Serikat John Kerry tiba di Jakarta untuk menghadiri pelantikan presiden dan wakil presiden terpilih, Jokowi-JK. Kerry juga disebut akan meminta bantuan negara-negara Asia Tenggara dalam upaya AS melawan militan ISIS.\r\n\r\nDalam kunjungan sehari di Jakarta, Kerry akan menghadiri pelantikan Jokowi-JK yang akan digelar pagi ini. Namun selain itu, Kerry juga dijadwalkan menggelar pertemuan bilateral dengan Jokowi, juga dengan Perdana Menteri Malaysia dan Singapura, lalu Sultan Brunei, Perdana Menteri Australia dan Menteri Luar Negeri Filipina.\r\n\r\nDemikian disampaikan oleh pejabat senior Departemen Luar Negeri AS kepada wartawan dalam penerbangan Kerry ke Jakarta, seperti dilansir Reuters, Senin (20/10/2014).\r\n\r\nMenurut pejabat senior yang enggan disebut namanya tersebut, pertemuan bilateral itu akan membahas sejumlah isu, mulai dari sengketa wilayah di Laut China Selatan, perjuangan melawan wabah Ebola dan perjanjian Kemitraan Perdagangan Trans-Pasifik yang masih dalam pembahasan.\r\n\r\nNamun isu prioritasnya, lanjut pejabat senior tersebut, ialah mencari lebih banyak bantuan dan dukungan dalam melawan ISIS di Suriah dan Irak.\r\n\r\nPembahasan antara kepala negara dan pejabat penting tersebut antara lain akan menyinggung upaya penangkalan rekrutmen anggota ISIS dari negara-negara Asia Tenggara, mencegah kembalinya pelaku jihad garis keras di wilayah tersebut, serta memblokir pendanaan bagi militan keji tersebut.\r\n\r\n"Menlu akan berbicara lewat wilayah yang kami yakini dan kami harap masing-masing negara bisa berbuat lebih banyak," ucap pejabat senior tersebut.', '2014-10-25 21:16:57'),
+	(2, 'Eks Tokoh Pendukung ISIS Dirikan Lembaga Riset', 'Eks Tokoh Pendukung ISIS Dirikan Lembaga Riset', 'Muchus Budi R. - detikNews\r\nSolo - Ketua Forum Pendukung Daulah Islamiyah (FPDI), Amir Mahmud, mendirikan sebuah lembaga riset di Solo. Doktor bidang studi Islam tersebut menegaskan lembaga tersebut akan bekerja profesional melakukan berbagai kajian tentang keislaman, peradaban dan budaya. Dia juga mengatakan lembaganya itu tak terkait dengan kelompok manapun dan bukan kedok perekrutan.\r\n\r\nLaunching lembaga riset yang dinamai Amir Institute tersebut dilakukan di Solo, Sabtu (25/10/2014). Lembaga tersebut mengedepankan jargon \'menjunjung tinggi syariat menuju peradaban Islam\'. Dalam penjelasannya, goal tentang peradaban adalah obsesi besar yang memang telah dia pikirkan dan perjuangkan sejak lama.\r\n\r\n"Secara kebetulan saja Presiden yang terpilih saat ini mengajukann konsep revolusi mental yang pada dasarnyaa itu juga sebuah konsep pembenahan peradaban. Kami tidak tahu dasar dan acuan apa yang akan dipakai oleh Presiden Jokowi dalam merealisasikan konsep besarnya itu. Kami sama sekali tak terkait? dengan itu. Memang secara kebetulan saja munculnya hampir bersamaan," ujarnya kepada wartawan di Solo.\r\n\r\nMeskipun demikian Amir menegaskan lembaga yang dikelolanya akan ikut mengontrol jalannya revolusi mental yang dicanangkan oleh Jokowi. Jika program-programnya sesuai harapan dan tidak meminggirkan aspirasi umat Islam sebagai mayoritas warga bangsa maka pihaknya? akan memberi dukungan. Namun jika yang terjadi sebaliknya maka Amir Institute akan memberikan kritik yang tegas.\r\n\r\n"Pisau paling tajam dari lembaga riset adalah karya-karya analisis yang akan kami dirilis terbuka agar menjadi perhatian bersama dan pemerintah menyadari tentang kekeliruannya itu," lanjutnya.\r\n\r\n?Lebih lanjut, Amir juga menegaskan lembaganya tersebut tidak ada kaitan dengan kelompok-kelompok yang terlibat konflik di Timur Tengah. Karena itu Amir Institute bukan kedok bagi perekrutan sumber daya manusia dari Indonesia untuk dikirim ke kawasan konflik di Timur Tengah. Namun demikian Amir menegaskan mempersilakan jika ada organisasi lain melakukan pengiriman itu, dengan dalih tidak ingin mencampuri kecenderungan pemikiran organisasi lain dalam menyikapi konflik yang terjadi.\r\n\r\nNama Amir Mahmud mengemuka di pemberitaan nasional pada bulan Juli hingga Agustus lalu karena inisiatifnya bersama Afif Abdul Majid ?mendirikan FPDI di Solo. Forum ini menyatakaan dukungan kepada ISIS dan bahkan melakukan baiat kepada para pendukungnya. Namun belakangan Amir yang juga kombaatan Afghanistan tersebut mengatakan dukungannya itu hanya merupakan wacana dan tidak pernah ada tindakan konkret melakukan aksi atas nama ISIS di Indonesia.\r\n\r\nBelakangan Afif Abdul Majid ditangkap Densus 88/Anti-Teror Mabes Polri dengan sangkaan terlibat dalam pendanaan kasus pelatihan militer di Aceh dan? karena aktifitasnya menggalang dukungan untuk gerakan ISIS. Namun Amir Mahmud tetap bebas dan aktifitasnya hingga kini tidak terpengaruh oleh kegiatannya di FPDI itu.\r\n\r\n(mbr/fjr)', 'Muchus Budi R. - detikNews\r\nSolo - Ketua Forum Pendukung Daulah Islamiyah (FPDI), Amir Mahmud, mendirikan sebuah lembaga riset di Solo. Doktor bidang studi Islam tersebut menegaskan lembaga tersebut akan bekerja profesional melakukan berbagai kajian tentang keislaman, peradaban dan budaya. Dia juga mengatakan lembaganya itu tak terkait dengan kelompok manapun dan bukan kedok perekrutan.\r\n\r\nLaunching lembaga riset yang dinamai Amir Institute tersebut dilakukan di Solo, Sabtu (25/10/2014). Lembaga tersebut mengedepankan jargon \'menjunjung tinggi syariat menuju peradaban Islam\'. Dalam penjelasannya, goal tentang peradaban adalah obsesi besar yang memang telah dia pikirkan dan perjuangkan sejak lama.\r\n\r\n"Secara kebetulan saja Presiden yang terpilih saat ini mengajukann konsep revolusi mental yang pada dasarnyaa itu juga sebuah konsep pembenahan peradaban. Kami tidak tahu dasar dan acuan apa yang akan dipakai oleh Presiden Jokowi dalam merealisasikan konsep besarnya itu. Kami sama sekali tak terkait? dengan itu. Memang secara kebetulan saja munculnya hampir bersamaan," ujarnya kepada wartawan di Solo.\r\n\r\nMeskipun demikian Amir menegaskan lembaga yang dikelolanya akan ikut mengontrol jalannya revolusi mental yang dicanangkan oleh Jokowi. Jika program-programnya sesuai harapan dan tidak meminggirkan aspirasi umat Islam sebagai mayoritas warga bangsa maka pihaknya? akan memberi dukungan. Namun jika yang terjadi sebaliknya maka Amir Institute akan memberikan kritik yang tegas.\r\n\r\n"Pisau paling tajam dari lembaga riset adalah karya-karya analisis yang akan kami dirilis terbuka agar menjadi perhatian bersama dan pemerintah menyadari tentang kekeliruannya itu," lanjutnya.\r\n\r\n?Lebih lanjut, Amir juga menegaskan lembaganya tersebut tidak ada kaitan dengan kelompok-kelompok yang terlibat konflik di Timur Tengah. Karena itu Amir Institute bukan kedok bagi perekrutan sumber daya manusia dari Indonesia untuk dikirim ke kawasan konflik di Timur Tengah. Namun demikian Amir menegaskan mempersilakan jika ada organisasi lain melakukan pengiriman itu, dengan dalih tidak ingin mencampuri kecenderungan pemikiran organisasi lain dalam menyikapi konflik yang terjadi.\r\n\r\nNama Amir Mahmud mengemuka di pemberitaan nasional pada bulan Juli hingga Agustus lalu karena inisiatifnya bersama Afif Abdul Majid ?mendirikan FPDI di Solo. Forum ini menyatakaan dukungan kepada ISIS dan bahkan melakukan baiat kepada para pendukungnya. Namun belakangan Amir yang juga kombaatan Afghanistan tersebut mengatakan dukungannya itu hanya merupakan wacana dan tidak pernah ada tindakan konkret melakukan aksi atas nama ISIS di Indonesia.\r\n\r\nBelakangan Afif Abdul Majid ditangkap Densus 88/Anti-Teror Mabes Polri dengan sangkaan terlibat dalam pendanaan kasus pelatihan militer di Aceh dan? karena aktifitasnya menggalang dukungan untuk gerakan ISIS. Namun Amir Mahmud tetap bebas dan aktifitasnya hingga kini tidak terpengaruh oleh kegiatannya di FPDI itu.\r\n\r\n(mbr/fjr)', '2014-10-26 00:09:17'),
+	(3, 'Selasa Besok Jokowi akan Sibuk Bertemu Para Kepala Negara', 'Selasa Besok Jokowi akan Sibuk Bertemu Para Kepala Negara', 'Jakarta - Dalam hitungan menit, Jokowi akan dilantik sebagai presiden RI ketujuh. Tak lama dilantik, beberapa kepala negara sudah antre untuk bertemu.\r\n\r\n"Besok ada pertemuan-pertemuan dengan perdana menteri dan kepala negara. Dan panggil panglima," ujar Jokowi di rumah dinas Gubernur DKI, Jalan Taman Suropati Nomor 7, Menteng, Jakarta Pusat, Senin (20/10/2014) pukul 08.00 WIB.\r\n\r\nSaat ditanya pertemuan dengan para kepala negara akan membahas apa saja, Jokowi menyahut, "Besok saja diikuti".\r\n\r\nYang jelas, baginya, sumpah jabatan presiden adalah beban yang berat. "Itu sebuah beban berat yang harus kita terima, dan itu merupakan sebuah tanggung jawab besar untuk menyelesaikan persoalan yang ada di negara kita," tutur dia.\r\n\r\nSekitar 18 tamu negara yang merupakan Kepala Negara/Kepala Pemerintahan atau utusan negara akan hadir di acara pelantikan Jokowi-JK. Mereka adalah Menlu AS John Kerry, Menlu Inggris Phillip Hammond, Perdana Menteri Australia Tony Abbot, Perdana Menteri Malaysia Najib Rajak, dan Perdana Menteri Singapura Lee Hsien Loong.\r\n\r\nSelain itu juga Sultan Brunei Darussalam Hassanal Bolkiah, Presiden Timor Leste Xanana Gusmao, mantan Perdana Menteri Jepang Yasuo Fukada, Gubernur Jenderal Papua Nugini Michael Ogio, dan Menteri Industri dan Perdagangan Rusia Denis Manturov. Beberapa utusan tamu kenegaraan lainnya juga rencananya akan hadir namun masih belum dipastikan siapa yang akan dikirim untuk datan yakni Vietnam, China, Thailand, dan Korea Selatan.\r\n\r\n(nwk/nrl)', 'Jakarta - Dalam hitungan menit, Jokowi akan dilantik sebagai presiden RI ketujuh. Tak lama dilantik, beberapa kepala negara sudah antre untuk bertemu.\r\n\r\n"Besok ada pertemuan-pertemuan dengan perdana menteri dan kepala negara. Dan panggil panglima," ujar Jokowi di rumah dinas Gubernur DKI, Jalan Taman Suropati Nomor 7, Menteng, Jakarta Pusat, Senin (20/10/2014) pukul 08.00 WIB.\r\n\r\nSaat ditanya pertemuan dengan para kepala negara akan membahas apa saja, Jokowi menyahut, "Besok saja diikuti".\r\n\r\nYang jelas, baginya, sumpah jabatan presiden adalah beban yang berat. "Itu sebuah beban berat yang harus kita terima, dan itu merupakan sebuah tanggung jawab besar untuk menyelesaikan persoalan yang ada di negara kita," tutur dia.\r\n\r\nSekitar 18 tamu negara yang merupakan Kepala Negara/Kepala Pemerintahan atau utusan negara akan hadir di acara pelantikan Jokowi-JK. Mereka adalah Menlu AS John Kerry, Menlu Inggris Phillip Hammond, Perdana Menteri Australia Tony Abbot, Perdana Menteri Malaysia Najib Rajak, dan Perdana Menteri Singapura Lee Hsien Loong.\r\n\r\nSelain itu juga Sultan Brunei Darussalam Hassanal Bolkiah, Presiden Timor Leste Xanana Gusmao, mantan Perdana Menteri Jepang Yasuo Fukada, Gubernur Jenderal Papua Nugini Michael Ogio, dan Menteri Industri dan Perdagangan Rusia Denis Manturov. Beberapa utusan tamu kenegaraan lainnya juga rencananya akan hadir namun masih belum dipastikan siapa yang akan dikirim untuk datan yakni Vietnam, China, Thailand, dan Korea Selatan.\r\n\r\n(nwk/nrl)', '2014-10-26 00:11:06');
+/*!40000 ALTER TABLE `pr_berita` ENABLE KEYS */;
+
+
+-- Dumping structure for table tourism.pr_berita_log
+DROP TABLE IF EXISTS `pr_berita_log`;
+CREATE TABLE IF NOT EXISTS `pr_berita_log` (
+  `id_berita_log` int(11) NOT NULL AUTO_INCREMENT,
+  `id_berita` int(10) NOT NULL,
+  `tanggal_log` timestamp NULL DEFAULT NULL,
+  `mac_address` varchar(255) DEFAULT NULL,
+  `browser` varchar(255) DEFAULT NULL,
+  `id_address` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_berita_log`),
+  KEY `FK_pr_berita_log_pr_berita` (`id_berita`),
+  CONSTRAINT `FK_pr_berita_log_pr_berita` FOREIGN KEY (`id_berita`) REFERENCES `pr_berita` (`id_berita`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_berita: ~0 rows (approximately)
-/*!40000 ALTER TABLE `pr_berita` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pr_berita` ENABLE KEYS */;
+-- Dumping data for table tourism.pr_berita_log: ~0 rows (approximately)
+/*!40000 ALTER TABLE `pr_berita_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pr_berita_log` ENABLE KEYS */;
 
 
 -- Dumping structure for table tourism.pr_berita_tag
@@ -125,10 +148,16 @@ CREATE TABLE IF NOT EXISTS `pr_berita_tag` (
   `tag` varchar(255) NOT NULL,
   PRIMARY KEY (`id_berita_tag`),
   UNIQUE KEY `tag` (`tag`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_berita_tag: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_berita_tag: ~5 rows (approximately)
 /*!40000 ALTER TABLE `pr_berita_tag` DISABLE KEYS */;
+INSERT INTO `pr_berita_tag` (`id_berita_tag`, `tag`) VALUES
+	(2, 'Luar Negeri'),
+	(5, 'Pantai'),
+	(1, 'Politik'),
+	(4, 'Wakatobi'),
+	(3, 'Wisata');
 /*!40000 ALTER TABLE `pr_berita_tag` ENABLE KEYS */;
 
 
@@ -143,10 +172,15 @@ CREATE TABLE IF NOT EXISTS `pr_berita_tag_trans` (
   KEY `FK_pr_berita_tag_trans_pr_berita_tag` (`id_berita_tag`),
   CONSTRAINT `FK_pr_berita_tag_trans_pr_berita` FOREIGN KEY (`id_berita`) REFERENCES `pr_berita` (`id_berita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_pr_berita_tag_trans_pr_berita_tag` FOREIGN KEY (`id_berita_tag`) REFERENCES `pr_berita_tag` (`id_berita_tag`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_berita_tag_trans: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_berita_tag_trans: ~4 rows (approximately)
 /*!40000 ALTER TABLE `pr_berita_tag_trans` DISABLE KEYS */;
+INSERT INTO `pr_berita_tag_trans` (`id_berita_tag_trans`, `id_berita`, `id_berita_tag`) VALUES
+	(1, 2, 1),
+	(2, 3, 1),
+	(3, 3, 2),
+	(4, 1, 1);
 /*!40000 ALTER TABLE `pr_berita_tag_trans` ENABLE KEYS */;
 
 
@@ -174,13 +208,18 @@ CREATE TABLE IF NOT EXISTS `pr_global` (
 DROP TABLE IF EXISTS `pr_kategori_promosi`;
 CREATE TABLE IF NOT EXISTS `pr_kategori_promosi` (
   `id_kategori_promosi` int(10) NOT NULL AUTO_INCREMENT,
-  `kategori_promosi` varchar(255) NOT NULL,
+  `kategori_promosi_ina` varchar(255) NOT NULL,
+  `kategori_promosi_eng` varchar(255) NOT NULL,
   PRIMARY KEY (`id_kategori_promosi`),
-  UNIQUE KEY `kategori_promosi` (`kategori_promosi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `kategori_promosi` (`kategori_promosi_ina`),
+  UNIQUE KEY `kategori_promosi_eng` (`kategori_promosi_eng`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_kategori_promosi: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_kategori_promosi: ~2 rows (approximately)
 /*!40000 ALTER TABLE `pr_kategori_promosi` DISABLE KEYS */;
+INSERT INTO `pr_kategori_promosi` (`id_kategori_promosi`, `kategori_promosi_ina`, `kategori_promosi_eng`) VALUES
+	(1, 'Tanaman', 'Plantation'),
+	(2, 'Makanan', 'Foods');
 /*!40000 ALTER TABLE `pr_kategori_promosi` ENABLE KEYS */;
 
 
@@ -209,6 +248,7 @@ INSERT INTO `pr_kategori_sarana_prasarana` (`id_kategori_sarana_prasarana`, `kat
 DROP TABLE IF EXISTS `pr_lokasi_wisata`;
 CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata` (
   `id_lokasi_wisata` int(10) NOT NULL AUTO_INCREMENT,
+  `id_lokasi_wisata_kategori` int(11) NOT NULL,
   `parent_id` int(10) DEFAULT NULL,
   `nama_lokasi_wisata_ina` varchar(255) NOT NULL,
   `nama_lokasi_wisata_eng` varchar(255) NOT NULL,
@@ -217,7 +257,9 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata` (
   `id_peta` int(10) DEFAULT NULL,
   PRIMARY KEY (`id_lokasi_wisata`),
   UNIQUE KEY `nama_lokasi_wisata_ina` (`nama_lokasi_wisata_ina`),
-  UNIQUE KEY `nama_lokasi_wisata_eng` (`nama_lokasi_wisata_eng`)
+  UNIQUE KEY `nama_lokasi_wisata_eng` (`nama_lokasi_wisata_eng`),
+  KEY `FK_pr_lokasi_wisata_pr_lokasi_wisata_kategori` (`id_lokasi_wisata_kategori`),
+  CONSTRAINT `FK_pr_lokasi_wisata_pr_lokasi_wisata_kategori` FOREIGN KEY (`id_lokasi_wisata_kategori`) REFERENCES `pr_lokasi_wisata_kategori` (`id_lokasi_wisata_kategori`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tourism.pr_lokasi_wisata: ~0 rows (approximately)
@@ -242,6 +284,20 @@ CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_gambar` (
 -- Dumping data for table tourism.pr_lokasi_wisata_gambar: ~0 rows (approximately)
 /*!40000 ALTER TABLE `pr_lokasi_wisata_gambar` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pr_lokasi_wisata_gambar` ENABLE KEYS */;
+
+
+-- Dumping structure for table tourism.pr_lokasi_wisata_kategori
+DROP TABLE IF EXISTS `pr_lokasi_wisata_kategori`;
+CREATE TABLE IF NOT EXISTS `pr_lokasi_wisata_kategori` (
+  `id_lokasi_wisata_kategori` int(11) NOT NULL AUTO_INCREMENT,
+  `kategori_ina` int(11) NOT NULL,
+  `kategori_eng` int(11) NOT NULL,
+  PRIMARY KEY (`id_lokasi_wisata_kategori`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table tourism.pr_lokasi_wisata_kategori: ~0 rows (approximately)
+/*!40000 ALTER TABLE `pr_lokasi_wisata_kategori` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pr_lokasi_wisata_kategori` ENABLE KEYS */;
 
 
 -- Dumping structure for table tourism.pr_lokasi_wisata_tag_sarana
@@ -274,10 +330,13 @@ CREATE TABLE IF NOT EXISTS `pr_paket_wisata` (
   PRIMARY KEY (`id_paket_wisata`),
   UNIQUE KEY `paket_wisata_ina` (`paket_wisata_ina`),
   UNIQUE KEY `paket_wisata_eng` (`paket_wisata_eng`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_paket_wisata: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_paket_wisata: ~2 rows (approximately)
 /*!40000 ALTER TABLE `pr_paket_wisata` DISABLE KEYS */;
+INSERT INTO `pr_paket_wisata` (`id_paket_wisata`, `paket_wisata_ina`, `paket_wisata_eng`, `deskripsi_ina`, `deskripsi_eng`, `url`) VALUES
+	(1, 'PAKET HEMAT BACKPACKER', 'PAKET HEMAT BACKPACKER', 'Hari 1 Air Port- Pulau Kaledupa (D)\r\nUsahakan Ambil Flight dari Jakarta Jam 5 subuh agar Tiba di bau bau jam 11.45 WITA, karena Kapal cepat reguler hanya beroperasi sekali dalam sehari yang berangkat Pukul 13.00 WITA dari Bau Bau, kemudian langsung ke Kaledupa , Kita akan menghabiskan waktu tempuh dalam perjalanan sekitar 4 jam, Check in Bungalaw  dan makan malam.\r\n\r\nHari 2 Snorkeling Day (B,L,D)-  Menuju Pulau Tomia\r\n\r\nRombongan sarapan pagi dan siap siap menuju Pulau Tomia, Tiba di Tomia, makan siang kemudian mulai snorkeling. Sore Harinya Mengunjungi Puncak Kahianga ( icon film The Mirror Never Lies ) untuk Hunting sunset. Setelah itu kembali ke Penginapan dan makan malam. Istirahat dan acara bebas..\r\n\r\nHari 3 Snorkeling Day (B,L,D)- Menuju Pulau Kaledupa\r\n\r\nRombongan sarapan pagi dan kembali ke Pulau Kaledupa. Makan siang, kemudian lanjut Full Snorkeling,Diving (exclude budget),Cano and Hoping Island di Pulau Hoga\r\n\r\nHari Ke 4 Tour End (B)\r\nTour End\r\n\r\nHarga Paket\r\n2 org =    Rp 2,650,000 / orang\r\n5 org  =   Rp  1.902.000 / orang\r\n10 org =   Rp 1.176.000 / orang\r\n15 org = Rp   949.333 / orang\r\n20 org =   Rp  824.500 / orang\r\n\r\nFasilitas :\r\n- Transportasi ke Penginapan dan selama wisata\r\n- Sewa Boat Reguler ke Pulau Tomia dari Kaledupa ( PP )\r\n- Penginapan/Home Stay berupa bungalow (rumah warga setempat)\r\n- Makan selama di Wakatobi\r\n- Sewa Alat Snorkeling full sesuai itenerary\r\n- Barbeque dengan Ikan segar Fresh from The Oven\r\n- Fee Pemandu Lokal\r\n- Cano sepuasnya\r\n- Bonus Kaos Wakatobi ( Cotton Combat 24 S)\r\nBiaya yang belum termasuk :\r\n- Transportasi Via Udara :Tiket pesawat Jakarta-Bau Bau/Bau bau jakarta (kurang lebih 1,4 jt)\r\n- Transportasi Via Laut : Tiket Kapal Pelni dari Tanjung Priok (Waktu Tempuh dari Tanjung Priok Jakarta hingga bau bau yakni 3 hari 3 malam) (420 rb untuk kelas ekonomi dan untuk kelas VIP kurang lebih 800 rb)\r\n* Biaya Hotel di bau bau,jika kita harus bermalam di bau bau (250 rb/2 orang)\r\n- Tiket Kapal Bau Bau-Wakatobi PP\r\n- Angkot dr Pelabuhan – Penginapan ( 25 rb untuk 8 org ), Jika tidak ingin jalan kaki ke penginapan. Jarak antara pelabuhan ke penginapan kurang lebih 10 menit jika jalan kaki.\r\n- Diving :\r\nLisensi (350 rb) dan Non Lisensi (450 rb)', 'Hari 1 Air Port- Pulau Kaledupa (D)\r\nUsahakan Ambil Flight dari Jakarta Jam 5 subuh agar Tiba di bau bau jam 11.45 WITA, karena Kapal cepat reguler hanya beroperasi sekali dalam sehari yang berangkat Pukul 13.00 WITA dari Bau Bau, kemudian langsung ke Kaledupa , Kita akan menghabiskan waktu tempuh dalam perjalanan sekitar 4 jam, Check in Bungalaw  dan makan malam.\r\n\r\nHari 2 Snorkeling Day (B,L,D)-  Menuju Pulau Tomia\r\n\r\nRombongan sarapan pagi dan siap siap menuju Pulau Tomia, Tiba di Tomia, makan siang kemudian mulai snorkeling. Sore Harinya Mengunjungi Puncak Kahianga ( icon film The Mirror Never Lies ) untuk Hunting sunset. Setelah itu kembali ke Penginapan dan makan malam. Istirahat dan acara bebas..\r\n\r\nHari 3 Snorkeling Day (B,L,D)- Menuju Pulau Kaledupa\r\n\r\nRombongan sarapan pagi dan kembali ke Pulau Kaledupa. Makan siang, kemudian lanjut Full Snorkeling,Diving (exclude budget),Cano and Hoping Island di Pulau Hoga\r\n\r\nHari Ke 4 Tour End (B)\r\nTour End\r\n\r\nHarga Paket\r\n2 org =    Rp 2,650,000 / orang\r\n5 org  =   Rp  1.902.000 / orang\r\n10 org =   Rp 1.176.000 / orang\r\n15 org = Rp   949.333 / orang\r\n20 org =   Rp  824.500 / orang\r\n\r\nFasilitas :\r\n- Transportasi ke Penginapan dan selama wisata\r\n- Sewa Boat Reguler ke Pulau Tomia dari Kaledupa ( PP )\r\n- Penginapan/Home Stay berupa bungalow (rumah warga setempat)\r\n- Makan selama di Wakatobi\r\n- Sewa Alat Snorkeling full sesuai itenerary\r\n- Barbeque dengan Ikan segar Fresh from The Oven\r\n- Fee Pemandu Lokal\r\n- Cano sepuasnya\r\n- Bonus Kaos Wakatobi ( Cotton Combat 24 S)\r\nBiaya yang belum termasuk :\r\n- Transportasi Via Udara :Tiket pesawat Jakarta-Bau Bau/Bau bau jakarta (kurang lebih 1,4 jt)\r\n- Transportasi Via Laut : Tiket Kapal Pelni dari Tanjung Priok (Waktu Tempuh dari Tanjung Priok Jakarta hingga bau bau yakni 3 hari 3 malam) (420 rb untuk kelas ekonomi dan untuk kelas VIP kurang lebih 800 rb)\r\n* Biaya Hotel di bau bau,jika kita harus bermalam di bau bau (250 rb/2 orang)\r\n- Tiket Kapal Bau Bau-Wakatobi PP\r\n- Angkot dr Pelabuhan – Penginapan ( 25 rb untuk 8 org ), Jika tidak ingin jalan kaki ke penginapan. Jarak antara pelabuhan ke penginapan kurang lebih 10 menit jika jalan kaki.\r\n- Diving :\r\nLisensi (350 rb) dan Non Lisensi (450 rb)', NULL),
+	(2, 'Biaya paket wisata wakatobi murah', 'Biaya paket wisata wakatobi murah', 'Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi – wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi – wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan – jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.', 'Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi – wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi – wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan – jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.', 'http://hogaristatours.com/biaya-paket-wisata-wakatobi-murah.html');
 /*!40000 ALTER TABLE `pr_paket_wisata` ENABLE KEYS */;
 
 
@@ -315,10 +374,13 @@ CREATE TABLE IF NOT EXISTS `pr_promosi` (
   UNIQUE KEY `promosi_eng` (`promosi_eng`),
   KEY `FKpr_promosi647132` (`id_promosi_kategori`),
   CONSTRAINT `FKpr_promosi647132` FOREIGN KEY (`id_promosi_kategori`) REFERENCES `pr_kategori_promosi` (`id_kategori_promosi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_promosi: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_promosi: ~2 rows (approximately)
 /*!40000 ALTER TABLE `pr_promosi` DISABLE KEYS */;
+INSERT INTO `pr_promosi` (`id_promosi`, `id_promosi_kategori`, `promosi_ina`, `promosi_eng`, `deskripsi_ina`, `deskripsi_eng`, `cover`, `tanggal_promosi`, `tanggal_kadarluarsa`) VALUES
+	(1, 1, 'Tanaman Kaktus', 'Tanaman Kaktus', 'Tanaman Kaktus', 'Tanaman Kaktus', NULL, '2014-10-26', '2014-11-15'),
+	(5, 1, 'asdasdsd', 'asd', 'asdsad', 'asdasdas', NULL, '2014-10-29', '2014-10-23');
 /*!40000 ALTER TABLE `pr_promosi` ENABLE KEYS */;
 
 
