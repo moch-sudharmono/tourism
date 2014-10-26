@@ -14,7 +14,7 @@
                 
             </li>
             <li class="parent admin_menu">
-                <a href="<?php echo base_url() ?>news">
+                <a href="#">
                 <i class="icon-basket"></i>
                 <span class="title">Berita / <em>News</em></span>
                 <span class="arrow "></span>
@@ -100,12 +100,24 @@
                 <span class="arrow "></span>
                 </a>					
             </li>   
-            <li class="admin_menu" id="promotion">
+            <li class="admin_menu parent">
                 <a href="<?php echo base_url() ?>admin/promotion">
                 <i class="icon-basket"></i>
                 <span class="title">Promosi / <em>Promotion</em></span>
                 <span class="arrow "></span>
-                </a>					
+                </a>
+                <ul class="sub-menu">
+                    <li id="promotion">
+                        <a href="<?php echo base_url() ?>admin/promotion">
+                        Promosi / <em>Promotion</em>
+                        </a>
+                    </li>
+                    <li id="promotion_category">
+                        <a href="<?php echo base_url() ?>admin/promotion_category">
+                        	Kategori / <em>Category</em>
+                        </a>
+                    </li>
+                </ul>						
             </li>    
         </ul>
         <!-- END SIDEBAR MENU -->

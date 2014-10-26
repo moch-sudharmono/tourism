@@ -32,6 +32,22 @@
 		return $tgl; 
 	}
 	
+	function ddmmyyyy($tgl)
+	{
+		if( isset($tgl) and !empty($tgl) ):
+			$tgl = explode("-", $tgl);
+			return $tgl[2] . "-" . $tgl[1] . "-" . $tgl[0];
+		endif;
+	}
+	
+	function yyyymmdd($tgl)
+	{
+		if( isset($tgl) and !empty($tgl) ):
+			$tgl = explode("-", $tgl);
+			return $tgl[2] . "-" . $tgl[1] . "-" . $tgl[0];
+		endif;
+	}
+	
 	function TglIndoSaja($tgl)
 	{
 		$bulan		= array("Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des");

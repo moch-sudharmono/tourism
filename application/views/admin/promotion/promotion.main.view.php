@@ -1,8 +1,8 @@
 <!-- BEGIN EXAMPLE TABLE PORTLET-->
-<div class="portlet box blue col-md-7">
+<div class="portlet box blue">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-edit"></i> Tag Table
+            <i class="fa fa-edit"></i> Tabel Data Promosi / <em>Promotion Table</em>
         </div>
         <div class="tools">
             <a href="javascript:;" class="collapse">
@@ -21,7 +21,7 @@
                 <div class="col-md-6">
                     <div class="btn-group">
                         <button id="addnew_tag" class="btn green">
-                        	Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
+                        	Tambah / <em>Add New </em> <i class="fa fa-plus"></i>
                         </button>
                     </div>
                 </div>
@@ -64,8 +64,11 @@
                 <td><?php echo $row->promosi_ina ?></td><td><?php echo $row->promosi_eng ?></td>
                 <td><?php echo PotongKata($row->deskripsi_ina, 30) ?></td><td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
                 <td align="center"> 
-                    <a href="#"> <i class="fa fa-edit"></i> Ubah / <em>Edit</em> </a> |
-                    <a href="<?php echo base_url() ?>admin/tag/delete/<?php echo $row->id_promosi ?>" class="hapus_tag"> 
+                    <a href="<?php echo base_url() ?>admin/promotion/form/<?php echo $row->id_promosi ?>"> 
+                    	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
+                    </a> 
+                    |
+                    <a href="<?php echo base_url() ?>admin/promotion/delete/<?php echo $row->id_promosi ?>" class="hapus_promosi"> 
                     	<i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                     </a>
                 </td>
@@ -87,10 +90,10 @@
 
 <script>
 	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>admin/tag/form/0"
+        location.href = "<?php echo base_url() ?>admin/promotion/form/0"
     });
 	
-	$(".hapus_tag").click(function(e) {
+	$(".hapus_promosi").click(function(e) {
         if( confirm("Anda yakin / Are you Sure ?") )
 		{
 			return true;

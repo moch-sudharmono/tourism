@@ -23,7 +23,7 @@
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
-                        <button type="button" class="btn default">Batal / Cancel</button>
+                        <button type="button" class="btn default" id="back_tag">Batal / Cancel</button>
                         <button type="submit" class="btn blue">Simpan / Submit</button>
                     </div>
                 </div>
@@ -32,3 +32,9 @@
     </div>
 </div>
 </div>
+
+<script>
+	$("#back_tag").click(function(e) {
+        location.href = "<?php echo base_url() ?>admin/tag"
+    });
+</script>
