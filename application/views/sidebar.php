@@ -85,7 +85,19 @@
 					<i class="icon-basket"></i>
 					<span class="title">Rute Perjalanan / <em>Route</em></span>
                     <span class="arrow "></span>
-					</a>					
+					</a>		
+                    <ul class="sub-menu">
+						<li>
+							<a href="<?php echo base_url()?>index.php/route">
+								Rute Perjalanan / <em>Route</em>
+							</a>		
+						</li>
+                        <li>
+							<a href="<?php echo base_url()?>index.php/node">
+								Titik Perjalanan / <em>Node</em>
+							</a>
+						</li>
+                    </ul>					
 				</li>   
                 <li>
 					<a href="<?php echo base_url()?>index.php/promotion">
