@@ -10,7 +10,9 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				<?php include("sidebar.php"); ?>
+				
+				<?php include('sidebar.php'); ?>		
+                	          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -25,8 +27,10 @@
 			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->			
-			<!-- IMAGE FORM -->
+			<!-- BEGIN PAGE CONTENT-->
+            
+            
+            <!-- IMAGE FORM -->
                         <div id="imageUpload">
                             <div class="portlet box green">
                                 <div class="portlet-title">
@@ -88,9 +92,9 @@
                                 </table>
                             </form>
                             </div>
+
                         </div>
                         <!-- END OF IMAGE FORM --> 
-                                   
 			<!-- END PAGE CONTENT-->
 	
 </div>
@@ -105,11 +109,7 @@
 	</div>
 </div>
 <!-- END FOOTER -->
-
-<!-- CUSTOMIZE JQUERY -->
-
 <?php include("jsfile.php"); ?>
-
 
 </body>
 <!-- END BODY -->

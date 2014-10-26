@@ -10,9 +10,7 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				
-				<?php include('sidebar.php'); ?>		
-                	          
+				<?php include("sidebar.php");?>       	          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -20,7 +18,7 @@
 	<!-- END SIDEBAR -->
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content">			
+		<div class="page-content">
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
@@ -28,23 +26,19 @@
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-            	
 			<div class="row">
 				<div class="col-md-12">
-                	
-                
 					<!-- BEGIN VALIDATION STATES-->
-                    <div id="ProfileForm">
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?php echo $title?> Form
+								<i class="fa fa-gift"></i>Promotion Form
 							</div>							
 						</div>
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="" id="form_profile" class="form-horizontal" method="post">
+							<form action="" method="post" id="form_sample_3" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -54,20 +48,8 @@
 										<button class="close" data-close="alert"></button>
 										Your form validation is successful!
 									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Parent Attraction Location
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_parent">
-												<option value="">Please Choose Option</option>
-                                                <?php foreach($query as $no=>$value){?>
-                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
-                                                <?php }?>
-											</select>
-										</div>
-									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Attraction Location (English) <span class="required">
+										<label class="control-label col-md-3">Title (English) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
@@ -75,7 +57,7 @@
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Lokasi Wisata (Bahasa) <span class="required">
+										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
@@ -84,34 +66,63 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="control-label col-md-3">Description (English) <span class="required">
+										<label class="control-label col-md-3">News (English) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_eng" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
 									</div>
                                     
                                     <div class="form-group">
-										<label class="control-label col-md-3">Penjelasan (Bahasa) <span class="required">
+										<label class="control-label col-md-3">Berita (Bahasa) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_ind" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>
 									</div>
+                                    
                                     <div class="form-group">
-										<label class="control-label col-md-3">Map Position <span class="required">
+										<label class="control-label col-md-3">Cover <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_map">
-												<option value="">Please Choose Option</option>
-											</select>
+											<input type="text" name="title_ind" data-required="1" class="form-control"/>
+										</div>
+									</div>
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Tanggal Promosi / <em>Promotion Date</em></label>
+										<div class="col-md-4">
+											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+												<input type="text" class="form-control" readonly name="datepicker">
+												<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+											</div>
+											<!-- /input-group -->
+											<span class="help-block">
+											select a date </span>
+										</div>
+									</div>
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Tanggal Promosi Berakhir / <em>Expired Date</em></label>
+										<div class="col-md-4">
+											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+												<input type="text" class="form-control" readonly name="datepicker">
+												<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+											</div>
+											<!-- /input-group -->
+											<span class="help-block">
+											select a date </span>
 										</div>
 									</div>
 																											
@@ -119,29 +130,29 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
-											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
+											<button type="submit" name="submit" class="btn green" value="save">Submit</button>
+											<button type="button" id="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
 								</div>
 							</form>
 							<!-- END FORM-->
 						</div>
-                        </div>
 						<!-- END VALIDATION STATES-->
 					</div>
 				</div>
 			</div>
-            
-            
-			<!-- END PAGE CONTENT-->
+            <!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
 	
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 	<div class="page-footer-inner">
-		 2014 &copy; Tourism by SS and co.
+		 2014 &copy; Metronic by keenthemes.
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>

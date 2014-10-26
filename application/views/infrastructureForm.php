@@ -10,9 +10,7 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				
-				<?php include('sidebar.php'); ?>		
-                	          
+				<?php include('sidebar.php'); ?>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -27,14 +25,12 @@
 			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
-            	
+			<!-- BEGIN PAGE CONTENT-->	
+            
+            <div id="InfrastructureForm">		
 			<div class="row">
 				<div class="col-md-12">
-                	
-                
 					<!-- BEGIN VALIDATION STATES-->
-                    <div id="ProfileForm">
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
@@ -44,7 +40,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="" id="form_profile" class="form-horizontal" method="post">
+							<form action="<?php echo base_url().'index.php/infrastructure/insert_infrastructure';?>" id="form_infrastructure" method="post" class="form-horizontal">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -55,19 +51,22 @@
 										Your form validation is successful!
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Parent Attraction Location
+										<label class="control-label col-md-3">Kategori/Category<span class="required">
+										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_parent">
+											<select class="form-control select2me" name="cbo_cat">
 												<option value="">Please Choose Option</option>
-                                                <?php foreach($query as $no=>$value){?>
-                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
-                                                <?php }?>
+                                                <?php foreach($query_kat as $value){ ?>
+												<option value="<?php echo $value["id_kategori_sarana_prasarana"]?>">
+												<?php echo $value["kategori_sarana_prasarana_ina"]." / <i>".$value["kategori_sarana_prasarana_eng"]."</i>";?>
+                                                </option>
+                                                <?php } ?>
 											</select>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Attraction Location (English) <span class="required">
+										<label class="control-label col-md-3">Title (English) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
@@ -75,7 +74,7 @@
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Lokasi Wisata (Bahasa) <span class="required">
+										<label class="control-label col-md-3">Judul (Bahasa) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
@@ -88,7 +87,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_eng" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="desc_eng" data-error-container="#editor1_error"></textarea>
 											<div id="editor1_error">
 											</div>
 										</div>
@@ -99,18 +98,28 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_ind" data-error-container="#editor1_error"></textarea>
+											<textarea class="wysihtml5 form-control" rows="6" name="desc_ind" data-error-container="#editor1_error"></textarea>
 											<div id="editor2_error">
 											</div>
 										</div>
 									</div>
                                     <div class="form-group">
+										<label class="control-label col-md-3">Url <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input type="text" name="url" data-required="1" class="form-control"/>
+										</div>
+									</div>
+                                    
+                                   <div class="form-group">
 										<label class="control-label col-md-3">Map Position <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
+												
 											</select>
 										</div>
 									</div>
@@ -119,7 +128,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_infra" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -127,11 +136,11 @@
 							</form>
 							<!-- END FORM-->
 						</div>
-                        </div>
 						<!-- END VALIDATION STATES-->
 					</div>
 				</div>
 			</div>
+            </div>
             
             
 			<!-- END PAGE CONTENT-->

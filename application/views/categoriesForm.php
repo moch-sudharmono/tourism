@@ -10,9 +10,7 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				
-				<?php include('sidebar.php'); ?>		
-                	          
+				<?php include("sidebar.php");?>          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -27,14 +25,12 @@
 			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
-            	
+			<!-- BEGIN PAGE CONTENT-->	
+            
+            <div ID="CategoriesForm">		
 			<div class="row">
 				<div class="col-md-12">
-                	
-                
 					<!-- BEGIN VALIDATION STATES-->
-                    <div id="ProfileForm">
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
@@ -44,7 +40,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="" id="form_profile" class="form-horizontal" method="post">
+							<form action="<?php echo base_url().'index.php/infrastructure/insert_categories' ?>" id="form_sarana_kat" class="form-horizontal" method="post"	>
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -54,63 +50,34 @@
 										<button class="close" data-close="alert"></button>
 										Your form validation is successful!
 									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Parent Attraction Location
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_parent">
-												<option value="">Please Choose Option</option>
-                                                <?php foreach($query as $no=>$value){?>
-                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
-                                                <?php }?>
-											</select>
-										</div>
-									</div>
 									<div class="form-group">
-										<label class="control-label col-md-3">Attraction Location (English) <span class="required">
+										<label class="control-label col-md-3">Category (English) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="title_eng" data-required="1" class="form-control"/>
+											<input type="text" name="category_eng" data-required="1" class="form-control"/>
 										</div>
 									</div>
                                     <div class="form-group">
-										<label class="control-label col-md-3">Lokasi Wisata (Bahasa) <span class="required">
+										<label class="control-label col-md-3">Kategori (Bahasa) <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<input type="text" name="title_ind" data-required="1" class="form-control"/>
+											<input type="text" name="category_ind" data-required="1" class="form-control"/>
 										</div>
 									</div>
 									
-									<div class="form-group">
-										<label class="control-label col-md-3">Description (English) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_eng" data-error-container="#editor1_error"></textarea>
-											<div id="editor1_error">
-											</div>
-										</div>
-									</div>
-                                    
+									
                                     <div class="form-group">
-										<label class="control-label col-md-3">Penjelasan (Bahasa) <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="description_ind" data-error-container="#editor1_error"></textarea>
-											<div id="editor2_error">
-											</div>
-										</div>
-									</div>
-                                    <div class="form-group">
-										<label class="control-label col-md-3">Map Position <span class="required">
+										<label class="control-label col-md-3">Icon Select <span class="required">
 										* </span>
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_map">
+											<select class="form-control select2me" name="category_icon">
 												<option value="">Please Choose Option</option>
+												<option value="Option 1">Cart</option>
+												<option value="Option 2">Rocket</option>
+												<option value="Option 3">Door</option>
 											</select>
 										</div>
 									</div>
@@ -119,7 +86,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
+											<button type="submit" class="btn green" name="submit" id="submit_infra_kat" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -127,13 +94,11 @@
 							</form>
 							<!-- END FORM-->
 						</div>
-                        </div>
 						<!-- END VALIDATION STATES-->
 					</div>
 				</div>
 			</div>
-            
-            
+            </div>
 			<!-- END PAGE CONTENT-->
 	
 </div>
@@ -149,7 +114,6 @@
 </div>
 <!-- END FOOTER -->
 <?php include("jsfile.php"); ?>
-
 </body>
 <!-- END BODY -->
 </html>

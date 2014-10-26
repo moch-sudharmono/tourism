@@ -1,6 +1,6 @@
 <?php include("cssfile.php"); ?>
 				<li>
-					<a href="<?php echo base_url()?>">
+					<a href="<?php echo base_url().'index.php/home'?>">
 					<i class="icon-home"></i>
 					<span class="title">Utama / <em>Dashboard</em></span>                    
 					<span class="arrow"></span>
@@ -26,7 +26,7 @@
 						</li>
                     </ul>				
 				</li>
-				<li class="start active open">
+				<li>
 					<a href="<?php echo base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
 					<span class="title">Lokasi Wisata / <em>Profile</em></span>

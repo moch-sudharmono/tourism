@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Infrastructure extends CI_Controller {
-	public $modul="Infrastructure";
+class Categories extends CI_Controller {
+	public $modul	 ="Infrastructure";
 	public $submodul = "Categories";
 	
 	public function __construct() {        
@@ -21,15 +21,6 @@ class Infrastructure extends CI_Controller {
 		$this->load->view('infrastructure', $data);
 	}
 	
-	public function add()
-	{
-		$data['title'] 			= "Infrastructure";
-		$data['small_title']	  = "Sarana dan Prasarana";	
-		$data['modul']			= $this->modul;
-		$data['query_kat']			= $this->Pr_kategorisarana->get_all();
-		$this->load->view('infrastructureForm', $data);
-	}
-	
 	public function categories()
 	{
 		$data['title'] 			= "Infrastructure Category";
@@ -37,16 +28,6 @@ class Infrastructure extends CI_Controller {
 		$data['modul']			= $this->modul;
 		$data['submodul']			= $this->submodul;
 		$data['query']			= $this->Pr_kategorisarana->get_all();
-		$this->load->view('categories', $data);
-	}
-	
-	public function categories_form()
-	{
-		$data['title'] 			= "Infrastructure Category";
-		$data['small_title']	= "Kategori Sarana dan Prasarana";
-		$data['modul']			= $this->modul;
-		$data['submodul']		= $this->submodul;
-
 		$this->load->view('categoriesForm', $data);
 	}
 	
