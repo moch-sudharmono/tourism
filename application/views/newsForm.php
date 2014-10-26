@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<label class="control-label col-md-3">Title (English) <span class="required">
 										* </span>
 										</label>
-										<div class="col-md-4">
+										<div class="col-md-8">
 											<input type="text" 
                                             value="<?php echo (isset($value['judul_berita_eng'])?$value['judul_berita_eng']:''); ?>" name="title_eng" data-required="1" class="form-control"/>
 										</div>
@@ -210,6 +210,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" name="submit" id="submit_news" class="btn green" value="">Submit</button>
 											<button type="button" id="CancelButton" class="btn default">Cancel</button>
+                                            <input type="hidden" value="<?php echo (isset($id)? $id: '') ?>" name="id_news" data-required="1" class="form-control"/>
 										</div>
 									</div>
 								</div>

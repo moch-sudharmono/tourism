@@ -34,8 +34,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -53,7 +53,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -106,7 +106,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -116,7 +116,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -185,9 +185,9 @@
 							<tbody>
                             <?php foreach($query as $no=>$value) {?>
 							<tr>
-                            	<td><?=$no+1?></td>
-								<td><?=$value["nama_lokasi_wisata_ina"]?></td>
-                                <td><?=$value["nama_lokasi_wisata_eng"]?></td>
+                            	<td><?php echo $no+1?></td>
+								<td><?php echo $value["nama_lokasi_wisata_ina"]?></td>
+                                <td><?php echo $value["nama_lokasi_wisata_eng"]?></td>
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -219,7 +219,7 @@
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?=$title?> Form
+								<i class="fa fa-gift"></i><?php echo $title?> Form
 							</div>							
 						</div>
                         
@@ -242,7 +242,7 @@
 											<select class="form-control select2me" name="cbo_parent">
 												<option value="">Please Choose Option</option>
                                                 <?php foreach($query as $no=>$value){?>
-                                                	<option value="<?=$value["id_lokasi_wisata"]?>"><?=$value["nama_lokasi_wisata_ina"]."/".$value["nama_lokasi_wisata_eng"]?></option>
+                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]."/".$value["nama_lokasi_wisata_eng"]?></option>
                                                 <?php }?>
 											</select>
 										</div>
@@ -326,7 +326,7 @@
                                     </div>							
                                 </div>
                                 
-                                <form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                                <form id="fileupload" action="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
                     	
                         
                                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -405,7 +405,7 @@ jQuery(document).ready(function() {
 	$('#AddNew').click(function(e){
 		$('#ProfileForm').show();
 		document.getElementById('submit_profile').value = "insert";
-		document.getElementById('form_profile').action="<?=base_url()."index.php/".$modul."/insert"?>";
+		document.getElementById('form_profile').action="<?php echo base_url()."index.php/".$modul."/insert"?>";
 	});
 	
 	$('#CancelButton').click(function(e){

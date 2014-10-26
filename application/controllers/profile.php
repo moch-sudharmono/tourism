@@ -6,6 +6,8 @@ class Profile extends CI_Controller
 	
 	public function __construct() {        
 		parent::__construct();
+		$this->load->model("Pr_saranaprasarana");		
+		$this->load->model("Pr_kategorisarana");
 		$this->load->model("Pr_profile");	
 	}
 
@@ -18,6 +20,19 @@ class Profile extends CI_Controller
 		$this->load->view('profile', $data);
 	}
 	
+	public function form()
+	{
+		$data['title'] 			= "Profile";
+		$data['small_title']	  = "Profile mengenai tujuan wisata";		
+		$data['modul']			= $this->modul;
+		$data['action']		   = "insert";	
+		if(isset($_GET['id'])){
+			$data['id'] 			= $_GET['id'];
+			$data['value']		= $this->Pr_profile->get_by_id($_GET['id']);
+			$data['action']		= "Update";
+		}
+		$this->load->view('profileForm', $data);
+	}
 	
 	public function insert()
 	{

@@ -34,8 +34,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -53,7 +53,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -92,7 +92,6 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				
 				<?php include("sidebar.php"); ?>
 			</ul>
 			<!-- END SIDEBAR MENU -->
@@ -105,7 +104,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->			
@@ -116,7 +115,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -164,6 +163,7 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
+                            	<th>No.</th>
 								<th>
 									 Judul
 								</th>
@@ -188,10 +188,11 @@
 
 							<?php foreach($query as $no=>$value) { ?>
                             <tr>
-                            	<td><?=$no+1?></td>
-								<td><?=$value["paket_wisata_ina"]?></td>
-								<td><?=$value["paket_wisata_eng"]?></td>
-								<td><?=$value["url"]?></td>
+                            	<td><?php echo $no+1?></td>
+								<td><?php echo $value["paket_wisata_ina"]?></td>
+								<td><?php echo $value["paket_wisata_eng"]?></td>
+								<td><?php echo $value["url"]?></td>
+
 								<td>								
                                 	<button class="btn green addImage">Add Image <i class="fa fa-plus"></i></button>
                                 </td>
@@ -205,6 +206,7 @@
 								</td>
 							</tr>
 							<?php } ?>
+							
 							</tbody>
 							</table>
 						</div>
@@ -271,6 +273,7 @@
 										</div>
 									</div>
                                     <div class="form-group">
+
 										<label class="control-label col-md-3">Url <span class="required">
 										* </span>
 										</label>
@@ -309,7 +312,7 @@
                                     </div>							
                                 </div>
                                 
-                                <form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                                <form id="fileupload" action="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
                     	
                         
                                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -393,7 +396,7 @@ jQuery(document).ready(function() {
 	$('#AddNew').click(function(e){
 		$('#AttractionForm').show();
 		document.getElementById('submit_attract').value = "insert";
-		document.getElementById('form_attraction').action="<?=base_url()."index.php/".$modul."/insert"?>";
+		document.getElementById('form_attraction').action="<?php echo base_url()."index.php/".$modul."/insert"?>";
 		//alert("add image");
 	});
 	

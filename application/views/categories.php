@@ -34,8 +34,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -53,7 +53,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -92,7 +92,6 @@
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				
 				<?php include("sidebar.php");?>          
 			</ul>
 			<!-- END SIDEBAR MENU -->
@@ -105,7 +104,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->	
@@ -115,7 +114,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -178,9 +177,9 @@
 							<tbody>
 							<?php foreach($query as $no=>$value){?>
                             <tr>
-								<td><?=$no+1?></td>
-								<td><?=$value["kategori_sarana_prasarana_ina"]?></td>
-                                <td><?=$value["kategori_sarana_prasarana_eng"]?></td>
+								<td><?php echo $no+1?></td>
+								<td><?php echo $value["kategori_sarana_prasarana_ina"]?></td>
+                                <td><?php echo $value["kategori_sarana_prasarana_eng"]?></td>
 								<td>
 									<a class="delete" href="javascript:;">
 									Delete </a>
@@ -203,7 +202,7 @@
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?=$title?> Form
+								<i class="fa fa-gift"></i><?php echo $title?> Form
 							</div>							
 						</div>
                         
@@ -291,7 +290,7 @@ jQuery(document).ready(function() {
 	$('#AddNew').click(function(e){
 		$('#CategoriesForm').show();
 		document.getElementById('submit_infra_kat').value="insert";
-		document.getElementById('form_sarana_kat').action="<?=base_url()."index.php/".$modul."/insert_categories"?>"
+		document.getElementById('form_sarana_kat').action="<?php echo base_url()."index.php/".$modul."/insert_categories"?>"
 	});
 	
 	$('#CancelButton').click(function(e){

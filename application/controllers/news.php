@@ -22,11 +22,13 @@ class News extends CI_Controller {
 	public function form()
 	{
 		$data['title'] 			= "News";
-		$data['small_title']	= "Berita Terkini";		
+		$data['small_title']	  = "Berita Terkini";		
 		$data['modul']			= $this->modul;
+		$data['action']		   = "insert";	
 		if(isset($_GET['id'])){
 			$data['id'] 			= $_GET['id'];
-			$data['value']			= $this->Pr_berita->get_by_id($_GET['id']);
+			$data['value']		= $this->Pr_berita->get_by_id($_GET['id']);
+			$data['action']		= "Update";
 		}
 		$this->load->view('newsForm', $data);
 	}
@@ -49,23 +51,23 @@ class News extends CI_Controller {
 	public function insert()
 	{
 		$task = $_POST['submit'];
-
-		if($task=="insert"){	
+		$id="";
+		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
             $isi_eng 	  = $this->input->post('isi_eng');			
             $isi_ind 	  = $this->input->post('isi_ind');
-			$date		 = $this->input->post('datepicker');
+			$tanggal		 = $this->input->post('tanggal');
 			
             $data = array(
                    'judul_berita_eng'=>$title_eng,
                    'judul_berita_ina'=>$title_ind,
 				   'isi_berita_eng'=>$isi_eng,
 				   'isi_berita_ina'=>$isi_ind,
-				   'tanggal_berita'=>$date                   
+				   'tanggal_berita'=>$tanggal                   
                     );
 				
-			$this->Pr_berita->validate($data);		
+			$this->Pr_berita->validate($data,$id);		
 					
 			redirect('News');					
 		}
@@ -84,14 +86,35 @@ class News extends CI_Controller {
 	
 	public function update()
 	{
-		$data['action']			= "update";
 		$task = $_POST['submit'];
+		$id = $_POST['id_news'];
+
+		if($task=="save"){	
+			$title_eng 	= $this->input->post('title_eng');
+            $title_ind 	= $this->input->post('title_ind');			
+            $isi_eng 	  = $this->input->post('isi_eng');			
+            $isi_ind 	  = $this->input->post('isi_ind');
+			$tanggal		 = $this->input->post('datepicker');
+			
+            $data = array(
+                   'judul_berita_eng'=>$title_eng,
+                   'judul_berita_ina'=>$title_ind,
+				   'isi_berita_eng'=>$isi_eng,
+				   'isi_berita_ina'=>$isi_ind,
+				   'tanggal_berita'=>$tanggal                   
+                    );
+				
+			$this->Pr_berita->validate($data,$id);		
+			//echo $id.$tanggal;
+			redirect('News');					
+		}
 	}
 	
 	public function delete()
 	{
 		$id=$_GET['id'];
 		$this->Pr_berita->delete($id);
+		redirect('News');	
 	}
 	
 }

@@ -34,8 +34,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -53,7 +53,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -93,7 +93,113 @@
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
 				
+<<<<<<< HEAD
 				<?php include("sidebar.php");?>      
+=======
+				<li>
+					<a href="<?php echo base_url()?>">
+					<i class="icon-home"></i>
+					<span class="title">Utama / <em>Dashboard</em></span>                    
+					<!--<span class="selected"></span>-->
+					<span class="arrow"></span>
+					</a>
+					
+				</li>
+				<li>
+					<a href="<?php echo base_url()?>index.php/news">
+					<i class="icon-basket"></i>
+					<span class="title">Berita / <em>News</em></span>
+                    <span class="arrow "></span>
+					</a>	
+                    <ul class="sub-menu">
+                    	<li>
+							<a href="<?php echo base_url()?>index.php/news">
+							Daftar Berita / <em>News Data</em>
+                            </a>
+						</li>
+						<li>
+							<a href="<?php echo base_url()?>index.php/tag">
+							Tag
+                            </a>
+						</li>
+                    </ul>				
+				</li>
+				<li>
+					<a href="<?php echo base_url()?>index.php/profile">
+					<i class="icon-basket"></i>
+					<span class="title">Lokasi Wisata / <em>Profile</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>				
+                <li>
+					<a href="<?php echo base_url()?>index.php/testimonial">
+					<i class="icon-rocket"></i>
+					<span class="title">Testimoni / <em>Testimonial</em></span>
+					<span class="arrow "></span>
+					</a>					
+				</li>      
+                <li>
+					<a href="<?php echo base_url()?>index.php/gallery">
+					<i class="icon-basket"></i>
+					<span class="title">Galeri foto / <em>Gallery</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>	
+                <li>
+					<a href="<?php echo base_url()?>index.php/attraction">
+					<i class="icon-basket"></i>
+					<span class="title">Paket Wisata / <em>Potential Attraction</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>
+				 <li>
+					<a href="<?php echo base_url()?>index.php/infrastructure">
+					<i class="icon-basket"></i>
+					<span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
+                    <span class="arrow "></span>
+					</a>		
+                    <ul class="sub-menu">
+						<li>
+							<a href="<?php echo base_url()?>index.php/infrastructure/categories">
+							Kategori / <em>Categories</em>
+                            </a>
+						</li>
+                        <li>
+							<a href="<?php echo base_url()?>index.php/infrastructure">
+							Daftar Sarana Prasarana / <em>Infrastructure Data</em>
+                            </a>
+						</li>
+                    </ul>			
+				</li>	
+                <li class="start active open">
+					<a href="<?php echo base_url()?>index.php/sitemap">
+					<i class="icon-basket"></i>
+					<span class="title">Peta Situs / <em>Sitemap</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>
+                <li>
+					<a href="<?php echo base_url()?>index.php/askus">
+					<i class="icon-basket"></i>
+					<span class="title">Tanya Kami / <em>Ask Us</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>	       
+                <li>
+					<a href="<?php echo base_url()?>index.php/route">
+					<i class="icon-basket"></i>
+					<span class="title">Rute Perjalanan / <em>Route</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>   
+                <li>
+					<a href="<?php echo base_url()?>index.php/promotion">
+					<i class="icon-basket"></i>
+					<span class="title">Promosi / <em>Promotion</em></span>
+                    <span class="arrow "></span>
+					</a>					
+				</li>       
+>>>>>>> origin/master
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -104,7 +210,7 @@
 		<div class="page-content">			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->	
@@ -114,7 +220,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -346,7 +452,7 @@
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?=$title?> Form
+								<i class="fa fa-gift"></i><?php echo $title?> Form
 							</div>							
 						</div>
                         

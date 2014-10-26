@@ -45,8 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?=base_url()?>">
-			<img src="<?=base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<a href="<?php echo base_url()?>">
+			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?=base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Admin </span>
 					<i class="fa fa-angle-down"></i>
@@ -104,7 +104,6 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
 				<?php include('sidebar.php'); ?>
-				          
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -116,7 +115,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<?=$title?> <small><?=$small_title?></small>
+			<?php echo $title?> <small><?php echo $small_title?></small>
 			</h3>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -126,7 +125,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i><?=$title?> Data
+								<i class="fa fa-edit"></i><?php echo $title?> Data
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -187,12 +186,12 @@ License: You must have a valid license purchased only from themeforest(the above
 							<tbody>
                             	<?php foreach($query as $no=>$value) {?>
 								<tr>
-                                    <td><?=$no+1;?></td>
-                                    <td><?=$value["judul_berita_ina"]?></td>
-                                    <td><?=$value["judul_berita_eng"]?></td>
-                                    <td><?=$value["isi_berita_ina"]?></td>
-                                    <td><?=$value["isi_berita_eng"]?></td>
-                                    <td><?=$value["tanggal_berita"]?></td>
+                                    <td><?php echo $no+1;?></td>
+                                    <td><?php echo $value["judul_berita_ina"]?></td>
+                                    <td><?php echo $value["judul_berita_eng"]?></td>
+                                    <td><?php echo $value["isi_berita_ina"]?></td>
+                                    <td><?php echo $value["isi_berita_eng"]?></td>
+                                    <td><?php echo $value["tanggal_berita"]?></td>
                                     <td>
                                     	<!--
                                         <a class="edit" href="javascript:;">
@@ -202,7 +201,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         Edit </a>
                                     </td>
                                     <td>
-                                        <a class="deleteNews" id="<?=$value["id_berita"]?>" href="javascript:;">
+                                        <a class="deleteNews" id="<?php echo $value["id_berita"]?>" href="javascript:;">
                                         Delete </a>
                                     </td>
                                 </tr>
@@ -215,7 +214,6 @@ License: You must have a valid license purchased only from themeforest(the above
 					
 				</div>
 			</div>
-            
             
 			<!-- END PAGE CONTENT-->
 		</div>
@@ -239,7 +237,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-	
 	$('.deleteNews').click(function (e) {
             e.preventDefault();
 
