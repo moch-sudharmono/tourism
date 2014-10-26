@@ -39,11 +39,9 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-<<<<<<< HEAD
-							<form action="<?=base_url()."index.php/".$modul."/".$action?>" method="post" id="form_news" class="form-horizontal">
-=======
+
 							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action; ?>" method="post" id="form_news" class="form-horizontal">
->>>>>>> origin/master
+
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -119,7 +117,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" name="submit" id="submit_news" class="btn green" value="">Submit</button>
+											<button type="submit" name="submit" id="submit_news" class="btn green" value="save">Submit</button>
 											<button type="button" id="CancelButton" class="btn default">Cancel</button>
                                             <input type="hidden" value="<?php echo (isset($id)? $id: '') ?>" name="id_news" data-required="1" class="form-control"/>
 										</div>

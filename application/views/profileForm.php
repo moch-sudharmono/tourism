@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-<?php include("cssfile.php"); ?>
-<?php include("jsfile.php"); ?>
-
-				<div class="row">
-				<div class="col-md-12">
-                	<!-- BEGIN VALIDATION STATES-->
-                	<div class="portlet box green">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i><?=$title?> Form
-							</div>							
-						</div>	
-                        <div class="portlet-body form">
-=======
 <?php include('header.php'); ?>
 <div class="clearfix">
 </div>
@@ -58,9 +43,9 @@
 						</div>
                         
 						<div class="portlet-body form">
->>>>>>> origin/master
+
 							<!-- BEGIN FORM-->
-							<form action="" id="form_profile" class="form-horizontal" method="post">
+							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action; ?>" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -74,14 +59,10 @@
 										<label class="control-label col-md-3">Parent Attraction Location
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_parent">
+											<select class="form-control select2me" name="cbo_parent" id="cbo_parent">
 												<option value="">Please Choose Option</option>
                                                 <?php foreach($query as $no=>$value){?>
-<<<<<<< HEAD
-                                                	<option value="<?=$value["id_lokasi_wisata"]?>"><?=$value["nama_lokasi_wisata_ina"]."/".$value["nama_lokasi_wisata_eng"]?></option>
-=======
-                                                	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
->>>>>>> origin/master
+	                                              	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
                                                 <?php }?>
 											</select>
 										</div>
@@ -131,19 +112,18 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
-<<<<<<< HEAD
+
 												<option value="Option 1">Wakatobi</option>
 												<option value="Option 2">Raja Ampat</option>
 												<option value="Option 3">Pantai Sikka</option>
-=======
->>>>>>> origin/master
+
 											</select>
 										</div>
 									</div>
 																											
 								</div>
 								<div class="form-actions">
-									<div class="row">
+									<div class="row"> 
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
@@ -153,7 +133,7 @@
 							</form>
 							<!-- END FORM-->
 						</div>
-<<<<<<< HEAD
+
                     </div>
                 <!-- END VALIDATION STATES-->
 					</div>
@@ -224,7 +204,7 @@
 
                         </div>
                         <!-- END OF IMAGE FORM --> 
-=======
+
                         </div>
 						<!-- END VALIDATION STATES-->
 					</div>
@@ -251,4 +231,9 @@
 </body>
 <!-- END BODY -->
 </html>
->>>>>>> origin/master
+
+<script>
+jQuery(document).ready(function() { 
+	//$("#cbo_parent").val()="<?php echo (isset($id)? $id: '') ?>"
+});
+</script>
