@@ -36,6 +36,15 @@ class News extends CI_Controller {
 		$data['modul']			= $this->modul;
 		$data['action']			= "insert";
 	}
+	
+	public function add()
+	{
+		$data['title'] 			= "News";
+		$data['small_title']	= "Berita Terkini";		
+		$data['modul']			= $this->modul;
+		$data['action']			= "insert";
+		$this->load->view('newsForm', $data);
+	}
 
 	public function insert()
 	{
@@ -61,6 +70,16 @@ class News extends CI_Controller {
 			redirect('News');					
 		}
 		
+	}
+	
+	public function edit()
+	{
+		$data['title'] 			= "News";
+		$data['small_title']	= "Berita Terkini";		
+		$data['modul']			= $this->modul;
+		$data['action']			= "update";
+		$data['value']			= $this->Pr_berita->get_by_id($_GET['id']);
+		$this->load->view('newsForm', $data);
 	}
 	
 	public function update()

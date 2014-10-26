@@ -3,7 +3,6 @@
 					<a href="<?=base_url()?>">
 					<i class="icon-home"></i>
 					<span class="title">Utama / <em>Dashboard</em></span>                    
-					<!--<span class="selected"></span>-->
 					<span class="arrow"></span>
 					</a>
 					
@@ -27,7 +26,7 @@
 						</li>
                     </ul>				
 				</li>
-				<li class="start active open">
+				<li>
 					<a href="<?=base_url()?>index.php/profile">
 					<i class="icon-basket"></i>
 					<span class="title">Lokasi Wisata / <em>Profile</em></span>
@@ -41,13 +40,13 @@
 					<span class="arrow "></span>
 					</a>					
 				</li>      
-                <li>
+                <!--<li>
 					<a href="<?=base_url()?>index.php/gallery">
 					<i class="icon-basket"></i>
 					<span class="title">Galeri foto / <em>Gallery</em></span>
                     <span class="arrow "></span>
 					</a>					
-				</li>	
+				</li>	-->
                 <li>
 					<a href="<?=base_url()?>index.php/attraction">
 					<i class="icon-basket"></i>
