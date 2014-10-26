@@ -33,12 +33,6 @@ class News extends CI_Controller {
 		$this->load->view('newsForm', $data);
 	}
 	
-<<<<<<< HEAD
-	public function insert()
-	{
-		$task = $_POST['submit'];
-
-=======
 	public function load_data()
 	{
 		$data['modul']			= $this->modul;
@@ -58,7 +52,7 @@ class News extends CI_Controller {
 	{
 		$task = $_POST['submit'];
 		$id="";
->>>>>>> origin/master
+
 		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
@@ -83,8 +77,6 @@ class News extends CI_Controller {
 	
 	public function edit()
 	{
-<<<<<<< HEAD
-=======
 		$data['title'] 			= "News";
 		$data['small_title']	= "Berita Terkini";		
 		$data['modul']			= $this->modul;
@@ -95,7 +87,6 @@ class News extends CI_Controller {
 	
 	public function update()
 	{
->>>>>>> origin/master
 		$task = $_POST['submit'];
 		$id = $_POST['id_news'];
 

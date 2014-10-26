@@ -30,6 +30,15 @@ class Infrastructure extends CI_Controller {
 		$this->load->view('infrastructureForm', $data);
 	}
 	
+	public function addimage()
+	{
+		$data['title'] 			= "Infrastructure";
+		$data['small_title']	= "Sarana dan Prasarana";	
+		$data['modul']			= $this->modul;
+
+		$this->load->view('infrastructureImage', $data);
+	}
+	
 	public function categories()
 	{
 		$data['title'] 			= "Infrastructure Category";

@@ -23,21 +23,16 @@ class Profile extends CI_Controller
 	public function form()
 	{
 		$data['title'] 			= "Profile";
-		$data['small_title']	  = "Profile mengenai tujuan wisata";		
+		$data['small_title']	= "Profile mengenai tujuan wisata";		
 		$data['modul']			= $this->modul;
-		$data['action']		   = "insert";	
-<<<<<<< HEAD
-=======
-		$data["query"]			= $this->Pr_profile->get_all();
->>>>>>> origin/master
+		$data['action']		    = "insert";	
+		$data['query']			= $this->Pr_profile->get_all();
 		if(isset($_GET['id'])){
 			$data['id'] 			= $_GET['id'];
 			$data['value']		= $this->Pr_profile->get_by_id($_GET['id']);
 			$data['action']		= "Update";
 		}
 		$this->load->view('profileForm', $data);
-<<<<<<< HEAD
-=======
 	}		
 	
 	public function addimage()
@@ -46,7 +41,6 @@ class Profile extends CI_Controller
 		$data['small_title']	= "Profile mengenai tujuan wisata";		
 		$data['modul']			= $this->modul;
 		$this->load->view('profileImage', $data);
->>>>>>> origin/master
 	}
 	
 	public function insert()
