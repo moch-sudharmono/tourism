@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class News extends CI_Controller {
-	public $route = "frontend/index";
+	public $route = "frontend/index.php";
 	private $class = "news";
 	
 	public function __construct(){
@@ -26,7 +26,7 @@ class News extends CI_Controller {
 		$news = $this->News_m->displayAll($limit, $offset);
 		$popular = $this->News_m->displayPopular();
 		$news_tag = $this->News_m->displayNewsTag();
-
+		
 		foreach( $news as $rn ):
 			$w = array( "id_berita"=>$rn->id_berita );
 			$rn->tags = $this->News_m->getNewsTag($w);
@@ -49,6 +49,7 @@ class News extends CI_Controller {
 		$data["class"] = $this->class;
 		
 		$data["konten"] = "frontend/news/news.main.view.php";
+		//print_r($data); exit;
 		$this->load->view($this->route, $data);
 	}
 	

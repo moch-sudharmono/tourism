@@ -1,9 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Attraction extends CI_Controller {
 	public $route = "frontend/index.php";
-	private $class = "home";
-	
+	private $class = "attraction";
 	
 	public function __construct(){
 		//function check access			
@@ -16,7 +15,7 @@ class Home extends CI_Controller {
 	{
 		$data["potensi_wisata"] = $this->navigation_lib->potensi_wisata();
 		$data["class"] = $this->class;
-		$data["konten"] = "frontend/home.view.php";
+		$data["konten"] = "frontend/attraction/attraction.main.view.php";
 		$this->load->view($this->route, $data);
 	}
 }

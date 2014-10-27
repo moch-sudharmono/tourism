@@ -56,14 +56,24 @@
       </ul>
     </li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+      <a class="dropdown-toggle ina" data-toggle="dropdown" data-target="#" href="#">
         Potensi Wisata
       </a>
-        
+      <a class="dropdown-toggle eng" data-toggle="dropdown" data-target="#" href="#">
+        Potensi Wisata
+      </a>
       <ul class="dropdown-menu">
-        <li><a href="page-about.html">Wisata Alam</a></li>
-        <li><a href="page-services.html">Wisata Budaya</a></li>
-        <li><a href="page-prices.html">Wisata Rohani</a></li>
+      	<?php 
+			$potensi_wisata = isset( $potensi_wisata )?$potensi_wisata:array();
+			foreach( $potensi_wisata as $row ):
+		?>
+	        <li>
+            	<a href="<?php echo base_url() ?>frontend/attraction/" class="ina"><?php echo $row->kategori_ina ?></a>
+                <a href="<?php echo base_url() ?>" class="eng"><?php echo $row->kategori_ina ?></a>
+            </li>
+        <?php
+        	endforeach;
+        ?>
       </ul>
     </li>
     <li class="dropdown">
