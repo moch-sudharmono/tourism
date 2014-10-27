@@ -80,7 +80,7 @@
                 </ul>			
             </li>	
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>sitemap">
+                <a href="<?php echo base_url() ?>admin/sitemap">
                 <i class="icon-basket"></i>
                 <span class="title">Peta Situs / <em>Sitemap</em></span>
                 <span class="arrow "></span>

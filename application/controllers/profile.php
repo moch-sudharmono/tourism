@@ -61,7 +61,8 @@ class Profile extends CI_Controller
 				'id_peta'=>$id_map                   
                );
 		
-		$this->Pr_profile->validate($data);		
+		//$this->Pr_profile->validate($data);		
+		$this->Pr_profile->insert($data);		
 					
 		redirect('Profile');
 	}

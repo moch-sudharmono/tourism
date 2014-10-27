@@ -93,9 +93,9 @@ class News extends CI_Controller {
 		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
-            $isi_eng 	  = $this->input->post('isi_eng');			
-            $isi_ind 	  = $this->input->post('isi_ind');
-			$tanggal		 = $this->input->post('datepicker');
+            $isi_eng 	= $this->input->post('isi_eng');			
+            $isi_ind 	= $this->input->post('isi_ind');
+			$tanggal	= $this->input->post('datepicker');
 			
             $data = array(
                    'judul_berita_eng'=>$title_eng,

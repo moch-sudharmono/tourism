@@ -1,36 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Sitemap extends CI_Controller {
-/*
-	public function index()
-	{
-		$data['title'] 			= "Sitemap";
-		$data['small_title']	= "Peta Situs";
-		$this->load->view('sitemap', $data);
-	}
-	
-	public function add()
-	{
-		$data['title'] 			= "Sitemap";
-		$data['small_title']	= "Peta Situs";
-		$this->load->view('sitemapForm', $data);
-	}
-	
-	public function edit()
-	{
-		$data['title'] 			= "Sitemap";
-		$data['small_title']	= "Peta Situs";
 
-		$this->load->view('sitemapForm', $data);
-	}
-
-*/	public $route = "admin/index.php";
+	public $route = "admin/index.php";
 	private $class = "sitemap";
 	
 	public function __construct(){
 		//function check access			
 		parent::__construct();	
-		$this->load->model("pr_sitemap");
+		$this->load->model("admin/SitemapModel");
 		$this->load->library('pagination_lib');
 	}
 	
@@ -46,11 +24,11 @@ class Sitemap extends CI_Controller {
 			$offset = 0;
 		endif;
 		
-		$sitemap = $this->pr_sitemap->displayAll($limit, $offset);
+		$sitemap = $this->SitemapModel->displayAll($limit, $offset);
 
 		// Paging
-		$total_row =  $this->pr_sitemap->countAllData();
-		$url = base_url() . "sitemap/?paging=true";
+		$total_row =  $this->SitemapModel->countAllData();
+		$url = base_url() . "admin/sitemap/?paging=true";
 		$data_paging = array(
 			"url"=>$url,
 			"total_rows"=>$total_row,
@@ -61,24 +39,22 @@ class Sitemap extends CI_Controller {
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
 		
 		$data["page"] = $page; 
-		$data["promotion"] = $sitemap; 
+		$data["sitemap"] = $sitemap; 
 		$data["class"] = $this->class;
 		
-		$data["konten"] = "sitemapForm.php";
+		$data["konten"] = "admin/sitemap/sitemap.main.view.php";
 		$this->load->view($this->route, $data);
 	}
 	
-	public function form($id_promosi=0)
+	public function form($id_sitemap=0)
 	{	
-		$where = array("id_promosi"=>$id_promosi);
-		$promotion = $this->Promosi->displaySelectedData($where);
-		$promotion_category = $this->Kategori_promosi->display();
+		$where = array("id_sitemap"=>$id_sitemap);
+		$promotion = $this->SitemapModel->displaySelectedData($where);
 		
-		$data["promotion"] = $promotion; 
-		$data["promotion_category"] = $promotion_category; 
+		$data["sitemap"] = $sitemap; 
 		$data["class"] = $this->class;
 		
-		$data["konten"] = "admin/promotion/promotion.form.view.php";
+		$data["konten"] = "admin/sitemap/sitemap.form.view.php";
 		$this->load->view($this->route, $data);
 	}
 	
@@ -107,34 +83,34 @@ class Sitemap extends CI_Controller {
 		//print_r($data); exit;
 		
 		$where = array(
-			"id_promosi"=>$id_promosi
+			"id_sitemap"=>$id_sitemap
 		);
 		
 		if( $id_promosi != 0 ):
-			$result = $this->Promosi->update($data, $where);
+			$result = $this->SitemapModel->update($data, $where);
 		else:
-			$result = $this->Promosi->insert($data);
+			$result = $this->SitemapModel->insert($data);
 		endif;
 		
 		if( $result ):
-			redirect("admin/promotion");
+			redirect("admin/sitemap");
 		else:
 			echo "Gagal";
 		endif;
 	}
 	
-	public function delete($id_promosi=0)
+	public function delete($id_sitemap=0)
 	{
 		$where = array(
-			"id_promosi"=>$id_promosi
+			"id_sitemap"=>$id_sitemap
 		);
 		
-		if( $id_promosi != "" ):
-			$result = $this->Promosi->delete($where);
+		if( $id_sitemap != "" ):
+			$result = $this->SitemapModel->delete($where);
 		endif;
 		
 		if( $result ):
-			redirect("admin/promotion");
+			redirect("admin/sitemap");
 		else:
 			echo "Gagal";
 		endif;
