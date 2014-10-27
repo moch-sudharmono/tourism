@@ -26,7 +26,7 @@
 			<!-- BEGIN DASHBOARD STATS -->
 			
             <?php $this->load->view($konten); ?>
-            
+    </div>        
 	<!-- END CONTENT -->
 	<?php $this->load->view("admin/include/quicksidebar.view.php") ?>		
 </div>

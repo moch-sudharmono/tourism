@@ -19,6 +19,8 @@ class News extends CI_Controller {
 		$this->load->view('news', $data);
 	}
 	
+<<<<<<< HEAD
+=======
 	public function form()
 	{
 		$data['title'] 			= "News";
@@ -39,6 +41,7 @@ class News extends CI_Controller {
 		$data['action']			= "insert";
 	}
 	
+>>>>>>> origin/master
 	public function add()
 	{
 		$data['title'] 			= "News";
@@ -58,7 +61,7 @@ class News extends CI_Controller {
             $title_ind 	= $this->input->post('title_ind');			
             $isi_eng 	  = $this->input->post('isi_eng');			
             $isi_ind 	  = $this->input->post('isi_ind');
-			$tanggal		 = $this->input->post('tanggal');
+			$tanggal		 = $this->input->post('datepicker');
 			
             $data = array(
                    'judul_berita_eng'=>$title_eng,
@@ -67,7 +70,7 @@ class News extends CI_Controller {
 				   'isi_berita_ina'=>$isi_ind,
 				   'tanggal_berita'=>$tanggal                   
                     );
-				
+			//print_r($data);
 			$this->Pr_berita->validate($data,$id);		
 					
 			redirect('News');					
@@ -77,6 +80,10 @@ class News extends CI_Controller {
 	
 	public function edit()
 	{
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 		$data['title'] 			= "News";
 		$data['small_title']	= "Berita Terkini";		
 		$data['modul']			= $this->modul;
@@ -87,6 +94,10 @@ class News extends CI_Controller {
 	
 	public function update()
 	{
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 		$task = $_POST['submit'];
 		$id = $_POST['id_news'];
 

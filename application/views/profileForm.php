@@ -1,4 +1,3 @@
-
 <?php include('header.php'); ?>
 <div class="clearfix">
 </div>
@@ -45,7 +44,7 @@
                         
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action;?>" id="form_profile" class="form-horizontal" method="post">
+							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action; ?>" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
 									<div class="alert alert-danger display-hide">
 										<button class="close" data-close="alert"></button>
@@ -59,7 +58,7 @@
 										<label class="control-label col-md-3">Parent Attraction Location
 										</label>
 										<div class="col-md-4">
-											<select class="form-control select2me" name="cbo_parent">
+											<select class="form-control select2me" name="cbo_parent" id="cbo_parent">
 												<option value="">Please Choose Option</option>
                                                 <?php foreach($query as $value){?>
                                                 	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
@@ -67,18 +66,6 @@
 											</select>
 										</div>
 									</div>
-                                    <!--<div class="form-group">
-										<label class="control-label col-md-3">Category Attraction
-										</label>
-										<div class="col-md-4">
-											<select class="form-control select2me" name="category_attraction">
-												<option value="">Please Choose Option</option>
-                                                <?php foreach($query2 as $value2){?>
-                                                	<option value="<?php echo $value2["id_lokasi_wisata_kategori"]?>"><?php echo $value2["kategori_ina"]." / ".$value2["kategori_eng"]?></option>
-                                                <?php }?>
-											</select>
-										</div>
-									</div>-->
 									<div class="form-group">
 										<label class="control-label col-md-3">Attraction Location (English) <span class="required">
 										* </span>
@@ -130,7 +117,7 @@
 																											
 								</div>
 								<div class="form-actions">
-									<div class="row">
+									<div class="row"> 
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" class="btn green" id="submit_profile" value="submit">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
@@ -140,6 +127,7 @@
 							</form>
 							<!-- END FORM-->
 						</div>
+
                         </div>
 						<!-- END VALIDATION STATES-->
 					</div>
@@ -166,3 +154,8 @@
 </body>
 <!-- END BODY -->
 </html>
+<script>
+jQuery(document).ready(function() { 
+	//$("#cbo_parent").val()="<?php echo (isset($id)? $id: '') ?>"
+});
+</script>

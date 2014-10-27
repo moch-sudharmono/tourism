@@ -46,12 +46,12 @@
               	<a href="#" class="ina"><?php echo strtoupper($row->judul_berita_ina) ?></a>
                 <a href="#" class="eng"><?php echo strtoupper($row->judul_berita_eng) ?></a>
               </h2>
-              <p class="ina">
+              <div class="ina">
               	 <?php echo $row->isi_berita_ina ?>
-              </p>
-              <p class="eng">
+              </div>
+              <div class="eng">
               	 <?php echo $row->isi_berita_eng ?>
-              </p>
+              </div>
               <ul class="blog-info">
                 <li><i class="fa fa-user"></i> By admin</li>
                 <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
@@ -59,7 +59,8 @@
                 <li><i class="fa fa-tags"></i> 
 					<?php
 						foreach( $row->tags as $rt ):
-							echo $rt->tag . " | ";	
+							echo "<label class='ina'>" . $rt->tag_ina . " | </label> ";	
+							echo "<label class='eng'>" . $rt->tag_eng . " | </label> ";	
 						endforeach;
 					?>                
                 </li>
@@ -134,7 +135,10 @@
                 	if( isset($news_tag) and !empty($news_tag) ):
 					foreach( $news_tag as $rnt ):
 				?>
-                  <li><a href="#"><i class="fa fa-tags"></i><?php echo $rnt->tag ?></a></li>
+                  <li>
+                  	<a href="#" class="ina"><i class="fa fa-tags"></i><?php echo $rnt->tag_ina ?></a>
+                    <a href="#" class="eng"><i class="fa fa-tags"></i><?php echo $rnt->tag_ina ?></a>
+                  </li>
                 <?php
 					endforeach;
                 	endif;

@@ -9,6 +9,14 @@
 			parent::__construct();
 		}
 		
+		public function display()
+		{
+			$this->db->order_by($this->primary_key . " desc ");
+			$query = $this->db->get($this->table);
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
 		public function displayAll($offset=10, $limit=0)
 		{
 			$this->db->limit($offset, $limit);

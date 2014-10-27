@@ -122,6 +122,16 @@
 				</div>
 			</div>
             
+<<<<<<< HEAD
+
+            <div id="NewsForm">
+           
+
+			</div>
+            </div>
+
+=======
+>>>>>>> origin/master
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
@@ -144,21 +154,21 @@
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-<<<<<<< HEAD
+
 	$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
 
-		$('#NewsForm').show();
+		//$('#NewsForm').show();
 		//document.getElementById('form_news').action="<?=base_url()."index.php/".$modul."/insert"?>";
 
 		//$('#NewsForm').show();
-		Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
+		//Query("POST","","<?=base_url()?>index.php/News/Form","#NewsForm","");
 		//document.getElementById('submit_news').value = "insert";
 	});
 	
 	$('#CancelButton').click(function(e){
-		$('#NewsForm').hide();
+		//$('#NewsForm').hide();
 	});
 	
 	// initialize select2 tags
@@ -170,12 +180,11 @@ jQuery(document).ready(function() {
 	
 	$('.editNews').css( 'cursor', 'pointer' ).click(function(e){
 		var id = $(this).attr('id');
-		$('#NewsForm').show();
-		Query("GET","id="+id,"<?=base_url()?>index.php/News/Form","#NewsForm","");
+		//$('#NewsForm').show();
+		//Query("GET","id="+id,"<?=base_url()?>index.php/News/Form","#NewsForm","");
 	});
 
-=======
->>>>>>> origin/master
+
 	$('.deleteNews').click(function (e) {
             e.preventDefault();
 
@@ -184,8 +193,8 @@ jQuery(document).ready(function() {
             }
 
 			var id = $(this).attr("id");
-            Query("GET", "id="+id, "<?php echo base_url()?>index.php/News/Delete","","");
-			Query("GET", "", "<?php echo base_url()?>index.php/News","","");
+          //  Query("GET", "id="+id, "<?php echo base_url()?>index.php/News/Delete","","");
+			//Query("GET", "", "<?php echo base_url()?>index.php/News","","");
         });
 			
 function Query(xType,xData,xUrl,xHasil,xEvent) {

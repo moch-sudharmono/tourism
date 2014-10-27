@@ -1,7 +1,8 @@
 <?php
 	$tag = isset( $tag )?$tag:array();
 	$id_berita_tag = isset( $tag[0]->id_berita_tag )?$tag[0]->id_berita_tag:"";
-	$tag = isset( $tag[0]->tag )?$tag[0]->tag:"";
+	$tag_ina = isset( $tag[0]->tag_ina )?$tag[0]->tag_ina:"";
+	$tag_eng = isset( $tag[0]->tag_eng )?$tag[0]->tag_eng:"";
 ?>
 <div class="portlet box purple col-md-7">
     <div class="portlet-title">
@@ -14,9 +15,17 @@
             <input type="hidden" name="id_berita_tag" value="<?php echo $id_berita_tag ?>" />
             <div class="form-body">
                 <div class="form-group">
-                    <label class="col-md-2 control-label">Tag</label>
+                    <label class="col-md-2 control-label">Tag (Bahasa)</label>
                     <div class="col-md-10">
-	                    <input type="text" class="form-control" name="tag" placeholder="Inputkan Tag" value="<?php echo $tag ?>">
+	                    <input type="text" class="form-control" name="tag_ina" placeholder="Inputkan Tag" value="<?php echo $tag_ina ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Tag (English)</label>
+                    <div class="col-md-10">
+	                    <input type="text" class="form-control" name="tag_eng" placeholder="Inputkan Tag" value="<?php echo $tag_eng ?>">
                     </div>
                 </div>
             </div>

@@ -48,7 +48,6 @@ class Tag extends CI_Controller {
 	
 	public function form($id_berita_tag=0)
 	{
-		
 		$where = array("id_berita_tag"=>$id_berita_tag);
 		$tag = $this->Berita_tag->displaySelectedData($where);
 		
@@ -62,10 +61,12 @@ class Tag extends CI_Controller {
 	public function save()
 	{
 		$id_berita_tag = $this->input->post("id_berita_tag");
-		$tag = $this->input->post("tag");
+		$tag_ina = $this->input->post("tag_ina");
+		$tag_eng = $this->input->post("tag_eng");
 		
 		$data = array(
-			"tag"=>$tag
+			"tag_ina"=>$tag_ina,
+			"tag_eng"=>$tag_eng
 		);
 		
 		$where = array(

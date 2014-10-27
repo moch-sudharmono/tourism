@@ -55,7 +55,30 @@
               </p>
                                     
             </div>
-            <!-- END LEFT SIDEBAR -->            
+            <!-- END LEFT SIDEBAR -->  
+            
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <div class="col-md-3 col-sm-3 blog-sidebar">
+                                       
+              <!-- BEGIN BLOG PHOTOS STREAM -->
+              <div class="blog-photo-stream margin-bottom-20">
+                <h3>Foto-foto / <em>Photos</em></h3>
+                <ul class="list-unstyled">
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img5-small.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img1.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img4-large.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img6.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img1-large.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img2-large.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img3.jpg"></a></li>
+                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img2-large.jpg"></a></li>
+                </ul>                    
+              </div>
+              <!-- END BLOG PHOTOS STREAM -->
+              
+            </div>
+            <!-- END RIGHT SIDEBAR -->   
+                      
           </div>
         </div>
       </div>
