@@ -65,7 +65,7 @@
                 <td><?php echo $row->tanggal_testimoni ?></td>
                 <td align="center"> 
                     <a href="<?php echo base_url() ?>index.php/admin/testimonial/form/<?php echo $row->id_testimoni_lokasi_wisata ?>"> 
-                    	<i class="fa"></i> <?php if ($row->publish=="N") { echo "Belum Dipublis / <em>Not Published</em>";} else {echo "Sudah Dipublish / <em>Published</em>";} ?>
+                    	<i class="fa"></i> <?php if ($row->publish=="N") { echo "Belum Dipublikasi / <em>Not Published</em>";} else {echo "Sudah Dipublikasi / <em>Published</em>";} ?>
                     </a> 
                 </td>
             </tr>

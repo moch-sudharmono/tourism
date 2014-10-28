@@ -33,7 +33,7 @@
 										<label class="control-label col-md-2">Title (English) <span class="required">
 										* </span>
 										</label>
-										<div class="col-md-3">
+										<div class="col-md-4">
 											<input type="text"
                                             value="<?php echo $paket_wisata_eng; ?>" name="title_eng" data-required="1" class="form-control"/>
 										</div>
