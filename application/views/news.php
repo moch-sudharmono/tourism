@@ -122,7 +122,7 @@
 				</div>
 			</div>
             
-<<<<<<< HEAD
+
 
             <div id="NewsForm">
            
@@ -130,8 +130,6 @@
 			</div>
             </div>
 
-=======
->>>>>>> origin/master
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
@@ -154,7 +152,7 @@
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-
+/*
 	$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
@@ -208,7 +206,7 @@ function Query(xType,xData,xUrl,xHasil,xEvent) {
 			  eval(xEvent);				
 			} 
 		});
-}
+}*/
 });
 </script>
 <!-- END CUSTOMIZE JQUERY -->
