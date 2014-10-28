@@ -24,7 +24,11 @@ class Sitemap extends CI_Controller {
 			$offset = 0;
 		endif;
 		
-		$sitemap = $this->SitemapModel->displayAll($limit, $offset);
+		$sitemap = $this->SitemapModel->displayAllJoin($limit, $offset);
+		/*echo "<pre>";
+		print_r($sitemap);
+		echo "</pre>";
+		exit;*/
 
 		// Paging
 		$total_row =  $this->SitemapModel->countAllData();
@@ -49,35 +53,35 @@ class Sitemap extends CI_Controller {
 	public function form($id_sitemap=0)
 	{	
 		$where = array("id_sitemap"=>$id_sitemap);
-		$promotion = $this->SitemapModel->displaySelectedData($where);
-		
+		$sitemap = $this->SitemapModel->displaySelectedData($where);
+		$parent = $this->SitemapModel->displayAll();
 		$data["sitemap"] = $sitemap; 
 		$data["class"] = $this->class;
-		
+		$data["parent"] = $parent; 
 		$data["konten"] = "admin/sitemap/sitemap.form.view.php";
 		$this->load->view($this->route, $data);
 	}
 	
 	public function save()
 	{
-		$id_promosi_kategori = $this->input->post("id_promosi_kategori");
-		$id_promosi = $this->input->post("id_promosi");
-		$promosi_ina = $this->input->post("promosi_ina");
-		$promosi_eng = $this->input->post("promosi_eng");
-		$deskripsi_ina = $this->input->post("deskripsi_ina");
-		$deskripsi_eng = $this->input->post("deskripsi_eng");
-		$tanggal_promosi = yyyymmdd($this->input->post("tanggal_promosi"));
-		$tanggal_kadarluarsa = yyyymmdd($this->input->post("tanggal_kadarluarsa"));
+		$id_sitemap = $this->input->post("id_sitemap");
+		$sitemap_no = $this->input->post("sitemap_no");
+		$parent_menu = $this->input->post("parent_menu");
+		$nama_sitemap_eng = $this->input->post("nama_sitemap_eng");
+		$nama_sitemap_ina = $this->input->post("nama_sitemap_ina");
+		$url = $this->input->post("url");
+		$css_id = yyyymmdd($this->input->post("css_id"));
+		$css_class = yyyymmdd($this->input->post("css_class"));
 		
 		
 		$data = array(
-			"promosi_ina"=>$promosi_ina,
-			"promosi_eng"=>$promosi_eng,
-			"deskripsi_ina"=>$deskripsi_ina,
-			"deskripsi_eng"=>$deskripsi_eng,
-			"tanggal_promosi"=>$tanggal_promosi,
-			"tanggal_kadarluarsa"=>$tanggal_kadarluarsa,
-			"id_promosi_kategori"=>$id_promosi_kategori
+			"sitemap_no"=>$sitemap_no,
+			"parent_id"=>$parent_menu,
+			"nama_sitemap_eng"=>$nama_sitemap_eng,
+			"nama_sitemap_ina"=>$nama_sitemap_ina,
+			"url"=>$url,
+			"css_id"=>$css_id,
+			"css_class"=>$css_class
 		);
 		
 		//print_r($data); exit;
@@ -86,7 +90,7 @@ class Sitemap extends CI_Controller {
 			"id_sitemap"=>$id_sitemap
 		);
 		
-		if( $id_promosi != 0 ):
+		if( $id_sitemap != 0 ):
 			$result = $this->SitemapModel->update($data, $where);
 		else:
 			$result = $this->SitemapModel->insert($data);

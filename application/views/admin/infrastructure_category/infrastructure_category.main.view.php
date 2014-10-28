@@ -69,7 +69,7 @@
             <td><?php echo $value->kategori_sarana_prasarana_ina?></td>
             <td><?php echo $value->kategori_sarana_prasarana_eng?></td>
             <td>
-                <a class="delete" href="javascript:;">
+                <a class="delete_category" href="<?php echo base_url().'admin/infrastructure_category/delete/'.$value->id_kategori_sarana_prasarana; ?>">
                 Delete </a>
             </td>
         </tr>
@@ -79,3 +79,15 @@
     </div>
 </div>
 <!-- END EXAMPLE TABLE PORTLET-->
+<script>
+	$(".delete_category").click(function(e) {
+        if( confirm("Anda yakin / Are you sure ?") )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+    });
+</script>

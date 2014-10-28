@@ -18,6 +18,23 @@
 			return $query->result();
 		}
 		
+		public function displayAllJoin($offset=10,$limit=0)
+		{
+			$this->db->select('a.id_sitemap, b.nama_sitemap_ina as parent_ina, 
+								b.nama_sitemap_eng as parent_eng, a.sitemap_no, 
+								a.nama_sitemap_ina, a.nama_sitemap_eng,
+								a.url, a.css_id, a.css_class, a.icon
+								');
+            $this->db->from($this->table.' a'); 
+            $this->db->join('pr_sitemap b', 'b.id_sitemap=a.parent_id', 'left');
+            $this->db->order_by('a.id_sitemap','desc');         
+            $this->db->limit($offset, $limit);
+			$query = $this->db->get(); 			
+            
+            return $query->result_array();
+            	
+		}
+		
 		public function displaySelectedData($data)
 		{
 			$this->db->where($data);
