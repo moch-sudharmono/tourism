@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 <?php include('header.php'); ?>
 <div class="clearfix">
 </div>
@@ -47,10 +43,6 @@
 						</div>
                         
 						<div class="portlet-body form">
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 							<!-- BEGIN FORM-->
 							<form action="<?php echo base_url().'index.php/'.$modul.'/'.$action; ?>" id="form_profile" class="form-horizontal" method="post">
 								<div class="form-body">									
@@ -68,13 +60,8 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_parent" id="cbo_parent">
 												<option value="">Please Choose Option</option>
-<<<<<<< HEAD
-                                                <?php foreach($query as $no=>$value){?>
-	                                              	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
-=======
                                                 <?php foreach($query as $value){?>
                                                 	<option value="<?php echo $value["id_lokasi_wisata"]?>"><?php echo $value["nama_lokasi_wisata_ina"]." / ".$value["nama_lokasi_wisata_eng"]?></option>
->>>>>>> origin/master
                                                 <?php }?>
 											</select>
 										</div>
@@ -124,14 +111,6 @@
 										<div class="col-md-4">
 											<select class="form-control select2me" name="cbo_map">
 												<option value="">Please Choose Option</option>
-<<<<<<< HEAD
-
-												<option value="Option 1">Wakatobi</option>
-												<option value="Option 2">Raja Ampat</option>
-												<option value="Option 3">Pantai Sikka</option>
-
-=======
->>>>>>> origin/master
 											</select>
 										</div>
 									</div>
@@ -140,7 +119,7 @@
 								<div class="form-actions">
 									<div class="row"> 
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green" id="submit_profile" value="">Submit</button>
+											<button type="submit" class="btn green" id="submit_profile" value="submit">Submit</button>
 											<button type="button" ID="CancelButton" class="btn default">Cancel</button>
 										</div>
 									</div>
@@ -148,81 +127,7 @@
 							</form>
 							<!-- END FORM-->
 						</div>
-<<<<<<< HEAD
 
-                    </div>
-                <!-- END VALIDATION STATES-->
-					</div>
-				</div>
-                
-                 <!-- IMAGE FORM -->
-                        <div id="imageUpload">
-                            <div class="portlet box green">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-gift"></i>Image Form
-                                    </div>							
-                                </div>
-                                
-                                <form id="fileupload" action="<?=base_url();?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
-                    	
-                        
-                                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                                <div class="row fileupload-buttonbar">
-                                    <div class="col-lg-7">
-                                        <!-- The fileinput-button span is used to style the file input field as button -->
-                                        <span class="btn blue fileinput-button">
-                                        <i class="fa fa-plus"></i>
-                                        <span>
-                                        Add files... </span>
-                                        <input type="file" name="files[]" multiple>
-                                        </span>
-                                        <button type="submit" class="btn blue start">
-                                        <i class="fa fa-upload"></i>
-                                        <span>
-                                        Start upload </span>
-                                        </button>
-                                        <button type="reset" class="btn warning cancel">
-                                        <i class="fa fa-ban-circle"></i>
-                                        <span>
-                                        Cancel upload </span>
-                                        </button>
-                                        <button type="button" class="btn red delete">
-                                        <i class="fa fa-trash"></i>
-                                        <span>
-                                        Delete </span>
-                                        </button>
-                                        <input type="checkbox" class="toggle">
-                                        <!-- The global file processing state -->
-                                        <span class="fileupload-process">
-                                        </span>
-                                    </div>
-                                    <!-- The global progress information -->
-                                    <div class="col-lg-5 fileupload-progress fade">
-                                        <!-- The global progress bar -->
-                                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar progress-bar-success" style="width:0%;">
-                                            </div>
-                                        </div>
-                                        <!-- The extended global progress information -->
-                                        <div class="progress-extended">
-                                             &nbsp;
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- The table listing the files available for upload/download -->
-                                <table role="presentation" class="table table-striped clearfix">
-                                <tbody class="files">
-                                </tbody>
-                                </table>
-                            </form>
-                            </div>
-
-                        </div>
-                        <!-- END OF IMAGE FORM --> 
-
-=======
->>>>>>> origin/master
                         </div>
 						<!-- END VALIDATION STATES-->
 					</div>
@@ -249,12 +154,8 @@
 </body>
 <!-- END BODY -->
 </html>
-<<<<<<< HEAD
-
 <script>
 jQuery(document).ready(function() { 
 	//$("#cbo_parent").val()="<?php echo (isset($id)? $id: '') ?>"
 });
 </script>
-=======
->>>>>>> origin/master

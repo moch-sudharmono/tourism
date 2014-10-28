@@ -25,27 +25,14 @@ class Profile extends CI_Controller
 		$data['title'] 			= "Profile";
 		$data['small_title']	= "Profile mengenai tujuan wisata";		
 		$data['modul']			= $this->modul;
-<<<<<<< HEAD
-		$data['action']		   = "insert";	
-
-		$data["query"]			= $this->Pr_profile->get_all();
-
-=======
 		$data['action']		    = "insert";	
 		$data['query']			= $this->Pr_profile->get_all();
->>>>>>> origin/master
 		if(isset($_GET['id'])){
 			$data['id'] 			= $_GET['id'];
 			$data['value']		= $this->Pr_profile->get_by_id($_GET['id']);
 			$data['action']		= "Update";
 		}
-<<<<<<< HEAD
-		echo $_GET['id'];
-		//$this->load->view('profileForm', $data);
-
-=======
 		$this->load->view('profileForm', $data);
->>>>>>> origin/master
 	}		
 	
 	public function addimage()
@@ -54,10 +41,6 @@ class Profile extends CI_Controller
 		$data['small_title']	= "Profile mengenai tujuan wisata";		
 		$data['modul']			= $this->modul;
 		$this->load->view('profileImage', $data);
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 	}
 	
 	public function insert()
@@ -78,7 +61,8 @@ class Profile extends CI_Controller
 				'id_peta'=>$id_map                   
                );
 		
-		$this->Pr_profile->validate($data);		
+		//$this->Pr_profile->validate($data);		
+		$this->Pr_profile->insert($data);		
 					
 		redirect('Profile');
 	}

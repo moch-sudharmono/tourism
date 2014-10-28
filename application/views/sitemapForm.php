@@ -1,39 +1,8 @@
-<?php include('header.php'); ?>
-<div class="clearfix">
-</div>
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-	<!-- BEGIN SIDEBAR -->
-	<div class="page-sidebar-wrapper">
-		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-		<div class="page-sidebar navbar-collapse collapse">
-			<!-- BEGIN SIDEBAR MENU -->
-			<ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-				<?php include("sidebar.php");?>      
-			</ul>
-			<!-- END SIDEBAR MENU -->
-		</div>
-	</div>
-	<!-- END SIDEBAR -->
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">			
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-			<?php echo $title?> <small><?php echo $small_title?></small>
-			</h3>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->	
-            
-            <div ID="SitemapForm">		
-			<div class="row">
-				<div class="col-md-12">
 					<!-- BEGIN VALIDATION STATES-->
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i><?php echo $title?> Form
+								<i class="fa fa-gift"></i>Sitemap Form
 							</div>							
 						</div>
                         
@@ -124,26 +93,5 @@
 							<!-- END FORM-->
 						</div>
 						<!-- END VALIDATION STATES-->
-					</div>
-				</div>
-			</div>
-            </div>
-			<!-- END PAGE CONTENT-->
-	
-</div>
-<!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer">
-	<div class="page-footer-inner">
-		 2014 &copy; Tourism by SS and co.
-	</div>
-	<div class="scroll-to-top">
-		<i class="icon-arrow-up"></i>
-	</div>
-</div>
-<!-- END FOOTER -->
-<?php include("jsfile.php");?>
-
-</body>
-<!-- END BODY -->
-</html>
+<?php include("jsfile.php"); ?>
+<?php include("cssfile.php"); ?>

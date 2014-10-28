@@ -45,7 +45,19 @@
 					<i class="icon-basket"></i>
 					<span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                     <span class="arrow "></span>
-					</a>					
+					</a>
+                    <ul class="sub-menu">
+						<li>
+							<a href="<?php echo base_url()?>index.php/categoryAttraction">
+							Kategori / <em>Categories</em>
+                            </a>
+						</li>
+                        <li>
+							<a href="<?php echo base_url()?>index.php/attraction">
+							Paket Wisata / <em>Potential Attraction</em></span>
+                            </a>
+						</li>
+                    </ul>						
 				</li>
 				 <li>
 					<a href="<?php echo base_url()?>index.php/infrastructure">
@@ -100,7 +112,7 @@
                     </ul>					
 				</li>   
                 <li>
-					<a href="<?php echo base_url()?>index.php/promotion">
+					<a href="<?php echo base_url()?>index.php/admin/promotion">
 					<i class="icon-basket"></i>
 					<span class="title">Promosi / <em>Promotion</em></span>
                     <span class="arrow "></span>
