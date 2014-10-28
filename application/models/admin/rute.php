@@ -18,6 +18,47 @@ class Rute extends MY_Model
 		return $query->result();
 	}
 	
+	public function displayAllJoin($offset=10,$limit=0)
+		{
+			$this->db->select('a.id_transportation, a.id_edges, a.id_sarana_prasarana, 
+								a.deskripsi_ina, a.deskripsi_eng, 
+								a.waktu_perjalanan, a.estimasi_biaya,
+								e.nama_ina, e.nama_eng, c.nodes as node_edge_from, d.nodes as node_edge_to
+								');
+            $this->db->from($this->table.' a'); 
+            $this->db->join('pr_route_edges b', 'b.id_edges=a.id_edges', 'left');
+			$this->db->join('pr_route_nodes c', 'c.id_nodes=b.edge_from', 'left');
+			$this->db->join('pr_route_nodes d', 'd.id_nodes=b.edge_to', 'left');
+			$this->db->join('pr_sarana_prasarana e', 'e.id_sarana_prasarana=a.id_sarana_prasarana', 'left');
+            $this->db->order_by('a.id_transportation','desc');         
+            $this->db->limit($offset, $limit);
+			$query = $this->db->get(); 			
+            
+            return $query->result_array();
+            	
+		}
+		
+	public function displaySelectedDataJoin($data)
+		{
+			$this->db->select('a.id_transportation, a.id_edges, a.id_sarana_prasarana, 
+								a.deskripsi_ina, a.deskripsi_eng, 
+								a.waktu_perjalanan, a.estimasi_biaya,
+								e.nama_ina, e.nama_eng, c.nodes as node_edge_from, d.nodes as node_edge_to
+								');
+            $this->db->from($this->table.' a'); 
+            $this->db->join('pr_route_edges b', 'b.id_edges=a.id_edges', 'left');
+			$this->db->join('pr_route_nodes c', 'c.id_nodes=b.edge_from', 'left');
+			$this->db->join('pr_route_nodes d', 'd.id_nodes=b.edge_to', 'left');
+			$this->db->join('pr_sarana_prasarana e', 'e.id_sarana_prasarana=a.id_sarana_prasarana', 'left');
+            $this->db->order_by('a.id_transportation','desc');   
+			$this->db->where($data);      
+
+			$query = $this->db->get(); 			
+            
+            return $query->result_array();
+            	
+		}
+	
 	public function displaySelectedData($data)
 	{
 		$this->db->where($data);
@@ -53,16 +94,28 @@ class Rute extends MY_Model
 		return $this->db->insert_id();
 	}
 	
-	public function display_tag_trans($where)
+	public function displayRoute()
 	{
-		$this->db->where($where);
-		$query = $this->db->get("pr_berita_tag_trans");
-		return $query->result();
+			$this->db->select('a.id_edges, a.edge_from, b.nodes as node_edge_from, 
+								a.edge_to, c.nodes as node_edge_to
+								');
+            $this->db->from('pr_route_edges a'); 
+            $this->db->join('pr_route_nodes b', 'b.id_nodes=a.edge_from', 'left');
+			$this->db->join('pr_route_nodes c', 'c.id_nodes=a.edge_to', 'left');
+            $this->db->order_by('a.id_edges','desc');         
+			$query = $this->db->get(); 			
+            
+            return $query->result_array();
 	}
 	
-	public function insert_tag_trans($data)
+	public function displayInfrastructure()
 	{
-		return $this->db->insert("pr_berita_tag_trans", $data);
+		$this->db->select('*');
+		$this->db->from('pr_sarana_prasarana'); 
+		$this->db->order_by("id_sarana_prasarana desc ");
+		$query = $this->db->get();
+		//echo $this->db->last_query();
+		return $query->result_array();
 	}
 	
 	public function delete_tag_trans($where)

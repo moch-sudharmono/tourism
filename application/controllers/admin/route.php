@@ -23,8 +23,7 @@ class Route extends CI_Controller {
 			$offset = 0;
 		endif;
 		
-		$route = $this->Rute->displayAll($limit, $offset);
-
+		$route = $this->Rute->displayAllJoin($limit, $offset);
 		// Paging
 		$total_row =  $this->Rute->countAllData();
 		$url = base_url() . "admin/route/?paging=true";
@@ -48,10 +47,13 @@ class Route extends CI_Controller {
 	public function form($id_transportation=0)
 	{	
 		$where = array("id_transportation"=>$id_transportation);
-		$news = $this->Rute->displaySelectedData($where);
+		$route = $this->Rute->displaySelectedDataJoin($where);
+		$edges = $this->Rute->displayRoute();
+		$infrastructure = $this->Rute->displayInfrastructure();
 		
 		$data["route"] = $route; 
-		
+		$data["edges"] = $edges;
+		$data["infrastructure"] = $infrastructure;
 		$data["class"] = $this->class;
 		
 		$data["konten"] = "admin/route/route.form.view.php";
@@ -61,69 +63,54 @@ class Route extends CI_Controller {
 	public function save()
 	{
 		$id_transportation = $this->input->post("id_transportation");
-		$judul_berita_ina = $this->input->post("judul_berita_ina");
-		$judul_berita_eng = $this->input->post("judul_berita_eng");
-		$isi_berita_ina = $this->input->post("isi_berita_ina");
-		$isi_berita_eng = $this->input->post("isi_berita_eng");
-		$id_berita_tag = $this->input->post("id_berita_tag");
+		$id_edges = $this->input->post("id_edges");
+		$id_sarana_prasarana = $this->input->post("id_sarana_prasarana");
+		$deskripsi_eng = $this->input->post("deskripsi_eng");
+		$deskripsi_ina = $this->input->post("deskripsi_ina");
+		$waktu_perjalanan = $this->input->post("waktu_perjalanan");
+		$estimasi_biaya = $this->input->post("estimasi_biaya");
 		
 		$data = array(
-			"judul_berita_ina"=>$judul_berita_ina,
-			"judul_berita_eng"=>$judul_berita_eng,
-			"isi_berita_ina"=>$isi_berita_ina,
-			"isi_berita_eng"=>$isi_berita_eng
+			"id_edges"=>$id_edges,
+			"id_sarana_prasarana"=>$id_sarana_prasarana,
+			"deskripsi_eng"=>$deskripsi_eng,
+			"deskripsi_ina"=>$deskripsi_ina,
+			"waktu_perjalanan"=>$waktu_perjalanan,
+			"estimasi_biaya"=>$estimasi_biaya
 		);
 
 		$where = array(
-			"id_berita"=>$id_berita
+			"id_transportation"=>$id_transportation
 		);
 		
-		if( $id_berita != 0 ):
-			$result = $this->Berita->update($data, $where);
+		if( $id_transportation != 0 ):
+			$result = $this->Rute->update($data, $where);
 			
 			
-			$this->Berita->delete_tag_trans($where);
-			for( $i=0; $i<count($id_berita_tag); $i++ ):
-				$data_tag = array(
-					"id_berita"=>$id_berita,
-					"id_berita_tag"=>$id_berita_tag[$i]
-				);	
-				$this->Berita->insert_tag_trans($data_tag);
-			endfor;
 		else:
-			$result = $this->Berita->insert($data);
-			
-			$id_berita = $this->Berita->insert_id();
-			
-			for( $i=0; $i< count($id_berita_tag); $i++ ):
-				$data_tag = array(
-					"id_berita"=>$id_berita,
-					"id_berita_tag"=>$id_berita_tag[$i]
-				);
-				$this->Berita->insert_tag_trans($data_tag);
-			endfor;
+			$result = $this->Rute->insert($data);
 			
 		endif;
 		
 		if( $result ):
-			redirect("admin/news");
+			redirect("admin/route");
 		else:
 			echo "Gagal";
 		endif;
 	}
 	
-	public function delete($id_berita=0)
+	public function delete($id_transportation=0)
 	{
 		$where = array(
-			"id_berita"=>$id_berita
+			"id_transportation"=>$id_transportation
 		);
 		
-		if( $id_berita != "" ):
-			$result = $this->Berita->delete($where);
+		if( $id_transportation != "" ):
+			$result = $this->Rute->delete($where);
 		endif;
 		
 		if( $result ):
-			redirect("admin/news");
+			redirect("admin/route");
 		else:
 			echo "Gagal";
 		endif;
