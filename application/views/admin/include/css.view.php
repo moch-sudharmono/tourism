@@ -23,3 +23,8 @@
 <link href="<?=base_url();?>inc/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="<?=base_url();?>inc/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
+
+
+<link href="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet"/>
+<link href="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
+<link href="<?php echo base_url();?>inc/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"/>

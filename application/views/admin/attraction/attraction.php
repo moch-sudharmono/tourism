@@ -2,7 +2,7 @@
 <div class="portlet box blue">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-edit"></i> Tabel Data Promosi / <em>Promotion Table</em>
+            <i class="fa fa-edit"></i> Tabel Data Paket Wisata / <em>Pottential Attraction Table</em>
         </div>
         <div class="tools">
             <a href="javascript:;" class="collapse">
@@ -50,25 +50,31 @@
             <table class="table table-striped table-hover table-bordered" id="tag_table">
             <thead>
             <tr>
-                <th>Judul</th><th>Title</th>
-                <th>Deskripsi</th><th>Description</th>
+                <th>Judul</th>
+                <th>Title</th>
+                <th>Deskripsi</th>
+                <th>Description</th>
+                <th>Url</th>
                 <th width="250">Aksi / <em>Action</em></th>
             </tr>
             </thead>
             <tbody>
             <?php			
-                if( isset($promotion) and !empty($promotion) ):
-                foreach( $promotion as $row ):
+                if( isset($attraction) and !empty($attraction) ):
+                foreach( $attraction as $row ):
             ?>
             <tr>
-                <td><?php echo $row->promosi_ina ?></td><td><?php echo $row->promosi_eng ?></td>
-                <td><?php echo PotongKata($row->deskripsi_ina, 30) ?></td><td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
+                <td><?php echo $row->paket_wisata_ina ?></td>
+                <td><?php echo $row->paket_wisata_eng ?></td>
+                <td><?php echo PotongKata($row->deskripsi_ina, 30) ?></td>
+                <td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
+                <td><?php echo $row->url ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>admin/promotion/form/<?php echo $row->id_promosi ?>"> 
+                    <a href="<?php echo base_url() ?>index.php/admin/attraction/form/<?php echo $row->id_paket_wisata ?>"> 
                     	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
                     </a> 
                     |
-                    <a href="<?php echo base_url() ?>admin/promotion/delete/<?php echo $row->id_promosi ?>" class="hapus_promosi"> 
+                    <a href="<?php echo base_url() ?>index.php/admin/attraction/delete/<?php echo $row->id_paket_wisata ?>" class="hapus_attraction"> 
                     	<i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                     </a>
                 </td>
@@ -90,10 +96,10 @@
 
 <script>
 	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>index.php/admin/promotion/form/0"
+        location.href = "<?php echo base_url() ?>index.php/admin/attraction/form/0"
     });
 	
-	$(".hapus_promosi").click(function(e) {
+	$(".hapus_attraction").click(function(e) {
         if( confirm("Anda yakin / Are you Sure ?") )
 		{
 			return true;

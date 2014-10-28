@@ -21,53 +21,53 @@
                 </a>	
                 <ul class="sub-menu">
                     <li id="news">
-                        <a href="<?php echo base_url() ?>admin/news">
+                        <a href="<?php echo base_url() ?>index.php/admin/news">
                         Daftar Berita / <em>News Data</em>
                         </a>
                     </li>
                     <li id="tag">
-                        <a href="<?php echo base_url() ?>admin/tag">
+                        <a href="<?php echo base_url() ?>index.php/admin/tag">
                         	Tag
                         </a>
                     </li>
                 </ul>				
             </li>
             <li class="admin_menu" id="profile">
-                <a href="<?php echo base_url() ?>admin/profile">
+                <a href="<?php echo base_url() ?>index.php/admin/profile">
                 <i class="icon-basket"></i>
                 <span class="title">Lokasi Wisata / <em>Profile</em></span>
                 </a>					
             </li>				
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>testimonial">
+                <a href="<?php echo base_url() ?>index.php/admin/testimonial">
                 <i class="icon-rocket"></i>
                 <span class="title">Testimoni / <em>Testimonial</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>      
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>gallery">
+                <a href="<?php echo base_url() ?>index.php/gallery">
                 <i class="icon-basket"></i>
                 <span class="title">Galeri foto / <em>Gallery</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>	
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>attraction">
+                <a href="<?php echo base_url() ?>index.php/admin/attraction">
                 <i class="icon-basket"></i>
                 <span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>
             <li class="admin_menu parent">
-                <a href="<?php echo base_url() ?>infrastructure">
+                <a href="<?php echo base_url() ?>index.php/infrastructure">
                 <i class="icon-basket"></i>
                 <span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                 <span class="arrow "></span>
                 </a>		
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url() ?>infrastructure/categories">
+                        <a href="<?php echo base_url() ?>index.php/infrastructure/categories">
                         Kategori / <em>Categories</em>
                         </a>
                     </li>
@@ -79,7 +79,7 @@
                 </ul>			
             </li>	
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>sitemap">
+                <a href="<?php echo base_url() ?>index.php/admin/sitemap">
                 <i class="icon-basket"></i>
                 <span class="title">Peta Situs / <em>Sitemap</em></span>
                 <span class="arrow "></span>
@@ -100,19 +100,19 @@
                 </a>					
             </li>   
             <li class="admin_menu parent">
-                <a href="<?php echo base_url() ?>admin/promotion">
+                <a href="<?php echo base_url() ?>index.php/admin/promotion">
                 <i class="icon-basket"></i>
                 <span class="title">Promosi / <em>Promotion</em></span>
                 <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
                     <li id="promotion">
-                        <a href="<?php echo base_url() ?>admin/promotion">
+                        <a href="<?php echo base_url() ?>index.php/admin/promotion">
                         Promosi / <em>Promotion</em>
                         </a>
                     </li>
                     <li id="promotion_category">
-                        <a href="<?php echo base_url() ?>admin/promotion_category">
+                        <a href="<?php echo base_url() ?>index.php/admin/promotion_category">
                         	Kategori / <em>Category</em>
                         </a>
                     </li>
