@@ -39,11 +39,9 @@
                 </a>					
             </li>				
             <li class="admin_menu">
-<<<<<<< HEAD
+
                 <a href="<?php echo base_url() ?>index.php/admin/testimonial">
-=======
-                <a href="<?php echo base_url() ?>admin/testimonial">
->>>>>>> origin/master
+
                 <i class="icon-rocket"></i>
                 <span class="title">Testimoni / <em>Testimonial</em></span>
                 <span class="arrow "></span>
@@ -57,33 +55,25 @@
                 </a>					
             </li>	
             <li class="admin_menu">
-<<<<<<< HEAD
                 <a href="<?php echo base_url() ?>index.php/admin/attraction">
-=======
-                <a href="<?php echo base_url() ?>admin/attraction">
->>>>>>> origin/master
+
                 <i class="icon-basket"></i>
                 <span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>
             <li class="admin_menu parent">
-<<<<<<< HEAD
+
                 <a href="<?php echo base_url() ?>index.php/infrastructure">
-=======
-                <a href="<?php echo base_url() ?>admin/infrastructure">
->>>>>>> origin/master
                 <i class="icon-basket"></i>
                 <span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                 <span class="arrow "></span>
                 </a>		
                 <ul class="sub-menu">
                     <li>
-<<<<<<< HEAD
+
                         <a href="<?php echo base_url() ?>index.php/infrastructure/categories">
-=======
-                        <a href="<?php echo base_url() ?>admin/infrastructure_category">
->>>>>>> origin/master
+
                         Kategori / <em>Categories</em>
                         </a>
                     </li>
@@ -95,11 +85,9 @@
                 </ul>			
             </li>	
             <li class="admin_menu">
-<<<<<<< HEAD
+
                 <a href="<?php echo base_url() ?>index.php/admin/sitemap">
-=======
-                <a href="<?php echo base_url() ?>admin/sitemap">
->>>>>>> origin/master
+
                 <i class="icon-basket"></i>
                 <span class="title">Peta Situs / <em>Sitemap</em></span>
                 <span class="arrow "></span>
