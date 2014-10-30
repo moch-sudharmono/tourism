@@ -75,7 +75,7 @@
               <!-- BEGIN RECENT NEWS -->                            
               <h3>Terpopuler / <em>Most View</em></h3>
               <div class="recent-news margin-bottom-10">
-                <?
+                <?php
                 	if( isset( $popular ) and !empty($popular) ):
 					foreach( $popular as $rp ):
 				?>
@@ -105,7 +105,7 @@
 				?>
                 	<label class="ina"> Data tidak ditemukan</label>
                     <label class="eng"> Data not Found</label>
-                <?	
+                <?php	
 					endif;
 				?>
               </div>

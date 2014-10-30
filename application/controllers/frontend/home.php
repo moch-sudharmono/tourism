@@ -14,7 +14,11 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		$data["potensi_wisata"] = $this->navigation_lib->potensi_wisata();
+		// For Navigation
+		$d = $this->navigation_lib->load_all();
+		$data["potensi_wisata"] = $d["potensi_wisata"];
+		// End For Navigation
+		
 		$data["class"] = $this->class;
 		$data["konten"] = "frontend/home.view.php";
 		$this->load->view($this->route, $data);

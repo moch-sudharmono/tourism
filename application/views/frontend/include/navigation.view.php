@@ -55,7 +55,7 @@
         </li>
       </ul>
     </li>
-    <li class="dropdown">
+    <li class="dropdown" class="attraction" id="attraction">
       <a class="dropdown-toggle ina" data-toggle="dropdown" data-target="#" href="#">
         Potensi Wisata
       </a>
@@ -67,36 +67,27 @@
 			$potensi_wisata = isset( $potensi_wisata )?$potensi_wisata:array();
 			foreach( $potensi_wisata as $row ):
 		?>
-	        <li>
-            	<a href="<?php echo base_url() ?>frontend/attraction/" class="ina"><?php echo $row->kategori_ina ?></a>
-                <a href="<?php echo base_url() ?>" class="eng"><?php echo $row->kategori_ina ?></a>
+	        <li class="ina">
+            	<a href="<?php echo base_url() ?>frontend/attraction/display/<?php echo $row->id_lokasi_wisata_kategori ?>/<?php echo SEO($row->kategori_ina) ?>">
+					<?php echo $row->kategori_ina ?>
+                </a>
+            </li>
+            <li class="eng">
+            	<a href="<?php echo base_url() ?>frontend/attraction/display/<?php echo $row->id_lokasi_wisata_kategori ?>/<?php echo SEO($row->kategori_eng) ?>">
+					<?php echo $row->kategori_eng ?>
+                </a>
             </li>
         <?php
         	endforeach;
         ?>
       </ul>
     </li>
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-        Fasilitas Wisata 
-      </a>
-        
-      <ul class="dropdown-menu">
-        <li><a href="feature-typography.html">Bandara</a></li>
-        <li><a href="feature-buttons.html">Hotel</a></li>
-        <li><a href="feature-forms.html">Rumah Makan</a></li>
-      </ul>
-    </li>
-    <li class="tour_packages" id="tour_packages">
-      <a href="<?php echo base_url() ?>frontend/tour_packages">
-        Paket Wisata 
+    <li>
+      <a href="http://103.10.105.249/kita" target="_blank">
+        Komunitas
       </a>
     </li>
-    <li class="tour_packages" id="promotion">
-      <a href="<?php echo base_url() ?>frontend/promotion">
-        Promosi
-      </a>
-    </li>
+    
     <li class="gallery" id="gallery">
       <a href="<?php echo base_url() ?>frontend/gallery">
         Gallery

@@ -3,8 +3,6 @@
 class Pagination_lib extends CI_Controller {
 	public function paging($data=array())
 	{
-		$this->load->library('pagination');
-
 		$config['base_url'] = $data["url"];
 		$config['total_rows'] = $data["total_rows"];
 		$config['per_page'] = $data["per_page"]; 

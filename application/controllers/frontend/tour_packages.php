@@ -7,6 +7,7 @@ class Tour_packages extends CI_Controller {
 	public function __construct(){
 		//function check access			
 		parent::__construct();	
+		$this->load->model("admin/Lokasi_wisata_kategori");
 		$this->load->model("frontend/Tour_packages_m");
 		$this->load->library('pagination_lib');
 	}
@@ -36,6 +37,10 @@ class Tour_packages extends CI_Controller {
 			"halaman"=>$page
 		);
 		
+		// For Navigation
+		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
+		// End Navigation
+		
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
 		
 		$data["packages"] = $packages; 
@@ -50,7 +55,9 @@ class Tour_packages extends CI_Controller {
 		$where = array(
 			"id_paket_wisata"=>$id_paket_wisata
 		);
-		
+		// For Navigation
+		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
+		// End Navigation
 		$data["class"] = $this->class;
 		$data["packages"] = $this->Tour_packages_m->displaySelectedData($where); 
 		$data["konten"] = "frontend/tour_packages/packages.detail.view.php";

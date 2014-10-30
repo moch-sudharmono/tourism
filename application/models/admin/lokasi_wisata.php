@@ -33,6 +33,19 @@ class Lokasi_wisata extends MY_Model
 		return $query->result();
 	}
 	
+	public function displaySelectedDataPaging($where, $offset=10, $limit=0)
+	{
+		$this->db->limit($offset, $limit);
+		$this->db->where($where);
+		$query = $this->db->get($this->table);
+		return $query->result();
+	}
+	
+	public function countSelectedData($data)
+	{
+		$this->db->where($data);
+		return $this->db->count_all_results($this->table);
+	}
 	
 	public function countAllData()
 	{

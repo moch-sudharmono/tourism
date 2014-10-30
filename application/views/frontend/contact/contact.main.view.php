@@ -30,7 +30,7 @@
                   <textarea class="form-control" rows="5" id="contacts-message" name="pertanyaan"></textarea>
                 </div>
                 <div class="form-group" align="right">
-	                <input type="submit" value="Submit" class="btn blue" />
+	                <input type="submit" value="Kirim / Submit" class="btn blue" />
               	</div>
               </form>
               <!-- END FORM-->

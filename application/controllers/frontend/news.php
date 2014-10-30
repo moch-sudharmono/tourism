@@ -6,7 +6,8 @@ class News extends CI_Controller {
 	
 	public function __construct(){
 		//function check access			
-		parent::__construct();	
+		parent::__construct();
+		$this->load->model("admin/Lokasi_wisata_kategori");	
 		$this->load->model("frontend/News_m");
 		$this->load->library('pagination_lib');
 	}
@@ -43,13 +44,16 @@ class News extends CI_Controller {
 		
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
 		
+		// For Navigation
+		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
+		// End Navigation
+		
 		$data["popular"] = $popular; 
 		$data["news"] = $news; 
 		$data["news_tag"] = $news_tag; 
 		$data["class"] = $this->class;
 		
 		$data["konten"] = "frontend/news/news.main.view.php";
-		//print_r($data); exit;
 		$this->load->view($this->route, $data);
 	}
 	
@@ -67,6 +71,10 @@ class News extends CI_Controller {
 			$w = array( "id_berita"=>$rn->id_berita );
 			$rn->tags = $this->News_m->getNewsTag($w);
 		endforeach;
+		
+		// For Navigation
+		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
+		// End Navigation
 		
 		$data["class"] = $this->class;
 		$data["popular"] = $popular; 

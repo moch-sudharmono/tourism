@@ -2,17 +2,24 @@
 
 class Navigation_lib extends CI_Controller {
 	
+	protected $ci;
 	
 	public function __construct(){
 		//function check access			
-		parent::__construct();	
-		$this->load->model("admin/Lokasi_wisata_kategori");
+		$this->ci =& get_instance();
+		$this->ci->load->model("admin/Lokasi_wisata_kategori");
 		
+	}
+	
+	public function load_all()
+	{
+		$data["potensi_wisata"] = $this->potensi_wisata();
+		return $data;
 	}
 	
 	public function potensi_wisata()
 	{
-		return $this->Lokasi_wisata_kategori->display();;
+		return $this->ci->Lokasi_wisata_kategori->display();
 	}
 	
 }

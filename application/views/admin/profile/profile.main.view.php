@@ -56,8 +56,8 @@
             <tr>
                 <td><?php echo $row->nama_lokasi_wisata_ina ?></td>
                 <td><?php echo $row->nama_lokasi_wisata_eng ?></td>
-                <td><?php echo $row->deskripsi_ina ?></td>
-                <td><?php echo $row->deskripsi_eng ?></td>
+                <td><?php echo PotongKata($row->deskripsi_ina, 20) ?></td>
+                <td><?php echo PotongKata($row->deskripsi_eng, 20) ?></td>
                 <td align="center"> 
                     <a href="<?php echo base_url() ?>admin/profile/form/<?php echo $row->id_lokasi_wisata ?>"> <i class="fa fa-edit">
                     	</i> Ubah / <em>Edit</em> 
