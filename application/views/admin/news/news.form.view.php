@@ -1,3 +1,7 @@
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
 <?php
 	$news = isset($news)?$news:array();
 	$id_berita = isset( $news[0]->id_berita )?$news[0]->id_berita:0;
@@ -89,6 +93,30 @@
                     </div>
                 </div>                                                                  
             </div>
+            <h3> Foto-foto / <em>Photos</em></h3>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-12" align="center">
+                    <a class="btn yellow" data-target="#newsupload" data-toggle="modal">Unggah Foto / <em>Upload Photos</em> </a>
+                </div>
+                <div class="col-md-12" align="center">
+                    <textarea name="gambar" id="gambar" class="form-control" readonly="readonly"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                    <?php
+                    	$gambar = isset($gambar)?$gambar:array();
+						foreach( $gambar as $row ):
+					?>
+                        <div class="col-md-2" align="center">
+							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
+                            	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
+                        	</a>
+                        </div>
+                    <?php
+                    	endforeach;
+					?>
+                </div>
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
@@ -101,6 +129,31 @@
         <!-- END FORM-->
     </div>
     <!-- END VALIDATION STATES-->
+</div>
+
+
+<div id="newsupload" class="modal container fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Unggah Foto-foto / <em>Upload Photos</em></h4>
+    </div>
+    <div class="modal-body">
+       <?php 
+	   		$config = array(
+				"filetype"=>"gif|jpe?g|png",
+				"filetype_caption"=>"JPG, GIF, PNG",
+				"filesize"=>5000000,
+				"filesize_caption"=>"5 MB",
+				"content"=>"gambar"
+			);
+	   		$this->load->view("upload/formupload.view.php", $config);
+	   ?>
+       
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn blue" id="SelectFile">Selesai / Done</button>
+    </div>
 </div>
 
 <script>

@@ -69,6 +69,24 @@ class Berita extends MY_Model
 	{
 		return $this->db->delete("pr_berita_tag_trans", $where);
 	}
+	
+	/*Upload Gambar*/
+	public function displayGambar($where)
+	{
+		$this->db->where($where);
+		$query = $this->db->get("pr_berita_gambar");
+		return $query->result();
+	}
+	
+	public function insertGambar($data)
+	{
+		return $this->db->insert("pr_berita_gambar", $data);
+	}
+	
+	public function deleteGambar($where)
+	{
+		return $this->db->delete("pr_berita_gambar", $where);
+	}
 }
 
 ?>

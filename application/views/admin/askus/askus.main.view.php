@@ -47,11 +47,11 @@
             <td>
                 <?php if($value->jawaban == '' || $value->jawaban == null){ ?>
                 <a href="<?php echo base_url() ?>admin/askus/form/<?php echo $value->id_tanya_kami ?>" class="label label-sm label-warning Answer">
-                Belum Dijawab / <em>Waiting for Answer</em>
+                	Belum Dijawab / <em>Waiting for Answer</em>
                 </a>
                 <?php }else{ ?>
-                <a class="label label-sm label-success">
-                Telah Dijawab / <em>Answered</em> 
+                <a href="<?php echo base_url() ?>admin/askus/form/<?php echo $value->id_tanya_kami ?>" class="label label-sm label-success">
+                	Telah Dijawab / <em>Answered</em> 
                 </a>
                 <?php } ?>
             </td>

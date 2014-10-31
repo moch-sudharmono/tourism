@@ -2,7 +2,7 @@
 
 class Attraction extends CI_Controller {
 	public $route = "admin/index.php";
-	private $class = "Attraction";
+	private $class = "attraction";
 
 	public function __construct(){
 		//function check access			

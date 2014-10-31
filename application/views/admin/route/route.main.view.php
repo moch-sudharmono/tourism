@@ -75,7 +75,7 @@
 		foreach($route as $no=>$val){
 		?>
         <tr>
-        	<td align="right">
+        	<td align="right" width="50">
                  <?php echo $no+1; ?>
             </td>
             <td>
@@ -90,7 +90,7 @@
             <td>
                  <?php echo $val['estimasi_biaya']; ?>
             </td>
-            <td>
+            <td align="center">
                 <a href="<?php echo base_url().'admin/route/form/'.$val['id_transportation']; ?>">
                        <i class="fa fa-edit"></i> Ubah / Edit
                 </a>

@@ -3,6 +3,7 @@ $askus = (isset($askus)?$askus:array());
 $id_tanya_kami = isset( $askus[0]->id_tanya_kami )?$askus[0]->id_tanya_kami:0;
 $email = isset( $askus[0]->email )?$askus[0]->email:"";
 $pertanyaan = isset( $askus[0]->pertanyaan )?$askus[0]->pertanyaan:"";
+$jawaban = isset( $askus[0]->jawaban )?$askus[0]->jawaban:"";
 ?>
 <!-- BEGIN VALIDATION STATES-->
 <div class="portlet box green">
@@ -29,7 +30,7 @@ $pertanyaan = isset( $askus[0]->pertanyaan )?$askus[0]->pertanyaan:"";
                     <label class="control-label col-md-3">Alamat Surel Pengirim / <em>Email Sender</em>
                     </label>
                     <div class="col-md-4">
-                        <input type="text" name="email" data-required="1" class="form-control" readonly placeholder="<?php echo $email; ?>"/>
+                        <label class="control-label"> <?php echo $email; ?> </label>
                     </div>
                 </div>                                    
                 
@@ -37,9 +38,7 @@ $pertanyaan = isset( $askus[0]->pertanyaan )?$askus[0]->pertanyaan:"";
                     <label class="control-label col-md-3">Pertanyaan / <em>Question</em>
                     </label>
                     <div class="col-md-9">
-                        <textarea class="form-control" rows="6" id="pertanyaan" name="pertanyaan" data-error-container="#editor1_error" readonly placeholder="<?php echo $pertanyaan; ?>"></textarea>
-                        <div id="editor1_error">
-                        </div>
+                        <label class="control-label"><?php echo $pertanyaan; ?></label>
                     </div>
                 </div>
                 
@@ -48,7 +47,7 @@ $pertanyaan = isset( $askus[0]->pertanyaan )?$askus[0]->pertanyaan:"";
                     * </span>
                     </label>
                     <div class="col-md-9">
-                        <textarea class="ckeditor form-control" id="jawaban" rows="6" name="jawaban" data-error-container="#editor2_error"></textarea>
+                        <textarea class="ckeditor form-control" id="jawaban" rows="6" name="jawaban" data-error-container="#editor2_error"><?php echo $jawaban ?></textarea>
                         <div id="editor2_error">
                         </div>
                     </div>
@@ -58,8 +57,8 @@ $pertanyaan = isset( $askus[0]->pertanyaan )?$askus[0]->pertanyaan:"";
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" name="submit" id="submit_askus" class="btn green">Submit</button>
-                        <button type="button" ID="CancelButton" class="btn default">Cancel</button>
+                        <button type="button" ID="CancelButton" class="btn default">Batal / Cancel</button>
+                        <button type="submit" name="submit" id="submit_askus" class="btn green">Simpan / Save</button>
                     </div>
                 </div>
             </div>

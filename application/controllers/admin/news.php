@@ -52,6 +52,9 @@ class News extends CI_Controller {
 		$news = $this->Berita->displaySelectedData($where);
 		$berita_tag = $this->Berita_tag->display();
 		$berita_tag_trans = $this->Berita->display_tag_trans($where);
+		$gambar = $this->Berita->displayGambar($where);
+		
+		$data["gambar"] = $gambar;
 		$data["news"] = $news; 
 		$data["berita_tag"] = $berita_tag; 
 		$data["berita_tag_trans"] = $berita_tag_trans;
@@ -69,6 +72,9 @@ class News extends CI_Controller {
 		$isi_berita_ina = $this->input->post("isi_berita_ina");
 		$isi_berita_eng = $this->input->post("isi_berita_eng");
 		$id_berita_tag = $this->input->post("id_berita_tag");
+		$gambar = $this->input->post("gambar");
+		$dgambar = explode("]", $gambar);
+		
 		
 		$data = array(
 			"judul_berita_ina"=>$judul_berita_ina,
@@ -91,7 +97,22 @@ class News extends CI_Controller {
 					"id_berita"=>$id_berita,
 					"id_berita_tag"=>$id_berita_tag[$i]
 				);	
-				$this->Berita->insert_tag_trans($data_tag);
+				if( !empty($id_berita_tag[$i]) ):
+					$this->Berita->insert_tag_trans($data_tag);
+				endif;
+			endfor;
+			
+			// Insert Gambar
+			$this->Berita->deleteGambar($where);
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_berita"=>$id_berita,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Berita->insertGambar($data_gambar);
+				endif;
 			endfor;
 		else:
 			$result = $this->Berita->insert($data);
@@ -103,7 +124,21 @@ class News extends CI_Controller {
 					"id_berita"=>$id_berita,
 					"id_berita_tag"=>$id_berita_tag[$i]
 				);
-				$this->Berita->insert_tag_trans($data_tag);
+				if( !empty($id_berita_tag[$i]) ):
+					$this->Berita->insert_tag_trans($data_tag);
+				endif;
+			endfor;
+			
+			// Insert Gambar
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_berita"=>$id_berita,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Berita->insertGambar($data_gambar);
+				endif;
 			endfor;
 			
 		endif;

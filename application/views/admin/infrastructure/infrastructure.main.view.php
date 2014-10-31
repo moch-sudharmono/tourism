@@ -50,7 +50,7 @@
         <table width="100%" class="table table-striped table-hover table-bordered" id="sample_editable_1">
         <thead>
         <tr>
-            <th>No.</th>
+            <th width="50">No.</th>
             <th>
                  Judul
             </th>
@@ -71,11 +71,11 @@
 		foreach($infrastructure as $no=>$value) {
 		?>
         <tr>
-            <td><?php echo $no+1?></td>
+            <td align="right"><?php echo $no+1?></td>
             <td><?php echo $value->nama_ina;?></td>
             <td><?php echo $value->nama_eng;?></td>
             <td><?php echo $value->url;?></td>
-            <td>
+            <td align="center">
                 <a href="<?php echo base_url() ?>admin/infrastructure/form/<?php echo $value->id_sarana_prasarana ?>">
                     	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
                 </a>

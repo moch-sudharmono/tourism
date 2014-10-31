@@ -9,6 +9,7 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->model("admin/Lokasi_wisata_kategori");	
 		$this->load->model("frontend/News_m");
+		$this->load->model("admin/berita");
 		$this->load->library('pagination_lib');
 	}
 	

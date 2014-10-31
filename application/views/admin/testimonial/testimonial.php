@@ -45,11 +45,11 @@
                 </div>
             </div>
         </div>
-            <table class="table table-striped table-hover table-bordered" id="tag_table">
+            <table width="100%" class="table table-striped table-hover table-bordered" id="tag_table">
             <thead>
             <tr>
-                <th>Lokasi Wisata/ Tourism</th>
-                <th>Testimoni/Testimonial</th>
+                <th>Lokasi Wisata / Tourism</th>
+                <th>Testimoni / Testimonial</th>
                 <th>Tanggal / Date</th>
                 <th width="250">Aksi / <em>Action</em></th>
             </tr>
@@ -62,10 +62,10 @@
             <tr>
                 <td><?php echo $row->nama_lokasi_wisata_ina.'/'.$row->nama_lokasi_wisata_eng ?></td>
                 <td><?php echo $row->testimoni ?></td>
-                <td><?php echo $row->tanggal_testimoni ?></td>
+                <td><?php echo TglIndo($row->tanggal_testimoni) ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>index.php/admin/testimonial/form/<?php echo $row->id_testimoni_lokasi_wisata ?>"> 
-                    	<i class="fa"></i> <?php if ($row->publish=="N") { echo "Belum Dipublikasi / <em>Not Published</em>";} else {echo "Sudah Dipublikasi / <em>Published</em>";} ?>
+                    <a href="<?php echo base_url() ?>admin/testimonial/form/<?php echo $row->id_testimoni_lokasi_wisata ?>"> 
+                    	<i class="fa fa-send"></i> <?php if ($row->publish=="N") { echo "Belum Dipublikasi / <em>Not Published</em>";} else {echo "Sudah Dipublikasi / <em>Published</em>";} ?>
                     </a> 
                 </td>
             </tr>

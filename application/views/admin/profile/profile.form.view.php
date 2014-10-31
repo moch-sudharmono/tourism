@@ -143,10 +143,26 @@
                 <div class="form-group">
                 	<div class="col-md-12" align="center">
                     	<a class="btn yellow" data-target="#static2" data-toggle="modal">Unggah Foto / <em>Upload Photos</em> </a>
-                        <input type="text" name="filename" id="filename" value="" />
+                    </div>
+                    <div class="col-md-12" align="center">
+                        <textarea name="gambar" id="gambar" class="form-control" readonly="readonly"></textarea>
                     </div>
                 </div>
                 
+                <div class="form-group">
+                    <?php
+                    	$gambar = isset($gambar)?$gambar:array();
+						foreach( $gambar as $row ):
+					?>
+                        <div class="col-md-2" align="center">
+							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
+                            	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
+                        	</a>
+                        </div>
+                    <?php
+                    	endforeach;
+					?>
+                </div>
                 
                 <h3> Sarana Prasarana / <em>Infrastructure</em></h3>
                 <hr />
@@ -201,9 +217,10 @@
 				"filetype"=>"gif|jpe?g|png",
 				"filetype_caption"=>"JPG, GIF, PNG",
 				"filesize"=>5000000,
-				"filesize_caption"=>"5 MB"
+				"filesize_caption"=>"5 MB",
+				"content"=>"gambar"
 			);
-	   		$this->load->view("admin/profile/formupload.view.php", $config);
+	   		$this->load->view("upload/formupload.view.php", $config);
 	   ?>
        
     </div>
