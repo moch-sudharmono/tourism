@@ -97,7 +97,24 @@
                 <i class="icon-basket"></i>
                 <span class="title">Rute Perjalanan / <em>Route</em></span>
                 <span class="arrow "></span>
-                </a>					
+                </a>	
+                <ul class="sub-menu">
+                    <li id="news">
+                        <a href="<?php echo base_url() ?>admin/route">
+                        Rute Perjalanan / <em>Route</em>
+                        </a>
+                    </li>
+                    <li id="node">
+                        <a href="<?php echo base_url() ?>admin/node">
+                        Titik Perjalanan / <em>Nodes</em>
+                        </a>
+                    </li>
+                    <li id="edge">
+                        <a href="<?php echo base_url() ?>admin/edge">
+                        Jalur Perjalanan / <em>Edges</em>
+                        </a>
+                    </li>
+                </ul>						
             </li>   
             <li class="admin_menu parent">
                 <a href="<?php echo base_url() ?>admin/promotion">
