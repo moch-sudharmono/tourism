@@ -155,7 +155,13 @@
 						foreach( $gambar as $row ):
 					?>
                         <div class="col-md-2" align="center">
+<<<<<<< HEAD
 							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
+=======
+							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
+                            	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
+                        	</a>
+>>>>>>> origin/master
                         </div>
                     <?php
                     	endforeach;
@@ -218,7 +224,7 @@
 				"filesize_caption"=>"5 MB",
 				"content"=>"gambar"
 			);
-	   		$this->load->view("admin/profile/formupload.view.php", $config);
+	   		$this->load->view("upload/formupload.view.php", $config);
 	   ?>
        
     </div>

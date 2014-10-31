@@ -1,7 +1,9 @@
 <?php
-	$route = isset($route)?$route:array();
-	$infrastructure = isset($infrastructure)?$infrastructure:array();
-	$edges = isset($edges)?$edges:array();
+	//Route di set $route[0] agar tinggal pakai saja arraynya
+	$route = !empty($route)?$route[0]:array();
+	
+	$infrastructure = !empty($infrastructure)?$infrastructure:array();
+	$edges = !empty($edges)?$edges:array();
 	
 	$id_transportation = isset( $route['id_transportation'])?$route['id_transportation']:0;
 	$deskripsi_ina = isset( $route['deskripsi_ina'] )?$route['deskripsi_ina']:"";

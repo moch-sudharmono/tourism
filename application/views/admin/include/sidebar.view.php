@@ -15,7 +15,7 @@
             </li>
             <li class="parent admin_menu">
                 <a href="#">
-                <i class="icon-basket"></i>
+                <i class="fa fa-file-text-o"></i>
                 <span class="title">Berita / <em>News</em></span>
                 <span class="arrow "></span>
                 </a>	
@@ -34,15 +34,15 @@
             </li>
             <li class="admin_menu" id="profile">
                 <a href="<?php echo base_url() ?>admin/profile">
-                <i class="icon-basket"></i>
+                <i class="fa fa-map-marker"></i>
                 <span class="title">Lokasi Wisata / <em>Profile</em></span>
                 </a>					
             </li>				
             <li class="admin_menu" id="testimoni">
                 <a href="<?php echo base_url() ?>admin/testimonial">
-                    <i class="icon-rocket"></i>
+                    <i class="fa fa-comments-o"></i>
                     <span class="title">Testimoni / <em>Testimonial</em></span>
-                    <span class="arrow "></span>
+
                 </a>					
             </li>      
             <!--<li class="admin_menu">
@@ -52,16 +52,16 @@
                 <span class="arrow "></span>
                 </a>					
             </li>	-->
-            <li class="admin_menu">
+            <li class="admin_menu" id="attraction">
                 <a href="<?php echo base_url() ?>admin/attraction">
-                <i class="icon-basket"></i>
+                <i class="fa fa-building-o"></i>
                 <span class="title">Paket Wisata / <em>Potential Attraction</em></span>
-                <span class="arrow "></span>
+
                 </a>					
             </li>
             <li class="admin_menu parent">
                 <a href="<?php echo base_url() ?>admin/infrastructure">
-                <i class="icon-basket"></i>
+                <i class="fa fa-life-bouy"></i>
                 <span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                 <span class="arrow "></span>
                 </a>		
@@ -78,30 +78,46 @@
                     </li>
                 </ul>			
             </li>	
-            <li class="admin_menu">
+           <!-- <li class="admin_menu" id="sitemap">
                 <a href="<?php echo base_url() ?>admin/sitemap">
-                <i class="icon-basket"></i>
+                <i class="fa fa-sitemap"></i>
                 <span class="title">Peta Situs / <em>Sitemap</em></span>
-                <span class="arrow "></span>
                 </a>					
-            </li>
+            </li>-->
             <li class="admin_menu" id="askus">
                 <a href="<?php echo base_url() ?>admin/askus">
-                <i class="icon-basket"></i>
+                <i class="fa fa-question"></i>
                 <span class="title">Tanya Kami / <em>Ask Us</em></span>
-                <span class="arrow "></span>
+
                 </a>					
             </li>
             <li class="admin_menu" id="route">
                 <a href="<?php echo base_url() ?>admin/route">
-                <i class="icon-basket"></i>
+                <i class="fa fa-road"></i>
                 <span class="title">Rute Perjalanan / <em>Route</em></span>
                 <span class="arrow "></span>
-                </a>					
+                </a>	
+                <ul class="sub-menu">
+                    <li id="news">
+                        <a href="<?php echo base_url() ?>admin/route">
+                        Rute Perjalanan / <em>Route</em>
+                        </a>
+                    </li>
+                    <li id="node">
+                        <a href="<?php echo base_url() ?>admin/node">
+                        Titik Perjalanan / <em>Nodes</em>
+                        </a>
+                    </li>
+                    <li id="edge">
+                        <a href="<?php echo base_url() ?>admin/edge">
+                        Jalur Perjalanan / <em>Edges</em>
+                        </a>
+                    </li>
+                </ul>						
             </li>   
             <li class="admin_menu parent">
                 <a href="<?php echo base_url() ?>admin/promotion">
-                <i class="icon-basket"></i>
+                <i class="fa fa-tags"></i>
                 <span class="title">Promosi / <em>Promotion</em></span>
                 <span class="arrow "></span>
                 </a>

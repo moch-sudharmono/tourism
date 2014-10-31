@@ -47,10 +47,10 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+        <table width="100%" class="table table-striped table-hover table-bordered" id="sample_editable_1">
         <thead>
         <tr>
-            <th>No.</th>
+            <th width="50">No.</th>
             <th>
                  Kategori
             </th>
@@ -68,9 +68,9 @@
             <td align="right"><?php echo $no+1?></td>
             <td><?php echo $value->kategori_sarana_prasarana_ina?></td>
             <td><?php echo $value->kategori_sarana_prasarana_eng?></td>
-            <td>
+            <td align="center">
                 <a class="delete_category" href="<?php echo base_url().'admin/infrastructure_category/delete/'.$value->id_kategori_sarana_prasarana; ?>">
-                <i class="fa fa-trash-o"></i> Delete 
+                <i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                 </a>
             </td>
         </tr>
