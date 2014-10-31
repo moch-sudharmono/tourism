@@ -107,7 +107,7 @@
 								<td><?php echo $value["nama_lokasi_wisata_ina"]?></td>
                                 <td><?php echo $value["nama_lokasi_wisata_eng"]?></td>
 								<td>								
-                                	<a href="<?php echo base_url().'index.php/profile/addimage'; ?>" class="btn blue">
+                                	<a href="<?php echo base_url().'index.php/profile/addimage?id='.$value['id_lokasi_wisata']; ?>" class="btn blue">
 											Add Image <i class="fa fa-plus"></i>
 									</a>
                                 </td>

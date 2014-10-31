@@ -143,6 +143,7 @@
                 <div class="form-group">
                 	<div class="col-md-12" align="center">
                     	<a class="btn yellow" data-target="#static2" data-toggle="modal">Unggah Foto / <em>Upload Photos</em> </a>
+                        <input type="text" name="filename" id="filename" value="" />
                     </div>
                 </div>
                 
@@ -195,17 +196,22 @@
         <h4 class="modal-title">Unggah Foto-foto / <em>Upload Photos</em></h4>
     </div>
     <div class="modal-body">
-       <?php $this->load->view("admin/include/formupload.view.php") ?>
+       <?php 
+	   		$config = array(
+				"filetype"=>"gif|jpe?g|png",
+				"filetype_caption"=>"JPG, GIF, PNG",
+				"filesize"=>5000000,
+				"filesize_caption"=>"5 MB"
+			);
+	   		$this->load->view("admin/profile/formupload.view.php", $config);
+	   ?>
+       
     </div>
     <div class="modal-footer">
         <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
-        <button type="button" data-dismiss="modal" class="btn blue">Selesai / Done</button>
+        <button type="button" data-dismiss="modal" class="btn blue" id="SelectFile">Selesai / Done</button>
     </div>
 </div>
-
-
-
-
 
 
 
@@ -245,8 +251,15 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	$("#back").click(function(e) {
         location.href = "<?php echo base_url() ?>admin/profile"
     });
-	
+	<?php if( isset($parent_id) and !empty($parent_id) ): ?>
 	$("#parent_id").val("<?php echo $parent_id; ?>");
+	<?php endif; ?>
+	
+	<?php if( isset($id_lokasi_wisata_kategori) and !empty($id_lokasi_wisata_kategori) ): ?>
 	$("#id_lokasi_wisata_kategori").val("<?php echo $id_lokasi_wisata_kategori ?>");
+	<?php endif; ?>
+	<?php if( isset($id_peta) and !empty($id_peta) ): ?>
 	$("#id_peta").val("<?php echo $id_peta ?>");
+	<?php endif; ?>
 </script>
+

@@ -38,62 +38,62 @@
                 <span class="title">Lokasi Wisata / <em>Profile</em></span>
                 </a>					
             </li>				
-            <li class="admin_menu">
-                <a href="<?php echo base_url() ?>testimonial">
-                <i class="icon-rocket"></i>
-                <span class="title">Testimoni / <em>Testimonial</em></span>
-                <span class="arrow "></span>
+            <li class="admin_menu" id="testimoni">
+                <a href="<?php echo base_url() ?>admin/testimonial">
+                    <i class="icon-rocket"></i>
+                    <span class="title">Testimoni / <em>Testimonial</em></span>
+                    <span class="arrow "></span>
                 </a>					
             </li>      
-            <li class="admin_menu">
+            <!--<li class="admin_menu">
                 <a href="<?php echo base_url() ?>gallery">
                 <i class="icon-basket"></i>
                 <span class="title">Galeri foto / <em>Gallery</em></span>
                 <span class="arrow "></span>
                 </a>					
-            </li>	
+            </li>	-->
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>attraction">
+                <a href="<?php echo base_url() ?>admin/attraction">
                 <i class="icon-basket"></i>
                 <span class="title">Paket Wisata / <em>Potential Attraction</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>
             <li class="admin_menu parent">
-                <a href="<?php echo base_url() ?>infrastructure">
+                <a href="<?php echo base_url() ?>admin/infrastructure">
                 <i class="icon-basket"></i>
                 <span class="title">Sarana Prasarana / <em>Infrastructure</em></span>
                 <span class="arrow "></span>
                 </a>		
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url() ?>infrastructure/categories">
+                <ul class="sub-menu parent">
+                    <li id="infrastructure_category">
+                        <a href="<?php echo base_url() ?>admin/infrastructure_category">
                         Kategori / <em>Categories</em>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() ?>infrastructure">
+                    <li id="infrastructure">
+                        <a href="<?php echo base_url() ?>admin/infrastructure">
                         Daftar Sarana Prasarana / <em>Infrastructure Data</em>
                         </a>
                     </li>
                 </ul>			
             </li>	
             <li class="admin_menu">
-                <a href="<?php echo base_url() ?>sitemap">
+                <a href="<?php echo base_url() ?>admin/sitemap">
                 <i class="icon-basket"></i>
                 <span class="title">Peta Situs / <em>Sitemap</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>
-            <li class="admin_menu">
-                <a href="<?php echo base_url() ?>askus">
+            <li class="admin_menu" id="askus">
+                <a href="<?php echo base_url() ?>admin/askus">
                 <i class="icon-basket"></i>
                 <span class="title">Tanya Kami / <em>Ask Us</em></span>
                 <span class="arrow "></span>
                 </a>					
             </li>
-            <li class="admin_menu">
-                <a href="<?php echo base_url() ?>route">
+            <li class="admin_menu" id="route">
+                <a href="<?php echo base_url() ?>admin/route">
                 <i class="icon-basket"></i>
                 <span class="title">Rute Perjalanan / <em>Route</em></span>
                 <span class="arrow "></span>

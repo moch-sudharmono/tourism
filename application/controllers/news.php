@@ -18,10 +18,8 @@ class News extends CI_Controller {
 		$data['query']			= $this->Pr_berita->get_all();
 		$this->load->view('news', $data);
 	}
-	
-<<<<<<< HEAD
-=======
-	public function form()
+
+/*	public function form()
 	{
 		$data['title'] 			= "News";
 		$data['small_title']	  = "Berita Terkini";		
@@ -34,14 +32,8 @@ class News extends CI_Controller {
 		}
 		$this->load->view('newsForm', $data);
 	}
-	
-	public function load_data()
-	{
-		$data['modul']			= $this->modul;
-		$data['action']			= "insert";
-	}
-	
->>>>>>> origin/master
+	*/
+
 	public function add()
 	{
 		$data['title'] 			= "News";
@@ -54,8 +46,6 @@ class News extends CI_Controller {
 	public function insert()
 	{
 		$task = $_POST['submit'];
-		$id="";
-
 		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
@@ -71,7 +61,7 @@ class News extends CI_Controller {
 				   'tanggal_berita'=>$tanggal                   
                     );
 			//print_r($data);
-			$this->Pr_berita->validate($data,$id);		
+			$this->Pr_berita->insert($data);		
 					
 			redirect('News');					
 		}
@@ -80,10 +70,7 @@ class News extends CI_Controller {
 	
 	public function edit()
 	{
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
+		$data['id']			  =$_GET['id'];
 		$data['title'] 			= "News";
 		$data['small_title']	= "Berita Terkini";		
 		$data['modul']			= $this->modul;
@@ -94,19 +81,18 @@ class News extends CI_Controller {
 	
 	public function update()
 	{
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 		$task = $_POST['submit'];
 		$id = $_POST['id_news'];
-
+		
+		//echo $id;
+		
 		if($task=="save"){	
 			$title_eng 	= $this->input->post('title_eng');
             $title_ind 	= $this->input->post('title_ind');			
-            $isi_eng 	  = $this->input->post('isi_eng');			
-            $isi_ind 	  = $this->input->post('isi_ind');
-			$tanggal		 = $this->input->post('datepicker');
+            $isi_eng 	= $this->input->post('isi_eng');			
+            $isi_ind 	= $this->input->post('isi_ind');
+			$tanggal	= $this->input->post('datepicker');
 			
             $data = array(
                    'judul_berita_eng'=>$title_eng,
@@ -115,8 +101,8 @@ class News extends CI_Controller {
 				   'isi_berita_ina'=>$isi_ind,
 				   'tanggal_berita'=>$tanggal                   
                     );
-				
-			$this->Pr_berita->validate($data,$id);		
+			//print_r($data);
+			$this->Pr_berita->update($data,$id);		
 			//echo $id.$tanggal;
 			redirect('News');					
 		}

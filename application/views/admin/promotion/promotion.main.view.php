@@ -90,7 +90,7 @@
 
 <script>
 	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>admin/promotion/form/0"
+        location.href = "<?php echo base_url() ?>index.php/admin/promotion/form/0"
     });
 	
 	$(".hapus_promosi").click(function(e) {

@@ -5,7 +5,7 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- BEGIN PAGE CONTENT-->
-        <form id="fileupload" action="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+        <form id="UploadForm" action="<?php echo base_url() ?>upload/do_upload" method="POST" enctype="multipart/form-data">
             <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
             <div class="row fileupload-buttonbar">
                 <div class="col-lg-12">
@@ -15,7 +15,7 @@
                     <span>
                     	Tambah Foto / <em>Add Photos</em>
                     </span>
-                    <input type="file" name="files[]" multiple>
+                    <input type="file" name="userfile" multiple>
                     </span>
                     <button type="submit" class="btn blue start">
                     <i class="fa fa-upload"></i>
@@ -29,13 +29,7 @@
                     	Batalkan / <em>Cancel upload</em> 
                     </span>
                     </button>
-                    <button type="button" class="btn red delete">
-                    <i class="fa fa-trash"></i>
-                    <span>
-                    Hapus / <em>Delete</em> 
-                    </span>
-                    </button>
-                    <input type="checkbox" class="toggle">
+
                     <!-- The global file processing state -->
                     <span class="fileupload-process">
                     </span>
@@ -54,7 +48,13 @@
                 </div>
             </div>
             <!-- The table listing the files available for upload/download -->
-            <table role="presentation" class="table table-striped clearfix">
+            <table role="presentation" class="table table-striped clearfix" id="TblUploadImage">
+            <thead>
+            	<tr>
+                	<th>Foto / Photo</th><th>Nama File / File Name</th>
+                    <th>Ukuran File / File Size</th><th>Aksi / Action</th>
+                </tr>
+            </thead>
             <tbody class="files">
             </tbody>
             </table>
@@ -85,6 +85,7 @@
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
         <td>
+			
             <span class="preview"></span>
         </td>
         <td>
@@ -116,114 +117,99 @@
 </script>
 <!-- The template to display files available for download -->
 <script id="template-download" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-            <tr class="template-download fade">
-                <td>
-                    <span class="preview">
-                        {% if (file.thumbnailUrl) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-							<input type="text" value="{%=file.name%}" />
-                        {% } %}
-                    </span>
-                </td>
-                <td>
-                    <p class="name">
-                        {% if (file.url) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                        {% } else { %}
-                            <span>{%=file.name%}</span>
-                        {% } %}
-                    </p>
-                    {% if (file.error) { %}
-                        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-                    {% } %}
-                </td>
-                <td>
-                    <span class="size">{%=o.formatFileSize(file.size)%}</span>
-                </td>
-                <td>
-                    {% if (file.deleteUrl) { %}
-                        <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                            <i class="fa fa-trash-o"></i>
-                            <span>Delete</span>
-                        </button>
-                        <input type="checkbox" name="delete" value="1" class="toggle">
-                    {% } else { %}
-                        <button class="btn yellow cancel btn-sm">
-                            <i class="fa fa-ban"></i>
-                            <span>Cancel</span>
-                        </button>
-                    {% } %}
-                </td>
-            </tr>
-        {% } %}
-    </script>
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="<?php echo base_url() ?>inc/global/plugins/respond.min.js"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/excanvas.min.js"></script> 
-<![endif]-->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="<?php echo base_url() ?>inc/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-<!-- END PAGE LEVEL PLUGINS-->
-<!-- BEGIN:File Upload Plugin JS files-->
-<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
-<!-- The Templates plugin is included to render the upload/download listings -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js"></script>
-<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/vendor/load-image.min.js"></script>
-<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js"></script>
-<!-- blueimp Gallery script -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js"></script>
-<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
-<!-- The basic File Upload plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
-<!-- The File Upload processing plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
-<!-- The File Upload image preview & resize plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js"></script>
-<!-- The File Upload audio preview plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
-<!-- The File Upload video preview plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js"></script>
-<!-- The File Upload validation plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
-<!-- The File Upload user interface plugin -->
-<script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js"></script>
-<!-- The main application script -->
-<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
-<!--[if (gte IE 8)&(lt IE 10)]>
-    <script src="<?php echo base_url() ?>inc/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js"></script>
-    <![endif]-->
-<!-- END:File Upload Plugin JS files-->
-<script src="<?php echo base_url() ?>inc/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/admin/pages/scripts/form-fileupload.js"></script>
+	{% for (var i=0, file; file=o.files[i]; i++) { %}
+		<tr class="template-download fade">
+			<td>
+				<span class="preview">
+					{% if (file.thumbnailUrl) { %}
+						<input type="checkbox" value="{%=file.name%}" class="SelectFileName" />
+						<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+					{% } %}
+				</span>
+			</td>
+			<td>
+				<p class="name">
+					{% if (file.url) { %}
+						<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+					{% } else { %}
+						<span>{%=file.name%}</span>
+					{% } %}
+				</p>
+				{% if (file.error) { %}
+					<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+				{% } %}
+			</td>
+			<td>
+				<span class="size">{%=o.formatFileSize(file.size)%}</span>
+			</td>
+			<td>
+				{% if (file.deleteUrl) { %}
+					
+				{% } else { %}
+					<button class="btn yellow cancel btn-sm">
+						<i class="fa fa-ban"></i>
+						<span>Cancel</span>
+					</button>
+				{% } %}
+			</td>
+		</tr>
+	{% } %}
+</script>
+
+
 <script>
-        jQuery(document).ready(function() {
-        // initiate layout and plugins
-        Metronic.init(); // init metronic core components
-		Layout.init(); // init current layout
-		QuickSidebar.init(); // init quick sidebar
-		Demo.init(); // init demo features
-        FormFileUpload.init();
-        });
-    </script>
-<!-- END JAVASCRIPTS -->
+	// Initialize the jQuery File Upload widget:
+	$('#UploadForm').fileupload({
+		disableImageResize: false,
+		autoUpload: false,
+		disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
+		maxFileSize: 5000000,
+		acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+		// Uncomment the following to send cross-domain cookies:
+		//xhrFields: {withCredentials: true},                
+	});
+
+	// Enable iframe cross-domain access via redirect option:
+	$('#UploadForm').fileupload(
+		'option',
+		'redirect',
+		window.location.href.replace(
+			/\/[^\/]*$/,
+			'/cors/result.html?%s'
+		)
+	);
+
+	// Upload server status check for browsers with CORS support:
+	if ($.support.cors) {
+		$.ajax({
+			type: 'HEAD'
+		}).fail(function () {
+			$('<div class="alert alert-danger"/>')
+				.text('Upload server currently unavailable - ' +
+						new Date())
+				.appendTo('#UploadForm');
+		});
+	}
+
+	// Load & display existing files:
+	$('#UploadForm').addClass('fileupload-processing');
+	$.ajax({
+		// Uncomment the following to send cross-domain cookies:
+		//xhrFields: {withCredentials: true},
+		url: $('#UploadForm').attr("action"),
+		dataType: 'json',
+		context: $('#UploadForm')[0]
+	}).always(function () {
+		$(this).removeClass('fileupload-processing');
+	}).done(function (result) {
+		$(this).fileupload('option', 'done')
+		.call(this, $.Event('done'), {result: result});
+		$(".SelectFileName").click(function(e) {
+			var filename =  $("#filename").val();
+			//alert(filename)
+			filename = filename + "<;>" + $(this).val();
+			$("#filename").val(filename);
+		});  
+	});
+</script>
+

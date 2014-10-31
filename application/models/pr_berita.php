@@ -9,18 +9,15 @@
 			parent::__construct();
 		}
 		
-		public function validate($data,$id)
+		public function insert($data)
 		{
-			if(isset($id))
-			{
-            	$this->update_table($data,$id); 
-			}else{
-				 $this->insert_into($data);    
-			}
-			
+			$this->insert_into($data);  
 		}
 		
-		
+		public function update($data,$id)
+		{
+			$this->update_table($data,$id);
+		}
 	}
 
 ?>

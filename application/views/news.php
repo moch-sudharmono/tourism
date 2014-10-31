@@ -83,8 +83,8 @@
                             	<th>No.</th>
 								<th>Judul</th>
 								<th>Title</th>
-                                <th>Konten</th>
-                                <th>Content</th>
+                                <!--<th>Konten</th>
+                                <th>Content</th>-->
 								<th>Tanggal/Date</th>
 								<th>Edit</th>
 								<th>Delete</th>
@@ -96,8 +96,8 @@
                                     <td><?php echo $no+1;?></td>
                                     <td><?php echo $value["judul_berita_ina"]?></td>
                                     <td><?php echo $value["judul_berita_eng"]?></td>
-                                    <td><?php echo $value["isi_berita_ina"]?></td>
-                                    <td><?php echo $value["isi_berita_eng"]?></td>
+                                    <!--<td><?php echo $value["isi_berita_ina"]?></td>
+                                    <td><?php echo $value["isi_berita_eng"]?></td>-->
                                     <td><?php echo $value["tanggal_berita"]?></td>
                                     <td>
                                     	<!--
@@ -105,11 +105,11 @@
                                         Edit </a>
                                         -->
                                         <a href="<?php echo base_url().'index.php/news/edit?id='.$value["id_berita"]; ?>" class="editNews" id="<?=$value["id_berita"]?>">
-                                        Edit </a>
+                                        <i class="fa fa-edit"></i>Ubah / <em>Edit</em> </a>
                                     </td>
                                     <td>
                                         <a class="deleteNews" id="<?php echo $value["id_berita"]?>" href="javascript:;">
-                                        Delete </a>
+                                        <i class="fa fa-trash-o"></i>Hapus / <em>Delete</em> </a>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -122,7 +122,7 @@
 				</div>
 			</div>
             
-<<<<<<< HEAD
+
 
             <div id="NewsForm">
            
@@ -130,8 +130,6 @@
 			</div>
             </div>
 
-=======
->>>>>>> origin/master
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
@@ -154,7 +152,7 @@
 <!-- CUSTOMIZE JQUERY -->
 <script>
 jQuery(document).ready(function() { 
-
+/*
 	$('#NewsForm').hide();
 	
 	$('#add_new').click(function(e){
@@ -208,7 +206,7 @@ function Query(xType,xData,xUrl,xHasil,xEvent) {
 			  eval(xEvent);				
 			} 
 		});
-}
+}*/
 });
 </script>
 <!-- END CUSTOMIZE JQUERY -->
