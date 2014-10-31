@@ -2,12 +2,12 @@
 
 class Attraction extends CI_Controller {
 	public $route = "admin/index.php";
-	private $class = "Attraction";
+	private $class = "attraction";
 
 	public function __construct(){
 		//function check access			
 		parent::__construct();	
-		$this->load->model("admin/Attractions");			
+		$this->load->model("admin/Attractions");	
 		$this->load->library('pagination_lib');
 	}
 
@@ -23,6 +23,7 @@ class Attraction extends CI_Controller {
 			$offset = 0;
 		endif;
 		
+		
 		$attraction = $this->Attractions->displayAll($limit, $offset);
 
 		// Paging
@@ -36,10 +37,13 @@ class Attraction extends CI_Controller {
 		);
 		
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
-		
+
 		$data["page"] = $page; 
 		$data["attraction"] = $attraction; 
 		$data["class"] = $this->class;
+		
+		
+		
 		
 		$data["konten"] = "admin/attraction/attraction.php";
 		$this->load->view($this->route, $data);
@@ -52,6 +56,10 @@ class Attraction extends CI_Controller {
 		$data["attractions"] = $attractions; 
 		$data["class"] = $this->class;
 		
+		$gambar = $this->Attractions->displayGambar($where);		
+		$data["gambar"] = $gambar;
+		
+		
 		$data["konten"] = "admin/attraction/attractionForm.php";
 		$this->load->view($this->route, $data);
 	}
@@ -63,6 +71,8 @@ class Attraction extends CI_Controller {
 		$judul_berita_eng = $this->input->post("title_eng");
 		$description_ind = $this->input->post("description_ind");
 		$description_eng = $this->input->post("description_eng");
+		$gambar =$this->input->post("gambar");
+		$dgambar = explode("]", $gambar);
 		$url=$this->input->post("url");
 		
 		$data = array(
@@ -77,13 +87,40 @@ class Attraction extends CI_Controller {
 			"id_paket_wisata"=>$id_attraction
 		);
 		
+		//print_r($dgambar);
 		
 		if( $id_attraction != 0 ):
 			//echo $id_attraction;
 			$result = $this->Attractions->update($data, $where);
+			
+			//delele before insert image
+			$this->Attractions->deleteGambar($where);
+			//insert image
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_paket_wisata"=>$id_attraction,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Attractions->insertGambar($data_gambar);
+				endif;
+			endfor;
 		else:
 			$result = $this->Attractions->insert($data);
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_paket_wisata"=>$id_attraction,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Attractions->insertGambar($data_gambar);
+				endif;
+			endfor;
 		endif;
+		
+		
 		
 		if( $result ):
 			redirect("admin/attraction");

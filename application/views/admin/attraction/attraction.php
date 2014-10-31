@@ -70,11 +70,11 @@
                 <td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
                 <td><?php echo $row->url ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>index.php/admin/attraction/form/<?php echo $row->id_paket_wisata ?>"> 
+                    <a href="<?php echo base_url() ?>admin/attraction/form/<?php echo $row->id_paket_wisata ?>"> 
                     	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
                     </a> 
                     |
-                    <a href="<?php echo base_url() ?>index.php/admin/attraction/delete/<?php echo $row->id_paket_wisata ?>" class="hapus_attraction"> 
+                    <a href="<?php echo base_url() ?>admin/attraction/delete/<?php echo $row->id_paket_wisata ?>" class="hapus_attraction"> 
                     	<i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                     </a>
                 </td>
@@ -96,7 +96,7 @@
 
 <script>
 	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>index.php/admin/attraction/form/0"
+        location.href = "<?php echo base_url() ?>admin/attraction/form/0"
     });
 	
 	$(".hapus_attraction").click(function(e) {

@@ -61,17 +61,17 @@
         </form>
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Catatn / <em>Notes</em></h3>
+                <h3 class="panel-title">Catatan / <em>Notes</em></h3>
             </div>
             <div class="panel-body">
                 <ul>
                     <li>
-                    		Ukuran Foto Maksimum <strong>5 MB</strong> / 
-                         	<em>The maximum file size for uploads is <strong>5 MB</strong></em>.
+                    		Ukuran Foto Maksimum <strong><?php echo isset($filesize_caption)?$filesize_caption:"5MB" ?></strong> / 
+                         	<em>The maximum file size for uploads is <strong><?php echo isset($filesize_caption)?$filesize_caption:"5MB" ?></strong></em>.
                     </li>
                     <li>
-                    	 	Tipe Foto yang diperbolehkan(<strong>JPG, GIF, PNG</strong>) /
-                        	<em>Only image files (<strong>JPG, GIF, PNG</strong>) are allowed</em>.
+                    	 	Tipe Foto yang diperbolehkan(<strong><?php echo isset($filetype_caption)?$filetype_caption:"5MB" ?></strong>) /
+                        	<em>Only image files (<strong><?php echo isset($filetype_caption)?$filetype_caption:"5MB" ?></strong>) are allowed</em>.
                     </li>
                 </ul>
             </div>
@@ -191,7 +191,7 @@
 		});
 	}
 
-	// Load & display existing files:
+	/*// Load & display existing files:
 	$('#UploadForm').addClass('fileupload-processing');
 	$.ajax({
 		// Uncomment the following to send cross-domain cookies:
@@ -210,6 +210,6 @@
 			filename = filename + "<;>" + $(this).val();
 			$("#filename").val(filename);
 		});  
-	});
+	});*/
 </script>
 

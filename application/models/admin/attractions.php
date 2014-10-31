@@ -5,6 +5,9 @@
 		protected 	 $table = 'pr_paket_wisata';	 	 
 		protected 	 $primary_key = 'id_paket_wisata';
 		
+		protected	 $tbl_gambar = 'pr_paket_wisata_gambar';
+		protected	 $pk_tbl_gambar = 'id_paket_wisata_gambar';
+		
 		public function displayAll($offset=10, $limit=0)
 		{
 			$this->db->limit($offset, $limit);
@@ -46,6 +49,21 @@
 		public function insert_id()
 		{
 			return $this->db->insert_id();
+		}
+		
+		public function displayGambar($where)
+		{
+			$this->db->where($where);
+			$query = $this->db->get($this->tbl_gambar);
+			return $query->result();
+		}
+		public function insertGambar($data)
+		{
+			return $this->db->insert($this->tbl_gambar, $data);
+		}
+		public function deleteGambar($where)
+		{
+			return $this->db->delete($this->tbl_gambar, $where);
 		}
 	}
 	

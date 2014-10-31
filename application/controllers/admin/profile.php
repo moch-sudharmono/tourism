@@ -55,7 +55,7 @@ class Profile extends CI_Controller {
 		$kategori = $this->Lokasi_wisata->displayLokasiWisataKategori();
 		$pointer = $this->Lokasi_wisata->displayMapPointer();
 		$sarana_prasarana_kategori = $this->Sarana_prasarana->displaySaranaPrasaranaKategori();
-		
+		$gambar = $this->Lokasi_wisata->displayGambar($where);
 		$sarana_prasarana_tag = $this->Lokasi_wisata->displayTagSaranaPrasarana($where);
 		
 		foreach( $sarana_prasarana_kategori as $row ):
@@ -66,7 +66,7 @@ class Profile extends CI_Controller {
 			$row->sarana_prasarana = $this->Sarana_prasarana->displaySaranaPrasaranaByKategori($where);
 			
 		endforeach;
-		
+		$data["gambar"] = $gambar;
 		$data["tag"] = $sarana_prasarana_tag;
 		$data["sarana_prasarana"] = $sarana_prasarana_kategori;
 		$data["pointer"] = $pointer;
@@ -84,7 +84,9 @@ class Profile extends CI_Controller {
 		$id_lokasi_wisata = $this->input->post("id_lokasi_wisata");
 		$id_lokasi_wisata_kategori = $this->input->post("id_lokasi_wisata_kategori");
 		$parent_id = $this->input->post("parent_id");
-		
+		$gambar = $this->input->post("gambar");
+		$dgambar = explode("]", $gambar);
+
 		$nama_lokasi_wisata_ina = $this->input->post("nama_lokasi_wisata_ina");
 		$nama_lokasi_wisata_eng = $this->input->post("nama_lokasi_wisata_eng");
 		$deskripsi_ina = $this->input->post("deskripsi_ina");
@@ -119,8 +121,22 @@ class Profile extends CI_Controller {
 					"id_lokasi_wisata"=>$id_lokasi_wisata,
 					"id_sarana_prasarana"=>$id_sarana_prasarana[$i]
 				);
-				
-				$this->Lokasi_wisata->insertTagSarana($data_sarana);
+				if( !empty($id_sarana_prasarana[$i]) ):
+					$this->Lokasi_wisata->insertTagSarana($data_sarana);
+				endif;
+			endfor;
+			
+			// Insert Gambar
+			$this->Lokasi_wisata->deleteGambar($where);
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_lokasi_wisata"=>$id_lokasi_wisata,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Lokasi_wisata->insertGambar($data_gambar);
+				endif;
 			endfor;
 		else:
 			$result = $this->Lokasi_wisata->insert($data);
@@ -132,8 +148,21 @@ class Profile extends CI_Controller {
 					"id_lokasi_wisata"=>$id_lokasi_wisata,
 					"id_sarana_prasarana"=>$id_sarana_prasarana[$i]
 				);
-				
-				$this->Lokasi_wisata->insertTagSarana($data_sarana);
+				if( !empty($id_sarana_prasarana[$i]) ):
+					$this->Lokasi_wisata->insertTagSarana($data_sarana);
+				endif;
+			endfor;
+			
+			// Insert Gambar
+			for( $j=0; $j<count($dgambar); $j++ ):
+				$gambar = str_replace("[", "", $dgambar[$j]);
+				$data_gambar = array(
+					"id_lokasi_wisata"=>$id_lokasi_wisata,
+					"gambar"=>$gambar
+				);
+				if( isset($gambar) and !empty($gambar) ):
+					$this->Lokasi_wisata->insertGambar($data_gambar);
+				endif;
 			endfor;
 		endif;
 		

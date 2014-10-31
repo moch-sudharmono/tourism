@@ -102,6 +102,22 @@ class Lokasi_wisata extends MY_Model
 		return $this->db->delete("pr_lokasi_wisata_tag_sarana", $where);
 	}
 	
+	
+	public function displayGambar($where)
+	{
+		$this->db->where($where);
+		$query = $this->db->get("pr_lokasi_wisata_gambar");
+		return $query->result();
+	}
+	public function insertGambar($data)
+	{
+		return $this->db->insert("pr_lokasi_wisata_gambar", $data);
+	}
+	public function deleteGambar($where)
+	{
+		return $this->db->delete("pr_lokasi_wisata_tag_sarana", $where);
+	}
+	
 }
 
 ?>

@@ -61,7 +61,7 @@
         </form>
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Catatn / <em>Notes</em></h3>
+                <h3 class="panel-title">Catatan / <em>Notes</em></h3>
             </div>
             <div class="panel-body">
                 <ul>
@@ -172,7 +172,11 @@
 		//xhrFields: {withCredentials: true},                
 	}).on('fileuploaddone', function (e, data) {
         $.each(data.result.files, function (index, file) {
-			alert(file.name);
+			var filename = file.name;
+			var content = $("#<?php echo isset($content)?$content:"gambar"; ?>").val();
+			//alert(content)
+			content = "[" + filename + "]" + content
+			$("#<?php echo isset($content)?$content:"gambar"; ?>").val(content);
             if (file.url) {
                 var link = $('<a>')
                     .attr('target', '_blank')
