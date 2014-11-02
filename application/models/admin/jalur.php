@@ -2,7 +2,8 @@
 	
 class Jalur extends MY_Model 
 {
-	protected 	 $table = 'pr_route_edges';	 	 
+	protected 	 $table = 'pr_route_edges';	 
+	protected 	 $view = 'pr_route_edges_view';	 	 
 	protected 	 $primary_key = 'id_edges';
 
 	public function __construct() {        
@@ -23,6 +24,23 @@ class Jalur extends MY_Model
 		$this->db->where($data);
 		$query = $this->db->get($this->table);
 		//echo $this->db->last_query();
+		return $query->result_array();
+	}
+	
+	public function displayRoute($from, $to)
+	{
+		$this->db->where($from);
+		$this->db->where($to);
+		$query = $this->db->get($this->view);
+		//echo $this->db->last_query();
+		return $query->result_array();
+	}
+	
+	public function displayTransportation($from, $to)
+	{
+		$this->db->where($from);
+		$this->db->or_where($to);
+		$query = $this->db->get("pr_route_transportation_view");
 		return $query->result_array();
 	}
 	
@@ -87,6 +105,7 @@ class Jalur extends MY_Model
 	{
 		return $this->db->delete($this->table, $where);
 	}
+
 	
 }
 

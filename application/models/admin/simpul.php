@@ -9,6 +9,14 @@ class Simpul extends MY_Model
 		parent::__construct();
 	}
 	
+	public function display()
+	{
+		$this->db->order_by("nodes asc ");
+		$query = $this->db->get($this->table);
+		//echo $this->db->last_query();
+		return $query->result_array();
+	}
+	
 	public function displayAll($offset=10, $limit=0)
 	{
 		$this->db->limit($offset, $limit);

@@ -96,6 +96,9 @@
                     <div class="col-md-4">
                         <input type="text" value="<?php echo $waktu_perjalanan; ?>" name="waktu_perjalanan" data-required="1" class="form-control"/>
                     </div>
+                    <div class="col-md-2">
+                    	( Jam / <em>Hour</em> )
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -105,14 +108,17 @@
                     <div class="col-md-4">
                         <input type="text" value="<?php echo $estimasi_biaya; ?>" name="estimasi_biaya" data-required="1" class="form-control"/>
                     </div>
+                    <div class="col-md-2">
+                    	( Rupiah / <em>IDR</em> )
+                    </div>
                 </div>
                                                                                         
             </div>
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" name="submit" class="btn green" value="save">Submit</button>
-                        <button type="button" id="CancelButton" class="btn default">Cancel</button>
+                        <button type="button" id="CancelButton" class="btn default">Batal / Cancel</button>
+                        <button type="submit" name="submit" class="btn green" value="save">Simpan / Save </button>
                     </div>
                 </div>
             </div>
