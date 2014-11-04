@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>inc/global/plugins/select2/select2.css"/>
+<link href="<?php echo base_url(); ?>inc/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+
 <?php  
 	$nodes = isset($nodes)?$nodes:array();
 ?>
@@ -11,8 +14,7 @@
     </div>
     <div>
         <div class="form-group">
-            <select name="edge_from" class="form-control" id="edge_from">
-            	<option value="">Pilih / Select</option>
+            <select name="edge_from"  id="edge_from" class="form-control">
             	<?php 
 					foreach( $nodes as $no=>$row ):
 				?>
@@ -32,7 +34,6 @@
     
     <div class="form-group">
         <select name="edge_to" class="form-control" id="edge_to">
-            	<option value="">Pilih / Select</option>
             	<?php 
 					foreach( $nodes as $no=>$row ):
 				?>
@@ -56,3 +57,18 @@
 </div>
 </form>
 <!-- END Search Route -->
+<script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/select2/select2.min.js"></script>
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script>
+	$("#edge_to").select2({
+            placeholder: "Select an option",
+            allowClear: true
+    });
+	$("#edge_from").select2({
+            placeholder: "Select an option",
+            allowClear: true
+    });
+</script>

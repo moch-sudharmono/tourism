@@ -4,9 +4,7 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="<?php echo base_url()?>">
-			<img src="<?php echo base_url();?>inc/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
-			</a>
+			<a href="">Tourism System</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
 			</div>
@@ -16,6 +14,35 @@
 		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
+
+        <div class="hor-menu hor-menu-light hidden-sm hidden-xs">
+			<ul class="nav navbar-nav">
+				<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
+				<li class="classic-menu-dropdown">
+					<a href="<?php echo base_url() ?>mapping/point">
+						Pemetaan
+					</a>
+				</li>
+				<li class="classic-menu-dropdown active">
+					<a href="<?php echo base_url() ?>admin/home">
+						Promosi
+                        <span class="selected"></span>
+					</a>
+				</li>
+				<li class="classic-menu-dropdown">
+					<a href="<?php echo base_url() ?>admin/module">
+						Pengembangan Masyarakat
+						
+					</a>
+				</li>
+				<li class="classic-menu-dropdown">
+					<a href="<?php echo base_url() ?>admin/configuration">
+						Pengaturan
+					</a>
+				</li>
+			</ul>
+		</div>
+        
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
 			<ul class="nav navbar-nav pull-right">

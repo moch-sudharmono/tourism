@@ -61,6 +61,8 @@ class Home extends CI_Controller {
 			$array_loc[$row["id_nodes"]] = $array_d;
 		endforeach;
 		
+		//print_r($array_loc);
+		
 		$dijkstra = new Dijkstra($array_loc);
 		
 		$route = $dijkstra->shortestPath($edge_from, $edge_to);
@@ -78,33 +80,24 @@ class Home extends CI_Controller {
 			$to = isset($row["to"])?$row["to"]:"";
         	//echo "From:" . $from . "To:" . $to . "<br>";
 			$data_from = array(
-				"edge_from"=>$from
-			);
-			$data_to = array(
+				"edge_from"=>$from,
 				"edge_to"=>$to
 			);
 			
-			$data_from2 = array(
-				"edge_from"=>$to
-			);
-			$data_to2 = array(
-				"edge_to"=>$from
-			);
-			
-			$transportation = $this->jalur->displayRoute($data_from, $data_to);
+			$transportation = $this->jalur->displayRoute($data_from);
 			
 			//print_r($transportation);
 			
 			foreach( $transportation as $q=>$x ):
 				$arr_route[$seq]["location_from"] = $x["location_from"];
 				$arr_route[$seq]["location_to"] = $x["location_to"];
-				$arr_route[$seq]["transportation"] = $this->jalur->displayTransportation($data_from, $data_to);
+				$arr_route[$seq]["transportation"] = $this->jalur->displayTransportation($data_from);
 			endforeach;
 			$seq++;
        	endforeach;
-		//echo "<pre>";
-		//print_r($arr_route);
-		//exit;
+		/*echo "<pre>";
+		print_r($arr_route);
+		exit;*/
 		$data["route"] = $arr_route;
 		$data["konten"] = "frontend/route/route.list.view.php";
 		$this->load->view($this->route, $data);

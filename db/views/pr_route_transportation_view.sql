@@ -1,6 +1,8 @@
 create or replace view pr_route_transportation_view as 
-select			a.id_edges, a.estimasi_biaya, a.id_sarana_prasarana,
-					a.deskripsi_ina, a.deskripsi_eng, b.nama_ina, b.nama_eng,
+select			
+					a.id_edges, a.estimasi_biaya, a.waktu_perjalanan, a.id_sarana_prasarana,
+					a.deskripsi_ina, a.deskripsi_eng, 
+					b.nama_ina, b.nama_eng,
 					c.edge_from, c.edge_to, c.location_from, c.location_to, b.id_kategori_sarana_prasarana,
 					e.icon
 from				pr_route_transportation a

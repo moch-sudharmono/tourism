@@ -70,8 +70,8 @@
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" name="submit" class="btn green" value="save">Submit</button>
-                        <button type="button" id="CancelButton" class="btn default">Cancel</button>
+                        <button type="button" id="CancelButton" class="btn default">Batal / Cancel</button>
+                        <button type="submit" name="submit" class="btn green" value="save">Simpan / Save</button>
                     </div>
                 </div>
             </div>

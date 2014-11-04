@@ -13,6 +13,14 @@
 <link href="<?php echo base_url();?>inc/global/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url();?>inc/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL PLUGIN STYLES -->
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>inc/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>inc/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>inc/global/plugins/jquery-multi-select/css/multi-select.css"/>
+<link href="<?php echo base_url(); ?>inc/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<!-- BEGIN THEME STYLES -->
+
 <!-- BEGIN PAGE STYLES -->
 <link href="<?php echo base_url();?>inc/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE STYLES -->

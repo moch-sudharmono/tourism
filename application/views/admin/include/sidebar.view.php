@@ -91,26 +91,26 @@
 
                 </a>					
             </li>
-            <li class="admin_menu" id="route">
+            <li class="admin_menu parent">
                 <a href="<?php echo base_url() ?>admin/route">
                 <i class="fa fa-road"></i>
                 <span class="title">Rute Perjalanan / <em>Route</em></span>
                 <span class="arrow "></span>
                 </a>	
                 <ul class="sub-menu">
-                    <li id="news">
+                    <li id="route">
                         <a href="<?php echo base_url() ?>admin/route">
                         Rute Perjalanan / <em>Route</em>
-                        </a>
-                    </li>
-                    <li id="node">
-                        <a href="<?php echo base_url() ?>admin/node">
-                        Titik Perjalanan / <em>Nodes</em>
                         </a>
                     </li>
                     <li id="edge">
                         <a href="<?php echo base_url() ?>admin/edge">
                         Jalur Perjalanan / <em>Edges</em>
+                        </a>
+                    </li>
+                    <li id="node">
+                        <a href="<?php echo base_url() ?>admin/node">
+                        Titik Perjalanan / <em>Nodes</em>
                         </a>
                     </li>
                 </ul>						

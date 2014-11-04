@@ -42,7 +42,7 @@ class Testimonial extends CI_Controller {
 		$data["testimoni"] = $testimoni; 
 		$data["class"] = $this->class;
 		
-		$data["konten"] = "admin/Testimonial/testimonial.php";	
+		$data["konten"] = "admin/testimonial/testimonial.php";	
 		$this->load->view($this->route, $data);
 	}
 	

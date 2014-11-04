@@ -92,4 +92,10 @@
 		return $input;
 	}
 	
+	function FormatUang($uang)
+	{
+		setlocale(LC_MONETARY, 'it_IT');
+		return money_format('%.2n', $number) . "\n";
+	}
+	
 ?>

@@ -55,10 +55,10 @@
                  Rute
             </th>
             <th>
-                 Waktu Perjalanan / <em>Travel Time</em>
+                 Waktu Perjalanan (Jam) / <em>Travel Time (Hour)</em>
             </th>
             <th>
-                 Perkiraan Biaya / <em>Estimated Cost</em>
+                 Perkiraan Biaya (Rp) / <em>Estimated Cost (IDR)</em>
             </th>            
             <th width="250">
                  Aksi / <em>Action</em>
@@ -79,11 +79,11 @@
             <td>
                  <?php echo $val['node_edge_from'].' - '.$val['node_edge_to']; ?> 
             </td>
-            <td>
+            <td align="right">
                  <?php echo $val['waktu_perjalanan']; ?>
             </td>
-            <td>
-                 <?php echo $val['estimasi_biaya']; ?>
+            <td align="right">
+                 <?php echo number_format($val['estimasi_biaya']); ?>
             </td>
             <td align="center">
                 <a href="<?php echo base_url().'admin/route/form/'.$val['id_transportation']; ?>">

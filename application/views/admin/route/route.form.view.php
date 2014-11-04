@@ -67,7 +67,16 @@
                         </select>
                     </div>
                 </div>                                    
-                
+                <div class="form-group">
+                    <label class="control-label col-md-3">Deskripsi (Bahasa) <span class="required">
+                    * </span>
+                    </label>
+                    <div class="col-md-9">
+                        <textarea class="ckeditor form-control" rows="6" name="deskripsi_ina" data-error-container="#editor1_error"><?php echo $deskripsi_ina; ?></textarea>
+                        <div id="editor2_error">
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="control-label col-md-3">Description (English) <span class="required">
                     * </span>
@@ -79,16 +88,7 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label class="control-label col-md-3">Deskripsi (Bahasa) <span class="required">
-                    * </span>
-                    </label>
-                    <div class="col-md-9">
-                        <textarea class="ckeditor form-control" rows="6" name="deskripsi_ina" data-error-container="#editor1_error"><?php echo $deskripsi_ina; ?></textarea>
-                        <div id="editor2_error">
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="form-group">
                     <label class="control-label col-md-3">Waktu Perjalanan / <em>Travel Time</em> <span class="required">
                     * </span>

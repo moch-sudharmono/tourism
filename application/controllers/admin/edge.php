@@ -71,6 +71,12 @@ class Edge extends CI_Controller {
 			"edge_from"=>$id_nodes_edge_from,
 			"edge_to"=>$id_nodes_edge_to
 		);
+		
+		$data2 = array(
+			"id_edges"=>$id_edges,
+			"edge_from"=>$id_nodes_edge_to,
+			"edge_to"=>$id_nodes_edge_from
+		);
 
 		$where = array(
 			"id_edges"=>$id_edges
@@ -78,11 +84,9 @@ class Edge extends CI_Controller {
 		
 		if( $id_nodes != 0 ):
 			$result = $this->Jalur->update($data, $where);
-			
-			
 		else:
 			$result = $this->Jalur->insert($data);
-			
+			$result = $this->Jalur->insert($data2);			
 		endif;
 		
 		if( $result ):

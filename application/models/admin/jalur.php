@@ -27,20 +27,19 @@ class Jalur extends MY_Model
 		return $query->result_array();
 	}
 	
-	public function displayRoute($from, $to)
+	public function displayRoute($from="", $to="")
 	{
 		$this->db->where($from);
-		$this->db->where($to);
 		$query = $this->db->get($this->view);
 		//echo $this->db->last_query();
 		return $query->result_array();
 	}
 	
-	public function displayTransportation($from, $to)
+	public function displayTransportation($from="", $to="")
 	{
 		$this->db->where($from);
-		$this->db->or_where($to);
 		$query = $this->db->get("pr_route_transportation_view");
+		//echo $this->db->last_query();
 		return $query->result_array();
 	}
 	

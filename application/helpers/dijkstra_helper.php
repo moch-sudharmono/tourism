@@ -62,7 +62,7 @@ class Dijkstra
     // stack will be empty if there is no route back
     //print_r($S);
 	if ($S->isEmpty()) {
-      echo "No route from $source to $target";
+      return false;
     }
     else {
       //print_r($S);
