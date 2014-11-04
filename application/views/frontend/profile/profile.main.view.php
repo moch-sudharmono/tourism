@@ -4,16 +4,16 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12 col-sm-12">
-        <h2>Berita / <em>News</em></h2>
+
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
             <div class="col-md-9 col-sm-9 blog-posts">
               
               <?php
-			  	$news = isset($news)?$news:array();
-			  	if( isset($news) and !empty($news) ):
-				foreach( $news as $row ):
+			  	$attraction = isset($attraction)?$attraction:array();
+			  	if( isset($attraction) and !empty($attraction) ):
+				foreach( $attraction as $row ):
 			  ?>
               <div class="row">
                 <div class="col-md-4 col-sm-4">
@@ -40,11 +40,10 @@
                       <?php 
 					  	else:
 					  ?>
-                      <div class="carousel-inner">
+					  <div class="carousel-inner">
                         <div class="item active">
                           <img alt="" src="<?php echo base_url() ?>upload/No_image_available.png">
                         </div>
-                        
                       </div>
                       <?php 
 					  	endif;
@@ -66,47 +65,23 @@
                 </div>
                 <div class="col-md-8 col-sm-8">
                   <h3>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina">
-                      	<?php echo strtoupper($row->judul_berita_ina) ?>
+                      <a href="<?php echo base_url() ?>frontend/profile/location/<?php echo $row->id_lokasi_wisata ?>/<?php echo SEO($row->nama_lokasi_wisata_ina) ?>" class="ina">
+                      	<?php echo strtoupper($row->nama_lokasi_wisata_ina) ?>
                       </a>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng">
-                      	<?php echo strtoupper($row->judul_berita_eng) ?>
+                      <a href="<?php echo base_url() ?>frontend/profile/location/<?php echo $row->id_lokasi_wisata ?>/<?php echo SEO($row->nama_lokasi_wisata_eng) ?>" class="eng">
+                      	<?php echo strtoupper($row->nama_lokasi_wisata_eng) ?>
                       </a>
                   </h3>
-                  <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
-                    <li><i class="fa fa-comments"></i> 17</li>
-                    <li><i class="fa fa-tags"></i>
-                    	<?php
-                        	foreach( $row->tags as $rt ):
-								echo "
-									<label class='ina'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ." / ". SEO($rt->tag_ina) . "'>
-									" . $rt->tag_ina . "</a>
-									|
-									</label>
-								";	
-								echo "
-									<label class='eng'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ." / ". SEO($rt->tag_eng) . "'>
-									" . $rt->tag_eng . "</a> 
-									|
-									</label> 
-								";	
-							endforeach;
-						?>
-                    </li>
-                  </ul>
                   <p class="ina">
-                  	<?php echo PotongKata($row->isi_berita_ina, 50) ?>
+                  	<?php echo PotongKata($row->deskripsi_ina, 50) ?>
                   </p>
                   <p class="eng">
-                  	<?php echo PotongKata($row->isi_berita_eng, 50) ?>
+                  	<?php echo PotongKata($row->deskripsi_eng, 50) ?>
                   </p>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina more">
+                  <a href="<?php echo base_url() ?>frontend/profile/location/<?php echo $row->id_lokasi_wisata ?>/<?php echo SEO($row->nama_lokasi_wisata_ina) ?>" class="ina more">
 					Selengkapnya
                   </a>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng more">
+                  <a href="<?php echo base_url() ?>frontend/profile/location/<?php echo $row->id_lokasi_wisata ?>/<?php echo SEO($row->nama_lokasi_wisata_eng) ?>" class="eng more">
                     Read More
                   </a>
                 </div>
@@ -127,11 +102,9 @@
             </div>
             <!-- END LEFT SIDEBAR -->
 
-            <?php  
-				$this->load->view("frontend/news/news.right.view.php")
-			?>
-            
-                       
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <?php $this->load->view("frontend/profile/profile.right.view.php"); ?>
+            <!-- END RIGHT SIDEBAR -->            
           </div>
         </div>
       </div>

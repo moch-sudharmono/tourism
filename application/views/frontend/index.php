@@ -10,9 +10,7 @@
 
 <!-- Body BEGIN -->
 <body class="corporate">
-	<?php
-		$this->session->set_userdata('lang', 'ina');
-	?>
+
 	<!--style customizzer-->
 	<?php //$this->load->view("frontend/include/style-customizerview.php") ?>
     

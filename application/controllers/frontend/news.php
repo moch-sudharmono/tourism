@@ -32,6 +32,7 @@ class News extends CI_Controller {
 		foreach( $news as $rn ):
 			$w = array( "id_berita"=>$rn->id_berita );
 			$rn->tags = $this->News_m->getNewsTag($w);
+			$rn->gambar = $this->News_m->getNewsPicture($w);
 		endforeach;
 		// Paging
 		$total_row =  $this->News_m->countAllData();
@@ -71,6 +72,7 @@ class News extends CI_Controller {
 		foreach( $news as $rn ):
 			$w = array( "id_berita"=>$rn->id_berita );
 			$rn->tags = $this->News_m->getNewsTag($w);
+			$rn->gambar = $this->News_m->getNewsPicture($w);
 		endforeach;
 		
 		// For Navigation
@@ -82,6 +84,57 @@ class News extends CI_Controller {
 		$data["news"] = $news; 
 		$data["news_tag"] = $news_tag; 
 		$data["konten"] = "frontend/news/news.detail.view.php";
+		$this->load->view($this->route, $data);
+	}
+	
+	public function tag($id_berita_tag=0)
+	{
+		
+		$where = array(
+			"id_berita_tag"=>$id_berita_tag
+		);
+		
+		$page = $this->input->get("page");
+		$page = !empty($page)?$page:1;
+		$limit = 10;
+		
+		if(isset($page) and !empty($page)):
+			$offset = ($page * $limit) - $limit;
+		else:
+			$offset = 0;
+		endif;
+		
+		$news = $this->News_m->displayAllperTag($limit, $offset, $where);
+		$popular = $this->News_m->displayPopular();
+		$news_tag = $this->News_m->displayNewsTag();
+		
+		foreach( $news as $rn ):
+			$w = array( "id_berita"=>$rn->id_berita );
+			$rn->tags = $this->News_m->getNewsTag($w);
+			$rn->gambar = $this->News_m->getNewsPicture($w);
+		endforeach;
+		// Paging
+		$total_row =  $this->News_m->countAllDataperTag($where);
+		$url = base_url() . "frontend/news/?paging=true";
+		$data_paging = array(
+			"url"=>$url,
+			"total_rows"=>$total_row,
+			"per_page"=>$limit,
+			"halaman"=>$page
+		);
+		
+		$data["paging"] = $this->pagination_lib->paging($data_paging);
+		
+		// For Navigation
+		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
+		// End Navigation
+		
+		$data["popular"] = $popular; 
+		$data["news"] = $news; 
+		$data["news_tag"] = $news_tag; 
+		$data["class"] = $this->class;
+		
+		$data["konten"] = "frontend/news/news.main.view.php";
 		$this->load->view($this->route, $data);
 	}
 }

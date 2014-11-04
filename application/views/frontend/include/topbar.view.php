@@ -13,8 +13,8 @@
             <!-- BEGIN TOP BAR MENU -->
             <div class="col-md-6 col-sm-6 additional-nav">
                 <ul class="list-unstyled list-inline pull-right">
-                    <li><a href="page-login.html">English</a></li>
-                    <li><a href="page-reg-page.html">Bahasa</a></li>
+                    <li><a href="<?php echo base_url() ?>frontend/language/setlanguage/eng?url=<?php echo urlencode(current_url()) ?>">English</a></li>
+                    <li><a href="<?php echo base_url() ?>frontend/language/setlanguage/ina?url=<?php echo urlencode(current_url()) ?>">Bahasa</a></li>
                 </ul>
             </div>
             <!-- END TOP BAR MENU -->
