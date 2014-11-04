@@ -115,7 +115,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn blue" name="submit" id="submit_attract" value="">Submit</button>
+											<button type="submit" class="btn blue" name="submit" id="submit_attract" value="">Save/Simpan</button>
 											<button type="button" ID="CancelButton" class="btn default">Batal / Cancel</button>
 										</div>
 									</div>
@@ -158,12 +158,12 @@
 
 <script src="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<script src="<?php echo base_url() ?>inc/admin/pages/scripts/ui-extended-modals.js"></script>
 
 <script>
 jQuery(document).ready(function() { 
    UIExtendedModals.init();
+   
+   FormValidation.init();
 });
 </script>
 <script>
@@ -185,4 +185,29 @@ $(".id_sarana_prasarana").each(function(index, element) {
 		endforeach;
 	?> 
 });
+</script>
+<script>
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	$( "#form_attraction" ).validate({
+	  rules: {
+		 title_eng: {
+			required: true
+		},title_ind: {
+			required: true
+		},
+		description_ind: {
+			required: true
+		},
+		description_eng: {
+			required: true
+		},
+		url: {
+			required: true
+		}
+	  }
+	});
+
 </script>

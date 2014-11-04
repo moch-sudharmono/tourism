@@ -131,3 +131,29 @@
 	$("#id_kategori_sarana_prasarana").val("<?php echo $id_kategori_sarana_prasarana; ?>");
 	$("#id_peta").val("<?php echo $id_peta ?>");
 </script>
+
+<script>
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	$( "#form_infrastructure" ).validate({
+	  rules: {
+		 id_kategori_sarana_prasarana: {
+			required: true
+		},nama_eng: {
+			required: true
+		},
+		nama_ina: {
+			required: true
+		},
+		id_peta: {
+			required: true
+		},
+		url: {
+			required: true
+		}
+	  }
+	});
+
+</script>

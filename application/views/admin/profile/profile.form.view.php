@@ -70,6 +70,7 @@
                     </label>
                     <div class="col-md-8">
                        <select name="id_lokasi_wisata_kategori" id="id_lokasi_wisata_kategori" class="form-control">
+                       		<option value="">-- Pilih Kategori / Select Category --</option>
 					   	<?php
 					   		$kategori = isset($kategori)?$kategori:array();
                        		foreach( $kategori as $row ):
@@ -105,6 +106,7 @@
                     </label>
                     <div class="col-md-8">
                        <select name="id_peta" id="id_peta" class="form-control">
+                       		<option value="">-- Pilih Peta / Select Map --</option>
 					   	<?php
 					   		$pointer = isset($pointer)?$pointer:array();
                        		foreach( $pointer as $row ):
@@ -155,9 +157,17 @@
 						foreach( $gambar as $row ):
 					?>
                         <div class="col-md-2" align="center">
+<<<<<<< HEAD
 							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
                             	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
                         	</a>
+=======
+
+							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
+                            	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
+                        	</a>
+
+>>>>>>> origin/master
                         </div>
                     <?php
                     	endforeach;
@@ -280,3 +290,29 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	<?php endif; ?>
 </script>
 
+<script>
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	$( "#profile_form" ).validate({
+	  rules: {
+		 parent_id: {
+			required: true
+		},
+		id_lokasi_wisata_kategori: {
+			required: true
+		},
+		nama_lokasi_wisata_ina: {
+			required: true
+		},
+		nama_lokasi_wisata_eng: {
+			required: true
+		},
+		id_peta: {
+			required: true
+		}
+	  }
+	});
+
+</script>
