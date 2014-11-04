@@ -56,10 +56,10 @@
 </script>
 
 <script>
-	jQuery.validator.setDefaults({
+/*	jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_node" ).validate({
 	  rules: {
 		 nodes: {

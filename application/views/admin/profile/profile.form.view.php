@@ -291,10 +291,10 @@ $(".id_sarana_prasarana").each(function(index, element) {
 </script>
 
 <script>
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#profile_form" ).validate({
 	  rules: {
 		 parent_id: {

@@ -137,10 +137,10 @@
 </script>
 
 <script>
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_route" ).validate({
 	  rules: {
 		 id_edges: {

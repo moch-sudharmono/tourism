@@ -178,10 +178,10 @@ $(".id_berita_tag").each(function(index, element) {
     });
 </script>
 <script>
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_news" ).validate({
 	  rules: {
 		 judul_berita_ina: {

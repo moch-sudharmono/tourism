@@ -153,10 +153,10 @@
 	
 	
 	
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	
 	$( ".form_promotion" ).validate({
 	  rules: {

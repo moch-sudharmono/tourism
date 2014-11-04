@@ -90,10 +90,10 @@
 </script>
 
 <script>
-	jQuery.validator.setDefaults({
+/*	jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_edge" ).validate({
 	  rules: {
 		 id_nodes_edge_from: {

@@ -49,10 +49,10 @@
 </script>
 
 <script>
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_news_tag" ).validate({
 	  rules: {
 		 tag_ina: {
