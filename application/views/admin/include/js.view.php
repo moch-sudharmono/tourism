@@ -85,6 +85,8 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 
+
+
 <script>
 jQuery(document).ready(function() {    
    Metronic.init(); // init metronic core componets
@@ -100,6 +102,8 @@ jQuery(document).ready(function() {
    Index.initMiniCharts();
    Index.initIntro();
    Tasks.initDashboardWidget();
+
 });
 </script>
 <!-- END JAVASCRIPTS -->
+

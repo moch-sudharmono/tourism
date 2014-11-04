@@ -57,7 +57,7 @@
 										</label>
 										<div class="col-md-8">
 											<input type="text" 
-                                            value="<?php echo (isset($value['judul_berita_eng'])?$value['judul_berita_eng']:''); ?>" name="title_eng" data-required="1" class="form-control"/>
+                                            value="<?php echo (isset($value['judul_berita_eng'])?$value['judul_berita_eng']:''); ?>" name="title_eng" data-required="1" class="form-control" id="title_eng" required/>
 										</div>
 									</div>
                                     <div class="form-group">
@@ -67,7 +67,7 @@
 										<div class="col-md-4">
 											<input type="text"
                                             value="<?php echo (isset($value['judul_berita_ina'])?$value['judul_berita_ina']:''); ?>"
-                                            name="title_ind" data-required="1" class="form-control"/>
+                                            name="title_ind" data-required="1" class="form-control" required/>
 										</div>
 									</div>
 									
@@ -76,7 +76,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#editor1_error">
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_eng" data-error-container="#isi_eng" required>
                                             <?php echo (isset($value['isi_berita_eng'])?$value['isi_berita_eng']:''); ?>
                                             </textarea>
 											<div id="editor1_error">
@@ -89,7 +89,7 @@
 										* </span>
 										</label>
 										<div class="col-md-9">
-											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#editor1_error">
+											<textarea class="wysihtml5 form-control" rows="6" name="isi_ind" data-error-container="#isi_ind" required>
                                             <?php echo (isset($value['isi_berita_ina'])?$value['isi_berita_ina']:''); ?>
                                             </textarea>
 											<div id="editor2_error">
@@ -102,7 +102,7 @@
 											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
 												<input type="text" 
                                                 value="<?php echo (isset($value['tanggal_berita'])?$value['tanggal_berita']:''); ?>"
-                                                class="form-control" readonly name="datepicker">
+                                                class="form-control" readonly name="datepicker" required>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 												</span>
@@ -148,8 +148,48 @@
 	</div>
 </div>
 <!-- END FOOTER -->
-<?php include("jsfile.php"); ?>
+<script src="<?php base_url() ?>inc/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="<?php base_url() ?>inc/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="<?php base_url() ?>inc/global/plugins/bootstrap-markdown/lib/markdown.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<script src="<?php base_url() ?>inc/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php base_url() ?>inc/admin/layout/scripts/demo.js" type="text/javascript"></script>
 
+<!-- END PAGE LEVEL STYLES -->
+<script>
+jQuery(document).ready(function() {   
+   // initiate layout and plugins
+   Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+QuickSidebar.init(); // init quick sidebar
+Demo.init(); // init demo features
+});
+</script>
+<script>
+		
+</script>
 </body>
 <!-- END BODY -->
 </html>

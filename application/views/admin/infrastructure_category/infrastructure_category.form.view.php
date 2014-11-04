@@ -76,3 +76,23 @@
         location.href = "<?php echo base_url() ?>admin/infrastructure_category"
     });
 </script>
+<script>
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	$( "#form_sarana_kat" ).validate({
+	  rules: {
+		 kategori_sarana_prasarana_eng: {
+			required: true
+		},
+		kategori_sarana_prasarana_ina: {
+			required: true
+		},
+		kategori_icon: {
+			required: true
+		}
+	  }
+	});
+
+</script>

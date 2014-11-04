@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="portlet-body form">
-        <form role="form" method="post" class="form-horizontal" action="<?php echo base_url() ?>admin/promotion/save">
+        <form role="form" method="post" class="form-horizontal form_promotion" action="<?php echo base_url() ?>admin/promotion/save">
             <input type="hidden" name="id_promosi" value="<?php echo $id_promosi ?>" />
             
             <div class="form-body">
@@ -87,7 +87,7 @@
                     <label class="col-md-2 control-label">Tanggal Promosi / <em>Promotion Date</em></label>
                     <div class="col-md-2">
                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                            <input type="text" class="form-control tanggal_promosi" value="<?php echo $tanggal_promosi ?>" name="tanggal_promosi"  readonly />
+                            <input type="text" class="form-control tanggal_promosi" value="<?php echo $tanggal_promosi ?>" name="tanggal_promosi"  id="tanggal_promosi" readonly/>
                             <span class="input-group-btn">
                             <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
@@ -140,6 +140,8 @@
 </div>
 </div>
 
+<script src="<?php base_url()?>inc/global/plugins/jquery.ui.datepicker.validation.min.js" type="text/javascript"></script>
+
 <script>
 	$("#back_promotion").click(function(e) {
         location.href = "<?php echo base_url() ?>admin/promotion"
@@ -147,6 +149,33 @@
 	
 	$("#id_promosi_kategori").val("<?php echo $id_promosi_kategori ?>")
 	
-	$(".date").datepicker();   
+	$(".date").datepicker();  
+	
+	
+	
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	
+	$( ".form_promotion" ).validate({
+	  rules: {
+		  id_promosi_kategori: {
+			required: true
+		},
+		 promosi_ina: {
+			required: true
+		},
+		promosi_eng: {
+			required: true
+		},
+		tanggal_promosi: {
+		  required: true 
+		},
+		tanggal_kadarluarsa: {
+		  required: true
+		}
+	  }
+	});
 
 </script>
