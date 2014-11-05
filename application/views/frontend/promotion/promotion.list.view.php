@@ -105,7 +105,12 @@
              </ul>              
             </div>
             <!-- END LEFT SIDEBAR -->
-
+			
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <?php  
+				$this->load->view("frontend/promotion/promotion.right.view.php")
+			?>
+            <!-- END RIGHT SIDEBAR -->  
           </div>
         </div>
       </div>
