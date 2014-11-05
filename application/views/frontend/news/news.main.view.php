@@ -75,7 +75,7 @@
                   </h3>
                   <ul class="blog-info">
                     <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
-                    <li><i class="fa fa-comments"></i> 17</li>
+                    <li><i class="fa fa-comments"></i> <?php echo $row->total ?></li>
                     <li><i class="fa fa-tags"></i>
                     	<?php
                         	foreach( $row->tags as $rt ):

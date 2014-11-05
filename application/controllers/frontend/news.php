@@ -85,6 +85,27 @@ class News extends CI_Controller {
 		$data["news_tag"] = $news_tag; 
 		$data["konten"] = "frontend/news/news.detail.view.php";
 		$this->load->view($this->route, $data);
+		// Insert Log
+		$this->updateLog($id_berita);
+	}
+	
+	public function updateLog($id_berita=0)
+	{
+		
+		$data = $this->session->all_userdata();
+		$session_id = $data["session_id"];
+		$ip_address = $data["ip_address"];
+		$data["id_berita"] = $id_berita;
+		$where = array(
+			"id_berita"=>$id_berita,
+			"session_id"=>$session_id,
+			"ip_address"=>$ip_address
+		);
+		$sd = $this->berita->displaySelectedBeritaLog($where);
+		
+		if( !$sd ):
+			$this->berita->insertBeritaLog($data);
+		endif;
 	}
 	
 	public function tag($id_berita_tag=0)
