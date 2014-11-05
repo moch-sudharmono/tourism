@@ -2,7 +2,7 @@
 <div class="portlet box blue">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-edit"></i>Kategori Sarana Prasarana / <em>Infrastructure Categories</em> Data
+            <i class="fa fa-edit"></i>Kategori Promosi / <em>Promotion Categories</em> Data
         </div>
         <div class="tools">
             
@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="btn-group">
-                        <a href="<?php echo base_url().'admin/infrastructure_category/form/0'; ?>" class="btn green">
+                        <a href="<?php echo base_url().'admin/promotion_category/form/0'; ?>" class="btn green">
                         Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
                         </a>
                     </div>
@@ -44,10 +44,10 @@
         <?php foreach($category as $no=>$value){?>
         <tr>
             <td align="right"><?php echo $no+1?></td>
-            <td><?php echo $value->kategori_sarana_prasarana_ina?></td>
-            <td><?php echo $value->kategori_sarana_prasarana_eng?></td>
+            <td><?php echo $value->kategori_promosi_ina?></td>
+            <td><?php echo $value->kategori_promosi_eng?></td>
             <td align="center">
-                <a class="delete_category" href="<?php echo base_url().'admin/infrastructure_category/delete/'.$value->id_kategori_sarana_prasarana; ?>">
+                <a class="delete_category" href="<?php echo base_url().'admin/promotion_category/delete/'.$value->id_kategori_promosi; ?>">
                 <i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                 </a>
             </td>

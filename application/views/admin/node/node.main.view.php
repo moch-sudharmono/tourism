@@ -5,8 +5,7 @@
             <i class="fa fa-edit"></i>Titik Perjalanan / <em>Node</em> Data
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
+           
         </div>
     </div>
     <div class="portlet-body">

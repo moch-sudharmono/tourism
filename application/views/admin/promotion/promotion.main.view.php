@@ -5,8 +5,7 @@
             <i class="fa fa-edit"></i> Tabel Data Promosi / <em>Promotion Table</em>
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
+            
         </div>
     </div>
     <div class="portlet-body">

@@ -5,14 +5,7 @@
             <i class="fa fa-edit"></i> Tabel Data Testimoni / <em>Testimonial Table</em>
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
-            <a href="#portlet-config" data-toggle="modal" class="config">
-            </a>
-            <a href="javascript:;" class="reload">
-            </a>
-            <a href="javascript:;" class="remove">
-            </a>
+            
         </div>
     </div>
     <div class="portlet-body">
@@ -23,7 +16,7 @@
                         
                     </div>
                 </div>
-                <div class="col-md-6">
+                <!--<div class="col-md-6">
                     <div class="btn-group pull-right">
                         <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
                         </button>
@@ -42,7 +35,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
             <table width="100%" class="table table-striped table-hover table-bordered" id="tag_table">

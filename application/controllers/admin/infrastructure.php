@@ -50,8 +50,11 @@ class Infrastructure extends CI_Controller {
 		$where = array("id_sarana_prasarana"=>$id_sarana_prasarana);
 		$infrastructure = $this->Sarana_prasarana->displaySelectedData($where);
 		$infrastructure_category = $this->Sarana_prasarana->displaySaranaPrasaranaKategori();
+		$pointer = $this->Sarana_prasarana->displayMapPosition();
+		
 		$data["infrastructure"] = $infrastructure; 
 		$data["infrastructure_category"] = $infrastructure_category; 
+		$data["pointer"] = $pointer; 
 		$data["class"] = $this->class;
 		
 		$data["konten"] = "admin/infrastructure/infrastructure.form.view.php";

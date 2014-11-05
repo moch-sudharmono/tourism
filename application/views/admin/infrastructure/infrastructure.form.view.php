@@ -102,8 +102,8 @@
 							$pointer = (isset($pointer)?$pointer:array());
 							foreach($pointer as $val){
 							?>
-                            <option value="<?php echo $val->id_peta?>">
-                            <?php echo $val->id_peta;?>
+                            <option value="<?php echo $val->id?>">
+                            <?php echo $val->name;?>
                             </option>
                             <?php } ?>
                         </select>

@@ -2,11 +2,10 @@
 <div class="portlet box blue">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-edit"></i>News Data
+            <i class="fa fa-edit"></i>Daftar Berita / <em>News List</em>
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
+            
         </div>
     </div>
     <div class="portlet-body">
@@ -15,7 +14,7 @@
                 <div class="col-md-6">
                     <div class="btn-group">
                         <a href="<?php echo base_url() . "admin/news/form/0"; ?>" class="btn green">
-                        Tambah / Add New <i class="fa fa-plus"></i>
+                        Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
                         </a>
                     </div>
                 </div>

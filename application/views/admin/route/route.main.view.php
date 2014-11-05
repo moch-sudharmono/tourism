@@ -5,8 +5,6 @@
             <i class="fa fa-edit"></i>Rute / <em>Route</em> Data
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
             
         </div>
     </div>

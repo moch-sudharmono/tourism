@@ -74,7 +74,12 @@ class Sarana_prasarana extends MY_Model
 		$query = $this->db->get("pr_sarana_prasarana");
 		return $query->result();
 	}
-	
+	public function displayMapPosition()
+	{
+		$this->db->order_by("id");
+		$query = $this->db->get("pointer");
+		return $query->result();
+	}
 }
 
 ?>
