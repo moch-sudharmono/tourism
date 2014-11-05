@@ -70,4 +70,8 @@ $jawaban = isset( $askus[0]->jawaban )?$askus[0]->jawaban:"";
     $("#CancelButton").click(function(e) {
         location.href = "<?php echo base_url() ?>admin/askus"
     });
+	
+jQuery(document).ready(function() {   
+   FormValidation.init();
+});
 </script>

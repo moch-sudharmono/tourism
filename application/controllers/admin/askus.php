@@ -9,6 +9,7 @@ class Askus extends CI_Controller {
 		parent::__construct();	
 		$this->load->model("admin/Tanya_kami");
 		$this->load->library('pagination_lib');
+		$this->load->library('email');
 	}
 	
 	public function index()
@@ -70,6 +71,29 @@ class Askus extends CI_Controller {
 		);
 		
 		$result = $this->Tanya_kami->update($data, $where);
+		
+		$where = array("id_tanya_kami"=>$id_tanya_kami);
+		$askus = $this->Tanya_kami->displaySelectedData($where);
+		
+		$config['protocol']    = 'smtp';
+	    $config['smtp_host']    = 'ssl://smtp.gmail.com';
+	    $config['smtp_port']    = '465';
+        $config['smtp_timeout'] = '7';
+        $config['smtp_user']    = 'm.sudharmono@gmail.com';
+        $config['smtp_pass']    = 'm.sudharmono@gmail.com123';
+        $config['charset']    = 'utf-8';
+        $config['newline']    = "\r\n";
+        $config['mailtype'] = 'text'; // or html
+        $config['validation'] = TRUE; // bool whether to validate email or not      
+
+        $this->email->initialize($config);
+        $this->email->from('m.sudharmono@gmail.com', 'sender_name');
+        $this->email->to($askus['email']); 
+        $this->email->subject('Jawaban Pertanyaan');
+        $this->email->message($askus['jawaban']);  
+        $this->email->send();
+
+        echo $this->email->print_debugger();
 		
 		if( $result ):
 			redirect("admin/askus");
