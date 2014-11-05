@@ -7,7 +7,7 @@
 <div class="portlet box purple col-md-7">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-gift"></i> Form Tag
+            <i class="fa fa-gift"></i> Form Tag / <em>Tag Form</em>
         </div>
     </div>
     <div class="portlet-body form">
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
                         <button type="button" class="btn default" id="back_tag">Batal / Cancel</button>
-                        <button type="submit" class="btn blue">Simpan / Submit</button>
+                        <button type="submit" class="btn blue">Simpan / Save</button>
                     </div>
                 </div>
             </div>

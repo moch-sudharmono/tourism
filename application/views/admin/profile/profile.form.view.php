@@ -50,7 +50,7 @@
                     </label>
                     <div class="col-md-8">
                        <select name="parent_id" id="parent_id" class="form-control">
-                       	<option value="">-- Lokasi Utama / Parent Location --</option>
+                       	<option value="0">-- Lokasi Utama / Parent Location --</option>
 					   	<?php
 					   		$parent = isset($parent)?$parent:array();
                        		foreach( $parent as $row ):
@@ -157,17 +157,10 @@
 						foreach( $gambar as $row ):
 					?>
                         <div class="col-md-2" align="center">
-<<<<<<< HEAD
-							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
-                            	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
-                        	</a>
-=======
 
 							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
                             	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
                         	</a>
-
->>>>>>> origin/master
                         </div>
                     <?php
                     	endforeach;
@@ -236,7 +229,7 @@
     </div>
     <div class="modal-footer">
         <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
-        <button type="button" data-dismiss="modal" class="btn blue" id="SelectFile">Selesai / Done</button>
+        <button type="submit" data-dismiss="modal" class="btn blue" id="SelectFile">Selesai / Done</button>
     </div>
 </div>
 
@@ -290,7 +283,7 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	<?php endif; ?>
 </script>
 
-<script>
+<!--<script>
 	jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
@@ -315,4 +308,4 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	  }
 	});
 
-</script>
+</script>-->

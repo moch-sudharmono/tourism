@@ -7,12 +7,7 @@
         <div class="tools">
             <a href="javascript:;" class="collapse">
             </a>
-            <a href="#portlet-config" data-toggle="modal" class="config">
-            </a>
-            <a href="javascript:;" class="reload">
-            </a>
-            <a href="javascript:;" class="remove">
-            </a>
+
         </div>
     </div>
     <div class="portlet-body">
@@ -21,28 +16,13 @@
                 <div class="col-md-6">
                     <div class="btn-group">
                         <a href="<?php echo base_url().'admin/infrastructure_category/form/0'; ?>" class="btn green">
-                        Add New <i class="fa fa-plus"></i>
+                        Tambah / <em>Add New</em> <i class="fa fa-plus"></i>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="btn-group pull-right">
-                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="#">
-                                Print </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Save as PDF </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Export to Excel </a>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 <div class="portlet box blue col-md-7">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-edit"></i> Tag Table
+            <i class="fa fa-edit"></i> Tabel Tag / <em>Tag Table</em>
         </div>
         <div class="tools">
             
@@ -20,22 +20,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="btn-group pull-right">
-                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="#">
-                                Print </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Save as PDF </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Export to Excel </a>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>

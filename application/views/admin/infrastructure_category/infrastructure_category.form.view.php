@@ -62,8 +62,8 @@
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" class="btn green" name="submit" id="submit_infra_kat" value="">Submit</button>
-                        <button type="button" ID="CancelButton" class="btn default">Cancel</button>
+                        <button type="button" ID="CancelButton" class="btn default">Batal / Cancel</button>
+                        <button type="submit" class="btn green" name="submit" id="submit_infra_kat" value="">Simpan / Save</button>
                     </div>
                 </div>
             </div>

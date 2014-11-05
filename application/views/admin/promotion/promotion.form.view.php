@@ -14,7 +14,7 @@
 <div class="portlet box purple">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-gift"></i> Form Tag
+            <i class="fa fa-gift"></i> Form Promosi / <em>Promotion Form</em>
         </div>
     </div>
     <div class="portlet-body form">

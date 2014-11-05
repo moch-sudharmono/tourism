@@ -44,6 +44,22 @@ class Profile extends CI_Controller {
 			$r->total = $this->Lokasi_wisata->displayCountLokasiWisataKategori($wr);
 		endforeach;
 
+
+		// Sarana Prasarana
+
+		$sarana = $this->Sarana_prasarana->displaySaranaPrasaranaKategori();
+
+		foreach( $sarana as $rsa ):
+			$w = array(
+				"id_kategori_sarana_prasarana"=>$rsa->id_kategori_sarana_prasarana,
+				"id_lokasi_wisata"=>$id_lokasi_wisata
+			); 
+			$rsa->sarana = $this->Lokasi_wisata->displayTagSaranaPrasarana($w);
+			//print_r($rsa->sarana);
+		endforeach;
+
+		
+		$data["sarana"] = $sarana;
 		$data["gambar"] = $gambar;
 		$data["terkait"] = $terkait;
 		$data["kategori"] = $kategori;
