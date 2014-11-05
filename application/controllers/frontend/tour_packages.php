@@ -60,6 +60,7 @@ class Tour_packages extends CI_Controller {
 		// End Navigation
 		$data["class"] = $this->class;
 		$data["packages"] = $this->Tour_packages_m->displaySelectedData($where); 
+		$data["images"] = $this->Tour_packages_m->displayImageSelectedData($where); 
 		$data["konten"] = "frontend/tour_packages/packages.detail.view.php";
 		$this->load->view($this->route, $data);
 	}

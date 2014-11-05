@@ -1,5 +1,6 @@
 <?php
 	$packages = isset($packages)?$packages:array();
+	$images = isset($images)?$images:array();
 	if( isset($packages) and !empty($packages) ):
 	foreach( $packages as $row ):
 ?>
@@ -20,25 +21,25 @@
                   <div id="myCarousel" class="carousel slide">
                     <!-- Carousel items -->
                     <div class="carousel-inner">
+                      <?php
+					  	foreach($images as $val){
+					  ?>
                       <div class="item">
-                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img1.jpg" alt="">
+                        <img src="<?php echo base_url() ?>upload/<?php echo $val->gambar?>" alt="">
                       </div>
-                      <div class="item">
-                        <!-- BEGIN VIDEO -->   
-                        <iframe src="http://player.vimeo.com/video/56974716?portrait=0" style="width:100%; border:0" allowfullscreen="" height="259"></iframe>
-                        <!-- END VIDEO -->   
-                      </div>
-                      <div class="item active">
-                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img3.jpg" alt="">
-                      </div>
+                      <?php
+						}
+					  ?>
                     </div>
                     <!-- Carousel nav -->
+                    <?php if(!empty($images)) { ?>
                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">
                       <i class="fa fa-angle-left"></i>
                     </a>
                     <a class="carousel-control right" href="#myCarousel" data-slide="next">
                       <i class="fa fa-angle-right"></i>
                     </a>
+                    <?php } ?>
                   </div>                
                 </div>
                 <!-- END CAROUSEL -->             
@@ -55,29 +56,7 @@
               </p>
                                     
             </div>
-            <!-- END LEFT SIDEBAR -->  
-            
-            <!-- BEGIN RIGHT SIDEBAR -->            
-            <div class="col-md-3 col-sm-3 blog-sidebar">
-                                       
-              <!-- BEGIN BLOG PHOTOS STREAM -->
-              <div class="blog-photo-stream margin-bottom-20">
-                <h3>Foto-foto / <em>Photos</em></h3>
-                <ul class="list-unstyled">
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img5-small.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img1.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img4-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img6.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img1-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img2-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img3.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img2-large.jpg"></a></li>
-                </ul>                    
-              </div>
-              <!-- END BLOG PHOTOS STREAM -->
-              
-            </div>
-            <!-- END RIGHT SIDEBAR -->   
+            <!-- END LEFT SIDEBAR -->   
                       
           </div>
         </div>
