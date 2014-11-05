@@ -81,14 +81,14 @@
                         	foreach( $row->tags as $rt ):
 								echo "
 									<label class='ina'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ." / ". SEO($rt->tag_ina) . "'>
+									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ."/". SEO($rt->tag_ina) . "'>
 									" . $rt->tag_ina . "</a>
 									|
 									</label>
 								";	
 								echo "
 									<label class='eng'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ." / ". SEO($rt->tag_eng) . "'>
+									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ."/". SEO($rt->tag_eng) . "'>
 									" . $rt->tag_eng . "</a> 
 									|
 									</label> 
