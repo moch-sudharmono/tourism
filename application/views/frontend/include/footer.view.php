@@ -1,5 +1,5 @@
 <!-- BEGIN PRE-FOOTER -->
-<div class="pre-footer">
+<div class="pre-footer" style="display:none">
   <div class="container">
     <div class="row">
       <!-- BEGIN BOTTOM ABOUT BLOCK -->
@@ -7,7 +7,7 @@
         <h2>Tentang Kami / About us</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
 
-        <!--<div class="photo-stream">
+        <div class="photo-stream">
           <h2>Photos Stream</h2>
           <ul class="list-unstyled">
             <li><a href="#"><img alt="" src="<?php echo base_url() ?>/inc/frontend/pages/img/people/img5-small.jpg"></a></li>
@@ -26,7 +26,7 @@
             <li><a href="#"><img alt="" src="<?php echo base_url() ?>/inc/frontend/pages/img/people/img2-large.jpg"></a></li>
             <li><a href="#"><img alt="" src="<?php echo base_url() ?>/inc/frontend/pages/img/works/img2.jpg"></a></li>
           </ul>                    
-        </div>-->
+        </div>
       </div>
       <!-- END BOTTOM ABOUT BLOCK -->
 
@@ -42,7 +42,7 @@
           Skype: <a href="skype:metronic">metronic</a>
         </address>
 
-        <!--<div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
+        <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
           <h2>Newsletter</h2>
           <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
           <form action="#">
@@ -54,15 +54,15 @@
             </div>
           </form>
         </div>
-      </div>-->
-      <!-- END BOTTOM CONTACTS -->
+      </div>
+       END BOTTOM CONTACTS 
 
-      <!-- BEGIN TWITTER BLOCK --> 
-     <!-- <div class="col-md-4 col-sm-6 pre-footer-col">
+       BEGIN TWITTER BLOCK  
+      <div class="col-md-4 col-sm-6 pre-footer-col">
         <h2 class="margin-bottom-0">Latest Tweets</h2>
         <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
-      </div>-->
-      <!-- END TWITTER BLOCK -->
+      </div>
+       END TWITTER BLOCK 
     </div>
   </div>
 </div>
@@ -74,12 +74,12 @@
     <div class="row">
       <!-- BEGIN COPYRIGHT -->
       <div class="col-md-6 col-sm-6 padding-top-10">
-        2014 © Metronic Shop UI. ALL Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        2014 © Tourism
       </div>
       <!-- END COPYRIGHT -->
       <!-- BEGIN PAYMENTS -->
       <div class="col-md-6 col-sm-6">
-        <ul class="social-footer list-unstyled list-inline pull-right">
+        <!--<ul class="social-footer list-unstyled list-inline pull-right">
           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
           <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
           <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -89,7 +89,7 @@
           <li><a href="#"><i class="fa fa-github"></i></a></li>
           <li><a href="#"><i class="fa fa-youtube"></i></a></li>
           <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
-        </ul>  
+        </ul>  -->
       </div>
       <!-- END PAYMENTS -->
     </div>

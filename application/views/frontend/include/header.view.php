@@ -2,7 +2,7 @@
 <div class="header">
   <div class="container">
     <a class="site-logo" href="<?php echo base_url() ?>">
-    	Wakatobi
+    	<?php echo getTitle() ?>
     </a>
 
     <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>

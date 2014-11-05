@@ -12,6 +12,7 @@ class Home extends CI_Controller {
 		$this->load->model("admin/jalur");
 		$this->load->model("frontend/slideshow");
 		$this->load->model("frontend/lokasi_wisata");
+		$this->load->model("frontend/Promotion_m");
 		$this->load->library("navigation_lib");
 		$this->load->helper("dijkstra");
 	}
@@ -24,7 +25,9 @@ class Home extends CI_Controller {
 		);
 		$slide = $this->slideshow->display(0, 3, $where);
 		$lokasi = $this->lokasi_wisata->displayGambar();
+		$promotion = $this->Promotion_m->displayAll(3, 0);
 		
+		$data["promotion"] = $promotion;
 		$data["lokasi"] = $lokasi;
 		$data["slide"] = $slide;
 		$data["nodes"] = $nodes;
@@ -101,6 +104,7 @@ class Home extends CI_Controller {
 		/*echo "<pre>";
 		print_r($arr_route);
 		exit;*/
+		$data["class"] = $this->class;
 		$data["route"] = $arr_route;
 		$data["konten"] = "frontend/route/route.list.view.php";
 		$this->load->view($this->route, $data);

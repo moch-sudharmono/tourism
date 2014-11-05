@@ -1,12 +1,24 @@
-<!-- Theme styles START -->
+<!--slider-->
+
+<div class="main">
+	<?php $this->load->view("frontend/include/slider.view.php"); ?>
+  <div class="container">
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+      <!-- BEGIN CONTENT -->
+      <div class="col-md-12 col-sm-12">
+
+        <div class="content-page">
+          <div class="row">
+            
+            <!-- Theme styles START -->
 <link href="<?php echo base_url() ?>inc/frontend/pages/css/style-shop.css" rel="stylesheet" type="text/css">
 <!-- Theme styles END -->
 
-<!--slider-->
-<?php $this->load->view("frontend/include/slider.view.php"); ?>
 
-<div class="main">
-    <div class="container">
+
+
+
         
         <?php $this->load->view("frontend/home.search.view.php") ?>
         
@@ -35,6 +47,15 @@
         <!-- END STEPS -->
     	
         <?php $this->load->view("frontend/home/locationphotos.view.php") ?>
-    
+        
+        <?php $this->load->view("frontend/home/promotion.view.php") ?>
+
+                       
+          </div>
+        </div>
+      </div>
+      <!-- END CONTENT -->
     </div>
+    <!-- END SIDEBAR & CONTENT -->
+  </div>
 </div>
