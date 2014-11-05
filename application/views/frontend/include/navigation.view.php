@@ -28,6 +28,11 @@
         Gallery
       </a>
     </li>
+    <li class="promotion" id="promotion">
+      <a href="<?php echo base_url() ?>frontend/promotion">
+        Promosi
+      </a>
+    </li>
     <li class="contact" id="contact"><a href="<?php echo base_url() ?>frontend/contact">Tanya Kami</a></li>
 
     <!-- BEGIN TOP SEARCH -->

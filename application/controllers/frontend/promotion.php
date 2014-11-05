@@ -7,7 +7,7 @@ class Promotion extends CI_Controller {
 	public function __construct(){
 		//function check access			
 		parent::__construct();	
-		$this->load->model("admin/Promosi");
+		$this->load->model("frontend/Promotion_m");
 		$this->load->library('pagination_lib');
 	}
 	
@@ -23,17 +23,10 @@ class Promotion extends CI_Controller {
 			$offset = 0;
 		endif;
 		
-		$news = $this->News_m->displayAll($limit, $offset);
-		$popular = $this->News_m->displayPopular();
-		$news_tag = $this->News_m->displayNewsTag();
-
-		foreach( $news as $rn ):
-			$w = array( "id_berita"=>$rn->id_berita );
-			$rn->tags = $this->News_m->getNewsTag($w);
-		endforeach;
+		$promotion = $this->Promotion_m->displayAll($limit, $offset);
 		// Paging
-		$total_row =  $this->News_m->countAllData();
-		$url = base_url() . "frontend/news/?paging=true";
+		$total_row =  $this->Promotion_m->countAllData();
+		$url = base_url() . "frontend/promotion/?paging=true";
 		$data_paging = array(
 			"url"=>$url,
 			"total_rows"=>$total_row,
@@ -43,35 +36,24 @@ class Promotion extends CI_Controller {
 		
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
 		
-		$data["popular"] = $popular; 
-		$data["news"] = $news; 
-		$data["news_tag"] = $news_tag; 
+		$data["promotion"] = $promotion; 
 		$data["class"] = $this->class;
 		
-		$data["konten"] = "frontend/news/news.main.view.php";
+		$data["konten"] = "frontend/promotion/promotion.list.view.php";
 		$this->load->view($this->route, $data);
 	}
 	
-	public function detail($id_berita=0)
+	public function detail($id_promosi=0)
 	{
 		$where = array(
-			"id_berita"=>$id_berita
+			"id_promosi"=>$id_promosi
 		);
 		
-		$news = $this->News_m->displaySelectedData($where);
-		$popular = $this->News_m->displayPopular();
-		$news_tag = $this->News_m->displayNewsTag();
-		
-		foreach( $news as $rn ):
-			$w = array( "id_berita"=>$rn->id_berita );
-			$rn->tags = $this->News_m->getNewsTag($w);
-		endforeach;
+		$promotion = $this->Promotion_m->displaySelectedData($where);
 		
 		$data["class"] = $this->class;
-		$data["popular"] = $popular; 
-		$data["news"] = $news; 
-		$data["news_tag"] = $news_tag; 
-		$data["konten"] = "frontend/news/news.detail.view.php";
+		$data["promotion"] = $promotion; 
+		$data["konten"] = "frontend/promotion/promotion.detail.view.php";
 		$this->load->view($this->route, $data);
 	}
 }
