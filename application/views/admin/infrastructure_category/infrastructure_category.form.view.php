@@ -77,10 +77,10 @@
     });
 </script>
 <script>
-	jQuery.validator.setDefaults({
+	/*jQuery.validator.setDefaults({
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#form_sarana_kat" ).validate({
 	  rules: {
 		 kategori_sarana_prasarana_eng: {

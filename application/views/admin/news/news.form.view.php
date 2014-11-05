@@ -177,3 +177,26 @@ $(".id_berita_tag").each(function(index, element) {
         location.href = "<?php echo base_url() ?>admin/news"
     });
 </script>
+<script>
+	/*jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});*/
+	$( "#form_news" ).validate({
+	  rules: {
+		 judul_berita_ina: {
+			required: true
+		},
+		judul_berita_eng: {
+			required: true
+		},
+		isi_berita_ina: {
+			required: true
+		},
+		isi_berita_eng: {
+			required: true
+		}
+	  }
+	});
+
+</script>

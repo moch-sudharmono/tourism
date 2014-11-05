@@ -24,7 +24,7 @@
     
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <form action="<?php echo base_url() ?>admin/route/save" method="post" id="form_sample_3" class="form-horizontal">
+        <form action="<?php echo base_url() ?>admin/route/save" method="post" id="form_route" class="form-horizontal">
         	<input type="hidden" name="id_transportation" value="<?php echo $id_transportation ?>" />
             <div class="form-body">									
                 <div class="alert alert-danger display-hide">
@@ -135,3 +135,32 @@
 	$("#id_sarana_prasarana").val("<?php echo $id_sarana_prasarana ?>");
 
 </script>
+
+<script>
+	/*jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});*/
+	$( "#form_route" ).validate({
+	  rules: {
+		 id_edges: {
+			required: true
+		},id_sarana_prasarana: {
+			required: true
+		},
+		deskripsi_ina: {
+			required: true
+		},
+		deskripsi_eng: {
+			required: true
+		},
+		waktu_perjalanan: {
+			required: true, number:true
+		},
+		estimasi_biaya: {
+			required: true,number:true
+		}
+	  }
+	});
+</script>
+

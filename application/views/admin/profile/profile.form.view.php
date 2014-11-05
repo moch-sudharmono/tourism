@@ -283,11 +283,16 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	<?php endif; ?>
 </script>
 
+<<<<<<< HEAD
 <!--<script>
 	jQuery.validator.setDefaults({
+=======
+<script>
+	/*jQuery.validator.setDefaults({
+>>>>>>> origin/master
 	  debug: true,
 	  success: "valid"
-	});
+	});*/
 	$( "#profile_form" ).validate({
 	  rules: {
 		 parent_id: {

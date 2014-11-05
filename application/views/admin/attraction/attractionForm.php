@@ -187,10 +187,7 @@ $(".id_sarana_prasarana").each(function(index, element) {
 });
 </script>
 <script>
-	jQuery.validator.setDefaults({
-	  debug: true,
-	  success: "valid"
-	});
+	
 	$( "#form_attraction" ).validate({
 	  rules: {
 		 title_eng: {

@@ -21,7 +21,7 @@
     
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <form action="<?php echo base_url() ?>admin/edge/save" method="post" id="form_sample_3" class="form-horizontal">
+        <form action="<?php echo base_url() ?>admin/edge/save" method="post" id="form_edge" class="form-horizontal">
         	<input type="hidden" name="id_edges" value="<?php echo $id_edges ?>" />
             <div class="form-body">									
                 <div class="alert alert-danger display-hide">
@@ -87,4 +87,20 @@
 	$("#id_nodes_edge_from").val("<?php echo $id_nodes_edge_from; ?>");
 	$("#id_nodes_edge_to").val("<?php echo $id_nodes_edge_to ?>");
 
+</script>
+
+<script>
+/*	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});*/
+	$( "#form_edge" ).validate({
+	  rules: {
+		 id_nodes_edge_from: {
+			required: true
+		},id_nodes_edge_to: {
+			required: true
+		}
+	  }
+	});
 </script>

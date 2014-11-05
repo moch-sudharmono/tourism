@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="portlet-body form">
-        <form role="form" method="post" class="form-horizontal" action="<?php echo base_url() ?>admin/tag/save">
+        <form role="form" method="post" class="form-horizontal" id="form_news_tag" action="<?php echo base_url() ?>admin/tag/save">
             <input type="hidden" name="id_berita_tag" value="<?php echo $id_berita_tag ?>" />
             <div class="form-body">
                 <div class="form-group">
@@ -46,4 +46,21 @@
 	$("#back_tag").click(function(e) {
         location.href = "<?php echo base_url() ?>admin/tag"
     });
+</script>
+
+<script>
+	/*jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});*/
+	$( "#form_news_tag" ).validate({
+	  rules: {
+		 tag_ina: {
+			required: true
+		},tag_eng: {
+			required: true
+		}
+	  }
+	});
+
 </script>

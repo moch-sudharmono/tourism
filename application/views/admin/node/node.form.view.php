@@ -14,7 +14,7 @@
     
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <form action="<?php echo base_url() ?>admin/node/save" method="post" id="form_sample_3" class="form-horizontal">
+        <form action="<?php echo base_url() ?>admin/node/save" method="post" id="form_node" class="form-horizontal">
         	<input type="hidden" name="id_nodes" value="<?php echo $id_nodes ?>" />
             <div class="form-body">									
                 <div class="alert alert-danger display-hide">
@@ -53,4 +53,17 @@
         location.href = "<?php echo base_url() ?>admin/node"
     });
 	
+</script>
+
+<script>
+/*	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});*/
+	$( "#form_node" ).validate({
+	  rules: {
+		 nodes: {
+			required: true
+		}
+	});
 </script>
