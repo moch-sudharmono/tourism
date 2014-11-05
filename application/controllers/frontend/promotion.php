@@ -50,9 +50,13 @@ class Promotion extends CI_Controller {
 		);
 		
 		$promotion = $this->Promotion_m->displaySelectedData($where);
+		$file = $this->Promotion_m->displayFileSelectedData($where);
+		$image = $this->Promotion_m->displayImageSelectedData($where);
 		
 		$data["class"] = $this->class;
 		$data["promotion"] = $promotion; 
+		$data["file"] = $file;
+		$data["image"] = $image;
 		$data["konten"] = "frontend/promotion/promotion.detail.view.php";
 		$this->load->view($this->route, $data);
 	}

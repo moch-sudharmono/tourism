@@ -25,6 +25,22 @@
 			return $query->result();
 		}
 		
+		public function displayFileSelectedData($data)
+		{
+			$this->db->where($data);
+			$query = $this->db->get("pr_promosi_berkas");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
+		public function displayImageSelectedData($data)
+		{
+			$this->db->where($data);
+			$query = $this->db->get("pr_promosi_gambar");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
 		public function countAllData($where="")
 		{
 			if( !empty($where) ):

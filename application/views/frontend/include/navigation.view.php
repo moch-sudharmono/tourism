@@ -33,6 +33,11 @@
         Promosi
       </a>
     </li>
+    <li class="tour_packages" id="tour_packages">
+      <a href="<?php echo base_url() ?>frontend/tour_packages">
+        Paket Wisata
+      </a>
+    </li>
     <li class="contact" id="contact"><a href="<?php echo base_url() ?>frontend/contact">Tanya Kami</a></li>
 
     <!-- BEGIN TOP SEARCH -->

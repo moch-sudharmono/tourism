@@ -1,5 +1,7 @@
 <?php
 	$promotion = isset($promotion)?$promotion:array();
+	$files = isset($files)?$files:array();
+	$image = isset($image)?$image:array();
 	foreach( $promotion as $row ):
 ?>
 <div class="main">
@@ -18,13 +20,10 @@
                   <div class="front-carousel">
                     <div class="carousel slide" id="myCarousel">
                       <!-- Carousel items -->
-                      <?php 
-					  	if( !empty($row->gambar) and isset($row->gambar) ):
-					  ?>
                       <div class="carousel-inner">
                         <?php
 							$no = 0;
-                        	foreach( $row->gambar as $rg ):
+                        	foreach( $image as $rg ):
 							$no++;
 						?>
                         <div class="item <?php echo $no==1?"active":"" ?>">
@@ -34,13 +33,7 @@
                         	endforeach;
 						?>
                       </div>
-                      <?php 
-					  	else:
-					  ?>
-
-                      <?php 
-					  	endif;
-					  ?>
+                     
                       <?php
                       	if( !empty($row->gambar) and isset($row->gambar) and count($row->gambar) > 1 ):
 					  ?>
@@ -66,6 +59,18 @@
               <div class="eng">
               	 <?php echo $row->deskripsi_eng ?>
               </div>
+              
+              <div class="file">
+              	<?php
+					foreach($files as $val){
+				?>
+              	 <a href="<?php echo base_url() ?>upload/<?php echo $val->berkas ?>" />
+                 <?php 
+				 	}
+				?>
+              </div>
+              
+              
               <ul class="blog-info">
                 <li><i class="fa fa-calendar"></i> <?php echo TglOnlyIndo($row->tanggal_promosi) ?></li>
                 
