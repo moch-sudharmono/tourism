@@ -20,6 +20,6 @@
 <link href="<?php echo base_url() ?>inc/frontend/layout/css/style.css" rel="stylesheet">
 <link href="<?php echo base_url() ?>inc/frontend/pages/css/style-revolution-slider.css" rel="stylesheet"><!-- metronic revo slider styles -->
 <link href="<?php echo base_url() ?>inc/frontend/layout/css/style-responsive.css" rel="stylesheet">
-<link href="<?php echo base_url() ?>inc/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
+<link href="<?php echo base_url() ?>inc/frontend/layout/css/themes/<?php echo getTheme() ?>.css" rel="stylesheet" id="style-color">
 <link href="<?php echo base_url() ?>inc/frontend/layout/css/custom.css" rel="stylesheet">
 <!-- Theme styles END -->

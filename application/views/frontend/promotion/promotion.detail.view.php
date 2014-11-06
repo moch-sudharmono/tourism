@@ -35,7 +35,7 @@
                       </div>
                      
                       <?php
-                      	if( !empty($row->gambar) and isset($row->gambar) and count($row->gambar) > 1 ):
+                      	if( !empty($image) and isset($image) and count($image) > 1 ):
 					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">
@@ -73,12 +73,19 @@
               
               <ul class="blog-info">
                 <li><i class="fa fa-calendar"></i> <?php echo TglOnlyIndo($row->tanggal_promosi) ?></li>
-                
+                <li><i class="fa fa-calendar"></i> Expired on <?php echo TglOnlyIndo($row->tanggal_kadarluarsa) ?></li>
+                <li><i class="fa fa-tags"></i>  <?php echo $kategori[0]->kategori_promosi_ina ?> / <em><?php echo $kategori[0]->kategori_promosi_eng ?></em></li>
               </ul>
 
                                     
             </div>
             <!-- END LEFT SIDEBAR -->
+            
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <?php  
+				$this->load->view("frontend/promotion/promotion.right.view.php")
+			?>
+            <!-- END RIGHT SIDEBAR -->    
 
           </div>
         </div>

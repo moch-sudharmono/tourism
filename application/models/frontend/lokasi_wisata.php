@@ -82,7 +82,7 @@ class Lokasi_wisata extends MY_Model
 		if( !empty($where) ):
 			$this->db->where($where);
 		endif;
-		$query = $this->db->get("pr_lokasi_wisata_gambar");
+		$query = $this->db->get("pr_lokasi_wisata_gambar_view");
 		return $query->result();
 	}
 	

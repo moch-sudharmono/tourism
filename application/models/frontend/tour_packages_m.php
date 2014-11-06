@@ -22,6 +22,21 @@
 			return $query->result();
 		}
 		
+		public function displayImageSelectedData($data)
+		{
+			$this->db->where($data);
+			$query = $this->db->get("pr_paket_wisata_gambar");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
+		public function displayAllImage()
+		{
+			$query = $this->db->get("pr_paket_wisata_gambar");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
 		public function countAllData()
 		{
 			return $this->db->count_all_results($this->table);

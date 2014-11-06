@@ -1,5 +1,6 @@
 <?php
 	$packages = isset($packages)?$packages:array();
+	$image = isset($image)?$image:array();
 	if( isset($packages) and !empty($packages) ):
 	foreach( $packages as $row ):
 ?>
@@ -15,33 +16,48 @@
             <!-- BEGIN LEFT SIDEBAR -->            
             <div class="col-md-9 col-sm-9 blog-item">
               <div class="blog-item-img">
-                <!-- BEGIN CAROUSEL -->            
-                <div class="front-carousel">
-                  <div id="myCarousel" class="carousel slide">
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-                      <div class="item">
-                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img1.jpg" alt="">
+              	<!-- BEGIN CAROUSEL -->            
+                  <div class="front-carousel">
+                    <div class="carousel slide" id="myCarousel">
+                      <!-- Carousel items -->
+                      <?php 
+					  	if( !empty($image) and isset($image) ):
+					  ?>
+                      <div class="carousel-inner">
+                        <?php
+							$no = 0;
+					  		foreach($image as $val):
+							$no++;
+						?>
+                        <div class="item <?php echo $no==1?"active":"" ?>">
+                          <img alt="" src="<?php echo base_url() ?>upload/<?php echo $val->gambar?>" height="400" style="height:400px !important; width:100%;">
+                        </div>
+                        <?php
+                        	endforeach;
+						?>
                       </div>
-                      <div class="item">
-                        <!-- BEGIN VIDEO -->   
-                        <iframe src="http://player.vimeo.com/video/56974716?portrait=0" style="width:100%; border:0" allowfullscreen="" height="259"></iframe>
-                        <!-- END VIDEO -->   
-                      </div>
-                      <div class="item active">
-                        <img src="<?php echo base_url() ?>inc/frontend/pages/img/posts/img3.jpg" alt="">
-                      </div>
-                    </div>
-                    <!-- Carousel nav -->
-                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                      <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                      <i class="fa fa-angle-right"></i>
-                    </a>
-                  </div>                
-                </div>
-                <!-- END CAROUSEL -->             
+                      <?php 
+					  	else:
+					  ?>
+
+                      <?php 
+					  	endif;
+					  ?>
+                      <?php
+                      	if( !empty($image) and isset($image) and count($image) > 1 ):
+					  ?>
+                      <!-- Carousel nav -->
+                      <a data-slide="prev" href="#myCarousel" class="carousel-control left">
+                        <i class="fa fa-angle-left"></i>
+                      </a>
+                      <a data-slide="next" href="#myCarousel" class="carousel-control right">
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                      <?php endif; ?>
+                    </div>                
+                  </div>
+                  <!-- END CAROUSEL -->
+                      
               </div>
               <h2>
               	<a href="#" class="ina"><?php echo strtoupper($row->paket_wisata_ina) ?></a>
@@ -55,30 +71,12 @@
               </p>
                                     
             </div>
-            <!-- END LEFT SIDEBAR -->  
-            
+            <!-- END LEFT SIDEBAR -->   
             <!-- BEGIN RIGHT SIDEBAR -->            
-            <div class="col-md-3 col-sm-3 blog-sidebar">
-                                       
-              <!-- BEGIN BLOG PHOTOS STREAM -->
-              <div class="blog-photo-stream margin-bottom-20">
-                <h3>Foto-foto / <em>Photos</em></h3>
-                <ul class="list-unstyled">
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img5-small.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img1.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img4-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img6.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img1-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/pics/img2-large.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img3.jpg"></a></li>
-                  <li><a href="#"><img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/people/img2-large.jpg"></a></li>
-                </ul>                    
-              </div>
-              <!-- END BLOG PHOTOS STREAM -->
-              
-            </div>
-            <!-- END RIGHT SIDEBAR -->   
-                      
+            <?php  
+				$this->load->view("frontend/tour_packages/packages.right.view.php")
+			?>
+            <!-- END RIGHT SIDEBAR -->           
           </div>
         </div>
       </div>

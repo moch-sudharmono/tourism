@@ -12,7 +12,7 @@
 				$this->db->where($where);
 			endif;
 			$this->db->order_by($this->primary_key . " desc ");
-			$query = $this->db->get($this->table);
+			$query = $this->db->get("pr_berita_view");
 			//echo $this->db->last_query();
 			return $query->result();
 		}
@@ -32,7 +32,7 @@
 		public function displaySelectedData($data)
 		{
 			$this->db->where($data);
-			$query = $this->db->get($this->table);
+			$query = $this->db->get("pr_berita_view");
 			//echo $this->db->last_query();
 			return $query->result();
 		}
@@ -40,9 +40,8 @@
 		public function displayPopular($offset=3, $limit=0)
 		{
 			$this->db->limit($offset, $limit);
-			$this->db->order_by($this->primary_key . " desc ");
-			$query = $this->db->get($this->table);
-			//echo $this->db->last_query();
+			$this->db->order_by("total desc ");
+			$query = $this->db->get("pr_berita_view");
 			return $query->result();
 		}
 		

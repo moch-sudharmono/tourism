@@ -10,21 +10,27 @@ class Home extends CI_Controller {
 		parent::__construct();	
 		$this->load->model("admin/simpul");
 		$this->load->model("admin/jalur");
+		$this->load->model("frontend/slideshow");
+		$this->load->model("frontend/lokasi_wisata");
+		$this->load->model("frontend/Promotion_m");
 		$this->load->library("navigation_lib");
 		$this->load->helper("dijkstra");
 	}
 	
 	public function index()
-	{
-		// For Navigation
-		$d = $this->navigation_lib->load_all();
-		$data["potensi_wisata"] = $d["potensi_wisata"];
-		// End For Navigation
-		
+	{		
 		$nodes = $this->simpul->display();
+		$where = array(
+			"publish"=>"Y"
+		);
+		$slide = $this->slideshow->display(0, 3, $where);
+		$lokasi = $this->lokasi_wisata->displayGambar();
+		$promotion = $this->Promotion_m->displayAll(3, 0);
 		
+		$data["promotion"] = $promotion;
+		$data["lokasi"] = $lokasi;
+		$data["slide"] = $slide;
 		$data["nodes"] = $nodes;
-		
 		$data["class"] = $this->class;
 		$data["konten"] = "frontend/home.view.php";
 		$this->load->view($this->route, $data);
@@ -98,6 +104,7 @@ class Home extends CI_Controller {
 		/*echo "<pre>";
 		print_r($arr_route);
 		exit;*/
+		$data["class"] = $this->class;
 		$data["route"] = $arr_route;
 		$data["konten"] = "frontend/route/route.list.view.php";
 		$this->load->view($this->route, $data);

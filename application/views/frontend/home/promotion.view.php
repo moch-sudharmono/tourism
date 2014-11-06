@@ -1,22 +1,16 @@
-<div class="main">
-  <div class="container">
-    <!-- BEGIN SIDEBAR & CONTENT -->
-    <div class="row margin-bottom-40">
-      <!-- BEGIN CONTENT -->
-      <div class="col-md-12 col-sm-12">
-        <h2>Berita / <em>News</em></h2>
-        <div class="content-page">
-          <div class="row">
+
+        <h2><i class="fa  fa-tag fa-lg"></i> Promosi / <em>Promotion</em></h2>
+       	<hr />
             <!-- BEGIN LEFT SIDEBAR -->            
-            <div class="col-md-9 col-sm-9 blog-posts">
+            <div class="col-md-12 col-sm-12 blog-posts">
               
               <?php
-			  	$news = isset($news)?$news:array();
-			  	if( isset($news) and !empty($news) ):
-				foreach( $news as $row ):
+			  	$promotion = isset($promotion)?$promotion:array();
+			  	if( isset($promotion) and !empty($promotion) ):
+				foreach( $promotion as $row ):
 			  ?>
               <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-3">
                   <!-- BEGIN CAROUSEL -->            
                   <div class="front-carousel">
                     <div class="carousel slide" id="myCarousel">
@@ -64,49 +58,28 @@
                   </div>
                   <!-- END CAROUSEL -->             
                 </div>
-                <div class="col-md-8 col-sm-8">
+                <div class="col-md-9 col-sm-9">
                   <h3>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina">
-                      	<?php echo strtoupper($row->judul_berita_ina) ?>
+                      <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $row->id_promosi ?>/<?php echo SEO($row->promosi_ina) ?>" class="ina">
+                      	<?php echo strtoupper($row->promosi_ina) ?>
                       </a>
-                      <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng">
-                      	<?php echo strtoupper($row->judul_berita_eng) ?>
+                      <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $row->id_promosi ?>/<?php echo SEO($row->promosi_eng) ?>" class="eng">
+                      	<?php echo strtoupper($row->promosi_eng) ?>
                       </a>
                   </h3>
                   <ul class="blog-info">
-                    <li><i class="fa fa-calendar"></i> <?php echo TglIndo($row->tanggal_berita) ?></li>
-                    <li><i class="fa fa-comments"></i> <?php echo $row->total ?></li>
-                    <li><i class="fa fa-tags"></i>
-                    	<?php
-                        	foreach( $row->tags as $rt ):
-								echo "
-									<label class='ina'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ."/". SEO($rt->tag_ina) . "'>
-									" . $rt->tag_ina . "</a>
-									|
-									</label>
-								";	
-								echo "
-									<label class='eng'>
-									<a href='" . base_url() . "frontend/news/tag/". $rt->id_berita_tag ."/". SEO($rt->tag_eng) . "'>
-									" . $rt->tag_eng . "</a> 
-									|
-									</label> 
-								";	
-							endforeach;
-						?>
-                    </li>
+                    <li><i class="fa fa-calendar"></i> <?php echo TglOnlyIndo($row->tanggal_promosi) ?></li>
                   </ul>
                   <p class="ina">
-                  	<?php echo PotongKata($row->isi_berita_ina, 50) ?>
+                  	<?php echo PotongKata($row->deskripsi_ina, 50) ?>
                   </p>
                   <p class="eng">
-                  	<?php echo PotongKata($row->isi_berita_eng, 50) ?>
+                  	<?php echo PotongKata($row->deskripsi_eng, 50) ?>
                   </p>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_ina) ?>" class="ina more">
+                  <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $row->id_promosi ?>/<?php echo SEO($row->promosi_ina) ?>" class="ina more">
 					Selengkapnya
                   </a>
-                  <a href="<?php echo base_url() ?>frontend/news/detail/<?php echo $row->id_berita ?>/<?php echo SEO($row->judul_berita_eng) ?>" class="eng more">
+                  <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $row->id_promosi ?>/<?php echo SEO($row->promosi_eng) ?>" class="eng more">
                     Read More
                   </a>
                 </div>
@@ -121,22 +94,8 @@
               <?php
 				endif; 
 			  ?>
-             <ul class="pagination">
-             	<?php echo $paging; ?>
-             </ul>              
+                        
             </div>
             <!-- END LEFT SIDEBAR -->
 
-            <?php  
-				$this->load->view("frontend/news/news.right.view.php")
-			?>
-            
-                       
-          </div>
-        </div>
-      </div>
-      <!-- END CONTENT -->
-    </div>
-    <!-- END SIDEBAR & CONTENT -->
-  </div>
-</div>
+

@@ -87,6 +87,20 @@ class Berita extends MY_Model
 	{
 		return $this->db->delete("pr_berita_gambar", $where);
 	}
+	
+	public function insertBeritaLog($data)
+	{
+		return $this->db->insert("pr_berita_log", $data);
+	}
+	
+	public function displaySelectedBeritaLog($where="")
+	{	
+		if( !empty($where) ):
+			$this->db->where($where);
+		endif;
+		$query = $this->db->get("pr_berita_log");
+		return $query->result();
+	}
 }
 
 ?>

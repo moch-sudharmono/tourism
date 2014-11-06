@@ -108,4 +108,22 @@
 		return money_format('%.2n', $number) . "\n";
 	}
 	
+	function getTheme()
+	{
+		$sql = "select * from pr_global where nama_variabel='theme'";
+		$r = mysql_query($sql);
+		$data = mysql_fetch_array($r);
+		$theme = !empty($data["val_varchar"])?$data["val_varchar"]:"red";
+		return $theme;
+	}
+	
+	function getTitle()
+	{
+		$sql = "select * from pr_global where nama_variabel='web_title'";
+		$r = mysql_query($sql);
+		$data = mysql_fetch_array($r);
+		$theme = !empty($data["val_varchar"])?$data["val_varchar"]:"";
+		return $theme;
+	}
+	
 ?>

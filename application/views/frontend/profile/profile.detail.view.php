@@ -127,7 +127,7 @@
 			  ?>
               
               <h2 class="ina">Komentar</h2>
-              <h2 class="eng">Testomonial</h2>
+              <h2 class="eng">Testimonial</h2>
               <div>
               	<?php  
 					$this->load->view("frontend/profile/profile.testimonial.view.php")

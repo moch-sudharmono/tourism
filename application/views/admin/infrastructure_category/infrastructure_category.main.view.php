@@ -35,7 +35,7 @@
             <th>
                  Category
             </th>
-            <th width="150">
+            <th width="250">
                  Aksi / Action
             </th>
         </tr>
@@ -47,6 +47,10 @@
             <td><?php echo $value->kategori_sarana_prasarana_ina?></td>
             <td><?php echo $value->kategori_sarana_prasarana_eng?></td>
             <td align="center">
+            	<a href="<?php echo base_url() ?>admin/infrastructure_category/form/<?php echo $value->id_kategori_sarana_prasarana ?>">
+                    	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
+                </a>
+                |
                 <a class="delete_category" href="<?php echo base_url().'admin/infrastructure_category/delete/'.$value->id_kategori_sarana_prasarana; ?>">
                 <i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                 </a>

@@ -41,12 +41,35 @@
 			return $query->result();
 		}
 		
+		public function displayAllImage()
+		{
+			$query = $this->db->get("pr_promosi_gambar");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
+		public function displayCategorySelectedData($data)
+		{
+			$this->db->where($data);
+			$query = $this->db->get("pr_kategori_promosi");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
 		public function countAllData($where="")
 		{
 			if( !empty($where) ):
 				$this->db->where($where);
 			endif;
 			return $this->db->count_all_results($this->table);
+		}
+		
+		public function display()
+		{
+			$this->db->order_by("id_kategori_promosi desc ");
+			$query = $this->db->get("pr_kategori_promosi");
+			//echo $this->db->last_query();
+			return $query->result();
 		}
 		
 	}

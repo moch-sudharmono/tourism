@@ -3,23 +3,26 @@
   <ul>
     <li class="home" id="home">
       <a href="<?php echo base_url() ?>">
-        Home 
+        <div class="fa fa-home fa-2x"></div> 
       </a>
     </li>
     <li class="news" id="news">
       <a href="<?php echo base_url() ?>frontend/news">
-        Berita 
+        <label class="ina">Berita</label>
+        <label class="eng">News</label> 
       </a>
     </li>
     <li class="news" id="profile">
       <a href="<?php echo base_url() ?>frontend/profile">
-        Profil
+       <label class="ina">Profil</label>
+       <label class="eng">Profile</label>
       </a>
     </li>
 
     <li>
       <a href="http://103.10.105.249/kita" target="_blank">
-        Komunitas
+        <label class="ina">Komunitas</label>
+        <label class="eng">Community</label>
       </a>
     </li>
     
@@ -30,15 +33,22 @@
     </li>
     <li class="promotion" id="promotion">
       <a href="<?php echo base_url() ?>frontend/promotion">
-        Promosi
+        <label class="ina">Promosi</label>
+        <label class="eng">Promotion</label>
       </a>
     </li>
     <li class="tour_packages" id="tour_packages">
       <a href="<?php echo base_url() ?>frontend/tour_packages">
-        Paket Wisata
+        <label class="ina">Paket Wisata</label>
+        <label class="eng">Tour Packages</label>
       </a>
     </li>
-    <li class="contact" id="contact"><a href="<?php echo base_url() ?>frontend/contact">Tanya Kami</a></li>
+    <li class="contact" id="contact">
+    	<a href="<?php echo base_url() ?>frontend/contact">
+        	<label class="ina">Tanya Kami</label>
+            <label class="eng">Ask Us</label>
+        </a>
+    </li>
 
     <!-- BEGIN TOP SEARCH -->
     <li class="menu-search">
