@@ -47,6 +47,10 @@
             <td><?php echo $value->kategori_promosi_ina?></td>
             <td><?php echo $value->kategori_promosi_eng?></td>
             <td align="center">
+            	<a href="<?php echo base_url() ?>admin/promotion_category/form/<?php echo $value->id_kategori_promosi ?>"> 
+                    <i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
+                </a> 
+                |
                 <a class="delete_category" href="<?php echo base_url().'admin/promotion_category/delete/'.$value->id_kategori_promosi; ?>">
                 <i class="fa fa-trash-o"></i> Hapus / <em>Delete</em> 
                 </a>

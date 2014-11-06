@@ -133,7 +133,14 @@
                         </a>
                     </li>
                 </ul>						
-            </li>    
+            </li> 
+            <li class="admin_menu" id="askus">
+                <a href="<?php echo base_url() ?>admin/icon">
+                <i class="fa fa-info"></i>
+                <span class="title">Icon</span>
+
+                </a>					
+            </li>   
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

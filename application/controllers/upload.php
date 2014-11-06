@@ -109,6 +109,7 @@ class Upload extends CI_Controller {
                 // so that this will still work if javascript is not enabled
             } else {
                 $file_data['upload_data'] = $this->upload->data();
+				//echo "demo";
                 //$this->load->view('upload/upload_success', $file_data);
             }
         }

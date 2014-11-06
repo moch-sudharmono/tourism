@@ -16,7 +16,7 @@
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
         <form action="<?php echo base_url().'admin/promotion_category/save' ?>" id="form_promosi_kat" class="form-horizontal" method="post"	>
-        	<input type="hidden" name="id_kategori_sarana_prasarana" value="<?php echo $id_kategori_promosi ?>" />
+        	<input type="hidden" name="id_kategori_promosi" value="<?php echo $id_kategori_promosi ?>" />
             <div class="form-body">									
                 <div class="alert alert-danger display-hide">
                     <button class="close" data-close="alert"></button>
