@@ -45,7 +45,9 @@ class Tour_packages extends CI_Controller {
 		
 		$data["packages"] = $packages; 
 		$data["class"] = $this->class;
-		
+
+		//for right sidebar
+		$data["images"] = $this->Tour_packages_m->displayAllImage(); 
 		$data["konten"] = "frontend/tour_packages/packages.main.view.php";
 		$this->load->view($this->route, $data);
 	}
@@ -60,7 +62,8 @@ class Tour_packages extends CI_Controller {
 		// End Navigation
 		$data["class"] = $this->class;
 		$data["packages"] = $this->Tour_packages_m->displaySelectedData($where); 
-		$data["images"] = $this->Tour_packages_m->displayImageSelectedData($where); 
+		$data["image"] = $this->Tour_packages_m->displayImageSelectedData($where); 
+		$data["images"] = $this->Tour_packages_m->displayAllImage(); 
 		$data["konten"] = "frontend/tour_packages/packages.detail.view.php";
 		$this->load->view($this->route, $data);
 	}

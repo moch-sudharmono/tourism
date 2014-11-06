@@ -41,6 +41,13 @@
 			return $query->result();
 		}
 		
+		public function displayAllImage()
+		{
+			$query = $this->db->get("pr_promosi_gambar");
+			//echo $this->db->last_query();
+			return $query->result();
+		}
+		
 		public function displayCategorySelectedData($data)
 		{
 			$this->db->where($data);

@@ -2,23 +2,33 @@
 <div class="col-md-3 col-sm-3 blog-sidebar">
 
   <!-- BEGIN RECENT NEWS -->                            
-  <h3>Kategori / <em>Category</em></h3>
+  <h2 class="no-top-space ina">Kategori</h2>
+  <h2 class="no-top-space eng">Category</h2>
   <div class="recent-news margin-bottom-10">
     <?php
         if( isset( $categories ) and !empty($categories) ):
-        foreach( $categories as $rp ):
+        
     ?>
-    <div class="row margin-bottom-10">
-      <div class="col-md-12">
-        <h4>
-		<a href="<?php echo base_url();?>frontend/promotion/category/<?php echo $rp->id_kategori_promosi?>/<?php echo $rp->kategori_promosi_ina?>">
-		<?php echo $rp->kategori_promosi_ina?> / <?php echo $rp->kategori_promosi_eng?>
-        </a>
-        </h4>
-      </div>                      
-    </div>
+    <ul class="nav sidebar-categories margin-bottom-40">
+		<?php
+			foreach( $categories as $rp ):
+		?>
+        	<li class="ina">
+                <a href="<?php echo base_url();?>frontend/promotion/category/<?php echo $rp->id_kategori_promosi?>/<?php echo SEO($rp->kategori_promosi_ina) ?>">
+                <?php echo $rp->kategori_promosi_ina ?>
+                </a>
+            </li>
+            <li class="eng">
+                <a href="<?php echo base_url();?>frontend/promotion/category/<?php echo $rp->id_kategori_promosi?>/<?php echo SEO($rp->kategori_promosi_eng) ?>">
+                    <?php echo $rp->kategori_promosi_eng ?>
+                </a>
+            </li>
+		<?php
+        	endforeach;
+		?>
+    </ul>
     <?php
-        endforeach;
+        
         else:
     ?>
         <label class="ina"> Data tidak ditemukan</label>
@@ -39,7 +49,7 @@
     ?>
       <li>
         <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $rnt->id_promosi ?>" class="ina">
-        	<img alt="" src="<?php echo base_url() ?>upload/<?php echo $rnt->gambar ?>">
+        	<img alt="" src="<?php echo base_url() ?>upload/thumbs/<?php echo $rnt->gambar ?>">
         </a>
       </li>
     <?php

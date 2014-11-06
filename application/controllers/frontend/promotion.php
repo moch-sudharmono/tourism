@@ -39,6 +39,7 @@ class Promotion extends CI_Controller {
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
 		
 		$data["promotion"] = $promotion; 
+		$data["images"] = $this->Promotion_m->displayAllImage();
 		$data["class"] = $this->class;
 		$data["categories"] = $categories;
 		$data["konten"] = "frontend/promotion/promotion.list.view.php";
@@ -75,7 +76,7 @@ class Promotion extends CI_Controller {
 		);
 		
 		$data["paging"] = $this->pagination_lib->paging($data_paging);
-		
+		$data["images"] = $this->Promotion_m->displayAllImage();
 		$data["promotion"] = $promotion; 
 		$data["class"] = $this->class;
 		$data["categories"] = $categories;
@@ -99,7 +100,7 @@ class Promotion extends CI_Controller {
 		
 		$kategori = $this->Promotion_m->displayCategorySelectedData($kondisi);
 		$categories = $this->Promotion_m->display();
-		
+		$data["images"] = $this->Promotion_m->displayAllImage();
 		$data["class"] = $this->class;
 		$data["promotion"] = $promotion; 
 		$data["kategori"] = $kategori;

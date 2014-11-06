@@ -4,7 +4,8 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12 col-sm-12">
-        <h2>Promosi / <em>Promotion</em></h2>
+        <h2 class="ina">Promosi</h2>
+        <h2 class="eng">Promotion</h2>
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
@@ -12,6 +13,7 @@
               
               <?php
 			  	$promotion = isset($promotion)?$promotion:array();
+
 			  	if( isset($promotion) and !empty($promotion) ):
 				foreach( $promotion as $row ):
 			  ?>
@@ -22,18 +24,20 @@
                     <div class="carousel slide" id="myCarousel">
                       <!-- Carousel items -->
                       <?php 
-					  	if( !empty($row->gambar) and isset($row->gambar) ):
+					  	if( !empty($images) and isset($images) ):
 					  ?>
                       <div class="carousel-inner">
                         <?php
 							$no = 0;
-                        	foreach( $row->gambar as $rg ):
+                        	foreach( $images as $rg ):
 							$no++;
+							if($rg->id_promosi == $row->id_promosi){
 						?>
                         <div class="item <?php echo $no==1?"active":"" ?>">
                           <img alt="" src="<?php echo base_url() ?>upload/<?php echo $rg->gambar ?>">
                         </div>
                         <?php
+							}
                         	endforeach;
 						?>
                       </div>
@@ -50,7 +54,7 @@
 					  	endif;
 					  ?>
                       <?php
-                      	if( !empty($row->gambar) and isset($row->gambar) and count($row->gambar) > 1 ):
+                      	if( ($rg->id_promosi == $row->id_promosi) and !empty($images) and isset($images) and count($images) > 1 ):
 					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">

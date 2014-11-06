@@ -35,7 +35,7 @@
                       </div>
                      
                       <?php
-                      	if( !empty($row->gambar) and isset($row->gambar) and count($row->gambar) > 1 ):
+                      	if( !empty($image) and isset($image) and count($image) > 1 ):
 					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">

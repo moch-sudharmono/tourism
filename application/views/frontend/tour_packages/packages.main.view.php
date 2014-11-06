@@ -4,7 +4,9 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12 col-sm-12">
-        <h2>Paket Wisata / <em>Tour Packages</em></h2>
+        <h2 class="ina">Paket Wisata</h2>
+        <h2 class="eng">Tour Packages</h2>
+        
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
@@ -20,17 +22,35 @@
                   <div class="front-carousel">
                     <div class="carousel slide" id="myCarousel">
                       <!-- Carousel items -->
+                      <?php 					  
+					  	if( !empty($images) and isset($images) ):
+					  ?>
                       <div class="carousel-inner">
-                        <div class="item">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img1.jpg">
+                        <?php
+							$no = 0;
+					  		foreach($images as $val):
+							
+							$no++;
+							if($val->id_paket_wisata == $row->id_paket_wisata){								
+						?>
+                        <div class="item <?php echo $no==1?"active":"" ?>">
+                          <img alt="" src="<?php echo base_url() ?>upload/<?php echo $val->gambar?>">
                         </div>
-                        <div class="item">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img2.jpg">
-                        </div>
-                        <div class="item active">
-                          <img alt="" src="<?php echo base_url() ?>inc/frontend/pages/img/works/img3.jpg">
-                        </div>
+                        <?php
+							}
+                        	endforeach;
+						?>
                       </div>
+                      <?php 
+					  	else:
+					  ?>
+
+                      <?php 
+					  	endif;
+					  ?>
+                      <?php
+                      	if( !empty($images) and isset($images) and count($images) > 1 ):
+					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">
                         <i class="fa fa-angle-left"></i>
@@ -38,6 +58,7 @@
                       <a data-slide="next" href="#myCarousel" class="carousel-control right">
                         <i class="fa fa-angle-right"></i>
                       </a>
+                      <?php endif; ?>
                     </div>                
                   </div>
                   <!-- END CAROUSEL -->             
