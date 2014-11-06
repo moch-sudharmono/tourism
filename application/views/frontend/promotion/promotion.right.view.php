@@ -34,12 +34,13 @@
     <h3>Gambar / <em>Image</em></h3>
     <ul>
     <?php
-        if( isset($news_tag) and !empty($news_tag) ):
-        foreach( $news_tag as $rnt ):
+        if( isset($images) and !empty($images) ):
+        foreach( $images as $rnt ):
     ?>
       <li>
-        <a href="<?php echo base_url() ?>frontend/news/tag/<?php echo $rnt->id_berita_tag ?>/<?php echo SEO($rnt->tag_ina) ?>" class="ina"><i class="fa fa-tags"></i><?php echo $rnt->tag_ina ?></a>
-        <a href="<?php echo base_url() ?>frontend/news/tag/<?php echo $rnt->id_berita_tag ?>/<?php echo SEO($rnt->tag_eng) ?>" class="eng"><i class="fa fa-tags"></i><?php echo $rnt->tag_eng ?></a>
+        <a href="<?php echo base_url() ?>frontend/promotion/detail/<?php echo $rnt->id_promosi ?>" class="ina">
+        	<img alt="" src="<?php echo base_url() ?>upload/<?php echo $rnt->gambar ?>">
+        </a>
       </li>
     <?php
         endforeach;

@@ -8,7 +8,7 @@
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            
-            <div class="col-md-12 col-sm-12 blog-posts">
+            <div class="col-md-9 col-sm-9 blog-posts">
               <?php
 			  	$packages = isset($packages)?$packages:array();
 			  	if( isset($packages) and !empty($packages) ):
@@ -83,6 +83,12 @@
               </ul>                
             </div>
             <!-- END LEFT SIDEBAR -->
+            
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <?php  
+				$this->load->view("frontend/tour_packages/packages.right.view.php")
+			?>
+            <!-- END RIGHT SIDEBAR -->  
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <?php
 	$packages = isset($packages)?$packages:array();
-	$images = isset($images)?$images:array();
+	$image = isset($image)?$image:array();
 	if( isset($packages) and !empty($packages) ):
 	foreach( $packages as $row ):
 ?>
@@ -22,7 +22,7 @@
                     <!-- Carousel items -->
                     <div class="carousel-inner">
                       <?php
-					  	foreach($images as $val){
+					  	foreach($image as $val){
 					  ?>
                       <div class="item">
                         <img src="<?php echo base_url() ?>upload/<?php echo $val->gambar?>" alt="">
@@ -57,7 +57,11 @@
                                     
             </div>
             <!-- END LEFT SIDEBAR -->   
-                      
+            <!-- BEGIN RIGHT SIDEBAR -->            
+            <?php  
+				$this->load->view("frontend/tour_packages/packages.right.view.php")
+			?>
+            <!-- END RIGHT SIDEBAR -->           
           </div>
         </div>
       </div>
