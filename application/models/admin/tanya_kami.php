@@ -37,6 +37,11 @@ class Tanya_kami extends MY_Model
 		return $this->db->insert($this->table, $data);
 	}
 	
+	public function send($data)
+	{
+		return $this->db->insert($this->table, $data);
+	}
+	
 	public function update($data, $where)
 	{
 		$this->db->where($where);

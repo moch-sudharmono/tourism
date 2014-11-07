@@ -3,7 +3,8 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12">
-        <h2>Hubungi Kami / <em>Contacts Us</em></h2>
+        <h2 class="ina">Tanya Kami</h2>
+        <h2 class="eng">Ask Us</h2>
         <div class="content-page">
           <div class="row">
             <div class="col-md-12">
@@ -12,6 +13,7 @@
             <div class="col-md-9 col-sm-9">
               
               <!-- BEGIN FORM-->
+              <!--
               <div class="alert alert-success succes">
                 <strong>Success!</strong> The page has been added.
               </div>
@@ -19,8 +21,8 @@
               <div class="alert alert-danger error">
                 <strong>Error!</strong> The daily cronjob has failed.
               </div>
-              
-              <form role="form" id="contact_form" method="post">
+              -->
+              <form action="<?php echo base_url() ?>frontend/contact/send" role="form" id="contact_form" method="post">
                 <div class="form-group">
                   <label for="contacts-email">Alamat Surel / <em>Email</em></label>
                   <input type="email" class="form-control" id="contacts-email" name="email">
@@ -30,7 +32,7 @@
                   <textarea class="form-control" rows="5" id="contacts-message" name="pertanyaan"></textarea>
                 </div>
                 <div class="form-group" align="right">
-	                <input type="submit" value="Kirim / Submit" class="btn blue" />
+	                <input type="submit" name="submit" value="Kirim / Submit" class="btn blue" />
               	</div>
               </form>
               <!-- END FORM-->
@@ -78,8 +80,8 @@
         // for more info visit the official plugin documentation: 
             // http://docs.jquery.com/Plugins/Validation
             var form1 = $('#contact_form');
-            var error1 = $('.alert-danger', form1);
-            var success1 = $('.alert-success', form1);
+            //var error1 = $('.alert-danger', form1);
+            //var success1 = $('.alert-success', form1);
 
             form1.validate({
                 errorElement: 'span', //default input error message container
@@ -101,7 +103,7 @@
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit              
+                /*invalidHandler: function (event, validator) { //display error alert on form submit              
                     success1.hide();
                     error1.show();
                     Metronic.scrollTo(error1, -200);
@@ -125,7 +127,7 @@
                 submitHandler: function (form) {
                     success1.show();
                     error1.hide();
-                }
+                }*/
             });
 
 
