@@ -133,7 +133,6 @@
                         </a>
                     </li>
                 </ul>						
-<<<<<<< HEAD
             </li> 
             <li class="admin_menu" id="askus">
                 <a href="<?php echo base_url() ?>admin/icon">
@@ -142,8 +141,6 @@
 
                 </a>					
             </li>   
-=======
-            </li>
             <li class="admin_menu" id="configuration">
                 <a href="<?php echo base_url() ?>admin/configuration">
                 	<i class="fa  fa-wrench"></i>
@@ -151,7 +148,6 @@
                 </a>
                 				
             </li>    
->>>>>>> origin/master
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>
