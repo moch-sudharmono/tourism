@@ -107,3 +107,35 @@ jQuery(document).ready(function() {
 </script>
 <!-- END JAVASCRIPTS -->
 
+<script>
+	function ajax(xType,xData,xUrl,xHasil,xEvent,xShowProgress) 
+	{
+		var pre = "";
+		if(xShowProgress=='1') 
+		{ 
+			pre = "<center><img src='<?php echo base_url() ?>images/preloader.gif' width='300'> </center>";
+		}
+		else
+		{
+			pre = xShowProgress;
+		}
+			$.ajax({
+				type: xType,
+				url: xUrl,    
+				data: xData,
+				beforeSend: function() {
+					 $(xHasil).html("<center><img src='<?php echo base_url() ?>images/preloader.gif' width='300'> Mohon Tunggu sedang dilakukan Kalkulasi Data ... </center>");
+				},
+				success: function (html){                 
+					$(xHasil).html(html);
+					eval(xEvent);
+					//$(".Status").delay(1200).fadeOut(1000);
+				} ,
+				error: function (request, status, error) {
+					$(xHasil).html('<div class="alert alert-danger"> <strong>Error '+request.status+'!</strong> Terjadi kesalahan. Silahkan hubungi Administrator.</div>');
+				}
+			});
+				
+	}
+</script>
+
