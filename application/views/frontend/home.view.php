@@ -20,7 +20,7 @@
 
 
         
-        <?php $this->load->view("frontend/home.search.view.php") ?>
+        <?php $this->load->view("frontend/home/home.search.view.php") ?>
         
         
         <!-- BEGIN STEPS -->

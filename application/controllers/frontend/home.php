@@ -36,10 +36,10 @@ class Home extends CI_Controller {
 		$this->load->view($this->route, $data);
 	}
 	
-	public function search_route()
+	public function search_route($edge_from=0, $edge_to=0)
 	{
-		$edge_from = $this->input->post("edge_from");
-		$edge_to = $this->input->post("edge_to");
+		//$edge_from = $this->input->post("edge_from");
+		//$edge_to = $this->input->post("edge_to");
 		
 		$nodes = $this->simpul->display();
 		
@@ -104,6 +104,9 @@ class Home extends CI_Controller {
 		/*echo "<pre>";
 		print_r($arr_route);
 		exit;*/
+		$data["edge_from"] = $edge_from;
+		$data["edge_to"] = $edge_to;
+		$data["nodes"] = $nodes;
 		$data["class"] = $this->class;
 		$data["route"] = $arr_route;
 		$data["konten"] = "frontend/route/route.list.view.php";

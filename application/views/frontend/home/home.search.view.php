@@ -34,14 +34,14 @@
     
     <div class="form-group">
         <select name="edge_to" class="form-control" id="edge_to">
-            	<?php 
-					foreach( $nodes as $no=>$row ):
-				?>
-                	<option value="<?php echo $row["id_nodes"] ?>"><?php echo $row["nodes"] ?></option>
-                <?php 
-					endforeach; 
-				?>
-            </select>
+			<?php 
+                foreach( $nodes as $no=>$row ):
+            ?>
+                <option value="<?php echo $row["id_nodes"] ?>"><?php echo $row["nodes"] ?></option>
+            <?php 
+                endforeach; 
+            ?>
+        </select>
     </div>
 
   </div>
@@ -51,8 +51,12 @@
       <span>Temukan / <em> Find</em></span>
     </div>
     <div class="form-group">
-            <button type="submit"  class="btn blue" name="cari"><i class="fa fa-search"></i> Temukan / Find</button>
+
+        <div class="col-sm-4">
+            <button type="button"  class="btn blue" id="findRoute" name="cari"><i class="fa fa-search"></i> Temukan / Find</button>
+        </div>
     </div>
+    
   </div>
 </div>
 </form>
@@ -70,5 +74,19 @@
 	$("#edge_from").select2({
             placeholder: "Select an option",
             allowClear: true
+    });
+</script>
+
+<script>
+	$("#findRoute").click(function(e) {
+        var edge_to = $("#edge_to").val();
+		var edge_from = $("#edge_from").val();
+		var opsi= $("#opsi").val();
+		
+		var edge_to_text = $("#edge_to option:selected").text();
+		var edge_from_text = $("#edge_from option:selected").text();
+		
+		var url = "<?php echo base_url() ?>frontend/home/search_route/" + edge_from + "/" + edge_to + "/" + encodeURIComponent(edge_from_text) + "/" + encodeURIComponent(edge_to_text);
+		location.href = url
     });
 </script>

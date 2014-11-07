@@ -92,39 +92,33 @@
     
     <!-- BEGIN RIGHT SIDEBAR -->            
     <div class="col-md-3 col-sm-3 blog-sidebar">
-      <!-- CATEGORIES START -->
-      <h2 class="no-top-space ina">Pilihan Rute</h2>
-      <h2 class="no-top-space eng">Route Option</h2>
-      <ul class="nav sidebar-categories margin-bottom-40">
-        <li>
-        	<a href="#" class="ina">Semua Kemungkinan Rute</a>
-            <a href="#" class="eng">All Posible Route</a>
-        </li>
-        <li>
-        	<a href="#" class="ina">Rute Termurah</a>
-            <a href="#" class="eng">Cheapest Route</a>
-        </li>
-        <li>
-        	<a href="#" class="ina">Rute Tersingkat</a>
-            <a href="#" class="eng">Shortest Route</a>
-        </li>
-
-      </ul>
-      <!-- CATEGORIES END -->
+     
       <h2 class="no-top-space ina">Cari Rute</h2>
       <h2 class="no-top-space eng">Find Route</h2>
       <div class="form-group">
-        	<select name="edge_from"  id="edge_from" class="form-control">
-            	<option>asd</option>
+        	<select name="edge_from" class="form-control" id="edge_from">
+				<?php 
+                    foreach( $nodes as $no=>$row ):
+                ?>
+                    <option value="<?php echo $row["id_nodes"] ?>"><?php echo $row["nodes"] ?></option>
+                <?php 
+                    endforeach; 
+                ?>
             </select>
         </div>
         <div class="form-group">
         	<select name="edge_to" class="form-control" id="edge_to">
-            	<option>asd</option>
+				<?php 
+                    foreach( $nodes as $no=>$row ):
+                ?>
+                    <option value="<?php echo $row["id_nodes"] ?>"><?php echo $row["nodes"] ?></option>
+                <?php 
+                    endforeach; 
+                ?>
             </select>
         </div>
         <div class="form-group" align="center">
-        	<button type="submit"  class="btn blue" name="cari"><i class="fa fa-search"></i> Temukan / Find</button>
+        	<button type="button" id="findRoute" class="btn blue" name="cari"><i class="fa fa-search"></i> Temukan / Find</button>
         </div>
 
     </div>
@@ -132,7 +126,6 @@
   </div>
 </div>
 <!-- END PAGE CONTENT-->
-
 <!-- END Search Route -->
 <script type="text/javascript" src="<?php echo base_url(); ?>inc/global/plugins/select2/select2.min.js"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -147,5 +140,22 @@
 	$("#edge_from").select2({
             placeholder: "Select an option",
             allowClear: true
+    });
+	
+	$("#edge_from").select2("val", "<?php echo isset($edge_from)?$edge_from:1 ?>");
+	$("#edge_to").select2("val", "<?php echo isset($edge_to)?$edge_to:1 ?>");
+</script>
+
+<script>
+	$("#findRoute").click(function(e) {
+        var edge_to = $("#edge_to").val();
+		var edge_from = $("#edge_from").val();
+		var opsi= $("#opsi").val();
+		
+		var edge_to_text = $("#edge_to option:selected").text();
+		var edge_from_text = $("#edge_from option:selected").text();
+		
+		var url = "<?php echo base_url() ?>frontend/home/search_route/" + edge_from + "/" + edge_to + "/" + encodeURIComponent(edge_from_text) + "/" + encodeURIComponent(edge_to_text);
+		location.href = url
     });
 </script>
