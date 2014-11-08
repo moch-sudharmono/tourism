@@ -31,6 +31,15 @@
                   <label for="contacts-message">Pertanyaan / <em>Message</em></label>
                   <textarea class="form-control" rows="5" id="contacts-message" name="pertanyaan"></textarea>
                 </div>
+                <div class="form-group">
+                	<?php
+						$a = rand(1,9);
+						$b = rand(1,9);
+						$c = $a + $b;
+					?>
+                  <label for="contacts-captcha">Captcha : Hasil Penjumlahan <?php echo $a.' + '.$b ?></label>
+                  <input type="captcha" class="form-control" id="contacts-captcha" name="captcha">
+                </div>
                 <div class="form-group" align="right">
 	                <input type="submit" name="submit" value="Kirim / Submit" class="btn blue" />
               	</div>
@@ -82,6 +91,10 @@
             var form1 = $('#contact_form');
             //var error1 = $('.alert-danger', form1);
             //var success1 = $('.alert-success', form1);
+			
+			$.validator.addMethod("captchaRule", function(value, element, param) { 
+				  return this.optional(element) || value === param; 
+			}, "Hasil Salah");
 
             form1.validate({
                 errorElement: 'span', //default input error message container
@@ -100,7 +113,11 @@
                     email: {
                         required: true,
                         email: true
-                    }
+                    },
+					captcha: {
+						required: true,
+						captchaRule : '<?php echo $c; ?>'
+					}
                 },
 
                 /*invalidHandler: function (event, validator) { //display error alert on form submit              
