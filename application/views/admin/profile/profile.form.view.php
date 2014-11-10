@@ -283,10 +283,6 @@ $(".id_sarana_prasarana").each(function(index, element) {
 	<?php endif; ?>
 </script>
 
-<<<<<<< HEAD
-<!--<script>
-	jQuery.validator.setDefaults({
-=======
 <script>
 	/*jQuery.validator.setDefaults({
 >>>>>>> origin/master
@@ -312,5 +308,4 @@ $(".id_sarana_prasarana").each(function(index, element) {
 		}
 	  }
 	});
-
-</script>-->
+</script>

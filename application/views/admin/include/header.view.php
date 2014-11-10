@@ -24,7 +24,7 @@
 					</a>
 				</li>
 				<li class="classic-menu-dropdown active">
-					<a href="<?php echo base_url() ?>admin/home">
+					<a href="<?php echo base_url() ?>admin/news">
 						Promosi
                         <span class="selected"></span>
 					</a>

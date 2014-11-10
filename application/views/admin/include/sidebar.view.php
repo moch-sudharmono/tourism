@@ -5,14 +5,14 @@
     <div class="page-sidebar navbar-collapse collapse">
         <!-- BEGIN SIDEBAR MENU -->
         <ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
-            <li class="start home admin_menu" id="home">
+            <!--<li class="start home admin_menu" id="home">
                 <a href="<?php echo base_url() ?>admin/home">
                 <i class="icon-home"></i>
                 <span class="title">Utama / <em>Dashboard</em></span>                    
                 <!--<span class="selected"></span>-->
                 </a>
                 
-            </li>
+            </li>-->
             <li class="parent admin_menu">
                 <a href="#">
                 <i class="fa fa-file-text-o"></i>

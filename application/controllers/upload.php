@@ -20,7 +20,7 @@ class Upload extends CI_Controller {
         $upload_path_url = base_url() . 'upload/';
 
         $config['upload_path'] = FCPATH . 'upload/';
-        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['allowed_types'] = '*';
         $config['max_size'] = '30000';
 
         $this->load->library('upload', $config);
