@@ -221,13 +221,15 @@ CREATE TABLE IF NOT EXISTS `pr_global` (
   PRIMARY KEY (`id_global`),
   UNIQUE KEY `nama_variabel` (`nama_variabel`),
   UNIQUE KEY `nama` (`nama`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_global: ~2 rows (approximately)
+-- Dumping data for table tourism.pr_global: ~4 rows (approximately)
 /*!40000 ALTER TABLE `pr_global` DISABLE KEYS */;
 INSERT INTO `pr_global` (`id_global`, `nama_variabel`, `nama`, `deskripsi`, `val_int`, `val_varchar`, `val_text`) VALUES
 	(1, 'theme', 'Website Theme', 'Mengatur Warna Dasar Website', NULL, 'green', NULL),
-	(2, 'web_title', 'Website Main Title', NULL, NULL, 'Wakatobi', NULL);
+	(2, 'web_title', 'Website Main Title', NULL, NULL, 'Wakatobi', NULL),
+	(3, 'our_contact', 'Main Contact', 'Kontak yg dapat dihubungi', NULL, 'Wakatobi', 'wakatobi\nasd\nadsa'),
+	(9, 'map_id', '', NULL, 10, NULL, NULL);
 /*!40000 ALTER TABLE `pr_global` ENABLE KEYS */;
 
 
@@ -401,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `pr_paket_wisata` (
 /*!40000 ALTER TABLE `pr_paket_wisata` DISABLE KEYS */;
 INSERT INTO `pr_paket_wisata` (`id_paket_wisata`, `paket_wisata_ina`, `paket_wisata_eng`, `deskripsi_ina`, `deskripsi_eng`, `url`) VALUES
 	(1, 'PAKET HEMAT BACKPACKER', 'PAKET HEMAT BACKPACKER', 'Hari 1 Air Port- Pulau Kaledupa (D)\r\nUsahakan Ambil Flight dari Jakarta Jam 5 subuh agar Tiba di bau bau jam 11.45 WITA, karena Kapal cepat reguler hanya beroperasi sekali dalam sehari yang berangkat Pukul 13.00 WITA dari Bau Bau, kemudian langsung ke Kaledupa , Kita akan menghabiskan waktu tempuh dalam perjalanan sekitar 4 jam, Check in Bungalaw  dan makan malam.\r\n\r\nHari 2 Snorkeling Day (B,L,D)-  Menuju Pulau Tomia\r\n\r\nRombongan sarapan pagi dan siap siap menuju Pulau Tomia, Tiba di Tomia, makan siang kemudian mulai snorkeling. Sore Harinya Mengunjungi Puncak Kahianga ( icon film The Mirror Never Lies ) untuk Hunting sunset. Setelah itu kembali ke Penginapan dan makan malam. Istirahat dan acara bebas..\r\n\r\nHari 3 Snorkeling Day (B,L,D)- Menuju Pulau Kaledupa\r\n\r\nRombongan sarapan pagi dan kembali ke Pulau Kaledupa. Makan siang, kemudian lanjut Full Snorkeling,Diving (exclude budget),Cano and Hoping Island di Pulau Hoga\r\n\r\nHari Ke 4 Tour End (B)\r\nTour End\r\n\r\nHarga Paket\r\n2 org =    Rp 2,650,000 / orang\r\n5 org  =   Rp  1.902.000 / orang\r\n10 org =   Rp 1.176.000 / orang\r\n15 org = Rp   949.333 / orang\r\n20 org =   Rp  824.500 / orang\r\n\r\nFasilitas :\r\n- Transportasi ke Penginapan dan selama wisata\r\n- Sewa Boat Reguler ke Pulau Tomia dari Kaledupa ( PP )\r\n- Penginapan/Home Stay berupa bungalow (rumah warga setempat)\r\n- Makan selama di Wakatobi\r\n- Sewa Alat Snorkeling full sesuai itenerary\r\n- Barbeque dengan Ikan segar Fresh from The Oven\r\n- Fee Pemandu Lokal\r\n- Cano sepuasnya\r\n- Bonus Kaos Wakatobi ( Cotton Combat 24 S)\r\nBiaya yang belum termasuk :\r\n- Transportasi Via Udara :Tiket pesawat Jakarta-Bau Bau/Bau bau jakarta (kurang lebih 1,4 jt)\r\n- Transportasi Via Laut : Tiket Kapal Pelni dari Tanjung Priok (Waktu Tempuh dari Tanjung Priok Jakarta hingga bau bau yakni 3 hari 3 malam) (420 rb untuk kelas ekonomi dan untuk kelas VIP kurang lebih 800 rb)\r\n* Biaya Hotel di bau bau,jika kita harus bermalam di bau bau (250 rb/2 orang)\r\n- Tiket Kapal Bau Bau-Wakatobi PP\r\n- Angkot dr Pelabuhan – Penginapan ( 25 rb untuk 8 org ), Jika tidak ingin jalan kaki ke penginapan. Jarak antara pelabuhan ke penginapan kurang lebih 10 menit jika jalan kaki.\r\n- Diving :\r\nLisensi (350 rb) dan Non Lisensi (450 rb)', 'Hari 1 Air Port- Pulau Kaledupa (D)\r\nUsahakan Ambil Flight dari Jakarta Jam 5 subuh agar Tiba di bau bau jam 11.45 WITA, karena Kapal cepat reguler hanya beroperasi sekali dalam sehari yang berangkat Pukul 13.00 WITA dari Bau Bau, kemudian langsung ke Kaledupa , Kita akan menghabiskan waktu tempuh dalam perjalanan sekitar 4 jam, Check in Bungalaw  dan makan malam.\r\n\r\nHari 2 Snorkeling Day (B,L,D)-  Menuju Pulau Tomia\r\n\r\nRombongan sarapan pagi dan siap siap menuju Pulau Tomia, Tiba di Tomia, makan siang kemudian mulai snorkeling. Sore Harinya Mengunjungi Puncak Kahianga ( icon film The Mirror Never Lies ) untuk Hunting sunset. Setelah itu kembali ke Penginapan dan makan malam. Istirahat dan acara bebas..\r\n\r\nHari 3 Snorkeling Day (B,L,D)- Menuju Pulau Kaledupa\r\n\r\nRombongan sarapan pagi dan kembali ke Pulau Kaledupa. Makan siang, kemudian lanjut Full Snorkeling,Diving (exclude budget),Cano and Hoping Island di Pulau Hoga\r\n\r\nHari Ke 4 Tour End (B)\r\nTour End\r\n\r\nHarga Paket\r\n2 org =    Rp 2,650,000 / orang\r\n5 org  =   Rp  1.902.000 / orang\r\n10 org =   Rp 1.176.000 / orang\r\n15 org = Rp   949.333 / orang\r\n20 org =   Rp  824.500 / orang\r\n\r\nFasilitas :\r\n- Transportasi ke Penginapan dan selama wisata\r\n- Sewa Boat Reguler ke Pulau Tomia dari Kaledupa ( PP )\r\n- Penginapan/Home Stay berupa bungalow (rumah warga setempat)\r\n- Makan selama di Wakatobi\r\n- Sewa Alat Snorkeling full sesuai itenerary\r\n- Barbeque dengan Ikan segar Fresh from The Oven\r\n- Fee Pemandu Lokal\r\n- Cano sepuasnya\r\n- Bonus Kaos Wakatobi ( Cotton Combat 24 S)\r\nBiaya yang belum termasuk :\r\n- Transportasi Via Udara :Tiket pesawat Jakarta-Bau Bau/Bau bau jakarta (kurang lebih 1,4 jt)\r\n- Transportasi Via Laut : Tiket Kapal Pelni dari Tanjung Priok (Waktu Tempuh dari Tanjung Priok Jakarta hingga bau bau yakni 3 hari 3 malam) (420 rb untuk kelas ekonomi dan untuk kelas VIP kurang lebih 800 rb)\r\n* Biaya Hotel di bau bau,jika kita harus bermalam di bau bau (250 rb/2 orang)\r\n- Tiket Kapal Bau Bau-Wakatobi PP\r\n- Angkot dr Pelabuhan – Penginapan ( 25 rb untuk 8 org ), Jika tidak ingin jalan kaki ke penginapan. Jarak antara pelabuhan ke penginapan kurang lebih 10 menit jika jalan kaki.\r\n- Diving :\r\nLisensi (350 rb) dan Non Lisensi (450 rb)', NULL),
-	(2, 'Biaya paket wisata wakatobi murah', 'Biaya paket wisata wakatobi murah', 'Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi – wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi – wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan – jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.', 'Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi – wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi – wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan – jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.', 'http://hogaristatours.com/biaya-paket-wisata-wakatobi-murah.html');
+	(2, 'Biaya paket wisata wakatobi murah', 'Biaya paket wisata wakatobi murah', '<p>Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi &ndash; wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi &ndash; wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan &ndash; jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.</p>\r\n', '<p>Biaya paket wisata wakatobi kali ini adalah tentang perjalanan dari Wangi &ndash; wangi, Tomia dan Hoga dengan paket liburan. Hari pertama, anda dapat dijemput dari bandara, check in di hotel, makan siang dan diteruskan dengan snorkeling di tempat terbaik di Wangi &ndash; wangi. Anda dapat menikmati indahnya matahari dari Sombu dan diteruskan berjalan &ndash; jalan untuk wisata kuliner khas kepulauan wakatobi. Pada hari kedua, anda dapat menggunakan kapal reguler untuk menuju Tomia, makan siang, lalu kembali snorkeling di pulau Tomia. hari ketiga, tour akan ke benteng patua Tomia yang menghadap laut Banda. Setelah itu, dilanjutkan ke kaledupa dan Hoga. Disini, anda akan menikmati scuba diving. Harga paket ini bisa mencapai 4.4 juta hingga 5.5 juta.</p>\r\n', 'http://hogaristatours.com/biaya-paket-wisata-wakatobi-murah.html');
 /*!40000 ALTER TABLE `pr_paket_wisata` ENABLE KEYS */;
 
 
@@ -415,10 +417,14 @@ CREATE TABLE IF NOT EXISTS `pr_paket_wisata_gambar` (
   `deskripsi_eng` text,
   PRIMARY KEY (`id_paket_wisata_gambar`),
   UNIQUE KEY `gambar` (`gambar`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_paket_wisata_gambar: ~0 rows (approximately)
+-- Dumping data for table tourism.pr_paket_wisata_gambar: ~3 rows (approximately)
 /*!40000 ALTER TABLE `pr_paket_wisata_gambar` DISABLE KEYS */;
+INSERT INTO `pr_paket_wisata_gambar` (`id_paket_wisata_gambar`, `id_paket_wisata`, `gambar`, `deskripsi_ina`, `deskripsi_eng`) VALUES
+	(1, 2, 'landscapes-beach_00347097.jpg', NULL, NULL),
+	(2, 2, 'wonderful-beach-hd-wallpaper-nature-amp-landscape-wallpapers-2.jpg', NULL, NULL),
+	(3, 2, 'Blue-Beach-Water-Wallpaper-Free.jpg', NULL, NULL);
 /*!40000 ALTER TABLE `pr_paket_wisata_gambar` ENABLE KEYS */;
 
 
@@ -668,12 +674,14 @@ CREATE TABLE IF NOT EXISTS `pr_tanya_kami` (
   `jawaban` text NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_tanya_kami`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_tanya_kami: ~1 rows (approximately)
+-- Dumping data for table tourism.pr_tanya_kami: ~3 rows (approximately)
 /*!40000 ALTER TABLE `pr_tanya_kami` DISABLE KEYS */;
 INSERT INTO `pr_tanya_kami` (`id_tanya_kami`, `email`, `pertanyaan`, `jawaban`, `tanggal`) VALUES
-	(1, 'selametsubu@yahoo.com', 'Siapa yg buat Website sekeren ini ?', '<p>mamet</p>\r\n', '2014-10-30 15:19:57');
+	(1, 'selametsubu@yahoo.com', 'Siapa yg buat Website sekeren ini ?', '<p>mamet</p>\r\n', '2014-10-30 15:19:57'),
+	(2, 'selametsubu@yahoo.com', 'test sadasd asdsadas sadas', '', '2014-11-10 09:33:00'),
+	(3, 'selametsubu@gmail.com', 'jsjsajjsa sajsajjsaj sacsajsjadj', '', '2014-11-10 09:33:52');
 /*!40000 ALTER TABLE `pr_tanya_kami` ENABLE KEYS */;
 
 
