@@ -61,20 +61,32 @@
               </div>
               
               <div class="file">
+              	<h4 class="ina">Berkas Promosi</h4>
+                <h4 class="eng">Promotion File</h4>
+              	<ul>
               	<?php
 					foreach($files as $val){
 				?>
-              	 <a href="<?php echo base_url() ?>upload/<?php echo $val->berkas ?>" />
+                 <li>
+              	 <a href="<?php echo base_url() ?>upload/<?php echo $val['berkas']; ?>"> Download </a>
+                 </li>
                  <?php 
 				 	}
 				?>
+                </ul>
               </div>
               
               
               <ul class="blog-info">
                 <li><i class="fa fa-calendar"></i> <?php echo TglOnlyIndo($row->tanggal_promosi) ?></li>
-                <li><i class="fa fa-calendar"></i> Expired on <?php echo TglOnlyIndo($row->tanggal_kadarluarsa) ?></li>
-                <li><i class="fa fa-tags"></i>  <?php echo $kategori[0]->kategori_promosi_ina ?> / <em><?php echo $kategori[0]->kategori_promosi_eng ?></em></li>
+                <li><i class="fa fa-calendar"></i> 
+                	<label class="eng">Expired on </label>
+					<label class="ina">Berakhir pada</label>
+					<?php echo TglOnlyIndo($row->tanggal_kadarluarsa) ?></li>
+                <li><i class="fa fa-tags"></i>  
+                	<label class="ina"><?php echo $kategori[0]->kategori_promosi_ina ?></label> 
+                    <label class="eng"><?php echo $kategori[0]->kategori_promosi_eng ?></label>
+                </li>
               </ul>
 
                                     
@@ -95,13 +107,4 @@
     <!-- END SIDEBAR & CONTENT -->
   </div>
 </div>
-<?php endforeach; ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-
-<body>
-</body>
-</html>
+<?php endforeach; ?>

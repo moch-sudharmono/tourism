@@ -26,10 +26,20 @@ class Tour_packages extends CI_Controller {
 		
 		$packages = $this->Tour_packages_m->displayAll($limit, $offset);
 		
+		foreach($packages as $val)
+		{
+			//print_r($val);
+			$w = array(
+				"id_paket_wisata"=>$val->id_paket_wisata
+			);
+			
+			$val->gambar = $this->Tour_packages_m->displayImageSelectedData($w);	
+		}
+		
 		// Paging
 		
 		$total_row =  $this->Tour_packages_m->countAllData();
-		$url = base_url() . "frontend/news/?paging=true";
+		$url = base_url() . "frontend/tour_packages/?paging=true";
 		$data_paging = array(
 			"url"=>$url,
 			"total_rows"=>$total_row,

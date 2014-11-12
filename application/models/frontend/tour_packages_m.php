@@ -24,6 +24,7 @@
 		
 		public function displayImageSelectedData($data)
 		{
+			$this->db->limit("20");
 			$this->db->where($data);
 			$query = $this->db->get("pr_paket_wisata_gambar");
 			//echo $this->db->last_query();

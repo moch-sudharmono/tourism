@@ -24,21 +24,20 @@
                     <div class="carousel slide" id="myCarousel">
                       <!-- Carousel items -->
                       <?php 
-					  	if( !empty($images) and isset($images) ):
+					  	if( !empty($row->gambar) and isset($row->gambar) ):
 					  ?>
                       <div class="carousel-inner">
                         <?php
 							$no = 0;
                         	foreach( $images as $rg ):
 							$no++;
-							if($rg->id_promosi == $row->id_promosi){
+							
 						?>
                         <div class="item <?php echo $no==1?"active":"" ?>">
-                          <img alt="" src="<?php echo base_url() ?>upload/<?php echo $rg->gambar ?>">
+                          <img alt="" src="<?php echo base_url() ?>upload/<?php echo $rg->gambar ?>" />
                         </div>
                         <?php
-							}
-                        	endforeach;
+							endforeach;
 						?>
                       </div>
                       <?php 
@@ -54,7 +53,7 @@
 					  	endif;
 					  ?>
                       <?php
-                      	if( ($rg->id_promosi == $row->id_promosi) and !empty($images) and isset($images) and count($images) > 1 ):
+                      	if( !empty($row->gambar) and isset($row->gambar) and count($row->gambar) > 1 ):
 					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">
@@ -79,6 +78,14 @@
                   </h3>
                   <ul class="blog-info">
                     <li><i class="fa fa-calendar"></i> <?php echo TglOnlyIndo($row->tanggal_promosi) ?></li>
+                    <li><i class="fa fa-calendar"></i> 
+                    	<label class="eng">Expired on </label>
+                        <label class="ina">Berakhir pada </label> 
+						<?php echo TglOnlyIndo($row->tanggal_kadarluarsa) ?></li>
+                	<li><i class="fa fa-tags"></i> 
+                    	<label class="eng"><?php echo $row->kategori_promosi_eng ?> </label>
+                        <label class="ina"><?php echo $row->kategori_promosi_ina ?> </label> 						
+                    </li>
                   </ul>
                   <p class="ina">
                   	<?php echo PotongKata($row->deskripsi_ina, 50) ?>

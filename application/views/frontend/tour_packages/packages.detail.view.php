@@ -39,7 +39,7 @@
                       <?php 
 					  	else:
 					  ?>
-
+							
                       <?php 
 					  	endif;
 					  ?>
@@ -68,6 +68,11 @@
               </p>
               <p class="eng">
               	 <?php echo $row->deskripsi_eng ?>
+              </p>
+              
+              <p>
+              Link Website terkait : 
+              <a href="<?php echo $row->url; ?>" target="_blank">Website</a>
               </p>
                                     
             </div>

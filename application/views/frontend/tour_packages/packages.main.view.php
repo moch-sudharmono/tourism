@@ -23,7 +23,8 @@
                     <div class="carousel slide" id="myCarousel">
                       <!-- Carousel items -->
                       <?php 					  
-					  	if( !empty($images) and isset($images) ):
+					  	if( !empty($row->gambar) and isset($row->gambar) ):
+						//echo "<pre>".print_r($images)."</pre>";
 					  ?>
                       <div class="carousel-inner">
                         <?php
@@ -44,12 +45,18 @@
                       <?php 
 					  	else:
 					  ?>
-
+							<div class="carousel-inner">
+                                <div class="item active">
+                                  <img alt="" src="<?php echo base_url() ?>upload/No_image_available.png">
+                                </div>
+                                
+                              </div>
                       <?php 
 					  	endif;
 					  ?>
-                      <?php
-                      	if( !empty($images) and isset($images) and count($images) > 1 ):
+                      <?php 					  
+					  	if( !empty($row->gambar) and isset($row->gambar) ):
+						//echo "<pre>".print_r($images)."</pre>";
 					  ?>
                       <!-- Carousel nav -->
                       <a data-slide="prev" href="#myCarousel" class="carousel-control left">
@@ -58,7 +65,9 @@
                       <a data-slide="next" href="#myCarousel" class="carousel-control right">
                         <i class="fa fa-angle-right"></i>
                       </a>
-                      <?php endif; ?>
+                      <?php
+					  	endif;
+					  ?>
                     </div>                
                   </div>
                   <!-- END CAROUSEL -->             

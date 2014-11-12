@@ -97,7 +97,21 @@ class Lokasi_wisata extends MY_Model
 		return $query->result();
 	}
 
-	
+	public function displayTestimonial($data)
+	{
+		if( !empty($where) ):
+			$this->db->where($where);
+		endif;
+		$this->db->order_by("id_testimoni_lokasi_wisata desc");
+		$this->db->limit("10");
+		$query = $this->db->get("pr_testimoni_lokasi_wisata");
+		return $query->result();
+	}
+
+	public function saveTestimonial($data)
+	{
+		return $this->db->insert("pr_testimoni_lokasi_wisata", $data);
+	}
 }
 
 ?>

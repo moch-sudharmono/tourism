@@ -34,6 +34,7 @@ class Profile extends CI_Controller {
 				"id_lokasi_wisata"=>$row->id_lokasi_wisata
 			);
 			$row->gambar = $this->Lokasi_wisata->displayGambar($w);
+			$row->testimonial = $this->Lokasi_wisata->displayTestimonial($w);
 		endforeach;
 		
 		foreach( $kategori as $r ):
@@ -77,7 +78,7 @@ class Profile extends CI_Controller {
 		
 		$profile = $this->Lokasi_wisata->displaySelectedData($where);
 		$kategori = $this->Lokasi_wisata->displayLokasiWisataKategori();
-		
+		$testimoni = $this->Lokasi_wisata->displayTestimonial($where);
 		
 		$id_lokasi_wisata = isset($profile[0]->id_lokasi_wisata)?$profile[0]->id_lokasi_wisata:"";
 		
@@ -122,6 +123,7 @@ class Profile extends CI_Controller {
 		$data["terkait"] = $terkait;
 		$data["kategori"] = $kategori;
 		$data["profile"] = $profile;
+		$data["testimoni"] = $testimoni;
 		$data["class"] = $this->class;
 		$data["konten"] = "frontend/profile/profile.detail.view.php";
 		$this->load->view($this->route, $data);
@@ -186,5 +188,23 @@ class Profile extends CI_Controller {
 		$data["konten"] = "frontend/profile/profile.main.view.php";
 		$this->load->view($this->route, $data);
 		
+	}
+	
+	public function send()
+	{
+		$testimonial = $this->input->post("testimonial");
+		$id_lokasi_wisata = $this->input->post("id_lokasi_wisata");
+		
+		$data = array(
+			"testimoni"=>$testimonial,
+			"id_lokasi_wisata"=>$id_lokasi_wisata
+		);
+		
+		$result = $this->Lokasi_wisata->saveTestimonial($data);
+		if( $result ):
+			redirect("frontend/profile/location/".$id_lokasi_wisata);
+		else:
+			echo "Gagal";
+		endif;
 	}
 }

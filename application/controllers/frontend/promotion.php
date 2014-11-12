@@ -23,7 +23,15 @@ class Promotion extends CI_Controller {
 			$offset = 0;
 		endif;
 		
-		$promotion = $this->Promotion_m->displayAll($limit, $offset);
+		$promotion = $this->Promotion_m->displayAllJoin($limit, $offset);
+		
+		foreach($promotion as $row):
+			$w = array(
+				"id_promosi"=>$row->id_promosi
+			);
+			
+			$row->gambar = $this->Promotion_m->displayImageSelectedData($w);
+		endforeach;
 		
 		$categories = $this->Promotion_m->display();
 		// Paging
@@ -105,7 +113,8 @@ class Promotion extends CI_Controller {
 		$data["promotion"] = $promotion; 
 		$data["kategori"] = $kategori;
 		$data["categories"] = $categories;
-		$data["file"] = $file;
+
+		$data["files"] = $file;
 		$data["image"] = $image;
 		$data["konten"] = "frontend/promotion/promotion.detail.view.php";
 		$this->load->view($this->route, $data);
