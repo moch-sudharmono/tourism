@@ -22,6 +22,20 @@ class Tabglobal extends MY_Model
 		return $this->db->update($this->table, $data);
 	}
 	
+	public function displaySelectedMap()
+	{
+		//$this->db->where($where);
+		$query = $this->db->get("tic_view");
+		return $query->result();
+	}
+	
+	public function displaySystemConfig()
+	{
+		//$this->db->where($where);
+		$query = $this->db->get("system_config");
+		return $query->result();
+	}
+	
 	
 }
 

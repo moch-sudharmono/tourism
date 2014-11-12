@@ -1,10 +1,20 @@
+<style>
+	#font1 {
+	  font-family: "Open Sans";
+	  font-style: normal;
+	  font-weight: 400;
+	  font-size:20px; color:#FFFFFF;
+	  padding-top:15px;
+	  src: local("Open Sans"), local("OpenSans"), url("http://fonts.gstatic.com/s/opensans/v10/uYKcPVoh6c5R0NpdEY5A-Q.woff") format("woff");
+	}
+</style>
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="">Tourism System</a>
+			<span id="font1">Tourism System</span>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
 			</div>
@@ -50,10 +60,10 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>
+					<!--<img alt="" class="img-circle hide1" src="<?php echo base_url();?>inc/admin/layout/img/avatar3_small.jpg"/>-->
 					<span class="username username-hide-on-mobile">
 					Admin </span>
-					<i class="fa fa-angle-down"></i>
+					<!--<i class="fa fa-angle-down"></i>-->
 					</a>
 					<ul class="dropdown-menu">
                     	<!--
@@ -84,8 +94,12 @@
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
                         -->
+                        <li>
+							<a href="extra_profile.html">
+							<i class="icon-user"></i> Ubah Password </a>
+						</li>
 						<li>
-							<a href="login.html">
+							<a href="<?php echo base_url() ?>admin/login/logout">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>

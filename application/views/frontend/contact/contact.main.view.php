@@ -46,26 +46,32 @@
               </form>
               <!-- END FORM-->
             </div>
-
+			<?php
+            	$config = isset($config)?$config:array();
+				$address = isset($config[0]->frontend_address)?$config[0]->frontend_address:"";
+				$telp = isset($config[0]->frontend_telp)?$config[0]->frontend_telp:"";
+				$email = isset($config[0]->frontend_email)?$config[0]->frontend_email:"";
+				$fax = isset($config[0]->frontend_fax)?$config[0]->frontend_fax:"";
+			?>
             <div class="col-md-3 col-sm-3 sidebar2">
               <h3>Kontak Kami / <em>Our Contacts</em></h3>
               <address>
-                <strong>Loop, Inc.</strong><br>
-                795 Park Ave, Suite 120<br>
-                San Francisco, CA 94107<br>
-                <abbr title="Phone">P:</abbr> (234) 145-1810
+                <p>
+                	<?php echo $address ?>
+                </p>
+                <abbr title="Phone">P:</abbr> <?php echo $telp ?>
               </address>
               <address>
                 <strong>Email</strong><br>
-                <a href="mailto:info@email.com">info@email.com</a><br>
-                <a href="mailto:support@example.com">support@example.com</a>
+                <a href="mailto:<?php echo $email ?>"><?php echo $email ?></a><br>
+                
               </address>
               <ul class="social-icons margin-bottom-40">
-                <li><a href="#" data-original-title="facebook" class="facebook"></a></li>
+                <!--<li><a href="#" data-original-title="facebook" class="facebook"></a></li>
                 <li><a href="#" data-original-title="github" class="github"></a></li>
                 <li><a href="#" data-original-title="Goole Plus" class="googleplus"></a></li>
                 <li><a href="#" data-original-title="linkedin" class="linkedin"></a></li>
-                <li><a href="#" data-original-title="rss" class="rss"></a></li>
+                <li><a href="#" data-original-title="rss" class="rss"></a></li>-->
               </ul>        
             </div>
           </div>
@@ -79,7 +85,7 @@
 <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
 <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>inc/global/plugins/gmaps/gmaps.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>inc/frontend/pages/scripts/contact-us.js" type="text/javascript"></script>
+<!--<script src="<?php echo base_url() ?>inc/frontend/pages/scripts/contact-us.js" type="text/javascript"></script>-->
 
 <script type="text/javascript" src="<?php echo base_url() ?>inc/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>inc/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
@@ -149,6 +155,43 @@
 
 
     }
+
+</script>
+<?php
+	$map = isset($map)?$map:array();
+	$name = isset($map[0]->name)?$map[0]->name:0;
+	$desc_point = isset($map[0]->desc_point)?$map[0]->desc_point:0;
+	$lat = isset($map[0]->lat)?$map[0]->lat:0;
+	$lng = isset($map[0]->lng)?$map[0]->lng:0;
+?>
+<script>
+	var ContactUs = function () {
+
+		return {
+			//main function to initiate the module
+			init: function () {
+				var map;
+				$(document).ready(function(){
+				  map = new GMaps({
+					div: '#map',
+					lat: <?php echo $lat ?>,
+					lng: <?php echo $lng ?>,
+				  });
+				   var marker = map.addMarker({
+						lat: <?php echo $lat ?>,
+						lng: <?php echo $lng ?>,
+						title: '<?php echo $name ?>',
+						infoWindow: {
+							content: "<?php echo $desc_point ?>"
+						}
+					});
+	
+				   marker.infoWindow.open(map, marker);
+				});
+			}
+		};
+	
+	}();
 
 </script>
 

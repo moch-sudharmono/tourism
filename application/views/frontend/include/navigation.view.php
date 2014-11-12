@@ -14,8 +14,8 @@
     </li>
     <li class="news" id="profile">
       <a href="<?php echo base_url() ?>frontend/profile">
-       <label class="ina">Profil</label>
-       <label class="eng">Profile</label>
+       <label class="ina">Potensi Wisata</label>
+       <label class="eng">Attraction</label>
       </a>
     </li>
 

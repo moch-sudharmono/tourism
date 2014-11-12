@@ -9,14 +9,16 @@ class Contact extends CI_Controller {
 		parent::__construct();	
 		$this->load->model("admin/Tanya_kami");
 		$this->load->model("admin/Lokasi_wisata_kategori");
+		$this->load->model("admin/Tabglobal");
 	}
 	
 	public function index()
 	{
-		// For Navigation
-		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
-		// End Navigation
+		$map = $this->Tabglobal->displaySelectedMap();
+		$config = $this->Tabglobal->displaySystemConfig();
 		
+		$data["config"] = $config;
+		$data["map"] = $map;
 		$data["class"] = $this->class;
 		$data["konten"] = "frontend/contact/contact.main.view.php";
 		$this->load->view($this->route, $data);

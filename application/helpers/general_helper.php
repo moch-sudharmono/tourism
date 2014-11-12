@@ -110,20 +110,38 @@
 	
 	function getTheme()
 	{
-		$sql = "select * from pr_global where nama_variabel='theme'";
+		$sql = "select * from system_config";
 		$r = mysql_query($sql);
 		$data = mysql_fetch_array($r);
-		$theme = !empty($data["val_varchar"])?$data["val_varchar"]:"red";
+		$theme = !empty($data["frontend_theme"])?$data["frontend_theme"]:"red";
 		return $theme;
 	}
 	
 	function getTitle()
 	{
-		$sql = "select * from pr_global where nama_variabel='web_title'";
+		$sql = "select * from system_config";
 		$r = mysql_query($sql);
 		$data = mysql_fetch_array($r);
-		$theme = !empty($data["val_varchar"])?$data["val_varchar"]:"";
-		return $theme;
+		$title = !empty($data["system_logo"])?$data["system_logo"]:"";
+		return base_url() ."assets_frontend/logo_utama/" . $title;
+	}
+	
+	function getPhone()
+	{
+		$sql = "select * from system_config";
+		$r = mysql_query($sql);
+		$data = mysql_fetch_array($r);
+		$title = !empty($data["frontend_telp"])?$data["frontend_telp"]:"";
+		return $title;
+	}
+	
+	function getEmail()
+	{
+		$sql = "select * from system_config";
+		$r = mysql_query($sql);
+		$data = mysql_fetch_array($r);
+		$title = !empty($data["frontend_email"])?$data["frontend_email"]:"";
+		return $title;
 	}
 	
 ?>

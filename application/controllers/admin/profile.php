@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Profile extends Access_Controller {
 	
 	public $route = "admin/index";
 	private $class = "profile";

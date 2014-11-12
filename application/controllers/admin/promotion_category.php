@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Promotion_category extends CI_Controller {
+class Promotion_category extends Access_Controller {
 
 	public $route = "admin/index.php";
 	private $class = "promotion_category";

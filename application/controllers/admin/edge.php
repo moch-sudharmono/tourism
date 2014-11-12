@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Edge extends CI_Controller {
+class Edge extends Access_Controller {
 	public $route = "admin/index.php";
 	private $class = "edge";
 	

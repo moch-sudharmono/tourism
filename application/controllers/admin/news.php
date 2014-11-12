@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class News extends Access_Controller {
 	public $route = "admin/index.php";
 	private $class = "news";
 	

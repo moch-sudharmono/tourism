@@ -8,14 +8,16 @@ class Gallery extends CI_Controller {
 		//function check access			
 		parent::__construct();
 		$this->load->model("admin/Lokasi_wisata_kategori");	
+		$this->load->model("frontend/Pr_gallery");	
 	}
 	
 	public function index()
 	{
 		
-		// For Navigation
-		$data["potensi_wisata"] =  $this->Lokasi_wisata_kategori->display();
-		// End Navigation
+		$gallery = $this->Pr_gallery->display();
+		
+		
+		$data["gallery"] = $gallery;
 		$data["class"] = $this->class;
 		$data["konten"] = "frontend/gallery/gallery.main.view.php";
 		$this->load->view($this->route, $data);

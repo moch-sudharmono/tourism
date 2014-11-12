@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Tag extends CI_Controller {
+class Tag extends Access_Controller {
 	
 	public $route = "admin/index";
 	private $class = "tag";

@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="<?PHP echo base_url()?>/inc/global/plugins/bootstrap-summernote/summernote.css">
 </head>
 <!-- END HEAD -->
-<body class="page-header-fixed page-quick-sidebar-over-content" onload="about_us()">
+<body class="page-header-fixed page-quick-sidebar-over-content" onLoad="about_us()">
 <?php
 	$this->load->view('admin/sidebar');
 ?>
@@ -51,7 +51,7 @@
 					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-wrench"></i>Pengaturan Sistem
+								<i class="fa fa-wrench"></i>Pengaturan Sistem   
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -60,7 +60,7 @@
 							</div>
 						</div>
 						<div class="portlet-body form">
-							<form class="form-horizontal form-row-separated" enctype="multipart/form-data" action="<?PHP echo base_url()?>admin/configuration/saveConfiguration" method="post" onsubmit="return postForm1()">
+							<form class="form-horizontal form-row-separated" enctype="multipart/form-data" action="<?PHP echo base_url()?>admin/configuration/saveConfiguration" method="post" onSubmit="return postForm1()">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="control-label col-md-3">Nama Sistem</label>
@@ -75,6 +75,21 @@
 										<div class="col-md-6">
 											<input type="file" name="system_logo">
 											<p class="help-block">File GIF , JPG atau PNG <br> dengan resolusi maksimum 128 x 32 pixel</p>
+                                            <img src="<?php echo base_url() ?>assets_frontend/logo_utama/<?php echo $system_logo ?>" style="border:1px solid silver; padding:3px;">
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="control-label col-md-3">Tema</label>
+										<div class="col-md-6">
+											<select class="form-control update" name="frontend_theme" id="frontend_theme">
+                                                <option value="">-- Pilih Tema / Select Theme--</option>
+                                                <option value="red">Merah / Red</option>
+                                                <option value="green">Hijau / Green</option>
+                                                <option value="blue">Biru / Blue</option>
+                                                <option value="gray">Abu-abu / Gray</option>
+                                                <option value="orange">Jingga / Orange</option>
+                                                <option value="turquoise">Pirus / Turquoise</option>
+                                            </select>
 										</div>
 									</div>
 									<div class="form-group">
@@ -124,6 +139,8 @@
 			</div>
 		</div>
 	</div>
+    
+  
 <!-- END FOOTER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
@@ -226,6 +243,8 @@ function about_us()
 	var about_us = $("#about_us").html();
 	$('#summernote1').code(about_us);
 }
+
+$("#frontend_theme").val("<?php echo $frontend_theme ?>")
 
 </script>
 <?php
