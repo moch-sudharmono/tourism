@@ -1,5 +1,7 @@
 <?php
 	$profile = isset($profile)?$profile:array();
+	$id_lokasi_wisata = isset($profile[0]->id_lokasi_wisata)?$profile[0]->id_lokasi_wisata:0;
+	//echo $id_lokasi_wisata;
 	foreach( $profile as $row ):
 ?>
 <div class="main">
@@ -130,7 +132,8 @@
               <h2 class="eng">Testimonial</h2>
               <div>
               	<?php  
-					$this->load->view("frontend/profile/profile.testimonial.view.php")
+					$data["id_lokasi_wisata"] = $id_lokasi_wisata; 
+					$this->load->view("frontend/profile/profile.testimonial.view.php", $data)
 				?>
               </div>
             </div>

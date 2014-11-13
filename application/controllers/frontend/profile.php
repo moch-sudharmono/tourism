@@ -23,6 +23,9 @@ class Profile extends CI_Controller {
 		$gambar = $this->Lokasi_wisata->displayGambarLimit();
 		$id_lokasi_wisata = isset($profile[0]->id_lokasi_wisata)?$profile[0]->id_lokasi_wisata:"";
 		
+		$w = array( "id_lokasi_wisata"=>$id_lokasi_wisata, "publish"=>"Y" );
+		$testimoni = $this->Lokasi_wisata->displayTestimonial($w);
+		
 		$wp = array(
 			"parent_id"=>$id_lokasi_wisata
 		);
@@ -59,7 +62,7 @@ class Profile extends CI_Controller {
 			//print_r($rsa->sarana);
 		endforeach;
 
-		
+		$data["testimoni"] = $testimoni;
 		$data["sarana"] = $sarana;
 		$data["gambar"] = $gambar;
 		$data["terkait"] = $terkait;
@@ -75,10 +78,14 @@ class Profile extends CI_Controller {
 		$where = array(
 			"id_lokasi_wisata"=>$id_lokasi_wisata
 		);
-		
+		//print_r($where);
 		$profile = $this->Lokasi_wisata->displaySelectedData($where);
 		$kategori = $this->Lokasi_wisata->displayLokasiWisataKategori();
-		$testimoni = $this->Lokasi_wisata->displayTestimonial($where);
+		$w = array(
+			"id_lokasi_wisata"=>$id_lokasi_wisata,
+			"publish"=>"Y"
+		);
+		$testimoni = $this->Lokasi_wisata->displayTestimonial($w);
 		
 		$id_lokasi_wisata = isset($profile[0]->id_lokasi_wisata)?$profile[0]->id_lokasi_wisata:"";
 		

@@ -4,7 +4,8 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-12 col-sm-12">
-        <h2>Berita / <em>News</em></h2>
+        <h2 class="ina">Berita</h2>
+        <h2 class="eng">News</h2>
         <div class="content-page">
           <div class="row">
             <!-- BEGIN LEFT SIDEBAR -->            

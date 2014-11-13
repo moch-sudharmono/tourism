@@ -1,6 +1,7 @@
 <style>
 	.testimonial { border:1px solid silver; min-height:30px; max-height:200px; overflow:auto; }
 </style>
+
 <div class="main">
   <div class="container">
     <div class="row margin-bottom-40">
@@ -14,7 +15,13 @@
 				 		foreach($testimoni as $tst):
 			?>
             <li>
-            	<?php echo $tst->testimoni ?> (<?php echo TglIndo($tst->tanggal_testimoni)?>)                                 
+            	<p>
+                	(<?php echo TglIndo($tst->tanggal_testimoni)?>)
+                </p>
+                <p>
+				<?php echo $tst->testimoni ?> 
+                </p>
+                <hr />                           
             </li>         
             <?php
 				endforeach;
@@ -29,7 +36,7 @@
                             
               <form action="<?php echo base_url() ?>frontend/profile/send" role="form" id="testimonial_form" method="post">
                 <div class="form-group">
-                	<input type="hidden" name="id_lokasi_wisata" value="<?php echo $this->uri->segment(4) ?>" />
+                	<input type="hidden" name="id_lokasi_wisata" value="<?php echo $id_lokasi_wisata ?>" />
 					<textarea id="testimonial" name="testimonial" class="testimonial" rows="5" cols="100%" contenteditable=""></textarea>
                 </div>
                 <div class="form-group">

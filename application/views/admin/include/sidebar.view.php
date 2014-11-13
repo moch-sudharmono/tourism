@@ -134,20 +134,20 @@
                     </li>
                 </ul>						
             </li> 
-            <li class="admin_menu" id="askus">
+            <li class="admin_menu" id="icon">
                 <a href="<?php echo base_url() ?>admin/icon">
                 <i class="fa fa-info"></i>
                 <span class="title">Icon</span>
 
                 </a>					
             </li>   
-            <li class="admin_menu" id="configuration">
+            <!--<li class="admin_menu" id="configuration">
                 <a href="<?php echo base_url() ?>admin/promotion_configuration">
                 	<i class="fa  fa-wrench"></i>
                	 	<span class="title">Pengaturan / <em>Configuration</em></span>
                 </a>
                 				
-            </li>    
+            </li>  -->  
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>
