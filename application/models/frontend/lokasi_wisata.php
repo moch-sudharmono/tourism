@@ -99,9 +99,7 @@ class Lokasi_wisata extends MY_Model
 
 	public function displayTestimonial($data)
 	{
-		if( !empty($where) ):
-			$this->db->where($where);
-		endif;
+		$this->db->where(array("publish"=>'Y'));
 		$this->db->order_by("id_testimoni_lokasi_wisata desc");
 		$this->db->limit("10");
 		$query = $this->db->get("pr_testimoni_lokasi_wisata");
