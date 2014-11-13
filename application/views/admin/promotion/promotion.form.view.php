@@ -1,3 +1,15 @@
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url() ?>inc/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>inc/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>inc/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>inc/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../inc/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>inc/global/plugins/typeahead/typeahead.css">
+<!-- END PAGE LEVEL STYLES -->
+
 <?php
 	$promotion = isset( $promotion )?$promotion:array();
 	$id_promosi = isset( $promotion[0]->id_promosi )?$promotion[0]->id_promosi:"";
@@ -10,6 +22,8 @@
 	$tanggal_promosi = ddmmyyyy($tanggal_promosi);
 	$tanggal_kadarluarsa = isset( $promotion[0]->tanggal_kadarluarsa )?$promotion[0]->tanggal_kadarluarsa:"";
 	$tanggal_kadarluarsa = ddmmyyyy($tanggal_kadarluarsa);
+	
+	$cover = isset( $promotion[0]->cover )?$promotion[0]->cover:"";
 ?>
 <div class="portlet box purple">
     <div class="portlet-title">
@@ -78,10 +92,45 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Gambar Sampul / <em>Cover</em></label>
                     <div class="col-md-10">
-	                    <input type="file" name="" />
+	                    <a class="btn yellow" data-target="#static1" data-toggle="modal">Pilih File / <em>Choose File</em></a>
+                    </div>
+                    <div class="col-md-12" align="center">
+                        <textarea name="gambar" id="gambar" class="form-control" readonly="readonly"></textarea>
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                    <?php
+                    	$cover = isset($cover)?$cover:array();
+						
+					?>
+                        <div class="col-md-2" align="center">
+                        <a href="<?php echo base_url() ?>upload/<?php echo $cover ?>" target="_blank">
+							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $cover ?>" alt="<?php echo $cover ?>" />                      </a>      
+                        </div>
+                    <?php
+					?>
+                </div>
+                
+            <hr />
+        <!--    <div class="form-body">
+				<div class="form-group">
+					<label class="col-md-2 control-label">Gambar Sampul / <em>Cover</em></label>
+					<div class="col-md-10">
+						<div class="fileinput fileinput-new" data-provides="fileinput">
+							<span class="btn default btn-file">
+                                <span class="fileinput-new">Pilih File / <em>Choose File</em> </span>
+                                <span class="fileinput-exists">Ubah/<em>Change</em> </span>
+                                    <input type="file" name="cover_promo">
+                                </span>
+                                <span class="fileinput-filename">
+                            </span>
+							&nbsp; <a href="#" class="close fileinput-exists" data-dismiss="fileinput">
+							</a>
+						</div>
+					</div>
+				</div>	
+			</div>-->
             <div class="form-body">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Tanggal Promosi / <em>Promotion Date</em></label>
@@ -114,19 +163,51 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Berkas Pendukung / <em>Files</em></label>
                     <div class="col-md-10">
-	                    <input type="file" name="" />
+	                    <a class="btn yellow" data-target="#static3" data-toggle="modal">Pilih File / <em>Choose File</em></a>
+                    </div>
+                    <div class="col-md-12" align="center">
+                        <textarea name="file" id="file" class="form-control" readonly="readonly"></textarea>
                     </div>
                 </div>
             </div>
+           <div class="form-group">
+                    <?php
+                    	$file = isset($file)?$file:array();
+						foreach( $file as $row ):
+					?>
+                        <div class="col-md-2" align="center">
+                        <a href="<?php echo base_url() ?>upload/<?php echo $row->berkas ?>" target="_blank"><?php echo $row->berkas ?>
+						</a>      
+                        </div>
+                    <?php
+                    	endforeach;
+					?>
+                </div>
             <hr />
             <div class="form-body">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Foto Pendukung / <em>Photos</em></label>
                     <div class="col-md-10">
-	                    <input type="file" name="" />
+	                    <a class="btn yellow" data-target="#static2" data-toggle="modal">Pilih File / <em>Choose File</em></a>
+                    </div>
+                    <div class="col-md-12" align="center">
+                        <textarea name="foto" id="foto" class="form-control" readonly="readonly"></textarea>
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                    <?php
+                    	$foto = isset($foto)?$foto:array();
+						foreach( $foto as $row ):
+					?>
+                        <div class="col-md-2" align="center">
+                        <a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
+							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                      </a>      
+                        </div>
+                    <?php
+                    	endforeach;
+					?>
+                </div>
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
@@ -140,7 +221,82 @@
 </div>
 </div>
 
-<script src="<?php base_url()?>inc/global/plugins/jquery.ui.datepicker.validation.min.js" type="text/javascript"></script>
+<div id="static1" class="modal container fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Unggah Foto-foto / <em>Upload Photos</em></h4>
+    </div>
+    <div class="modal-body">
+       <?php 
+	   			$config1 = array(
+							"filetype"=>"gif|jpe?g|png",
+							"filetype_caption"=>"JPG, GIF, PNG",
+							"filesize"=>5000000,
+							"filesize_caption"=>"5 MB",	
+							"content"=>"gambar"
+						);
+		   		$this->load->view("admin/promotion/promotionFile2.php", $config1) 
+	?>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn blue">Selesai / Done</button>
+    </div>
+</div>
+
+<div id="static2" class="modal container fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Unggah Foto-foto / <em>Upload Photos</em></h4>
+    </div>
+    <div class="modal-body">
+       <?php 
+	   			$config1 = array(
+							"filetype"=>"gif|jpe?g|png",
+							"filetype_caption"=>"JPG, GIF, PNG",
+							"filesize"=>5000000,
+							"filesize_caption"=>"5 MB",	
+							"content"=>"foto"
+						);
+		   		$this->load->view("admin/promotion/promotionImage.php", $config1) 
+	?>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn blue">Selesai / Done</button>
+    </div>
+</div>
+
+
+<div id="static3" class="modal container fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Unggah File / <em>Upload Files</em></h4>
+    </div>
+    <div class="modal-body">
+       <?php 
+	   			$config = array(
+							"filetype"=>"pdf",
+							"filetype_caption"=>"PDF",
+							"filesize"=>5000000,
+							"filesize_caption"=>"5 MB",	
+							"content"=>"file"
+						);
+		   		$this->load->view("admin/promotion/promotionFile.php", $config) 
+	?>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Batal / Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn blue">Selesai / Done</button>
+    </div>
+</div>
+
+
+<script src="<?php echo base_url()?>inc/global/plugins/jquery.ui.datepicker.validation.min.js" type="text/javascript"></script>
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="<?php echo base_url()?>inc/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
 
 <script>
 	$("#back_promotion").click(function(e) {
@@ -179,3 +335,4 @@
 	});
 
 </script>
+

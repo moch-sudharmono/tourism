@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Promotion extends Access_Controller {
+class Promotion extends CI_Controller {
 
 	public $route = "admin/index.php";
 	private $class = "promotion";
@@ -53,6 +53,12 @@ class Promotion extends Access_Controller {
 		$promotion = $this->Promosi->displaySelectedData($where);
 		$promotion_category = $this->Kategori_promosi->display();
 		
+		$foto = $this->Promosi->displayGambar($where);		
+		$data["foto"] = $foto;
+		
+		$file = $this->Promosi->displayFile($where);		
+		$data["file"] = $file;
+		
 		$data["promotion"] = $promotion; 
 		$data["promotion_category"] = $promotion_category; 
 		$data["class"] = $this->class;
@@ -70,8 +76,14 @@ class Promotion extends Access_Controller {
 		$deskripsi_ina = $this->input->post("deskripsi_ina");
 		$deskripsi_eng = $this->input->post("deskripsi_eng");
 		$tanggal_promosi = yyyymmdd($this->input->post("tanggal_promosi"));
-		$tanggal_kadarluarsa = yyyymmdd($this->input->post("tanggal_kadarluarsa"));
+		$tanggal_kadarluarsa = yyyymmdd($this->input->post("tanggal_kadarluarsa"));		
+		$cover_promo =$this->input->post("gambar");
 		
+		$file =$this->input->post("file");
+		$dfile = explode("]", $file);
+		
+		$foto =$this->input->post("foto");
+		$dfoto = explode("]", $foto);
 		
 		$data = array(
 			"promosi_ina"=>$promosi_ina,
@@ -80,7 +92,8 @@ class Promotion extends Access_Controller {
 			"deskripsi_eng"=>$deskripsi_eng,
 			"tanggal_promosi"=>$tanggal_promosi,
 			"tanggal_kadarluarsa"=>$tanggal_kadarluarsa,
-			"id_promosi_kategori"=>$id_promosi_kategori
+			"id_promosi_kategori"=>$id_promosi_kategori,
+			"cover"=>$cover_promo
 		);
 		
 		//print_r($data); exit;
@@ -91,8 +104,61 @@ class Promotion extends Access_Controller {
 		
 		if( $id_promosi != 0 ):
 			$result = $this->Promosi->update($data, $where);
+			
+			//delele before insert image
+			$this->Promosi->deleteGambar($where);
+			//insert image
+			for( $j=0; $j<count($dfoto); $j++ ):
+				$foto = str_replace("[", "", $dfoto[$j]);
+				$data_foto = array(
+					"id_promosi"=>$id_promosi,
+					"gambar"=>$foto
+				);
+				if( isset($foto) and !empty($foto) ):
+					$this->Promosi->insertGambar($data_foto);
+				endif;
+			endfor;
+			
+			
+			//delele before insert file
+			$this->Promosi->deleteFile($where);
+			//insert file
+			for( $j=0; $j<count($dfile); $j++ ):
+				$file = str_replace("[", "", $dfile[$j]);
+				$data_file = array(
+					"id_promosi"=>$id_promosi,
+					"berkas"=>$file
+				);
+				if( isset($file) and !empty($file) ):
+					$this->Promosi->insertFile($data_file);
+				endif;
+			endfor;
+			
 		else:
 			$result = $this->Promosi->insert($data);
+			
+			for( $j=0; $j<count($dfoto); $j++ ):
+				$foto = str_replace("[", "", $dfoto[$j]);
+				$data_foto = array(
+					"id_promosi"=>$id_promosi,
+					"gambar"=>$foto
+				);
+				if( isset($foto) and !empty($foto) ):
+					$this->Promosi->insertGambar($data_foto);
+				endif;
+			endfor;
+			
+			//insert file
+			for( $j=0; $j<count($dfile); $j++ ):
+				$file = str_replace("[", "", $dfile[$j]);
+				$data_file = array(
+					"id_promosi"=>$id_promosi,
+					"berkas"=>$berkas
+				);
+				if( isset($file) and !empty($file) ):
+					$this->Promosi->insertFile($data_file);
+				endif;
+			endfor;
 		endif;
 		
 		if( $result ):
