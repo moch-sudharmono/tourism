@@ -110,6 +110,20 @@ class Lokasi_wisata extends MY_Model
 	{
 		return $this->db->insert("pr_testimoni_lokasi_wisata", $data);
 	}
+	
+	public function searchLokasiWisata($query)
+	{
+		$sql = "
+			select		*
+			from		pr_lokasi_wisata_view
+			where		nama_lokasi_wisata_ina like '%" . $query . "%' or nama_lokasi_wisata_eng like '%" . $query . "%'
+						or deskripsi_ina like '%" . $query . "%' or deskripsi_eng like '%" . $query . "%'
+		";
+		//echo $sql;
+		$query = $this->db->query($sql);
+		
+		return $query->result();
+	}
 }
 
 ?>

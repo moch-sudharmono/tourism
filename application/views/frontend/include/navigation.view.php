@@ -55,11 +55,11 @@
       <span class="sep"></span>
       <i class="fa fa-search search-btn"></i>
       <div class="search-box">
-        <form action="#">
+        <form action="<?php echo base_url() ?>frontend/home/search_result" method="post">
           <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control">
+            	<input type="text" placeholder="Search" class="form-control" name="query" />
             <span class="input-group-btn">
-              <button class="btn btn-primary" type="submit">Search</button>
+              	<button class="btn btn-primary" type="submit">Search</button>
             </span>
           </div>
         </form>

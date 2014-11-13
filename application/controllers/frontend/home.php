@@ -112,4 +112,16 @@ class Home extends CI_Controller {
 		$data["konten"] = "frontend/route/route.list.view.php";
 		$this->load->view($this->route, $data);
 	}
+	
+	public function search_result()
+	{
+		$query = $this->input->post("query");
+		//echo $query;
+		$hasil = $this->lokasi_wisata->searchLokasiWisata($query);
+		//print_r($hasil);
+		$data["hasil"] = $hasil;
+		$data["query"] = $query;
+		$data["konten"] = "frontend/search/search.main.view.php";
+		$this->load->view($this->route, $data);
+	}
 }
