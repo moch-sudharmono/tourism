@@ -18,35 +18,40 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.admin: ~0 rows (approximately)
+-- Dumping data for table tourism.admin: ~2 rows (approximately)
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+	(1, 'admin', 'luthfinoviandi@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
+	(2, 'admin', 'admin@admin', '21232f297a57a5a743894a0e4a801fc3');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 
 -- Dumping structure for table tourism.category
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cat` int(11) NOT NULL AUTO_INCREMENT,
   `name_category` varchar(100) NOT NULL,
   `icon` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id_cat`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.category: ~9 rows (approximately)
+-- Dumping data for table tourism.category: ~11 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` (`id`, `name_category`, `icon`, `description`) VALUES
+INSERT INTO `category` (`id_cat`, `name_category`, `icon`, `description`) VALUES
 	(1, 'Tempat Wisata', 'wisata.png', ''),
 	(2, 'Penginapan', 'penginapan.png', ''),
 	(3, 'Pusat Belanja', 'pusatbelanja.png', ''),
 	(4, 'Bandara', 'bandara.png', ''),
 	(5, 'Terminal', 'terminal.png', ''),
-	(6, 'Restaurant', 'restauran.png', ''),
+	(6, 'Restaurant', 'restaurant.png', ''),
 	(7, 'SPBU', 'spbu.png', ''),
 	(8, 'Pusat ATM', 'atm.png', ''),
-	(9, 'Dermaga', 'dermaga.png', '');
+	(9, 'Dermaga', 'dermaga.png', ''),
+	(11, 'Budidaya Tanaman', 'farm.png', ''),
+	(12, 'Tourist Information center', 'tourist.png', '');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 
@@ -150,17 +155,23 @@ CREATE TABLE IF NOT EXISTS `pr_berita_log` (
   `user_agent` text,
   `last_activity` varchar(50) NOT NULL DEFAULT '0',
   `user_data` varchar(50) NOT NULL DEFAULT '0',
+  `id` int(11) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `lang` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_berita_log`),
   KEY `FK_pr_berita_log_pr_berita` (`id_berita`),
   CONSTRAINT `FK_pr_berita_log_pr_berita` FOREIGN KEY (`id_berita`) REFERENCES `pr_berita` (`id_berita`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_berita_log: ~3 rows (approximately)
+-- Dumping data for table tourism.pr_berita_log: ~5 rows (approximately)
 /*!40000 ALTER TABLE `pr_berita_log` DISABLE KEYS */;
-INSERT INTO `pr_berita_log` (`id_berita_log`, `session_id`, `id_berita`, `tanggal_log`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-	(2, '8196c1a90e7f9b4abc3a87209db2beac', 3, '2014-11-05 22:29:13', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201130', ''),
-	(3, '186a43dd391d9f86200714f7aa044b19', 3, '2014-11-05 22:34:17', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201657', ''),
-	(4, '39bb24a53c72a133b0f818c7ef342c04', 3, '2014-11-05 22:34:18', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201657', '');
+INSERT INTO `pr_berita_log` (`id_berita_log`, `session_id`, `id_berita`, `tanggal_log`, `ip_address`, `user_agent`, `last_activity`, `user_data`, `id`, `email`, `name`, `lang`) VALUES
+	(2, '8196c1a90e7f9b4abc3a87209db2beac', 3, '2014-11-05 22:29:13', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201130', '', NULL, NULL, NULL, NULL),
+	(3, '186a43dd391d9f86200714f7aa044b19', 3, '2014-11-05 22:34:17', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201657', '', NULL, NULL, NULL, NULL),
+	(4, '39bb24a53c72a133b0f818c7ef342c04', 3, '2014-11-05 22:34:18', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415201657', '', NULL, NULL, NULL, NULL),
+	(5, 'b34b6360fc8540f54e21a74eda653afd', 3, '2014-11-12 15:05:36', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415779534', '', NULL, NULL, NULL, NULL),
+	(6, '81afe5ab566b872463d2fa84929d68f6', 3, '2014-11-13 11:27:35', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36', '1415852847', '', 2, 'admin@admin', 'admin', 'eng');
 /*!40000 ALTER TABLE `pr_berita_log` ENABLE KEYS */;
 
 
@@ -227,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `pr_global` (
 /*!40000 ALTER TABLE `pr_global` DISABLE KEYS */;
 INSERT INTO `pr_global` (`id_global`, `nama_variabel`, `nama`, `deskripsi`, `val_int`, `val_varchar`, `val_text`) VALUES
 	(1, 'theme', 'Website Theme', 'Mengatur Warna Dasar Website', NULL, 'green', NULL),
-	(2, 'web_title', 'Website Main Title', NULL, NULL, 'Wakatobi', NULL),
+	(2, 'web_title', 'Website Main Title', NULL, NULL, 'Wakatobi1', NULL),
 	(3, 'our_contact', 'Main Contact', 'Kontak yg dapat dihubungi', NULL, 'Wakatobi', 'wakatobi\nasd\nadsa'),
 	(9, 'map_id', '', NULL, 10, NULL, NULL);
 /*!40000 ALTER TABLE `pr_global` ENABLE KEYS */;
@@ -655,13 +666,12 @@ CREATE TABLE IF NOT EXISTS `pr_slideshow` (
   `keterangan_eng` text,
   `publish` enum('Y','N') DEFAULT 'N',
   PRIMARY KEY (`id_slideshow`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_slideshow: ~2 rows (approximately)
+-- Dumping data for table tourism.pr_slideshow: ~1 rows (approximately)
 /*!40000 ALTER TABLE `pr_slideshow` DISABLE KEYS */;
 INSERT INTO `pr_slideshow` (`id_slideshow`, `gambar`, `keterangan_ina`, `keterangan_eng`, `publish`) VALUES
-	(1, 'Reefs-within-Wakatobi-sanctuary_aerial-view_photo-by-Didi-Lotze.jpg', '<div class="caption lft slide_title_white slide_item_left"\r\n            data-x="30"\r\n            data-y="90"\r\n            data-speed="400"\r\n            data-start="1500"\r\n            data-easing="easeOutExpo">\r\n            Nikmati Keindahan<br><span class="slide_title_white_bold">Wakatobi</span>\r\n          </div>\r\n          <div class="caption lft slide_subtitle_white slide_item_left"\r\n            data-x="87"\r\n            data-y="245"\r\n            data-speed="400"\r\n            data-start="2000"\r\n            data-easing="easeOutExpo">\r\n            Lokasi liburan yang Menakjubkan.\r\n          </div>\r\n                       \r\n          <div class="caption lfb"\r\n            data-x="640" \r\n            data-y="0" \r\n            data-speed="700" \r\n            data-start="1000" \r\n            data-easing="easeOutExpo">\r\n            <!--<img src="<?php echo base_url() ?>inc/frontend/pages/img/revolutionslider/lady.png" alt="Image 1">-->\r\n          </div>', '<div class="caption lft slide_title_white slide_item_left"\r\n            data-x="30"\r\n            data-y="90"\r\n            data-speed="400"\r\n            data-start="1500"\r\n            data-easing="easeOutExpo">\r\n            Nikmati Keindahan<br><span class="slide_title_white_bold">Wakatobi</span>\r\n          </div>\r\n          <div class="caption lft slide_subtitle_white slide_item_left"\r\n            data-x="87"\r\n            data-y="245"\r\n            data-speed="400"\r\n            data-start="2000"\r\n            data-easing="easeOutExpo">\r\n            Lokasi liburan yang Menakjubkan.\r\n          </div>\r\n                       \r\n          <div class="caption lfb"\r\n            data-x="640" \r\n            data-y="0" \r\n            data-speed="700" \r\n            data-start="1000" \r\n            data-easing="easeOutExpo">\r\n            <!--<img src="<?php echo base_url() ?>inc/frontend/pages/img/revolutionslider/lady.png" alt="Image 1">-->\r\n          </div>', 'Y'),
-	(2, 'dive-wakatobi.jpg', '<div class="caption lft slide_subtitle slide_item_left"\r\n            data-x="30"\r\n            data-y="180"\r\n            data-speed="400"\r\n            data-start="2000"\r\n            data-easing="easeOutExpo">\r\n            Salah satu tempat menyelam Terbaik di Dunia\r\n          </div>\r\n\r\n                       \r\n          <div class="caption lfb"\r\n            data-x="640" \r\n            data-y="55" \r\n            data-speed="700" \r\n            data-start="1000" \r\n            data-easing="easeOutExpo">\r\n            <!--<img src="<?php echo base_url() ?>inc/frontend/pages/img/revolutionslider/man-winner.png" alt="Image 1">-->\r\n          </div>', '<div class="caption lft slide_subtitle slide_item_left"\r\n            data-x="30"\r\n            data-y="180"\r\n            data-speed="400"\r\n            data-start="2000"\r\n            data-easing="easeOutExpo">\r\n            Salah satu tempat menyelam Terbaik di Dunia\r\n          </div>\r\n\r\n                       \r\n          <div class="caption lfb"\r\n            data-x="640" \r\n            data-y="55" \r\n            data-speed="700" \r\n            data-start="1000" \r\n            data-easing="easeOutExpo">\r\n            <!--<img src="<?php echo base_url() ?>inc/frontend/pages/img/revolutionslider/man-winner.png" alt="Image 1">-->\r\n          </div>', 'Y');
+	(5, 'beach-palms-sandbank-2880x180071.jpg', '<p>Nikmati Keindahan</p>\r\n\r\n<p>Wakatobi</p>\r\n', '<p>Enjoy</p>\r\n\r\n<p>Wakatobi</p>\r\n', 'Y');
 /*!40000 ALTER TABLE `pr_slideshow` ENABLE KEYS */;
 
 
@@ -696,13 +706,38 @@ CREATE TABLE IF NOT EXISTS `pr_testimoni_lokasi_wisata` (
   PRIMARY KEY (`id_testimoni_lokasi_wisata`),
   KEY `FK_pr_testimoni_lokasi_wisata_pr_lokasi_wisata` (`id_lokasi_wisata`),
   CONSTRAINT `FK_pr_testimoni_lokasi_wisata_pr_lokasi_wisata` FOREIGN KEY (`id_lokasi_wisata`) REFERENCES `pr_lokasi_wisata` (`id_lokasi_wisata`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tourism.pr_testimoni_lokasi_wisata: ~1 rows (approximately)
+-- Dumping data for table tourism.pr_testimoni_lokasi_wisata: ~4 rows (approximately)
 /*!40000 ALTER TABLE `pr_testimoni_lokasi_wisata` DISABLE KEYS */;
 INSERT INTO `pr_testimoni_lokasi_wisata` (`id_testimoni_lokasi_wisata`, `id_lokasi_wisata`, `testimoni`, `tanggal_testimoni`, `publish`) VALUES
-	(1, 1, 'Bagus', '2014-10-30 15:18:15', 'Y');
+	(1, 1, 'Bagus', '2014-10-30 15:18:15', 'Y'),
+	(3, 5, 'asdasdas', '2014-11-13 11:12:16', 'N'),
+	(4, 1, 'asdsadasd', '2014-11-13 11:18:19', 'N'),
+	(5, 5, 'sadasdsadasd', '2014-11-13 11:22:37', 'N');
 /*!40000 ALTER TABLE `pr_testimoni_lokasi_wisata` ENABLE KEYS */;
+
+
+-- Dumping structure for table tourism.system_config
+DROP TABLE IF EXISTS `system_config`;
+CREATE TABLE IF NOT EXISTS `system_config` (
+  `frontend_name` varchar(100) NOT NULL,
+  `frontend_address` varchar(300) NOT NULL,
+  `frontend_telp` varchar(20) NOT NULL,
+  `frontend_email` varchar(50) NOT NULL,
+  `frontend_fax` varchar(18) NOT NULL,
+  `frontend_theme` varchar(255) NOT NULL,
+  `system_name` varchar(300) NOT NULL,
+  `system_logo` varchar(300) NOT NULL,
+  `about_us` text NOT NULL,
+  PRIMARY KEY (`frontend_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table tourism.system_config: ~1 rows (approximately)
+/*!40000 ALTER TABLE `system_config` DISABLE KEYS */;
+INSERT INTO `system_config` (`frontend_name`, `frontend_address`, `frontend_telp`, `frontend_email`, `frontend_fax`, `frontend_theme`, `system_name`, `system_logo`, `about_us`) VALUES
+	('1', 'gang mesjid no 18765, Bekasi Timur', '080989999123', 'email@email.com', '080989999', 'green', 'Tourism System', 'logo.png', 'qwewqewqe');
+/*!40000 ALTER TABLE `system_config` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
