@@ -10,10 +10,13 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <?php
+
+	$deskripsi_default = '';
+
 	$slideshow = isset( $slideshow )?$slideshow:array();
 	$id_slideshow = isset( $slideshow[0]->id_slideshow )?$slideshow[0]->id_slideshow:"";
-	$deskripsi_ina = isset( $slideshow[0]->keterangan_ina )?$slideshow[0]->keterangan_ina:"";
-	$deskripsi_eng = isset( $slideshow[0]->keterangan_eng )?$slideshow[0]->keterangan_eng:"";
+	$deskripsi_ina = isset( $slideshow[0]->keterangan_ina )?$slideshow[0]->keterangan_ina:$deskripsi_default;
+	$deskripsi_eng = isset( $slideshow[0]->keterangan_eng )?$slideshow[0]->keterangan_eng:$deskripsi_default;
 	$publish = isset( $slideshow[0]->publish )?$slideshow[0]->publish:"";
 	$gambar = isset( $slideshow[0]->gambar )?$slideshow[0]->gambar:"";
 	
@@ -34,14 +37,20 @@
 					<div class="col-md-10">
                     	<div class="col-md-2" align="center">
                         <a href="<?php echo base_url() ?>upload/<?php echo $gambar ?>" target="_blank">
+                        	<?php
+                            	if( !empty($gambar) ):
+							?>
 							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $gambar ?>" alt="<?php echo $gambar ?>" />                      </a>      
+                        	<?php
+                            	endif;
+							?>
                         </div>
 						<div class="form-group">
                             <div class="col-md-12" align="center">
                                 <a class="btn yellow" data-target="#static2" data-toggle="modal">Unggah Foto / <em>Upload Photos</em> </a>
                             </div>
                             <div class="col-md-12" align="center">
-                                <textarea name="gambar" id="gambar" class="form-control" readonly="readonly"></textarea>
+                                <textarea name="gambar" id="gambar" class="form-control" readonly="readonly"><?php echo $gambar ?></textarea>
                             </div>
                         </div>
 					</div>

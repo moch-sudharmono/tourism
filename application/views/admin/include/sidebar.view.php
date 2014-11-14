@@ -32,6 +32,12 @@
                     </li>
                 </ul>				
             </li>
+            <li class="admin_menu" id="slideshow">
+                <a href="<?php echo base_url() ?>admin/slideshow">
+                <i class="fa fa-file-picture-o"></i>
+                <span class="title">Slideshow</span>
+                </a>					
+            </li>
             <li class="admin_menu" id="profile">
                 <a href="<?php echo base_url() ?>admin/profile">
                 <i class="fa fa-map-marker"></i>

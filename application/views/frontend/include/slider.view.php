@@ -13,10 +13,27 @@
           <img src="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" alt="">
           
           <div class="ina">
-          	<?php echo $row->keterangan_ina ?>
+          			
+            <div class="caption lft slide_title_white slide_item_left"
+                data-x="30"
+                data-y="90"
+                data-speed="400"
+                data-start="1500"
+                data-easing="easeOutExpo">
+                <?php echo $row->keterangan_ina ?>
+             </div>
           </div>
           <div class="eng">
-          	<?php echo $row->keterangan_ina ?>
+          
+            <div class="caption lft slide_title_white slide_item_left"
+                data-x="30"
+                data-y="90"
+                data-speed="400"
+                data-start="1500"
+                data-easing="easeOutExpo">
+               	<?php echo $row->keterangan_eng ?>
+               
+             </div>
           </div>
         </li>    
 		<?php
