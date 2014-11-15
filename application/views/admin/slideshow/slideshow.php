@@ -61,7 +61,7 @@
                 <td><?php echo PotongKata($row->keterangan_eng, 30) ?></td>
                 <td><?php echo $row->publish? "Publish":"NotPublish" ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>admin/slideshow/form/<?php echo $row->id_slideshow ?>"> 
+                    <a href="<?php echo base_url() ?>index.php/admin/slideshow/form/<?php echo $row->id_slideshow ?>"> 
                     	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
                     </a> 
                     |
@@ -87,7 +87,7 @@
 
 <script>
 	$("#addnew_tag").click(function(e) {
-        location.href = "<?php echo base_url() ?>admin/slideshow/form/0"
+        location.href = "<?php echo base_url() ?>index.php/admin/slideshow/form/0"
     });
 	
 	$(".hapus_attraction").click(function(e) {

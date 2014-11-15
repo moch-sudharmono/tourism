@@ -101,14 +101,17 @@
             </div>
             <div class="form-group">
                     <?php
-                    	$cover = isset($cover)?$cover:array();
+                    	//$cover = isset($cover)?$cover:array();
+						if (isset($cover)) :
 						
+						else :
 					?>
                         <div class="col-md-2" align="center">
                         <a href="<?php echo base_url() ?>upload/<?php echo $cover ?>" target="_blank">
 							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $cover ?>" alt="<?php echo $cover ?>" />                      </a>      
                         </div>
                     <?php
+					    endif 
 					?>
                 </div>
                 
@@ -229,10 +232,6 @@
     <div class="modal-body">
        <?php 
 	   			$config1 = array(
-							"filetype"=>"gif|jpe?g|png",
-							"filetype_caption"=>"JPG, GIF, PNG",
-							"filesize"=>5000000,
-							"filesize_caption"=>"5 MB",	
 							"content"=>"gambar"
 						);
 		   		$this->load->view("admin/promotion/promotionFile2.php", $config1) 

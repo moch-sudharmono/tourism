@@ -42,7 +42,7 @@
                 <td><?php echo $row->promosi_ina ?></td><td><?php echo $row->promosi_eng ?></td>
                 <td><?php echo PotongKata($row->deskripsi_ina, 30) ?></td><td><?php echo PotongKata($row->deskripsi_eng, 30) ?></td>
                 <td align="center"> 
-                    <a href="<?php echo base_url() ?>admin/promotion/form/<?php echo $row->id_promosi ?>"> 
+                    <a href="<?php echo base_url() ?>index.php/admin/promotion/form/<?php echo $row->id_promosi ?>"> 
                     	<i class="fa fa-edit"></i> Ubah / <em>Edit</em> 
                     </a> 
                     |
