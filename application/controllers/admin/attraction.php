@@ -94,7 +94,7 @@ class Attraction extends Access_Controller {
 			$result = $this->Attractions->update($data, $where);
 			
 			//delele before insert image
-			$this->Attractions->deleteGambar($where);
+			//$this->Attractions->deleteGambar($where);
 			//insert image
 			for( $j=0; $j<count($dgambar); $j++ ):
 				$gambar = str_replace("[", "", $dgambar[$j]);
@@ -144,6 +144,23 @@ class Attraction extends Access_Controller {
 			redirect("admin/attraction");
 		else:
 			echo "Gagal";
+		endif;
+	}
+	
+	public function deleteimage($id_paket_wisata_gambar=0, $id_paket_wisata=0, $nama_file="")
+	{
+		$where = array("id_paket_wisata_gambar"=>$id_paket_wisata_gambar);
+		$r = $this->Attractions->deleteGambar($where);
+		if( $r ):
+			if( !empty($nama_file) ):
+				$thumb = "./upload/thumbs/" . $nama_file;
+				$file = "./upload/" . $nama_file;
+				unlink($thumb);
+				unlink($file);
+			endif;
+			redirect("admin/attraction/form/" . $id_paket_wisata);
+		else:
+			redirect("admin/attraction/form/" . $id_paket_wisata);
 		endif;
 	}
 }

@@ -213,7 +213,7 @@
 			$('<div class="alert alert-danger"/>')
 				.text('Upload server currently unavailable - ' +
 						new Date())
-				.appendTo('#UploadForm');
+				.appendTo('#UploadForm2');
 		})
 	}
 

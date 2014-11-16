@@ -127,7 +127,7 @@ class Profile extends Access_Controller {
 			endfor;
 			
 			// Insert Gambar
-			$this->Lokasi_wisata->deleteGambar($where);
+			//$this->Lokasi_wisata->deleteGambar($where);
 			for( $j=0; $j<count($dgambar); $j++ ):
 				$gambar = str_replace("[", "", $dgambar[$j]);
 				$data_gambar = array(
@@ -187,6 +187,23 @@ class Profile extends Access_Controller {
 			redirect("admin/profile");
 		else:
 			echo "Gagal";
+		endif;
+	}
+	
+	public function deleteimage($id_pr_lokasi_wisata_gambar=0, $id_lokasi_wisata=0, $nama_file="")
+	{
+		$where = array("id_pr_lokasi_wisata_gambar"=>$id_pr_lokasi_wisata_gambar);
+		$r = $this->Lokasi_wisata->deleteGambar($where);
+		if( $r ):
+			if( !empty($nama_file) ):
+				$thumb = "./upload/thumbs/" . $nama_file;
+				$file = "./upload/" . $nama_file;
+				unlink($thumb);
+				unlink($file);
+			endif;
+			redirect("admin/profile/form/" . $id_lokasi_wisata);
+		else:
+			redirect("admin/profile/form/" . $id_lokasi_wisata);
 		endif;
 	}
 }

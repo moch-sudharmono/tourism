@@ -103,7 +103,7 @@ class News extends Access_Controller {
 			endfor;
 			
 			// Insert Gambar
-			$this->Berita->deleteGambar($where);
+			//$this->Berita->deleteGambar($where);
 			for( $j=0; $j<count($dgambar); $j++ ):
 				$gambar = str_replace("[", "", $dgambar[$j]);
 				$data_gambar = array(
@@ -164,6 +164,23 @@ class News extends Access_Controller {
 			redirect("admin/news");
 		else:
 			echo "Gagal";
+		endif;
+	}
+	
+	public function deleteimage($id_berita_gambar=0, $id_berita=0, $nama_file="")
+	{
+		$where = array("id_berita_gambar"=>$id_berita_gambar);
+		$r = $this->Berita->deleteGambar($where);
+		if( $r ):
+			if( !empty($nama_file) ):
+				$thumb = "./upload/thumbs/" . $nama_file;
+				$file = "./upload/" . $nama_file;
+				unlink($thumb);
+				unlink($file);
+			endif;
+			redirect("admin/news/form/" . $id_berita);
+		else:
+			redirect("admin/news/form/" . $id_berita);
 		endif;
 	}
 	

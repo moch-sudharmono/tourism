@@ -13,7 +13,7 @@
                     <span class="btn green fileinput-button">
                     <i class="fa fa-plus"></i>
                     <span>
-                    	Tambah Foto / <em>Add Photos</em>
+                    	Tambah Berkas / <em>Add Files</em>
                     </span>
                     <input type="file" name="userfile" multiple>
                     </span>
@@ -71,7 +71,7 @@
                     </li>
                     <li>
                     	 	Tipe Foto yang diperbolehkan(<strong><?php echo isset($filetype_caption)?$filetype_caption:"5MB" ?></strong>) /
-                        	<em>Only image files (<strong><?php echo isset($filetype_caption)?$filetype_caption:"5MB" ?></strong>) are allowed</em>.
+                        	<em>Only files (<strong><?php echo isset($filetype_caption)?$filetype_caption:"5MB" ?></strong>) are allowed</em>.
                     </li>
                 </ul>
             </div>

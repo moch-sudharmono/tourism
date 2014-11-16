@@ -161,6 +161,7 @@
 							<a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
                             	<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                            
                         	</a>
+                            <center><a href="<?php echo base_url() ?>admin/profile/deleteimage/<?php echo $row->id_pr_lokasi_wisata_gambar ?>/<?php echo $id_lokasi_wisata ?>/<?php echo urlencode($row->gambar) ?>" class="deleteImage"><i class="fa fa-times"></i></a></center>
                         </div>
                     <?php
                     	endforeach;
@@ -308,4 +309,17 @@ $(".id_sarana_prasarana").each(function(index, element) {
 		}
 	  }
 	});
+</script>
+
+<script>
+	$(".deleteImage").click(function(e) {
+        if( confirm("Anda Yakin / Are you sure ?") )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+    });
 </script>

@@ -101,14 +101,17 @@
             </div>
             <div class="form-group">
                     <?php
-                    	$cover = isset($cover)?$cover:array();
+                    	//$cover = isset($cover)?$cover:array();
+						if (isset($cover)) :
 						
+						else :
 					?>
                         <div class="col-md-2" align="center">
                         <a href="<?php echo base_url() ?>upload/<?php echo $cover ?>" target="_blank">
 							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $cover ?>" alt="<?php echo $cover ?>" />                      </a>      
                         </div>
                     <?php
+					    endif 
 					?>
                 </div>
                 
@@ -202,12 +205,16 @@
 					?>
                         <div class="col-md-2" align="center">
                         <a href="<?php echo base_url() ?>upload/<?php echo $row->gambar ?>" target="_blank">
-							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                      </a>      
+							<img src="<?php echo base_url() ?>upload/thumbs/<?php echo $row->gambar ?>" alt="<?php echo $row->gambar ?>" />                      
+                        </a> 
+                        <br />
+                        <center><a href="<?php echo base_url() ?>admin/promotion/deleteimage/<?php echo $row->id_promosi_gambar ?>/<?php echo $id_promosi ?>/<?php echo urlencode($row->gambar) ?>" class="deleteImage"><i class="fa fa-times"></i></a></center>     
                         </div>
+                        
                     <?php
                     	endforeach;
 					?>
-                </div>
+            </div>
             <div class="form-actions">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
@@ -229,10 +236,6 @@
     <div class="modal-body">
        <?php 
 	   			$config1 = array(
-							"filetype"=>"gif|jpe?g|png",
-							"filetype_caption"=>"JPG, GIF, PNG",
-							"filesize"=>5000000,
-							"filesize_caption"=>"5 MB",	
 							"content"=>"gambar"
 						);
 		   		$this->load->view("admin/promotion/promotionFile2.php", $config1) 
@@ -334,5 +337,18 @@
 	  }
 	});
 
+</script>
+
+<script>
+	$(".deleteImage").click(function(e) {
+        if( confirm("Anda Yakin / Are you sure ?") )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+    });
 </script>
 

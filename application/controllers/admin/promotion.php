@@ -184,6 +184,39 @@ class Promotion extends CI_Controller {
 			echo "Gagal";
 		endif;
 	}
+	
+	public function deleteimage($id_promosi_gambar=0, $id_promosi=0, $nama_file="")
+	{
+		$where = array("id_promosi_gambar"=>$id_promosi_gambar);
+		$r = $this->Promosi->deleteGambar($where);
+		if( $r ):
+			if( !empty($nama_file) ):
+				$thumb = "./upload/thumbs/" . $nama_file;
+				$file = "./upload/" . $nama_file;
+				unlink($thumb);
+				unlink($file);
+			endif;
+			redirect("admin/promotion/form/" . $id_promosi);
+		else:
+			redirect("admin/promotion/form/" . $id_promosi);
+		endif;
+	}
+	
+	public function deleteFile($id_promosi_berkas=0, $id_promosi=0, $nama_file="")
+	{
+		$where = array("id_promosi_berkas"=>$id_promosi_berkas);
+		$r = $this->Promosi->deleteFile($where);
+		if( $r ):
+			if( !empty($nama_file) ):
+				$file = "./upload/" . $nama_file;
+				unlink($file);
+			endif;
+			redirect("admin/promotion/form/" . $id_promosi);
+		else:
+			redirect("admin/promotion/form/" . $id_promosi);
+		endif;
+	}
+
 }
 
 ?>
