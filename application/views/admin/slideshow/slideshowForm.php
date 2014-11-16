@@ -107,10 +107,6 @@
     <div class="modal-body">
        <?php 
 	   			$config = array(
-							"filetype"=>"gif|jpe?g|png",
-							"filetype_caption"=>"JPG, GIF, PNG",
-							"filesize"=>5000000,
-							"filesize_caption"=>"5 MB",
 							"content"=>"gambar"
 						);
 		   		$this->load->view("admin/slideshow/slideshowImage.php",$config) 
