@@ -147,13 +147,13 @@
 
                 </a>					
             </li>   
-            <!--<li class="admin_menu" id="configuration">
-                <a href="<?php echo base_url() ?>admin/promotion_configuration">
+            <li class="admin_menu" id="email_configuration">
+                <a href="<?php echo base_url() ?>admin/email_configuration">
                 	<i class="fa  fa-wrench"></i>
-               	 	<span class="title">Pengaturan / <em>Configuration</em></span>
+               	 	<span class="title">Pengaturan Email / <em>Email Configuration</em></span>
                 </a>
                 				
-            </li>  -->  
+            </li>    
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

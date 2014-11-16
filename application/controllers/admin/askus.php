@@ -8,6 +8,7 @@ class Askus extends Access_Controller {
 		//function check access			
 		parent::__construct();	
 		$this->load->model("admin/Tanya_kami");
+		$this->load->model("admin/Email_configuration_m");
 		$this->load->library('pagination_lib');
 		$this->load->library('email');
 	}
@@ -74,31 +75,48 @@ class Askus extends Access_Controller {
 		
 		$where = array("id_tanya_kami"=>$id_tanya_kami);
 		$askus = $this->Tanya_kami->displaySelectedData($where);
+		$ask = isset($askus[0])?$askus[0]:array();
 		
-		$config['protocol']    = 'smtp';
-	    $config['smtp_host']    = 'ssl://smtp.gmail.com';
-	    $config['smtp_port']    = '465';
-        $config['smtp_timeout'] = '7';
-        $config['smtp_user']    = 'm.sudharmono@gmail.com';
-        $config['smtp_pass']    = 'm.sudharmono@gmail.com123';
-        $config['charset']    = 'utf-8';
-        $config['newline']    = "\r\n";
-        $config['mailtype'] = 'text'; // or html
-        $config['validation'] = TRUE; // bool whether to validate email or not      
+		$mail_config = $this->Email_configuration_m->displaySelectedData();
+		$conf = isset($mail_config[0])?$mail_config[0]:array();
+		
+		$email_from = isset($conf->email_from)?$conf->email_from:"";
+		$protocol = isset($conf->protocol)?$conf->protocol:"";
+		$smtp_host = isset($conf->smtp_host)?$conf->smtp_host:"";
+		$smtp_port = isset($conf->smtp_port)?$conf->smtp_port:"";
+		$smtp_timeout = isset($conf->smtp_timeout)?$conf->smtp_timeout:"";
+		$smtp_user = isset($conf->smtp_user)?$conf->smtp_user:"";
+		$smtp_pass = isset($conf->smtp_pass)?$conf->smtp_pass:"";
+		$charset = isset($conf->charset)?$conf->charset:"";
+		$newline = isset($conf->newline)?$conf->newline:"";
+		$mailtype = isset($conf->mailtype)?$conf->mailtype:"";
+		//echo $smtp_user; exit;
+		$config['protocol'] = $protocol;
+	    $config['smtp_host'] = $smtp_host;
+	    $config['smtp_port'] = $smtp_port;
+        $config['smtp_timeout'] = $smtp_timeout;
+        $config['smtp_user'] = $smtp_user;
+        $config['smtp_pass'] = $smtp_pass;
+        $config['charset'] = $charset;
+        $config['newline'] = $newline;
+        $config['mailtype'] = $mailtype; // or html
+        $config['validation'] = true; // bool whether to validate email or not      
+		//print_r($config); exit;
+		$message = "Pertanyaan / <em>Question</em> :<b> " . $ask->pertanyaan . "</b><br><br>";
+		$message .= "<p>" . $ask->jawaban . "</p>";
 
         $this->email->initialize($config);
-        $this->email->from('m.sudharmono@gmail.com', 'sender_name');
-        $this->email->to($askus['email']); 
-        $this->email->subject('Jawaban Pertanyaan');
-        $this->email->message($askus['jawaban']);  
-        $this->email->send();
+        $this->email->from($email_from, $email_from);
+        $this->email->to($ask->email); 
+        $this->email->subject('Jawaban Pertanyaan / <em>Answered of the Question</em>');
+        $this->email->message($message);  
+        //$this->email->send();
 
-        echo $this->email->print_debugger();
-		
-		if( $result ):
+		if( $result and $this->email->send()):
 			redirect("admin/askus");
 		else:
-			echo "Gagal";
+			show_error($this->email->print_debugger());
+			echo "Gagal. Klik <a href='". base_url() ."admin/askus'> disini </a> untuk kembali";
 		endif;
 	}
 	
