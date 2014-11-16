@@ -115,7 +115,7 @@ class Lokasi_wisata extends MY_Model
 	}
 	public function deleteGambar($where)
 	{
-		return $this->db->delete("pr_lokasi_wisata_gambar", $where);
+		return $this->db->delete("pr_lokasi_wisata_tag_sarana", $where);
 	}
 	
 }
